@@ -6,12 +6,12 @@ public static class Program
 {
 	private static void Main()
 	{
-		var format = new FormatChunk(BitRateType.EightBit, ChannelType.Stereo);
+		var format = new FormatChunk(BitRateType.SixteenBit, ChannelType.Stereo);
 		var wave = Naki(format);
 		wave.ChangeVolume(50, WaveChannelType.BOTH);
-		var sound = new SoundWaveChunk(wave);
+		var sound = new SoundWaveChunk(wave, BitRateType.SixteenBit);
 		IWriteable writer = new WaveWriter(format, sound);
-		writer.Write("亡き王女の為のセプテット(ステレオ25%).wav");
+		writer.Write("亡き王女の為のセプテット(テスト).wav");
 		Console.WriteLine("書き込んだよ");
 	}
 
@@ -37,15 +37,15 @@ public static class Program
         factory2.Add(new EqualTemperament(Scale.C, 5, 0.5));
         var monaural1 = factory1.CreateMonaural(format);
 		var monaural2 = factory2.CreateMonaural(format);
-		return new StereoWave(monaural1.GetBytes(), monaural2.GetBytes());
+		return new StereoWave(monaural1.GetValues(), monaural2.GetValues());
 
 	}
 	public static StereoWave Naki(FormatChunk format)
 	{
-		IWaveFactory wave = new SquareWaveFactory(SquareWaveRatio.POINT_25);
-		IWaveFactory wave1 = new SquareWaveFactory(SquareWaveRatio.POINT_25);
-		IWaveFactory wave2 = new SquareWaveFactory(SquareWaveRatio.POINT_25);
-		IWaveFactory wave3 = new SquareWaveFactory(SquareWaveRatio.POINT_25);
+		IWaveFactory wave = new TriangleWaveFactory();
+		IWaveFactory wave1 = new TriangleWaveFactory();
+		IWaveFactory wave2 = new TriangleWaveFactory();
+		IWaveFactory wave3 = new TriangleWaveFactory();
 		// 「主旋律１」
 		wave.Add(new EqualTemperament(Scale.F_SHARP, 4, second: 0.25));
 		wave.Add(new EqualTemperament(Scale.B, 4, second: 0.25));
@@ -223,8 +223,8 @@ public static class Program
 		{
 			wave.CreateMonaural(format),wave1.CreateMonaural(format),wave2.CreateMonaural(format),wave3.CreateMonaural(format)
 		};
-		var stereo1 = new StereoWave(tracks[0].GetBytes(), tracks[3].GetBytes());
-        var stereo2 = new StereoWave(tracks[1].GetBytes(), tracks[2].GetBytes());
+		var stereo1 = new StereoWave(tracks[0].GetValues(), tracks[3].GetValues());
+        var stereo2 = new StereoWave(tracks[1].GetValues(), tracks[2].GetValues());
 		var stereoTracks = new List<StereoWave>()
 		{
 			stereo1, stereo2

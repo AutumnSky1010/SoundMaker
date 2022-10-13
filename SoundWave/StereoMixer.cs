@@ -21,32 +21,32 @@ internal class StereoMixer
 
         foreach (var wave in this._waves)
         {
-            byte[] rightWaveByte = wave.GetRightBytes();
-            byte[] leftWaveByte = wave.GetLeftBytes();
-            int minLength = rightWaveByte.Length < leftWaveByte.Length ? rightWaveByte.Length : leftWaveByte.Length;
+            ushort[] rightWave = wave.GetRightWave();
+            ushort[] leftWave = wave.GetLeftWave();
+            int minLength = rightWave.Length < leftWave.Length ? rightWave.Length : leftWave.Length;
             for (int i = 0; i < minLength; i++)
             {
-                resultRightIntList[i] = resultRightIntList[i] + rightWaveByte[i];
-                resultLeftIntList[i] = resultLeftIntList[i] + leftWaveByte[i];
+                resultRightIntList[i] = resultRightIntList[i] + rightWave[i];
+                resultLeftIntList[i] = resultLeftIntList[i] + leftWave[i];
             }
-            if (minLength == rightWaveByte.Length)
+            if (minLength == rightWave.Length)
             {
-                for (int i = minLength; i < leftWaveByte.Length; i++)
+                for (int i = minLength; i < leftWave.Length; i++)
                 {
-                    resultLeftIntList[i] = resultLeftIntList[i] + leftWaveByte[i];
+                    resultLeftIntList[i] = resultLeftIntList[i] + leftWave[i];
                 }
             }
             else
             {
-                for (int i = minLength; i < rightWaveByte.Length; i++)
+                for (int i = minLength; i < rightWave.Length; i++)
                 {
-                    resultRightIntList[i] = resultRightIntList[i] + rightWaveByte[i];
+                    resultRightIntList[i] = resultRightIntList[i] + rightWave[i];
                 }
             }
         }
         return new StereoWave(
-            resultRightIntList.ConvertAll<byte>((x) => (byte)(x / (ulong)this._waves.Count)),
-            resultLeftIntList.ConvertAll<byte>((x) => (byte)(x / (ulong)this._waves.Count)));
+            resultRightIntList.ConvertAll<ushort>((x) => (ushort)(x / (ulong)this._waves.Count)),
+            resultLeftIntList.ConvertAll<ushort>((x) => (ushort)(x / (ulong)this._waves.Count)));
     }
 
     private int GetMaxLength()

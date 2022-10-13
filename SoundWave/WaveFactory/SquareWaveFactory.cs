@@ -29,7 +29,7 @@ public class SquareWaveFactory : WaveFactoryBase, IWaveFactory
 	public SquareWaveFactory(SquareWaveRatio ratio) => this._ratioIndex = (int)ratio;
 	public override MonauralWave CreateMonaural(FormatChunk format)
 	{
-		var result = new List<byte>((int)this.Second * (int)format.SamplingFrequency);
+		var result = new List<ushort>((int)this.Second * (int)format.SamplingFrequency);
 		bool mode = false;
 		int count = 1;
 		for (int i = 0; i < this._soundComponents.Count; i++)
@@ -48,7 +48,7 @@ public class SquareWaveFactory : WaveFactoryBase, IWaveFactory
 				int repeatNumber = (int)(format.SamplingFrequency / equalTemperament.Hertz);
 				for (int j = 1; j <= repeatNumber * this._ratio[_ratioIndex].Item1 && mode; j++, count++)
 				{
-					byte sound = (byte)(255 * equalTemperament.Volume / 100);
+					ushort sound = (ushort)(ushort.MaxValue * equalTemperament.Volume / 100);
 					result.Add(sound);
 				}
 				for (int j = 1; j <= repeatNumber * this._ratio[_ratioIndex].Item2 && !mode; j++, count++)

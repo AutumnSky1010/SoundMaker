@@ -38,6 +38,7 @@ public struct FormatChunk : IChunk
 	private ushort _blockSize { get; }
 
 	public ushort BitRate { get; }
+
 	public byte[] GetBytes()
 	{
 		var result = BitConverter.GetBytes(0x20746D66);

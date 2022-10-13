@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SoundMaker.WaveFile;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,5 +12,5 @@ public interface IWave
 
 	int Length { get; }
 	
-	byte[] GetBytes();
+	byte[] GetBytes(BitRateType bitRate);
 }

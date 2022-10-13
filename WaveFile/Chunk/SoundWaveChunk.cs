@@ -3,9 +3,9 @@
 namespace SoundMaker.WaveFile;
 public class SoundWaveChunk : IChunk
 {
-	public SoundWaveChunk(IWave soundWave)
+	public SoundWaveChunk(IWave soundWave, BitRateType bitRate)
 	{
-		this._soundWaveData = soundWave.GetBytes();
+		this._soundWaveData = soundWave.GetBytes(bitRate);
 		this._size = (uint)this._soundWaveData.Length;
 	}
 	private uint _size;

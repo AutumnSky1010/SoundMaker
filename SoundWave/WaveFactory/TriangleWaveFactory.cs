@@ -8,7 +8,7 @@ public class TriangleWaveFactory : WaveFactoryBase, IWaveFactory
 	public TriangleWaveFactory() : base() { }
 	public override MonauralWave CreateMonaural(FormatChunk format)
 	{
-		var result = new List<byte>((int)this.Second * (int)format.SamplingFrequency);
+		var result = new List<ushort>((int)this.Second * (int)format.SamplingFrequency);
 		bool mode = true;
 		int count = 1;
 		for (int i = 0; i < this._soundComponents.Count; i++)
@@ -25,10 +25,10 @@ public class TriangleWaveFactory : WaveFactoryBase, IWaveFactory
 				var equalTemperament = (EqualTemperament)this._soundComponents[i];
 				double hertz = equalTemperament.Hertz;
 				double repeatNumber = format.SamplingFrequency / hertz / 2;
-				double slope = mode ? 255 / repeatNumber : -255 / repeatNumber;
+				double slope = mode ? ushort.MaxValue / repeatNumber : -ushort.MaxValue / repeatNumber;
 				for (int j = 1; j <= repeatNumber; j++, count++)
 				{
-					byte sound = mode ? (byte)(slope * j * equalTemperament.Volume / 100) : (byte)(( 255 + slope * j) * equalTemperament.Volume / 100);
+					ushort sound = mode ? (ushort)(slope * j * equalTemperament.Volume / 100) : (ushort)(( ushort.MaxValue + slope * j) * equalTemperament.Volume / 100);
 					result.Add(sound);
 				}
 				mode = !mode;

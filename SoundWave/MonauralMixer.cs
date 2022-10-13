@@ -12,28 +12,28 @@ internal class MonauralMixer
 	{
 		this._waves = waves;
 	}
-	public List<byte> Mix()
+	public MonauralWave Mix()
 	{
 		int maxLength = this.GetMaxLength();
 		var resultIntList = Enumerable.Repeat<ulong>(0, maxLength).ToList();
 
 		foreach (var wave in this._waves)
 		{
-			byte[] waveByte = wave.GetBytes();
-			for (int i = 0; i < waveByte.Length; i++)
+			ushort[] waveValues = wave.GetValues();
+			for (int i = 0; i < waveValues.Length; i++)
 			{
-				resultIntList[i] = resultIntList[i] + waveByte[i];
+				resultIntList[i] = resultIntList[i] + waveValues[i];
 			}
 		}
-		return resultIntList.ConvertAll<byte>((x) => (byte)(x / (ulong)this._waves.Count));
+		return new MonauralWave(resultIntList.ConvertAll<ushort>((x) => (ushort)(x / (ulong)this._waves.Count)));
 	}
 	private int GetMaxLength()
 	{
 		int maxLength = 0;
 		foreach (var wave in this._waves)
 		{
-			byte[] waveBytes = wave.GetBytes();
-			maxLength = waveBytes.Length >= maxLength ? waveBytes.Length : maxLength;
+			ushort[] waveValues = wave.GetValues();
+			maxLength = waveValues.Length >= maxLength ? waveValues.Length : maxLength;
 		}
 		return maxLength;
 	}

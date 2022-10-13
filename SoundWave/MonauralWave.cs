@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SoundMaker.WaveFile;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,24 +8,24 @@ using System.Threading.Tasks;
 namespace SoundMaker.SoundWave;
 public class MonauralWave : IWave
 {
-	public MonauralWave(IReadOnlyCollection<byte> waveBytes)
+	public MonauralWave(IReadOnlyCollection<ushort> wave)
 	{
-		byte[] argumentBytes = waveBytes.ToArray();
-		this._originalVolumeWaveBytes = new byte[waveBytes.Count];
-		this._waveBytes = new byte[waveBytes.Count];
-		Array.Copy(argumentBytes, this._originalVolumeWaveBytes, argumentBytes.Length);
-		Array.Copy(argumentBytes, this._waveBytes, argumentBytes.Length);
+		ushort[] argumentIntegers = wave.ToArray();
+		this._originalVolumeWave = new ushort[wave.Count];
+		this._wave = new ushort[wave.Count];
+		Array.Copy(argumentIntegers, this._originalVolumeWave, argumentIntegers.Length);
+		Array.Copy(argumentIntegers, this._wave, argumentIntegers.Length);
 	}
 
-    private byte[] _originalVolumeWaveBytes { get; set; }
+    private ushort[] _originalVolumeWave { get; set; }
 
-    private byte[] _waveBytes { get; set; }
+    private ushort[] _wave { get; set; }
 
     public int Volume { get; private set; }
 
     public int Length
     {
-        get => this._waveBytes.Length;
+        get => this._wave.Length;
     }
 
     public void ChangeVolume(int volume)
@@ -32,18 +33,42 @@ public class MonauralWave : IWave
 		volume = volume < 0 ? 0 : volume;
 		volume = volume > 100 ? 100 : volume;
 		this.Volume = volume;
-		for (int i = 0; i < _waveBytes.Length; i++)
+		for (int i = 0; i < _wave.Length; i++)
 		{
-			_waveBytes[i] = (byte)(_originalVolumeWaveBytes[i] * volume / 100);
+			_wave[i] = (byte)(_originalVolumeWave[i] * volume / 100);
 		}
 	}
 
 	public void Merge(MonauralWave wave)
 	{
-		this._waveBytes = this._waveBytes.Concat(wave.GetBytes()).ToArray();
-		this._originalVolumeWaveBytes = new byte[this._waveBytes.Length];
-		Array.Copy(this._waveBytes, this._originalVolumeWaveBytes, this._waveBytes.Length);
+		this._wave = this._wave.Concat(wave.GetValues()).ToArray();
+		this._originalVolumeWave = new ushort[this._wave.Length];
+		Array.Copy(this._wave, this._originalVolumeWave, this._wave.Length);
 	}
 
-	public byte[] GetBytes() => this._waveBytes;
+	public byte[] GetBytes(BitRateType bitRate)
+	{
+        if (bitRate == BitRateType.SixteenBit)
+		{
+            var result = new List<byte>(this._wave.Length * 2);
+			foreach (ushort value in this._wave)
+			{
+				var bytes = BitConverter.GetBytes(value);
+				result.Add(bytes[0]);
+                result.Add(bytes[1]);
+            }
+			return result.ToArray();
+        }
+		else
+		{
+            var result = new List<byte>(this._wave.Length);
+            foreach (ushort value in this._wave)
+            {
+                result.Add((byte)(value / 256));
+            }
+			return result.ToArray();
+        }
+	}
+
+	public ushort[] GetValues() => this._wave;
 }
