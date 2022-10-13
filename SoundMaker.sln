@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoundMaker", "SoundMaker.csproj", "{FFD8B4B4-3FA1-42A8-A38A-835A1BB86A46}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FFD8B4B4-3FA1-42A8-A38A-835A1BB86A46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFD8B4B4-3FA1-42A8-A38A-835A1BB86A46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFD8B4B4-3FA1-42A8-A38A-835A1BB86A46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFD8B4B4-3FA1-42A8-A38A-835A1BB86A46}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {43EE256B-EFA7-4C29-8696-C9FE912D3F2D}
+	EndGlobalSection
+EndGlobal
