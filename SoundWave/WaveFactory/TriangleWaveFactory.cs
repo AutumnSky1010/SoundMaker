@@ -13,6 +13,7 @@ public class TriangleWaveFactory : WaveFactoryBase, IWaveFactory
 		int count = 1;
 		for (int i = 0; i < this._soundComponents.Count; i++)
 		{
+			// 音の長さの秒数まで繰り返す
 			while (count <= this._soundComponents[i].Second * format.SamplingFrequency)
 			{
 				// 休符の時
@@ -22,16 +23,24 @@ public class TriangleWaveFactory : WaveFactoryBase, IWaveFactory
 					count++;
 					continue;
 				}
+
 				var equalTemperament = (EqualTemperament)this._soundComponents[i];
 				double hertz = equalTemperament.Hertz;
-				double repeatNumber = format.SamplingFrequency / hertz / 2;
-				double slope = mode ? ushort.MaxValue / repeatNumber : -ushort.MaxValue / repeatNumber;
+				// △の波形の波形を作るための繰り返し回数
+				double repeatNumber = format.SamplingFrequency / hertz;
+				// 直線の方程式の傾きを求める。
+				double slope = ushort.MaxValue / repeatNumber;
 				for (int j = 1; j <= repeatNumber; j++, count++)
 				{
 					ushort sound = mode ? (ushort)(slope * j * equalTemperament.Volume / 100) : (ushort)(( ushort.MaxValue + slope * j) * equalTemperament.Volume / 100);
 					result.Add(sound);
+					if (j == (int)(repeatNumber / 2))
+					{
+                        mode = !mode;
+						slope = -slope;
+                    }
 				}
-				mode = !mode;
+				
 			}
 			count = 1;
 		}

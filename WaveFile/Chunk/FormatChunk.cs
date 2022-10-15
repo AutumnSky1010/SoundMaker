@@ -10,18 +10,27 @@ public enum ChannelType : ushort
 	Monaural = 0x0001,
 	Stereo = 0x0002
 }
+
 public enum BitRateType : ushort
 {
 	SixteenBit = 0x0010,
 	EightBit = 0x0008
 }
+
+public enum SamplingFrequencyType : uint
+{
+	FourtyEightKHz = 0x0000BB80,
+    FourtyFourKHz = 0x0000AC44
+}
+
 public struct FormatChunk : IChunk
 {
-	public FormatChunk(BitRateType bitRate, ChannelType type)
+	public FormatChunk(SamplingFrequencyType samplingFrequency, BitRateType bitRate, ChannelType type)
 	{
 		this._channel = (ushort)type;
 		this.BitRate = (ushort)bitRate;
-		this._blockSize = (ushort)(this.BitRate * this._channel / 8);
+        this.SamplingFrequency = (uint)samplingFrequency;
+        this._blockSize = (ushort)(this.BitRate * this._channel / 8);
 		this._byteSizePerSecond = this._blockSize * this.SamplingFrequency;
 	}
 
@@ -31,7 +40,7 @@ public struct FormatChunk : IChunk
 
 	private ushort _channel { get; }
 
-	public uint SamplingFrequency { get; } = 0x0000AC44;
+	public uint SamplingFrequency { get; }
 
 	private uint _byteSizePerSecond { get; }
 

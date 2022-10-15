@@ -39,7 +39,7 @@ public class MonauralWave : IWave
 		}
 	}
 
-	public void Merge(MonauralWave wave)
+	public void Append(MonauralWave wave)
 	{
 		this._wave = this._wave.Concat(wave.GetValues()).ToArray();
 		this._originalVolumeWave = new ushort[this._wave.Length];
@@ -53,8 +53,8 @@ public class MonauralWave : IWave
             var result = new List<byte>(this._wave.Length * 2);
 			foreach (ushort value in this._wave)
 			{
-				var bytes = BitConverter.GetBytes(value);
-				result.Add(bytes[0]);
+				var bytes = BitConverter.GetBytes((short)((value - short.MaxValue) / 2));
+                result.Add(bytes[0]);
                 result.Add(bytes[1]);
             }
 			return result.ToArray();

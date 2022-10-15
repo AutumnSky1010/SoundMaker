@@ -133,8 +133,8 @@ public class StereoWave : IWave
         var resultWave = new List<byte>(maxAndMinLength.Max * 4);
         for (int i = 0; i < maxAndMinLength.Min; i++)
         {
-            byte[] leftBytes = BitConverter.GetBytes(this._leftWave[i]);
-            byte[] rightBytes = BitConverter.GetBytes(this._rightWave[i]);
+            byte[] leftBytes = BitConverter.GetBytes((short)((this._leftWave[i] - short.MaxValue) / 2));
+            byte[] rightBytes = BitConverter.GetBytes((short)((this._rightWave[i] - short.MaxValue) / 2));
             // Point : ステレオの波は左右左右左右左右・・・・・・左右
             resultWave.Add(leftBytes[0]);
             resultWave.Add(leftBytes[1]);
@@ -146,7 +146,7 @@ public class StereoWave : IWave
         {
             for (int i = maxAndMinLength.Min; i < maxAndMinLength.Max; i++)
             {
-                byte[] leftBytes = BitConverter.GetBytes(this._leftWave[i]);
+                byte[] leftBytes = BitConverter.GetBytes((short)((this._leftWave[i] - short.MaxValue) / 2));
                 resultWave.Add(leftBytes[0]);
                 resultWave.Add(leftBytes[1]);
                 resultWave.Add(0);
@@ -157,7 +157,7 @@ public class StereoWave : IWave
         {
             for (int i = maxAndMinLength.Min; i < maxAndMinLength.Max; i += 2)
             {
-                byte[] rightBytes = BitConverter.GetBytes(this._rightWave[i]);
+                byte[] rightBytes = BitConverter.GetBytes((short)((this._rightWave[i] - short.MaxValue) / 2));
                 resultWave.Add(0);
                 resultWave.Add(0);
                 resultWave.Add(rightBytes[0]);
@@ -181,10 +181,16 @@ public class StereoWave : IWave
         return resultushorts;
     }
 
-    public void Merge(StereoWave wave)
+    public void Append(StereoWave wave)
 	{
-		throw new NotImplementedException();
-	}
+        this._rightWave = this._rightWave.Concat(wave.GetRightWave()).ToArray();
+        this._rightOriginalVolumeWave = new ushort[this._rightWave.Length];
+        Array.Copy(this._rightWave, this._rightOriginalVolumeWave, this._rightWave.Length);
+
+        this._leftWave = this._leftWave.Concat(wave.GetLeftWave()).ToArray();
+        this._leftOriginalVolumeWave = new ushort[this._leftWave.Length];
+        Array.Copy(this._leftWave, this._leftOriginalVolumeWave, this._leftWave.Length);
+    }
 
 	private MaxAndMin GetMaxAndMinWaveLength()
 	{

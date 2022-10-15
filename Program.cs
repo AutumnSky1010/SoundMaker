@@ -6,26 +6,26 @@ public static class Program
 {
 	private static void Main()
 	{
-		var format = new FormatChunk(BitRateType.SixteenBit, ChannelType.Stereo);
+		var format = new FormatChunk(SamplingFrequencyType.FourtyFourKHz, BitRateType.EightBit, ChannelType.Stereo);
 		var wave = Naki(format);
-		wave.ChangeVolume(50, WaveChannelType.BOTH);
-		var sound = new SoundWaveChunk(wave, BitRateType.SixteenBit);
+		wave.Append(Naki(format));
+		var sound = new SoundWaveChunk(wave, BitRateType.EightBit);
 		IWriteable writer = new WaveWriter(format, sound);
-		writer.Write("亡き王女の為のセプテット(テスト).wav");
+		writer.Write("(テスト).wav");
 		Console.WriteLine("書き込んだよ");
 	}
 
-	private static StereoWave CDEFGABC(FormatChunk format)
+	private static MonauralWave CDEFGABC(FormatChunk format)
 	{
 		var factory1 = new SquareWaveFactory(8, SquareWaveRatio.POINT_5);
 		factory1.Add(new EqualTemperament(Scale.C, 4, 0.5));
-		factory1.Add(new Rest(0.5));
+		factory1.Add(new EqualTemperament(Scale.D, 4, 0.5));
 		factory1.Add(new EqualTemperament(Scale.E, 4, 0.5));
-		factory1.Add(new Rest(0.5));
+		factory1.Add(new EqualTemperament(Scale.D, 4, 0.5));
 		factory1.Add(new EqualTemperament(Scale.G, 4, 0.5));
-		factory1.Add(new Rest(0.5));
+		factory1.Add(new EqualTemperament(Scale.D, 4, 0.5));
 		factory1.Add(new EqualTemperament(Scale.B, 4, 0.5));
-		factory1.Add(new Rest(0.5));
+		factory1.Add(new EqualTemperament(Scale.D, 4, 0.5));
         var factory2 = new SquareWaveFactory(8, SquareWaveRatio.POINT_125);
         factory2.Add(new Rest(0.5));
         factory2.Add(new EqualTemperament(Scale.D, 4, 0.5));
@@ -37,7 +37,7 @@ public static class Program
         factory2.Add(new EqualTemperament(Scale.C, 5, 0.5));
         var monaural1 = factory1.CreateMonaural(format);
 		var monaural2 = factory2.CreateMonaural(format);
-		return new StereoWave(monaural1.GetValues(), monaural2.GetValues());
+		return new MonauralMixer(new List<MonauralWave> { monaural1, monaural2, monaural2, monaural2 }).Mix();
 
 	}
 	public static StereoWave Naki(FormatChunk format)
@@ -221,8 +221,10 @@ public static class Program
 
 		var tracks = new List<MonauralWave>()
 		{
-			wave.CreateMonaural(format),wave1.CreateMonaural(format),wave2.CreateMonaural(format),wave3.CreateMonaural(format)
-		};
+			wave.CreateMonaural(format),wave1.CreateMonaural(format),wave2.CreateMonaural(format),wave3.CreateMonaural(format),
+            wave.CreateMonaural(format),wave1.CreateMonaural(format),wave2.CreateMonaural(format),wave3.CreateMonaural(format),
+            wave.CreateMonaural(format),wave1.CreateMonaural(format),wave2.CreateMonaural(format),wave3.CreateMonaural(format)
+        };
 		var stereo1 = new StereoWave(tracks[0].GetValues(), tracks[3].GetValues());
         var stereo2 = new StereoWave(tracks[1].GetValues(), tracks[2].GetValues());
 		var stereoTracks = new List<StereoWave>()

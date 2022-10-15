@@ -53,7 +53,7 @@ public class SquareWaveFactory : WaveFactoryBase, IWaveFactory
 				}
 				for (int j = 1; j <= repeatNumber * this._ratio[_ratioIndex].Item2 && !mode; j++, count++)
 				{
-					byte sound = 0;
+					ushort sound = 0;
 					result.Add(sound);
 				}
 				mode = !mode;
