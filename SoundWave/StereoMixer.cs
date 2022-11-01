@@ -1,61 +1,76 @@
-﻿using System;
+﻿using SoundMaker.SoundWave.Score;
+using SoundMaker.WaveFile;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
+using System.Net.WebSockets;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace SoundMaker.SoundWave;
-internal class StereoMixer
+internal class StereoMixer : MixerBase
 {
-    private IReadOnlyList<StereoWave> _waves { get; }
-    public StereoMixer(IReadOnlyList<StereoWave> waves)
+    public StereoMixer(IReadOnlyList<ISoundChannel> channels) : base(channels)
     {
-        this._waves = waves;
     }
 
     public StereoWave Mix()
     {
-        int maxLength = this.GetMaxLength();
-        var resultRightIntList = Enumerable.Repeat<ulong>(0, maxLength).ToList();
-        var resultLeftIntList = new List<ulong>(resultRightIntList);
-
-        foreach (var wave in this._waves)
+        int max = this.GetMaxWaveLength();
+        var channelCount = this.GetChannelCount();
+        ushort[] rightResult = Enumerable.Repeat((ushort)0, max).ToArray();
+        ushort[] leftResult = Enumerable.Repeat((ushort)0, max).ToArray();
+        foreach (var channel in this.Channels)
         {
-            ushort[] rightWave = wave.GetRightWave();
-            ushort[] leftWave = wave.GetLeftWave();
-            int minLength = rightWave.Length < leftWave.Length ? rightWave.Length : leftWave.Length;
-            for (int i = 0; i < minLength; i++)
+            var waveNumericData = channel.CreateWave();
+            if (channel.PanType is WaveFactory.PanType.LEFT)
             {
-                resultRightIntList[i] = resultRightIntList[i] + rightWave[i];
-                resultLeftIntList[i] = resultLeftIntList[i] + leftWave[i];
-            }
-            if (minLength == rightWave.Length)
-            {
-                for (int i = minLength; i < leftWave.Length; i++)
+                for (int i = 0; i < waveNumericData.Length; i++)
                 {
-                    resultLeftIntList[i] = resultLeftIntList[i] + leftWave[i];
+                    leftResult[i] += (ushort)(waveNumericData[i] / channelCount.Left);
                 }
             }
             else
             {
-                for (int i = minLength; i < rightWave.Length; i++)
+                for (int i = 0; i < waveNumericData.Length; i++)
                 {
-                    resultRightIntList[i] = resultRightIntList[i] + rightWave[i];
+                    rightResult[i] += (ushort)(waveNumericData[i] / channelCount.Right);
                 }
             }
+
         }
-        return new StereoWave(
-            resultRightIntList.ConvertAll<ushort>((x) => (ushort)(x / (ulong)this._waves.Count)),
-            resultLeftIntList.ConvertAll<ushort>((x) => (ushort)(x / (ulong)this._waves.Count)));
+        return new StereoWave(rightResult, leftResult);
     }
 
-    private int GetMaxLength()
+    private ChannelCount GetChannelCount()
     {
-        int maxLength = 0;
-        foreach (var wave in this._waves)
+        int right = 0;
+        int left = 0;
+        foreach (var channel in this.Channels)
         {
-            maxLength = wave.Length >= maxLength ? wave.Length : maxLength;
+            if (channel.PanType is WaveFactory.PanType.LEFT)
+            {
+                left++;
+            }
+            else
+            {
+                right++;
+            }
         }
-        return maxLength;
+        return new ChannelCount(left, right);
+    }
+
+    private struct ChannelCount
+    {
+        public ChannelCount(int left, int right)
+        {
+            this.Left = left;
+            this.Right = right;
+        }
+
+        public int Right { get; }
+
+        public int Left { get; }
     }
 }

@@ -118,7 +118,7 @@ public class StereoWave : IWave
         }
         else
         {
-            for (int i = maxAndMinLength.Min; i < maxAndMinLength.Max; i += 2)
+            for (int i = maxAndMinLength.Min; i < maxAndMinLength.Max; i++)
             {
                 resultWave.Add(0);
                 resultWave.Add((byte)(this._rightWave[i] / 256));

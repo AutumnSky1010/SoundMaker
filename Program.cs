@@ -6,231 +6,200 @@ public static class Program
 {
 	private static void Main()
 	{
-		var format = new FormatChunk(SamplingFrequencyType.FourtyFourKHz, BitRateType.EightBit, ChannelType.Stereo);
-		var wave = Naki(format);
-		wave.Append(Naki(format));
+		var format = new FormatChunk(SamplingFrequencyType.FourtyEightKHz, BitRateType.EightBit, ChannelType.Stereo);
+		var wave = Shinko.GetShinko(format);
+		wave.ChangeVolume(30, WaveChannelType.BOTH);
 		var sound = new SoundWaveChunk(wave, BitRateType.EightBit);
 		IWriteable writer = new WaveWriter(format, sound);
-		writer.Write("(テスト).wav");
+		writer.Write("shinko.wav");
 		Console.WriteLine("書き込んだよ");
 	}
 
-	private static MonauralWave CDEFGABC(FormatChunk format)
-	{
-		var factory1 = new SquareWaveFactory(8, SquareWaveRatio.POINT_5);
-		factory1.Add(new EqualTemperament(Scale.C, 4, 0.5));
-		factory1.Add(new EqualTemperament(Scale.D, 4, 0.5));
-		factory1.Add(new EqualTemperament(Scale.E, 4, 0.5));
-		factory1.Add(new EqualTemperament(Scale.D, 4, 0.5));
-		factory1.Add(new EqualTemperament(Scale.G, 4, 0.5));
-		factory1.Add(new EqualTemperament(Scale.D, 4, 0.5));
-		factory1.Add(new EqualTemperament(Scale.B, 4, 0.5));
-		factory1.Add(new EqualTemperament(Scale.D, 4, 0.5));
-        var factory2 = new SquareWaveFactory(8, SquareWaveRatio.POINT_125);
-        factory2.Add(new Rest(0.5));
-        factory2.Add(new EqualTemperament(Scale.D, 4, 0.5));
-        factory2.Add(new Rest(0.5));
-        factory2.Add(new EqualTemperament(Scale.F, 4, 0.5));
-        factory2.Add(new Rest(0.5));
-        factory2.Add(new EqualTemperament(Scale.A, 4, 0.5));
-        factory2.Add(new Rest(0.5));
-        factory2.Add(new EqualTemperament(Scale.C, 5, 0.5));
-        var monaural1 = factory1.CreateMonaural(format);
-		var monaural2 = factory2.CreateMonaural(format);
-		return new MonauralMixer(new List<MonauralWave> { monaural1, monaural2, monaural2, monaural2 }).Mix();
-
-	}
 	public static StereoWave Naki(FormatChunk format)
 	{
-		IWaveFactory wave = new TriangleWaveFactory();
-		IWaveFactory wave1 = new TriangleWaveFactory();
-		IWaveFactory wave2 = new TriangleWaveFactory();
-		IWaveFactory wave3 = new TriangleWaveFactory();
+		int tempo = 144;
+		ISoundChannel wave = new SquareSoundChannel(tempo, format, SquareWaveRatio.POINT_5, SoundWave.WaveFactory.PanType.LEFT);
+		ISoundChannel wave1 = new SquareSoundChannel(tempo, format, SquareWaveRatio.POINT_5, SoundWave.WaveFactory.PanType.LEFT);
+		ISoundChannel wave2 = new SquareSoundChannel(tempo, format, SquareWaveRatio.POINT_5, SoundWave.WaveFactory.PanType.RIGHT);
+		ISoundChannel wave3 = new SquareSoundChannel(tempo, format, SquareWaveRatio.POINT_5, SoundWave.WaveFactory.PanType.RIGHT);
 		// 「主旋律１」
-		wave.Add(new EqualTemperament(Scale.F_SHARP, 4, second: 0.25));
-		wave.Add(new EqualTemperament(Scale.B, 4, second: 0.25));
-		wave.Add(new EqualTemperament(Scale.C_SHARP, 5, second: 0.25));
-		wave.Add(new EqualTemperament(Scale.D, 5, second: 0.75));
-		wave.Add(new EqualTemperament(Scale.E, 5, second: 0.25));
-		wave.Add(new EqualTemperament(Scale.C_SHARP, 5, second: 0.75));
-		wave.Add(new EqualTemperament(Scale.D, 5, second: 0.25));
-		wave.Add(new EqualTemperament(Scale.B, 4, second: 1));
+		wave.Add(new Note(Scale.F_SHARP, 4, 8));
+		wave.Add(new Note(Scale.B, 4, 8));
+		wave.Add(new Note(Scale.C_SHARP, 5, 8));
+		wave.Add(new Note(Scale.D, 5, 4, true));
+		wave.Add(new Note(Scale.E, 5, 8));
+		wave.Add(new Note(Scale.C_SHARP, 5, 4, true));
+		wave.Add(new Note(Scale.D, 5, 8));
+		wave.Add(new Note(Scale.B, 4, 2));
 
-		wave.Add(new Rest(second: 0.25));
+		wave.Add(new Rest(8));
 
-		wave.Add(new EqualTemperament(Scale.F_SHARP, 4, second: 0.25));
-		wave.Add(new EqualTemperament(Scale.B, 4, second: 0.25));
-		wave.Add(new EqualTemperament(Scale.C_SHARP, 5, second: 0.25));
-		wave.Add(new EqualTemperament(Scale.D, 5, second: 0.75));
-		wave.Add(new EqualTemperament(Scale.E, 5, second: 0.25));
-		wave.Add(new EqualTemperament(Scale.C_SHARP, 5, second: 0.75));
-		wave.Add(new EqualTemperament(Scale.A, 5, second: 0.25));
-		wave.Add(new EqualTemperament(Scale.F_SHARP, 5, second: 1));
+		wave.Add(new Note(Scale.F_SHARP, 4, 8));
+		wave.Add(new Note(Scale.B, 4, 8));
+		wave.Add(new Note(Scale.C_SHARP, 5, 8));
+		wave.Add(new Note(Scale.D, 5, 4, true));
+		wave.Add(new Note(Scale.E, 5, 8));
+		wave.Add(new Note(Scale.C_SHARP, 5, 4, true));
+		wave.Add(new Note(Scale.A, 5, 8));
+		wave.Add(new Note(Scale.F_SHARP, 5, 2));
 
-		wave.Add(new Rest(second: 0.25));
+		wave.Add(new Rest(8));
 
-		wave.Add(new EqualTemperament(Scale.F_SHARP, 5, second: 0.25));
-		wave.Add(new EqualTemperament(Scale.A, 5, second: 0.25));
-		wave.Add(new EqualTemperament(Scale.B, 5, second: 0.25));
-		wave.Add(new EqualTemperament(Scale.E, 5, second: 0.5));
-		wave.Add(new EqualTemperament(Scale.E, 5, second: 0.75));
-		wave.Add(new EqualTemperament(Scale.E, 5, second: 0.25));
-		wave.Add(new EqualTemperament(Scale.F_SHARP, 5, second: 0.25));
-		wave.Add(new EqualTemperament(Scale.A, 5, second: 0.25));
+		wave.Add(new Note(Scale.F_SHARP, 5, 8));
+		wave.Add(new Note(Scale.A, 5, 8));
+		wave.Add(new Note(Scale.B, 5, 8));
+		wave.Add(new Note(Scale.E, 5, 4));
+		wave.Add(new Note(Scale.E, 5, 4, true));
+		wave.Add(new Note(Scale.E, 5, 8));
+		wave.Add(new Note(Scale.F_SHARP, 5, 8));
+		wave.Add(new Note(Scale.A, 5, 8));
 
-		wave.Add(new EqualTemperament(Scale.D, 5, second: 0.5));
-		wave.Add(new EqualTemperament(Scale.D, 5, second: 0.75));
-		wave.Add(new EqualTemperament(Scale.B, 4, second: 0.25));
-		wave.Add(new EqualTemperament(Scale.B, 4, second: 0.25));
-		wave.Add(new EqualTemperament(Scale.C_SHARP, 5, second: 0.25));
-		wave.Add(new EqualTemperament(Scale.D, 5, second: 0.75));
-		wave.Add(new EqualTemperament(Scale.E, 5, second: 0.25));
-		wave.Add(new EqualTemperament(Scale.C_SHARP, 5, second: 0.75));
+		wave.Add(new Note(Scale.D, 5, 4));
+		wave.Add(new Note(Scale.D, 5, 4, true));
+		wave.Add(new Note(Scale.B, 4, 8));
+		wave.Add(new Note(Scale.B, 4, 8));
+		wave.Add(new Note(Scale.C_SHARP, 5, 8));
+		wave.Add(new Note(Scale.D, 5, 4, true));
+		wave.Add(new Note(Scale.E, 5, 8));
+		wave.Add(new Note(Scale.C_SHARP, 5, 4, true));
 
-		wave.Add(new EqualTemperament(Scale.A_SHARP, 4, second: 0.25));
-		wave.Add(new EqualTemperament(Scale.B, 4, second: 1));
-		wave.Add(new EqualTemperament(Scale.C_SHARP, 5, second: 1));
+		wave.Add(new Note(Scale.A_SHARP, 4, 8));
+		wave.Add(new Note(Scale.B, 4, 2));
+		wave.Add(new Note(Scale.C_SHARP, 5, 2));
 
 		// 「主旋律２」
-		wave1.Add(new Rest(second: 0.25));
-		wave1.Add(new Rest(second: 0.25));
-		wave1.Add(new Rest(second: 0.25));
-		wave1.Add(new EqualTemperament(Scale.B, 4, second: 0.75));
-		wave1.Add(new Rest(second: 0.25));
-		wave1.Add(new EqualTemperament(Scale.A, 4, second: 0.75));
-		wave1.Add(new Rest(second: 0.25));
-		wave1.Add(new EqualTemperament(Scale.G, 4, second: 1));
+		wave1.Add(new Rest(8));
+		wave1.Add(new Rest(8));
+		wave1.Add(new Rest(8));
+		wave1.Add(new Note(Scale.B, 4, 4, true));
+		wave1.Add(new Rest(8));
+		wave1.Add(new Note(Scale.A, 4, 4, true));
+		wave1.Add(new Rest(8));
+		wave1.Add(new Note(Scale.G, 4, 2));
 
-		wave1.Add(new Rest(second: 0.25));
+		wave1.Add(new Rest(8));
 
-		wave1.Add(new Rest(second: 0.25));
-		wave1.Add(new Rest(second: 0.25));
-		wave1.Add(new Rest(second: 0.25));
-		wave1.Add(new EqualTemperament(Scale.B, 4, second: 0.75));
-		wave1.Add(new Rest(second: 0.25));
-		wave1.Add(new EqualTemperament(Scale.A, 4, second: 0.75));
-		wave1.Add(new Rest(second: 0.25));
-		wave1.Add(new EqualTemperament(Scale.D, 5, second: 1));
+		wave1.Add(new Rest(8));
+		wave1.Add(new Rest(8));
+		wave1.Add(new Rest(8));
+		wave1.Add(new Note(Scale.B, 4, 4, true));
+		wave1.Add(new Rest(8));
+		wave1.Add(new Note(Scale.A, 4, 4, true));
+		wave1.Add(new Rest(8));
+		wave1.Add(new Note(Scale.D, 5, 2));
 		
-		wave1.Add(new Rest(second: 0.25));
+		wave1.Add(new Rest(8));
 
-		wave1.Add(new Rest(second: 0.25));
-		wave1.Add(new Rest(second: 0.25));
-		wave1.Add(new Rest(second: 0.25));
-		wave1.Add(new EqualTemperament(Scale.B, 4, second: 0.5));
-		wave1.Add(new Rest(second: 0.75));
-		wave1.Add(new Rest(second: 0.25));
-		wave1.Add(new Rest(second: 0.25));
-		wave1.Add(new Rest(second: 0.25));
+		wave1.Add(new Rest(8));
+		wave1.Add(new Rest(8));
+		wave1.Add(new Rest(8));
+		wave1.Add(new Note(Scale.B, 4, 4));
+		wave1.Add(new Rest(4, true));
+		wave1.Add(new Rest(8));
+		wave1.Add(new Rest(8));
+		wave1.Add(new Rest(8));
 
-		wave1.Add(new EqualTemperament(Scale.A, 4, second: 0.5));
-		wave1.Add(new Rest(second: 0.75));
-		wave1.Add(new Rest(second: 0.25));
-		wave1.Add(new Rest(second: 0.25));
-		wave1.Add(new Rest(second: 0.25));
-		wave1.Add(new EqualTemperament(Scale.G, 4, second: 0.75));
-		wave1.Add(new Rest(second: 0.25));
-		wave1.Add(new EqualTemperament(Scale.A, 4, second: 0.75));
+		wave1.Add(new Note(Scale.A, 4, 4));
+		wave1.Add(new Rest(4, true));
+		wave1.Add(new Rest(8));
+		wave1.Add(new Rest(8));
+		wave1.Add(new Rest(8));
+		wave1.Add(new Note(Scale.G, 4, 4, true));
+		wave1.Add(new Rest(8));
+		wave1.Add(new Note(Scale.A, 4, 4, true));
 
-		wave1.Add(new Rest(second: 0.25));
-		wave1.Add(new EqualTemperament(Scale.G, 4, second: 1));
-		wave1.Add(new EqualTemperament(Scale.A, 4, second: 1));
+		wave1.Add(new Rest(8));
+		wave1.Add(new Note(Scale.G, 4, 2));
+		wave1.Add(new Note(Scale.A, 4, 2));
 		
 		// 「ベース1」
-		wave2.Add(new Rest(second: 0.25));
-		wave2.Add(new Rest(second: 0.25));
-		wave2.Add(new Rest(second: 0.25));
+		wave2.Add(new Rest(8));
+		wave2.Add(new Rest(8));
+		wave2.Add(new Rest(8));
 
-		wave2.Add(new EqualTemperament(Scale.B, 2, second: 0.25));
-		wave2.Add(new EqualTemperament(Scale.F_SHARP, 3, second: 0.25));
-		wave2.Add(new EqualTemperament(Scale.A, 3, second: 0.5));
-		wave2.Add(new EqualTemperament(Scale.B, 2, second: 0.25));
-		wave2.Add(new EqualTemperament(Scale.F_SHARP, 3, second: 0.25));
-		wave2.Add(new EqualTemperament(Scale.A, 3, second: 0.5));
+		wave2.Add(new Note(Scale.B, 2, 8));
+		wave2.Add(new Note(Scale.F_SHARP, 3, 8));
+		wave2.Add(new Note(Scale.A, 3, 4));
+		wave2.Add(new Note(Scale.B, 2, 8));
+		wave2.Add(new Note(Scale.F_SHARP, 3, 8));
+		wave2.Add(new Note(Scale.A, 3, 4));
 
-		wave2.Add(new EqualTemperament(Scale.G, 2, second: 0.25));
-		wave2.Add(new EqualTemperament(Scale.B, 2, second: 0.25));
-		wave2.Add(new EqualTemperament(Scale.D, 3, second: 0.25));
-		wave2.Add(new EqualTemperament(Scale.G, 3, second: 0.25));
-		wave2.Add(new EqualTemperament(Scale.B, 3, second: 1));
+		wave2.Add(new Note(Scale.G, 2, 8));
+		wave2.Add(new Note(Scale.B, 2, 8));
+		wave2.Add(new Note(Scale.D, 3, 8));
+		wave2.Add(new Note(Scale.G, 3, 8));
+		wave2.Add(new Note(Scale.B, 3, 2));
 
 
-		wave2.Add(new EqualTemperament(Scale.B, 2, second: 0.25));
-		wave2.Add(new EqualTemperament(Scale.F_SHARP, 3, second: 0.25));
-		wave2.Add(new EqualTemperament(Scale.A, 3, second: 0.5));
-		wave2.Add(new EqualTemperament(Scale.B, 2, second: 0.25));
-		wave2.Add(new EqualTemperament(Scale.F_SHARP, 3, second: 0.25));
-		wave2.Add(new EqualTemperament(Scale.A, 3, second: 0.5));
+		wave2.Add(new Note(Scale.B, 2, 8));
+		wave2.Add(new Note(Scale.F_SHARP, 3, 8));
+		wave2.Add(new Note(Scale.A, 3, 4));
+		wave2.Add(new Note(Scale.B, 2, 8));
+		wave2.Add(new Note(Scale.F_SHARP, 3, 8));
+		wave2.Add(new Note(Scale.A, 3, 4));
 
-		wave2.Add(new EqualTemperament(Scale.G_SHARP, 2, second: 0.25));
-		wave2.Add(new EqualTemperament(Scale.B, 2, second: 0.25));
-		wave2.Add(new EqualTemperament(Scale.E, 3, second: 0.25));
-		wave2.Add(new EqualTemperament(Scale.G_SHARP, 3, second: 0.25));
-		wave2.Add(new EqualTemperament(Scale.B, 3, second: 1));
+		wave2.Add(new Note(Scale.G_SHARP, 2, 8));
+		wave2.Add(new Note(Scale.B, 2, 8));
+		wave2.Add(new Note(Scale.E, 3, 8));
+		wave2.Add(new Note(Scale.G_SHARP, 3, 8));
+		wave2.Add(new Note(Scale.B, 3, 2));
 		//
-		wave2.Add(new EqualTemperament(Scale.B, 2, second: 2));
-		wave2.Add(new EqualTemperament(Scale.A, 2, second: 2));
-		wave2.Add(new EqualTemperament(Scale.B, 2, second: 1));
-		wave2.Add(new EqualTemperament(Scale.C, 3, second: 1));
+		wave2.Add(new Note(Scale.B, 2, 1));
+		wave2.Add(new Note(Scale.A, 2, 1));
+		wave2.Add(new Note(Scale.B, 2, 2));
+		wave2.Add(new Note(Scale.C, 3, 2));
 
-		wave2.Add(new EqualTemperament(Scale.G, 2, second: 0.25));
-		wave2.Add(new EqualTemperament(Scale.D, 3, second: 0.25));
-		wave2.Add(new EqualTemperament(Scale.G, 2, second: 0.25));
-		wave2.Add(new EqualTemperament(Scale.D, 3, second: 0.25));
-		wave2.Add(new EqualTemperament(Scale.G, 2, second: 0.25));
-		wave2.Add(new EqualTemperament(Scale.D, 3, second: 0.25));
-		wave2.Add(new EqualTemperament(Scale.G, 2, second: 0.25));
-		wave2.Add(new EqualTemperament(Scale.D, 3, second: 0.25));
+		wave2.Add(new Note(Scale.G, 2, 8));
+		wave2.Add(new Note(Scale.D, 3, 8));
+		wave2.Add(new Note(Scale.G, 2, 8));
+		wave2.Add(new Note(Scale.D, 3, 8));
+		wave2.Add(new Note(Scale.G, 2, 8));
+		wave2.Add(new Note(Scale.D, 3, 8));
+		wave2.Add(new Note(Scale.G, 2, 8));
+		wave2.Add(new Note(Scale.D, 3, 8));
 		
 		// 「ベース2」
-		wave3.Add(new Rest(second: 0.25));
-		wave3.Add(new Rest(second: 0.25));
-		wave3.Add(new Rest(second: 0.25));
+		wave3.Add(new Rest(8));
+		wave3.Add(new Rest(8));
+		wave3.Add(new Rest(8));
 
-		wave3.Add(new Rest(second: 0.25));
-		wave3.Add(new Rest(second: 0.25));
-		wave3.Add(new Rest(second: 0.5));
-		wave3.Add(new Rest(second: 0.25));
-		wave3.Add(new Rest(second: 0.25));
-		wave3.Add(new Rest(second: 0.5));
+		wave3.Add(new Rest(8));
+		wave3.Add(new Rest(8));
+		wave3.Add(new Rest(4));
+		wave3.Add(new Rest(8));
+		wave3.Add(new Rest(8));
+		wave3.Add(new Rest(4));
 
-		wave3.Add(new Rest(second: 0.25));
-		wave3.Add(new Rest(second: 0.25));
-		wave3.Add(new Rest(second: 0.25));
-		wave3.Add(new Rest(second: 0.25));
-		wave3.Add(new Rest(second: 1));
+		wave3.Add(new Rest(8));
+		wave3.Add(new Rest(8));
+		wave3.Add(new Rest(8));
+		wave3.Add(new Rest(8));
+		wave3.Add(new Rest(2));
 
 
-		wave3.Add(new Rest(second: 0.25));
-		wave3.Add(new Rest(second: 0.25));
-		wave3.Add(new Rest(second: 0.5));
-		wave3.Add(new Rest(second: 0.25));
-		wave3.Add(new Rest(second: 0.25));
-		wave3.Add(new Rest(second: 0.5));
+		wave3.Add(new Rest(8));
+		wave3.Add(new Rest(8));
+		wave3.Add(new Rest(4));
+		wave3.Add(new Rest(8));
+		wave3.Add(new Rest(8));
+		wave3.Add(new Rest(4));
 
-		wave3.Add(new Rest(second: 0.25));
-		wave3.Add(new Rest(second: 0.25));
-		wave3.Add(new Rest(second: 0.25));
-		wave3.Add(new Rest(second: 0.25));
-		wave3.Add(new Rest(second: 1));
+		wave3.Add(new Rest(8));
+		wave3.Add(new Rest(8));
+		wave3.Add(new Rest(8));
+		wave3.Add(new Rest(8));
+		wave3.Add(new Rest(2));
 		//
-		wave3.Add(new EqualTemperament(Scale.E, 2, second: 2));
-		wave3.Add(new EqualTemperament(Scale.D, 2, second: 2));
-		wave3.Add(new EqualTemperament(Scale.E, 2, second: 1));
-		wave3.Add(new EqualTemperament(Scale.F_SHARP, 3, second: 1));
+		wave3.Add(new Note(Scale.E, 2, 1));
+		wave3.Add(new Note(Scale.D, 2, 1));
+		wave3.Add(new Note(Scale.E, 2, 2));
+		wave3.Add(new Note(Scale.F_SHARP, 3, 2));
 
-		var tracks = new List<MonauralWave>()
+		var channels = new List<ISoundChannel>()
 		{
-			wave.CreateMonaural(format),wave1.CreateMonaural(format),wave2.CreateMonaural(format),wave3.CreateMonaural(format),
-            wave.CreateMonaural(format),wave1.CreateMonaural(format),wave2.CreateMonaural(format),wave3.CreateMonaural(format),
-            wave.CreateMonaural(format),wave1.CreateMonaural(format),wave2.CreateMonaural(format),wave3.CreateMonaural(format)
-        };
-		var stereo1 = new StereoWave(tracks[0].GetValues(), tracks[3].GetValues());
-        var stereo2 = new StereoWave(tracks[1].GetValues(), tracks[2].GetValues());
-		var stereoTracks = new List<StereoWave>()
-		{
-			stereo1, stereo2
+			wave, wave1, wave2, wave3
 		};
-        return new StereoMixer(stereoTracks).Mix();
+		var mixer = new StereoMixer(channels);
+		return mixer.Mix();
 	}
 }
