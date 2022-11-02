@@ -1,11 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SoundMaker.WaveFile;
+﻿namespace SoundMaker.WaveFile;
+/// <summary>
+/// 書き込みが可能なオブジェクトのインターフェイス
+/// </summary>
 public interface IWriteable
 {
-	void Write(string path);
+    /// <summary>
+    /// 書き込むメソッド。
+    /// </summary>
+    /// <param name="path">書き込み先のファイルのパス</param>
+    void Write(string path);
 }
