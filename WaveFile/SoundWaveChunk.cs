@@ -8,8 +8,7 @@ public class SoundWaveChunk : IChunk
     /// コンストラクタ
     /// </summary>
     /// <param name="soundWave">音の波形データの配列</param>
-    /// <param name="bitRate">量子化ビット数</param>
-    public SoundWaveChunk(byte[] soundWave, BitRateType bitRate)
+    public SoundWaveChunk(byte[] soundWave)
     {
         this._soundWaveData = soundWave;
         this._size = (uint)this._soundWaveData.Length;
