@@ -34,11 +34,20 @@ public class StereoMixer : MixerBase
                     leftResult[i] += (ushort)(waveNumericData[i] / channelCount.Left);
                 }
             }
+            else if (channel.PanType is PanType.Right)
+            {
+                for (int i = 0; i < waveNumericData.Length; i++)
+                {
+                    rightResult[i] += (ushort)(waveNumericData[i] / channelCount.Right);
+                }
+            }
+            // 両方のチャンネルから音が出る場合
             else
             {
                 for (int i = 0; i < waveNumericData.Length; i++)
                 {
                     rightResult[i] += (ushort)(waveNumericData[i] / channelCount.Right);
+                    leftResult[i] += (ushort)(waveNumericData[i] / channelCount.Left);
                 }
             }
 
@@ -56,11 +65,12 @@ public class StereoMixer : MixerBase
         int left = 0;
         foreach (var channel in this.Channels)
         {
-            if (channel.PanType is PanType.Left)
+            // 両方の場合は両方インクリメントする。
+            if (channel.PanType is PanType.Left || channel.PanType is PanType.Both)
             {
                 left++;
             }
-            else
+            if (channel.PanType is PanType.Right || channel.PanType is PanType.Both)
             {
                 right++;
             }

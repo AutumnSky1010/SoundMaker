@@ -7,7 +7,6 @@
     <Nullable>enable</Nullable>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Title>SoundMaker</Title>
-    <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/AutumnSky1010/SoundMaker</RepositoryUrl>
     <PackageTags>sound;wave;chiptune;</PackageTags>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
@@ -20,6 +19,7 @@
 2. export sound to a file of wave format.</Description>
     <PackageIcon>SoundMakerIcon.png</PackageIcon>
     <Copyright>Copyright ©2022 AutumnSky1010</Copyright>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
   <ItemGroup>

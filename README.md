@@ -1,5 +1,5 @@
-﻿# SoundMaker(alpha version)
-
+﻿# SoundMaker
+![icon](https://github.com/AutumnSky1010/SoundMaker/blob/master/SoundMakerIcon.png)
 ## 言語(Language)
 1) [日本語](#概要)
 2) [English](#Overview)
@@ -16,7 +16,9 @@
 .NET 6
 
 ## インストール方法
-リポジトリをクローンするか。dllを使ってください。
+### NuGet
+
+[SoundMaker](https://www.nuget.org/packages/SoundMaker/)
 
 ## 簡単な使い方
 ```CSharp
@@ -113,7 +115,9 @@ In preparation.
 .NET 6
 
 ## Installation
-Clone the repository or use dll.
+### NuGet
+
+[SoundMaker](https://www.nuget.org/packages/SoundMaker/)
 
 ## Usage
 ```CSharp

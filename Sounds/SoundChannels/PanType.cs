@@ -5,6 +5,10 @@
 public enum PanType
 {
     /// <summary>
+    /// 左右両方
+    /// </summary>
+    Both,
+    /// <summary>
     /// 右
     /// </summary>
     Right,
