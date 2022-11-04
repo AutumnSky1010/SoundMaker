@@ -12,24 +12,24 @@ public struct FormatChunk : IChunk
     /// <param name="channel">チャンネル数</param>
     public FormatChunk(SamplingFrequencyType samplingFrequency, BitRateType bitRate, ChannelType channel)
     {
-        this._channel = (ushort)channel;
+        this.Channel = (ushort)channel;
         this.BitRate = (ushort)bitRate;
         this.SamplingFrequency = (uint)samplingFrequency;
-        this._blockSize = (ushort)(this.BitRate * this._channel / 8);
-        this._byteSizePerSecond = this._blockSize * this.SamplingFrequency;
+        this.BlockSize = (ushort)(this.BitRate * this.Channel / 8);
+        this.ByteSizePerSecond = this.BlockSize * this.SamplingFrequency;
     }
 
-    private uint _chankSize { get; } = 0x00000010;
+    private uint ChankSize { get; } = 0x00000010;
 
-    private ushort _soundFormat { get; } = 0x0001;
+    private ushort SoundFormat { get; } = 0x0001;
 
-    private ushort _channel { get; }
+    private ushort Channel { get; }
 
     public uint SamplingFrequency { get; }
 
-    private uint _byteSizePerSecond { get; }
+    private uint ByteSizePerSecond { get; }
 
-    private ushort _blockSize { get; }
+    private ushort BlockSize { get; }
 
     /// <summary>
     /// 量子化ビット数
@@ -43,12 +43,12 @@ public struct FormatChunk : IChunk
     public byte[] GetBytes()
     {
         var result = BitConverter.GetBytes(0x20746D66);
-        result = result.Concat(BitConverter.GetBytes(this._chankSize)).ToArray();
-        result = result.Concat(BitConverter.GetBytes(this._soundFormat)).ToArray();
-        result = result.Concat(BitConverter.GetBytes(this._channel)).ToArray();
+        result = result.Concat(BitConverter.GetBytes(this.ChankSize)).ToArray();
+        result = result.Concat(BitConverter.GetBytes(this.SoundFormat)).ToArray();
+        result = result.Concat(BitConverter.GetBytes(this.Channel)).ToArray();
         result = result.Concat(BitConverter.GetBytes(this.SamplingFrequency)).ToArray();
-        result = result.Concat(BitConverter.GetBytes(this._byteSizePerSecond)).ToArray();
-        result = result.Concat(BitConverter.GetBytes(this._blockSize)).ToArray();
+        result = result.Concat(BitConverter.GetBytes(this.ByteSizePerSecond)).ToArray();
+        result = result.Concat(BitConverter.GetBytes(this.BlockSize)).ToArray();
         return result.Concat(BitConverter.GetBytes(this.BitRate)).ToArray();
     }
 }

@@ -11,7 +11,7 @@ public interface ISoundComponent
     /// <param name="format">音のフォーマット</param>
     /// <param name="tempo">一分間の四分音符・休符の数</param>
     /// <returns>配列の長さ : int</returns>
-    public int GetWaveArrayLength(SoundFormat format, int tempo);
+    int GetWaveArrayLength(SoundFormat format, int tempo);
 
     /// <summary>
     /// 矩形波の波形データの配列を生成するメソッド。
@@ -20,7 +20,7 @@ public interface ISoundComponent
     /// <param name="squareWaveRatio">デューティ比</param>
     /// <param name="tempo">一分間の四分音符・休符の数</param>
     /// <returns>波形データ : unsigned short[]</returns>
-    public ushort[] GetSquareWave(SoundFormat format, SquareWaveRatio squareWaveRatio, int tempo);
+    ushort[] GetSquareWave(SoundFormat format, SquareWaveRatio squareWaveRatio, int tempo);
 
     /// <summary>
     /// 三角波の波形データの配列を生成するメソッド。
@@ -28,7 +28,7 @@ public interface ISoundComponent
     /// <param name="format">音のフォーマット</param>
     /// <param name="tempo">一分間の四分音符・休符の数</param>
     /// <returns>波形データ : unsigned short[]</returns>
-    public ushort[] GetTriangleWave(SoundFormat format, int tempo);
+    ushort[] GetTriangleWave(SoundFormat format, int tempo);
 
     /// <summary>
     /// 配列の長さを強制的に指定して、矩形波の波形データの配列を生成するメソッド。
@@ -38,7 +38,7 @@ public interface ISoundComponent
     /// <param name="tempo">一分間の四分音符・休符の数</param>
     /// <param name="length">戻り値の配列の長さ</param>
     /// <returns>波形データ : unsigned short[]</returns>
-    public ushort[] GetSquareWave(SoundFormat format, SquareWaveRatio squareWaveRatio, int tempo, int length);
+    ushort[] GetSquareWave(SoundFormat format, SquareWaveRatio squareWaveRatio, int tempo, int length);
 
     /// <summary>
     /// 配列の長さを強制的に指定して、三角波の波形データの配列を生成するメソッド。
@@ -47,5 +47,5 @@ public interface ISoundComponent
     /// <param name="tempo">一分間の四分音符・休符の数</param>
     /// <param name="length">戻り値の配列の長さ</param>
     /// <returns>波形データ : unsigned short[]</returns>
-    public ushort[] GetTriangleWave(SoundFormat format, int tempo, int length);
+    ushort[] GetTriangleWave(SoundFormat format, int tempo, int length);
 }

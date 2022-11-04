@@ -10,26 +10,21 @@ public class SoundWaveChunk : IChunk
     /// <param name="soundWave">音の波形データの配列</param>
     public SoundWaveChunk(byte[] soundWave)
     {
-        this._soundWaveData = soundWave;
-        this._size = (uint)this._soundWaveData.Length;
+        this.SoundWaveData = soundWave;
+        this.Size = (uint)this.SoundWaveData.Length;
     }
-
-    private uint _size;
 
     /// <summary>
     /// 波形データのサイズ
     /// </summary>
-    public uint Size
-    {
-        get { return this._size; }
-    }
+    public uint Size { get; }
 
-    private byte[] _soundWaveData { get; }
+    private byte[] SoundWaveData { get; }
 
     public byte[] GetBytes()
     {
         var result = BitConverter.GetBytes(0x61746164);
-        result = result.Concat(BitConverter.GetBytes(this._size)).ToArray();
-        return result.Concat(this._soundWaveData).ToArray();
+        result = result.Concat(BitConverter.GetBytes(this.Size)).ToArray();
+        return result.Concat(this.SoundWaveData).ToArray();
     }
 }

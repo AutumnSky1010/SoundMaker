@@ -2,10 +2,8 @@
 /// <summary>
 /// waveファイルに書き込む
 /// </summary>
-public class WaveWriter : IWriteable
+public class WaveWriter
 {
-    private List<IChunk> _chunks { get; } = new List<IChunk>(3);
-
     /// <summary>
     /// コンストラクタ
     /// </summary>
@@ -14,17 +12,19 @@ public class WaveWriter : IWriteable
     public WaveWriter(FormatChunk format, SoundWaveChunk soundWave)
     {
         // ファイル全体サイズ = 音声波形データ + 44B
-        this._chunks.Add(new RIFFChunk(soundWave.Size + 36));
-        this._chunks.Add(format);
-        this._chunks.Add(soundWave);
+        this.Chunks.Add(new RIFFChunk(soundWave.Size + 36));
+        this.Chunks.Add(format);
+        this.Chunks.Add(soundWave);
     }
+
+    private List<IChunk> Chunks { get; } = new(3);
 
     public void Write(string path)
     {
         using (var stream = new FileStream(path, FileMode.Create, FileAccess.Write))
         using (var writer = new BinaryWriter(stream))
         {
-            foreach (var chunk in this._chunks)
+            foreach (var chunk in this.Chunks)
             {
                 writer.Write(chunk.GetBytes());
             }
