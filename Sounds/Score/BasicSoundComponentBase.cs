@@ -25,6 +25,10 @@ public abstract class BasicSoundComponentBase : ISoundComponent
     /// </summary>
     public bool IsDotted { get; }
 
+    public abstract ushort[] GetNoiseWave(SoundFormat format, int tempo);
+
+    public abstract ushort[] GetNoiseWave(SoundFormat format, int tempo, int length);
+
     public abstract ushort[] GetSquareWave(SoundFormat format, SquareWaveRatio squareWaveRatio, int tempo);
 
     public abstract ushort[] GetSquareWave(SoundFormat format, SquareWaveRatio squareWaveRatio, int tempo, int length);

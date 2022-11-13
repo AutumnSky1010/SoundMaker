@@ -12,11 +12,17 @@ public class Rest : BasicSoundComponentBase
     public Rest(LengthType length, bool isDotted = false)
         : base(length, isDotted) { }
 
+    public override ushort[] GetNoiseWave(SoundFormat format, int tempo)
+        => this.GetWave(format, tempo);
+
+    public override ushort[] GetNoiseWave(SoundFormat format, int tempo, int length)
+         => this.GetWave(format, tempo, length);
+
     public override ushort[] GetSquareWave(SoundFormat format, SquareWaveRatio squareWaveRatio, int tempo)
         => this.GetWave(format, tempo);
 
     public override ushort[] GetSquareWave(SoundFormat format, SquareWaveRatio squareWaveRatio, int tempo, int length)
-        => this.GetWave(format, tempo);
+        => this.GetWave(format, tempo, length);
 
     public override ushort[] GetTriangleWave(SoundFormat format, int tempo)
         => this.GetWave(format, tempo);

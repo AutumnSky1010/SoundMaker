@@ -32,6 +32,17 @@ public class Tie : ISoundComponent
     /// </summary>
     public bool AdditionalIsDotted { get; }
 
+    public ushort[] GetNoiseWave(SoundFormat format, int tempo)
+    {
+        int length = this.GetWaveArrayLength(format, tempo);
+        return this.GetNoiseWave(format, tempo, length);
+    }
+
+    public ushort[] GetNoiseWave(SoundFormat format, int tempo, int length)
+    {
+        return this.BaseNote.GetNoiseWave(format, tempo, length);
+    }
+
     public ushort[] GetSquareWave(SoundFormat format, SquareWaveRatio squareWaveRatio, int tempo)
     {
         int length = this.GetWaveArrayLength(format, tempo);

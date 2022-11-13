@@ -48,4 +48,8 @@ public interface ISoundComponent
     /// <param name="length">戻り値の配列の長さ</param>
     /// <returns>波形データ : unsigned short[]</returns>
     ushort[] GetTriangleWave(SoundFormat format, int tempo, int length);
+
+    ushort[] GetNoiseWave(SoundFormat format, int tempo);
+
+    ushort[] GetNoiseWave(SoundFormat format, int tempo, int length);
 }

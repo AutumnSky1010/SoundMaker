@@ -165,4 +165,42 @@ public class Note : BasicSoundComponentBase
         }
         return result.ToArray();
     }
+
+    public override ushort[] GetNoiseWave(SoundFormat format, int tempo)
+    {
+        int listLength = this.GetWaveArrayLength(format, tempo);
+        return this.GetNoiseWave(format, tempo, listLength);
+    }
+
+    public override ushort[] GetNoiseWave(SoundFormat format, int tempo, int length)
+    {
+        var result = new List<ushort>(length);
+        bool mode = false;
+        int count = 1;
+        while (count <= length)
+        {
+            int allRepeatTimes = (int)((int)format.SamplingFrequency / this.Hertz);
+            int firstRepeatTimes = (int)(allRepeatTimes * 0.5);
+            /*
+            if (count + allRepeatTimes >= length)
+            {
+                result.Add(0);
+                count++;
+                continue;
+            }*/
+            ushort height = (ushort)new Random().Next(0,ushort.MaxValue + 1);
+            for (int i = 1; i <= firstRepeatTimes && mode && count <= length; i++, count++)
+            {
+                ushort sound = (ushort)(height * this.Volume / 100);
+                result.Add(sound);
+            }
+            height = (ushort)new Random().Next(0, ushort.MaxValue + 1);
+            for (int i = 1; i <= allRepeatTimes - firstRepeatTimes && !mode && count <= length; i++, count++)
+            {
+                result.Add(height);
+            }
+            mode = !mode;
+        }
+        return result.ToArray();
+    }
 }

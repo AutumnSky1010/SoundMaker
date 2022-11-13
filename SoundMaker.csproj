@@ -11,7 +11,7 @@
     <PackageTags>sound;wave;chiptune;</PackageTags>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
-    <Version>0.1.0</Version>
+    <Version>0.2.0</Version>
     <Authors>AutumnSky1010</Authors>
     <Description>You can do The following content with this library.
 

@@ -64,7 +64,6 @@ public class Tuplet : ISoundComponent
     public ushort[] GetTriangleWave(SoundFormat format, int tempo, int length)
     {
         var result = new List<ushort>(length);
-        // コンポーネントの数の分で割って、商を求める
         var componentLength = length / this.Count;
         int i;
         for (i = 0; i < length - 1; i++)
@@ -79,5 +78,26 @@ public class Tuplet : ISoundComponent
     public int GetWaveArrayLength(SoundFormat format, int tempo)
     {
         return SoundWaveLengthCaluclator.Caluclate(format, tempo, this.Length, this.IsDotted);
+    }
+
+    public ushort[] GetNoiseWave(SoundFormat format, int tempo)
+    {
+        var length = this.GetWaveArrayLength(format, tempo);
+        return this.GetNoiseWave(format, tempo, length);
+    }
+
+    public ushort[] GetNoiseWave(SoundFormat format, int tempo, int length)
+    {
+        var result = new List<ushort>(length);
+        // コンポーネントの数で割って、一個あたりの配列の長さを算出
+        var componentLength = length / this.Count;
+        int i;
+        for (i = 0; i < this.Count - 1; i++)
+        {
+            result.AddRange(this.TupletComponents[i].GetNoiseWave(format, tempo, componentLength));
+        }
+        var lastComponentLength = componentLength + length % this.Count;
+        result.AddRange(this.TupletComponents[i].GetNoiseWave(format, tempo, lastComponentLength));
+        return result.ToArray();
     }
 }
