@@ -1,1 +1,16 @@
-﻿Restで矩形波が正しい長さで生成されないバグを修正
+﻿breaking change
+delete at ISoundComponent
+ushort[] GetSquareWave(SoundFormat format, SquareWaveRatio squareWaveRatio, int tempo);
+ushort[] GetTriangleWave(SoundFormat format, int tempo);
+ushort[] GetSquareWave(SoundFormat format, SquareWaveRatio squareWaveRatio, int tempo, int length);
+ushort[] GetTriangleWave(SoundFormat format, int tempo, int length);
+add at ISoundComponent
+ushort[] GenerateWave(SoundFormat format, int tempo, int length, WaveTypeBase waveType);
+ushort[] GenerateWave(SoundFormat format, int tempo, WaveTypeBase waveType);
+
+ロービットノイズを実装した
+Restで矩形波が正しい長さで生成されないバグを修正
+三角波の音量が半分になるバグを修正
+音量の最大値を変更
+モノラルミキサが非公開になっているバグを修正
+コメントアウトを一部英語化した

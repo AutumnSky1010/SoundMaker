@@ -7,7 +7,7 @@ namespace SoundMaker.Sounds;
 public abstract class MixerBase
 {
     /// <summary>
-    /// コンストラクタ
+    /// constructor コンストラクタ
     /// </summary>
     /// <param name="channels">音声チャンネルのリスト(読み取り専用)</param>
     public MixerBase(IReadOnlyList<ISoundChannel> channels)

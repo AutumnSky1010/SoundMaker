@@ -7,15 +7,15 @@ namespace SoundMaker.Sounds;
 public class StereoMixer : MixerBase
 {
     /// <summary>
-    /// コンストラクタ
+    /// constructor. コンストラクタ
     /// </summary>
-    /// <param name="channels">チャンネルのリスト</param>
+    /// <param name="channels">channels. チャンネルのリスト</param>
     public StereoMixer(IReadOnlyList<ISoundChannel> channels) : base(channels)
     {
     }
 
     /// <summary>
-    /// ミックスするメソッド。
+    /// mix. ミックスするメソッド。
     /// </summary>
     /// <returns>ステレオ波形データ</returns>
     public StereoWave Mix()

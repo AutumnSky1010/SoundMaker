@@ -10,10 +10,10 @@ public abstract class SoundChannelBase : ISoundChannel
     /// <summary>
     /// コンストラクタ。
     /// </summary>
-    /// <param name="tempo">一分間の四分音符・休符の数</param>
-    /// <param name="format">音のフォーマット</param>
-    /// <param name="panType">左右どちらから音が出るか</param>
-    /// <param name="componentsCount">サウンドコンポーネントの個数</param>
+    /// <param name="tempo">quarter note/rest per minute. 一分間の四分音符・休符の数</param>
+    /// <param name="format">format of the sound.音のフォーマット</param>
+    /// <param name="panType">pan of the sound. 左右どちらから音が出るか</param>
+    /// <param name="componentsCount">count of sound components. サウンドコンポーネントの個数</param>
     public SoundChannelBase(int tempo, SoundFormat format, PanType panType, int componentsCount)
     {
         this.SoundComponents = new List<ISoundComponent>(componentsCount);
@@ -25,9 +25,9 @@ public abstract class SoundChannelBase : ISoundChannel
     /// <summary>
     /// コンストラクタ。
     /// </summary>
-    /// <param name="tempo">一分間の四分音符・休符の数</param>
-    /// <param name="format">音のフォーマット</param>
-    /// <param name="panType">左右どちらから音が出るか</param>
+    /// <param name="tempo">quarter note/rest per minute. 一分間の四分音符・休符の数</param>
+    /// <param name="format">format of the sound.音のフォーマット</param>
+    /// <param name="panType">pan of the sound. 左右どちらから音が出るか</param>
     public SoundChannelBase(int tempo, SoundFormat format, PanType panType)
     {
         this.PanType = panType;

@@ -5,7 +5,7 @@
 public class SoundWaveChunk : IChunk
 {
     /// <summary>
-    /// コンストラクタ
+    /// constructor. コンストラクタ
     /// </summary>
     /// <param name="soundWave">音の波形データの配列</param>
     public SoundWaveChunk(byte[] soundWave)
@@ -15,7 +15,7 @@ public class SoundWaveChunk : IChunk
     }
 
     /// <summary>
-    /// 波形データのサイズ
+    /// size of the wave data. 波形データのサイズ
     /// </summary>
     public uint Size { get; }
 

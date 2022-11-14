@@ -4,24 +4,24 @@ namespace SoundMaker.Sounds.SoundChannels;
 public interface ISoundChannel
 {
     /// <summary>
-    /// index番目のサウンドコンポーネントを取得する
+    /// get sound component at index. index番目のサウンドコンポーネントを取得する
     /// </summary>
     /// <param name="index">何番目かを表す整数</param>
-    /// <returns>サウンドコンポーネント</returns>
+    /// <returns>sound component.サウンドコンポーネント</returns>
     ISoundComponent this[int index] { get; }
 
     /// <summary>
-    /// サウンドコンポーネントの個数
+    /// count of sound components. サウンドコンポーネントの個数
     /// </summary>
     public int ComponentCount { get; }
 
     /// <summary>
-    /// 音の波形データを表す配列の長さ
+    /// wave length 音の波形データを表す配列の長さ
     /// </summary>
     public int WaveArrayLength { get; }
 
     /// <summary>
-    /// 一分間の四分音符・休符の数
+    /// tempo. 一分間の四分音符・休符の数
     /// </summary>
     public int Tempo { get; }
 

@@ -5,10 +5,10 @@
 public class StereoWave : IWave
 {
     /// <summary>
-    /// コンストラクタ
+    /// constructor
     /// </summary>
-    /// <param name="rightWave">右の波形データ</param>
-    /// <param name="leftWave">左の波形データ</param>
+    /// <param name="rightWave">wave of right. 右の波形データ</param>
+    /// <param name="leftWave">wave of left. 左の波形データ</param>
     public StereoWave(IReadOnlyCollection<ushort> rightWave, IReadOnlyCollection<ushort> leftWave)
     {
         ushort[] rightArgument = rightWave.ToArray();
@@ -34,12 +34,12 @@ public class StereoWave : IWave
     private ushort[] LeftWave { get; set; }
 
     /// <summary>
-    /// 波形データの音量
+    /// volume of the wave. 波形データの音量
     /// </summary>
     public int Volume { get; private set; }
 
     /// <summary>
-    /// 波形データを表すの配列の長さ。GetBytes()メソッドで得られるバイト列の長さとは異なる
+    /// length of the wave. 波形データを表すの配列の長さ。GetBytes()メソッドで得られるバイト列の長さとは異なる
     /// </summary>
     public int Length
     {
@@ -47,10 +47,10 @@ public class StereoWave : IWave
     }
 
     /// <summary>
-    /// 音量を変更するメソッド。
+    /// change the volume this. 音量を変更するメソッド。
     /// </summary>
-    /// <param name="volume">音量(0 ~ 100)</param>
-    /// <param name="channelType">左右・両方の中から音量を変更するものを選ぶ</param>
+    /// <param name="volume">volume(0 ~ 100) 音量(0 ~ 100)</param>
+    /// <param name="channelType">Channel to change the sound. 左右・両方の中から音量を変更するものを選ぶ</param>
     public void ChangeVolume(int volume, SoundDirectionType channelType)
     {
         volume = volume < 0 ? 0 : volume;
@@ -90,10 +90,10 @@ public class StereoWave : IWave
     }
 
     /// <summary>
-    /// 波形データのバイト列を取得するメソッド。
+    /// get byte array of the wave. 波形データのバイト列を取得するメソッド。
     /// </summary>
-    /// <param name="bitRate">量子化ビット数</param>
-    /// <returns>波形データのバイト列 : byte[]</returns>
+    /// <param name="bitRate">bitrate of the sound. 量子化ビット数</param>
+    /// <returns>byte array of wave data. 波形データのバイト列 : byte[]</returns>
     public byte[] GetBytes(BitRateType bitRate)
     {
         if (bitRate == BitRateType.SixteenBit)
@@ -150,8 +150,8 @@ public class StereoWave : IWave
         var resultWave = new List<byte>(maxAndMinLength.Max * 4);
         for (int i = 0; i < maxAndMinLength.Min; i++)
         {
-            byte[] leftBytes = BitConverter.GetBytes((short)((this.LeftWave[i] - short.MaxValue) / 2));
-            byte[] rightBytes = BitConverter.GetBytes((short)((this.RightWave[i] - short.MaxValue) / 2));
+            byte[] leftBytes = BitConverter.GetBytes((short)((this.LeftWave[i] - short.MaxValue) - 1));
+            byte[] rightBytes = BitConverter.GetBytes((short)((this.RightWave[i] - short.MaxValue) - 1));
             // Point : ステレオの波は左右左右左右左右・・・・・・左右
             resultWave.Add(leftBytes[0]);
             resultWave.Add(leftBytes[1]);
@@ -163,7 +163,7 @@ public class StereoWave : IWave
         {
             for (int i = maxAndMinLength.Min; i < maxAndMinLength.Max; i++)
             {
-                byte[] leftBytes = BitConverter.GetBytes((short)((this.LeftWave[i] - short.MaxValue) / 2));
+                byte[] leftBytes = BitConverter.GetBytes((short)((this.LeftWave[i] - short.MaxValue) - 1));
                 resultWave.Add(leftBytes[0]);
                 resultWave.Add(leftBytes[1]);
                 resultWave.Add(0);
@@ -174,7 +174,7 @@ public class StereoWave : IWave
         {
             for (int i = maxAndMinLength.Min; i < maxAndMinLength.Max; i += 2)
             {
-                byte[] rightBytes = BitConverter.GetBytes((short)((this.RightWave[i] - short.MaxValue) / 2));
+                byte[] rightBytes = BitConverter.GetBytes((short)((this.RightWave[i] - short.MaxValue) - 1));
                 resultWave.Add(0);
                 resultWave.Add(0);
                 resultWave.Add(rightBytes[0]);
@@ -187,7 +187,7 @@ public class StereoWave : IWave
     /// <summary>
     /// 右側のチャンネルの音の波形データを取得するメソッド。
     /// </summary>
-    /// <returns>右側のチャンネルの音の波形データ : unsigned short[]</returns>
+    /// <returns>wave of right. 右側のチャンネルの音の波形データ : unsigned short[]</returns>
     public ushort[] GetRightWave()
     {
         var resultushorts = new ushort[this.RightWave.Length];
@@ -198,7 +198,7 @@ public class StereoWave : IWave
     /// <summary>
     /// 左側のチャンネルの音の波形データを取得するメソッド。
     /// </summary>
-    /// <returns>左側のチャンネルの音の波形データ : unsigned short[]</returns>
+    /// <returns>wave of left. 左側のチャンネルの音の波形データ : unsigned short[]</returns>
     public ushort[] GetLeftWave()
     {
         var resultushorts = new ushort[this.LeftWave.Length];
@@ -207,9 +207,9 @@ public class StereoWave : IWave
     }
 
     /// <summary>
-    /// 別のステレオ波形を末尾に繋げるメソッド。
+    /// append wave to this. 別のステレオ波形を末尾に繋げるメソッド。
     /// </summary>
-    /// <param name="wave"></param>
+    /// <param name="wave">wave</param>
     public void Append(StereoWave wave)
     {
         this.RightWave = this.RightWave.Concat(wave.GetRightWave()).ToArray();

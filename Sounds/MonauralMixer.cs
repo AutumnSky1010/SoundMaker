@@ -4,20 +4,20 @@ namespace SoundMaker.Sounds;
 /// <summary>
 /// モノラル音声をミックスするクラス。
 /// </summary>
-internal class MonauralMixer : MixerBase
+public class MonauralMixer : MixerBase
 {
     /// <summary>
     /// コンストラクタ
     /// </summary>
-    /// <param name="channels">チャンネルのリスト(読み取り専用)</param>
+    /// <param name="channels">channels. チャンネルのリスト(読み取り専用)</param>
     public MonauralMixer(IReadOnlyList<ISoundChannel> channels) : base(channels)
     {
     }
 
     /// <summary>
-    /// ミックスするクラス。
+    /// mix ミックスする。
     /// </summary>
-    /// <returns>モノラルの波形データ : MonauralWave</returns>
+    /// <returns>wave of monaural. モノラルの波形データ : MonauralWave</returns>
     public MonauralWave Mix()
     {
         ushort[] result = Enumerable.Repeat((ushort)0, this.GetMaxWaveLength()).ToArray();

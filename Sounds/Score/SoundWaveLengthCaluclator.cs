@@ -8,7 +8,7 @@ internal static class SoundWaveLengthCaluclator
     /// メソッド。
     /// </summary>
     /// <param name="format">SoundFormat in SoundMaker.Sounds of namespace.</param>
-    /// <param name="tempo">一分間の四分音符・休符の数</param>
+    /// <param name="tempo">quarter note/rest per minute. 一分間の四分音符・休符の数</param>
     /// <param name="length">音の長さ</param>
     /// <param name="isDotted">付点の場合はTrueに設定する</param>
     /// <returns>音の配列の長さ : int</returns>

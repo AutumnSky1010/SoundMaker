@@ -1,14 +1,16 @@
-﻿namespace SoundMaker.Sounds.Score;
+﻿using SoundMaker.Sounds.WaveTypes;
+
+namespace SoundMaker.Sounds.Score;
 /// <summary>
 /// 音符・休符など音の基本部品を表す抽象基底クラス
 /// </summary>
 public abstract class BasicSoundComponentBase : ISoundComponent
 {
     /// <summary>
-    /// コンストラクタ
+    /// constructor コンストラクタ
     /// </summary>
-    /// <param name="length">長さ（音楽的な、「四分」音符、「全」休符のような長さを表す。）</param>
-    /// <param name="isDotted">付点かを表す論理型</param>
+    /// <param name="length">length (ex. "quarter" note) 長さ（音楽的な、「四分」音符、「全」休符のような長さを表す。）</param>
+    /// <param name="isDotted">note/rest is dotted. 付点かを表す論理型</param>
     public BasicSoundComponentBase(LengthType length, bool isDotted)
     {
         this.Length = length;
@@ -16,26 +18,18 @@ public abstract class BasicSoundComponentBase : ISoundComponent
     }
 
     /// <summary>
-    /// 長さ（音楽的な、「四分」音符、「全」休符のような長さを表す。）
+    /// length (ex. "quarter" note) 長さ（音楽的な、「四分」音符、「全」休符のような長さを表す。）
     /// </summary>
     public LengthType Length { get; }
 
     /// <summary>
-    /// 付点かを表す論理型
+    /// note/rest is dotted. 付点かを表す論理型
     /// </summary>
     public bool IsDotted { get; }
 
-    public abstract ushort[] GetNoiseWave(SoundFormat format, int tempo);
+    public abstract ushort[] GenerateWave(SoundFormat format, int tempo, int length, WaveTypeBase waveType);
 
-    public abstract ushort[] GetNoiseWave(SoundFormat format, int tempo, int length);
-
-    public abstract ushort[] GetSquareWave(SoundFormat format, SquareWaveRatio squareWaveRatio, int tempo);
-
-    public abstract ushort[] GetSquareWave(SoundFormat format, SquareWaveRatio squareWaveRatio, int tempo, int length);
-
-    public abstract ushort[] GetTriangleWave(SoundFormat format, int tempo);
-
-    public abstract ushort[] GetTriangleWave(SoundFormat format, int tempo, int length);
+    public abstract ushort[] GenerateWave(SoundFormat format, int tempo, WaveTypeBase waveType);
 
     public int GetWaveArrayLength(SoundFormat format, int tempo)
     {
