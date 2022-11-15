@@ -27,7 +27,8 @@ public class TriangleWave : WaveTypeBase
             }
             for (int j = 1; j <= repeatNumber && count <= length; j++, count++)
             {
-                ushort sound = mode ? (ushort)(slope * j * volume / 100) : (ushort)((ushort.MaxValue + slope * j) * volume / 100);
+                ushort sound = mode ? (ushort)(slope * j) : (ushort)(ushort.MaxValue + slope * j);
+                sound = (ushort)(sound * (volume / 100d));
                 result.Add(sound);
                 if (j == (int)(repeatNumber / 2))
                 {

@@ -26,7 +26,8 @@ public class LowBitNoiseWave : WaveTypeBase
             height = (ushort)new Random().Next(0, ushort.MaxValue + 1);
             for (int i = 1; i <= allRepeatTimes - firstRepeatTimes && !mode && count <= length; i++, count++)
             {
-                result.Add(height);
+                ushort sound = (ushort)(height * volume / 100);
+                result.Add(sound);
             }
             mode = !mode;
         }

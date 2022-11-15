@@ -60,21 +60,21 @@ public class StereoWave : IWave
             case SoundDirectionType.Left:
                 for (int i = 0; i < this.LeftWave.Length; i++)
                 {
-                    this.LeftWave[i] = (ushort)(this.LeftOriginalVolumeWave[i] * volume / 100);
+                    this.LeftWave[i] = (ushort)(this.LeftOriginalVolumeWave[i] * (volume / 100d));
                 }
                 break;
             case SoundDirectionType.Right:
                 for (int i = 0; i < this.RightWave.Length; i++)
                 {
-                    this.RightWave[i] = (ushort)(this.RightOriginalVolumeWave[i] * volume / 100);
+                    this.RightWave[i] = (ushort)(this.RightOriginalVolumeWave[i] * (volume / 100d));
                 }
                 break;
             default:
                 var maxAndMinLength = this.GetMaxAndMinWaveLength();
                 for (int i = 0; i < maxAndMinLength.Min; i++)
                 {
-                    this.RightWave[i] = (ushort)(this.RightOriginalVolumeWave[i] * volume / 100);
-                    this.LeftWave[i] = (ushort)(this.LeftOriginalVolumeWave[i] * volume / 100);
+                    this.RightWave[i] = (ushort)(this.RightOriginalVolumeWave[i] * (volume / 100d));
+                    this.LeftWave[i] = (ushort)(this.LeftOriginalVolumeWave[i] * (volume / 100d));
                 }
 
                 // 残りを処理する。
@@ -83,7 +83,7 @@ public class StereoWave : IWave
                     this.RightOriginalVolumeWave : this.LeftOriginalVolumeWave;
                 for (int i = maxAndMinLength.Min; i < maxAndMinLength.Max; i++)
                 {
-                    wave[i] = (ushort)(originalWave[i] * volume / 100);
+                    wave[i] = (ushort)(originalWave[i] * (volume / 100d));
                 }
                 break;
         }
@@ -150,8 +150,12 @@ public class StereoWave : IWave
         var resultWave = new List<byte>(maxAndMinLength.Max * 4);
         for (int i = 0; i < maxAndMinLength.Min; i++)
         {
-            byte[] leftBytes = BitConverter.GetBytes((short)((this.LeftWave[i] - short.MaxValue) - 1));
-            byte[] rightBytes = BitConverter.GetBytes((short)((this.RightWave[i] - short.MaxValue) - 1));
+            short left = this.LeftWave[i] == ushort.MaxValue ? 
+                (short)(this.LeftWave[i] - short.MaxValue - 1) : (short)(this.LeftWave[i] - short.MaxValue);
+            short right = this.RightWave[i] == ushort.MaxValue ?
+                (short)(this.RightWave[i] - short.MaxValue - 1) : (short)(this.RightWave[i] - short.MaxValue);
+            byte[] leftBytes = BitConverter.GetBytes(left);
+            byte[] rightBytes = BitConverter.GetBytes(right);
             // Point : ステレオの波は左右左右左右左右・・・・・・左右
             resultWave.Add(leftBytes[0]);
             resultWave.Add(leftBytes[1]);
@@ -163,7 +167,9 @@ public class StereoWave : IWave
         {
             for (int i = maxAndMinLength.Min; i < maxAndMinLength.Max; i++)
             {
-                byte[] leftBytes = BitConverter.GetBytes((short)((this.LeftWave[i] - short.MaxValue) - 1));
+                short left = this.LeftWave[i] == ushort.MaxValue ?
+                (short)(this.LeftWave[i] - short.MaxValue - 1) : (short)(this.LeftWave[i] - short.MaxValue);
+                byte[] leftBytes = BitConverter.GetBytes(left);
                 resultWave.Add(leftBytes[0]);
                 resultWave.Add(leftBytes[1]);
                 resultWave.Add(0);
@@ -174,7 +180,9 @@ public class StereoWave : IWave
         {
             for (int i = maxAndMinLength.Min; i < maxAndMinLength.Max; i += 2)
             {
-                byte[] rightBytes = BitConverter.GetBytes((short)((this.RightWave[i] - short.MaxValue) - 1));
+                short right = this.RightWave[i] == ushort.MaxValue ?
+                    (short)(this.RightWave[i] - short.MaxValue - 1) : (short)(this.RightWave[i] - short.MaxValue);
+                byte[] rightBytes = BitConverter.GetBytes(right);
                 resultWave.Add(0);
                 resultWave.Add(0);
                 resultWave.Add(rightBytes[0]);
