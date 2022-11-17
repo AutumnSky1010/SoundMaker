@@ -2,7 +2,7 @@
 
 namespace SoundMaker.Sounds.Score;
 /// <summary>
-/// 休符を表すクラス
+/// rest. 休符を表すクラス
 /// </summary>
 public class Rest : BasicSoundComponentBase
 {

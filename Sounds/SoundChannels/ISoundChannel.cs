@@ -26,35 +26,35 @@ public interface ISoundChannel
     public int Tempo { get; }
 
     /// <summary>
-    /// 音のフォーマット
+    /// format of the sound. 音のフォーマット
     /// </summary>
     SoundFormat Format { get; }
 
     /// <summary>
-    /// ステレオサウンドの場合、左右どちらから音が出るか
+    /// direction of hearing. ステレオサウンドの場合、左右どちらから音が出るか
     /// </summary>
     PanType PanType { get; }
 
     /// <summary>
-    /// 音の波形データを生成するメソッド。
+    /// create wave data. 音の波形データを生成するメソッド。
     /// </summary>
     /// <returns>音の波形データの配列 : unsigned short[]</returns>
     ushort[] CreateWave();
 
     /// <summary>
-    /// サウンドコンポーネントを追加するメソッド。
+    /// add sound component to this. サウンドコンポーネントを追加するメソッド。
     /// </summary>
     /// <param name="components">追加するサウンドコンポーネント</param>
     void Add(ISoundComponent components);
 
     /// <summary>
-    /// index番目のサウンドコンポーネントを削除するメソッド。
+    /// remove the sound component at index. index番目のサウンドコンポーネントを削除するメソッド。
     /// </summary>
     /// <param name="index">削除するサウンドコンポーネントのインデックス</param>
     void RemoveAt(int index);
 
     /// <summary>
-    /// チャンネル内のサウンドコンポーネントを空にするメソッド。
+    /// clear sound components in this. チャンネル内のサウンドコンポーネントを空にするメソッド。
     /// </summary>
     void Clear();
 }

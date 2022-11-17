@@ -1,6 +1,6 @@
 ﻿namespace SoundMaker.WaveFile;
 /// <summary>
-/// サンプリング周波数の種類を表す列挙型
+/// sampling frequency types. サンプリング周波数の種類を表す列挙型
 /// </summary>
 public enum SamplingFrequencyType : uint
 {

@@ -1,4 +1,7 @@
 ﻿namespace SoundMaker.Sounds.WaveTypes;
+/// <summary>
+/// low bit noise. ロービットノイズ
+/// </summary>
 public class LowBitNoiseWave : WaveTypeBase
 {
     public override ushort[] GenerateWave(SoundFormat format, int tempo, int length, int volume, double hertz)
@@ -10,13 +13,6 @@ public class LowBitNoiseWave : WaveTypeBase
         {
             int allRepeatTimes = (int)((int)format.SamplingFrequency / hertz);
             int firstRepeatTimes = (int)(allRepeatTimes * 0.5);
-            /*
-            if (count + allRepeatTimes >= length)
-            {
-                result.Add(0);
-                count++;
-                continue;
-            }*/
             ushort height = (ushort)new Random().Next(0, ushort.MaxValue + 1);
             for (int i = 1; i <= firstRepeatTimes && mode && count <= length; i++, count++)
             {

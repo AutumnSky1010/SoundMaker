@@ -1,19 +1,19 @@
 ﻿namespace SoundMaker.Sounds.Score;
 /// <summary>
-/// デューティ比の列挙型
+/// type of duty cycle. デューティ比の列挙型
 /// </summary>
 public enum SquareWaveRatio
 {
     /// <summary>
-    /// デューティ比 : 0.125
+    /// 12.5%
     /// </summary>
     Point125,
     /// <summary>
-    /// デューティ比 : 0.25
+    /// 25%
     /// </summary>
     Point25,
     /// <summary>
-    /// デューティ比 : 0.5
+    /// 50%
     /// </summary>
     Point5
 }

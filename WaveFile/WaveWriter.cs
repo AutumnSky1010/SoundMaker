@@ -1,6 +1,6 @@
 ﻿namespace SoundMaker.WaveFile;
 /// <summary>
-/// waveファイルに書き込む
+/// write to the .wav file. waveファイルに書き込む
 /// </summary>
 public class WaveWriter
 {

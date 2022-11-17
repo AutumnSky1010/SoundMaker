@@ -1,6 +1,6 @@
 ﻿namespace SoundMaker.Sounds;
 /// <summary>
-/// モノラル波形データを表すクラス。
+/// monaural wave. モノラル波形データを表すクラス。
 /// </summary>
 public class MonauralWave : IWave
 {

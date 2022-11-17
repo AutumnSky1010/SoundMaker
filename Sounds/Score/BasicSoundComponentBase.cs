@@ -2,7 +2,7 @@
 
 namespace SoundMaker.Sounds.Score;
 /// <summary>
-/// 音符・休符など音の基本部品を表す抽象基底クラス
+/// basic sound component. 音符・休符など音の基本部品を表す抽象基底クラス
 /// </summary>
 public abstract class BasicSoundComponentBase : ISoundComponent
 {

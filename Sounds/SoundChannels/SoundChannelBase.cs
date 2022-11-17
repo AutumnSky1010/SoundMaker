@@ -3,12 +3,12 @@ using SoundMaker.Sounds.Score;
 
 namespace SoundMaker.Sounds.SoundChannels;
 /// <summary>
-/// サウンドチャンネルの抽象基底クラス。
+/// sound channel base. サウンドチャンネルの抽象基底クラス。
 /// </summary>
 public abstract class SoundChannelBase : ISoundChannel
 {
     /// <summary>
-    /// コンストラクタ。
+    /// constructor. コンストラクタ。
     /// </summary>
     /// <param name="tempo">quarter note/rest per minute. 一分間の四分音符・休符の数</param>
     /// <param name="format">format of the sound.音のフォーマット</param>
@@ -23,7 +23,7 @@ public abstract class SoundChannelBase : ISoundChannel
     }
 
     /// <summary>
-    /// コンストラクタ。
+    /// constructor. コンストラクタ。
     /// </summary>
     /// <param name="tempo">quarter note/rest per minute. 一分間の四分音符・休符の数</param>
     /// <param name="format">format of the sound.音のフォーマット</param>

@@ -2,7 +2,7 @@
 
 namespace SoundMaker.Sounds.Score;
 /// <summary>
-/// 音符を表すクラス
+/// note. 音符を表すクラス
 /// </summary>
 public class Note : BasicSoundComponentBase
 {

@@ -1,6 +1,6 @@
 ﻿namespace SoundMaker.Sounds;
 /// <summary>
-/// ステレオ波形データのクラス
+/// stereo wave. ステレオ波形データのクラス
 /// </summary>
 public class StereoWave : IWave
 {

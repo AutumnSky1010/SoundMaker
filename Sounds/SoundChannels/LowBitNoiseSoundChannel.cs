@@ -1,6 +1,9 @@
 ﻿using SoundMaker.Sounds.WaveTypes;
 
 namespace SoundMaker.Sounds.SoundChannels;
+/// <summary>
+/// this generates low bit noise wave. ロービットノイズを生成するサウンドチャンネル
+/// </summary>
 public class LowBitNoiseSoundChannel : SoundChannelBase
 {
     public LowBitNoiseSoundChannel(int tempo, SoundFormat format, PanType panType, int componentsCount) : base(tempo, format, panType, componentsCount)

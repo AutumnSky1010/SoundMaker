@@ -3,9 +3,9 @@ using SoundMaker.Sounds.WaveTypes;
 
 namespace SoundMaker.Sounds.SoundChannels;
 /// <summary>
-/// 矩形波を生成するサウンドチャンネル
+/// this generates square wave. 矩形波を生成するサウンドチャンネル
 /// </summary>
-public class SquareSoundChannel : SoundChannelBase, ISoundChannel
+public class SquareSoundChannel : SoundChannelBase
 {
     /// <summary>
     /// コンストラクタ

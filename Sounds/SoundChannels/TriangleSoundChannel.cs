@@ -1,7 +1,10 @@
 ﻿using SoundMaker.Sounds.WaveTypes;
 
 namespace SoundMaker.Sounds.SoundChannels;
-public class TriangleSoundChannel : SoundChannelBase, ISoundChannel
+/// <summary>
+/// this generates triangle wave. 三角波を生成するチャンネル。
+/// </summary>
+public class TriangleSoundChannel : SoundChannelBase
 {
     /// <summary>
     /// constructor コンストラクタ

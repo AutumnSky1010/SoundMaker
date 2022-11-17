@@ -1,15 +1,15 @@
 ﻿namespace SoundMaker.WaveFile;
 /// <summary>
-/// チャンネル数の種類を表す列挙型
+/// type of channels count. チャンネル数の種類を表す列挙型
 /// </summary>
 public enum ChannelType : ushort
 {
     /// <summary>
-    /// モノラル1ch
+    /// monaural(1ch) モノラル1ch
     /// </summary>
     Monaural = 0x0001,
     /// <summary>
-    /// ステレオ2ch
+    /// stereo(2ch) ステレオ2ch
     /// </summary>
     Stereo = 0x0002
 }

@@ -5,6 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace SoundMaker.Sounds.WaveTypes;
+/// <summary>
+/// triangle wave. 三角波
+/// </summary>
 public class TriangleWave : WaveTypeBase
 {
     public override ushort[] GenerateWave(SoundFormat format, int tempo, int length, int volume, double hertz)

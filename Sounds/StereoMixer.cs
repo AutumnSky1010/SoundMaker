@@ -2,7 +2,7 @@
 
 namespace SoundMaker.Sounds;
 /// <summary>
-/// ステレオ音声をミックスするクラス。
+/// mix waves to stereo wave. ステレオ音声をミックスするクラス。
 /// </summary>
 public class StereoMixer : MixerBase
 {

@@ -1,8 +1,15 @@
 ﻿using SoundMaker.Sounds.Score;
 
 namespace SoundMaker.Sounds.WaveTypes;
+/// <summary>
+/// square wave. 矩形波
+/// </summary>
 public class SquareWave : WaveTypeBase
 {
+    /// <summary>
+    /// constructor. コンストラクタ
+    /// </summary>
+    /// <param name="squareWaveRatio">duty cycle. デューティ比</param>
     public SquareWave(SquareWaveRatio squareWaveRatio)
     {
         this.SquareWaveRatio = squareWaveRatio;

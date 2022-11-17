@@ -2,12 +2,12 @@
 
 namespace SoundMaker.Sounds;
 /// <summary>
-/// モノラル音声をミックスするクラス。
+/// mix waves to monaural wave. モノラル音声をミックスするクラス。
 /// </summary>
 public class MonauralMixer : MixerBase
 {
     /// <summary>
-    /// コンストラクタ
+    /// constructor. コンストラクタ
     /// </summary>
     /// <param name="channels">channels. チャンネルのリスト(読み取り専用)</param>
     public MonauralMixer(IReadOnlyList<ISoundChannel> channels) : base(channels)

@@ -1,15 +1,15 @@
 ﻿namespace SoundMaker.Sounds;
 /// <summary>
-/// チャンネル数を表す列挙型
+/// type of channels count. チャンネル数を表す列挙型
 /// </summary>
 public enum ChannelType
 {
     /// <summary>
-    /// モノラル1ch
+    /// monaural(1ch) モノラル1ch
     /// </summary>
     Monaural,
     /// <summary>
-    /// ステレオ2ch
+    /// stereo(2ch) ステレオ2ch
     /// </summary>
     Stereo
 }

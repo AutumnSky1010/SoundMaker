@@ -2,7 +2,7 @@
 
 namespace SoundMaker.Sounds.Score;
 /// <summary>
-/// タイ（同じ高さの音符同士を繋げて、あたかも一つの音符かのように扱う）を表すクラス
+/// tie. タイ（同じ高さの音符同士を繋げて、あたかも一つの音符かのように扱う）を表すクラス
 /// </summary>
 public class Tie : ISoundComponent
 {

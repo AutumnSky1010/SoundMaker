@@ -8,18 +8,19 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Title>SoundMaker</Title>
     <RepositoryUrl>https://github.com/AutumnSky1010/SoundMaker</RepositoryUrl>
-    <PackageTags>sound;wave;chiptune;</PackageTags>
+    <PackageTags>C#;.NET;game;music;sound;chiptune;audio;wave;wav;</PackageTags>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
     <Authors>AutumnSky1010</Authors>
     <Description>You can do The following content with this library.
 
-1. make the sound of chiptune
+1. make the sound of chiptune(old game sound)
 2. export sound to a file of wave format.</Description>
     <PackageIcon>SoundMakerIcon.png</PackageIcon>
     <Copyright>Copyright ©2022 AutumnSky1010</Copyright>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageReleaseNotes>Fixed a bug that the volume of each note was not reflected.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>

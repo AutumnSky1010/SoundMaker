@@ -2,7 +2,7 @@
 
 namespace SoundMaker.Sounds.Score;
 /// <summary>
-/// 連符を表すクラス
+/// tuplet. 連符を表すクラス
 /// </summary>
 public class Tuplet : ISoundComponent
 {

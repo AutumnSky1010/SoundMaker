@@ -5,11 +5,11 @@
 public struct FormatChunk : IChunk
 {
     /// <summary>
-    /// コンストラクタ
+    /// constructor. コンストラクタ
     /// </summary>
-    /// <param name="samplingFrequency">サンプリング周波数</param>
-    /// <param name="bitRate">量子化ビット数</param>
-    /// <param name="channel">チャンネル数</param>
+    /// <param name="samplingFrequency">samplingFrequency. サンプリング周波数</param>
+    /// <param name="bitRate">bit rate. 量子化ビット数</param>
+    /// <param name="channel">type of channels count. チャンネル数</param>
     public FormatChunk(SamplingFrequencyType samplingFrequency, BitRateType bitRate, ChannelType channel)
     {
         this.Channel = (ushort)channel;

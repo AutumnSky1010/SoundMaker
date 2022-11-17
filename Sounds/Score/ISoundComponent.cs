@@ -3,7 +3,7 @@
 namespace SoundMaker.Sounds.Score;
 
 /// <summary>
-/// 音の部品を表すインターフェイス
+/// interface for sound components. 音の部品を表すインターフェイス
 /// </summary>
 public interface ISoundComponent
 {

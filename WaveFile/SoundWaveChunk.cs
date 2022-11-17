@@ -1,6 +1,6 @@
 ﻿namespace SoundMaker.WaveFile;
 /// <summary>
-/// 波形データのチャンクを表すクラス
+/// chunk of the sound wave. 波形データのチャンクを表すクラス
 /// </summary>
 public class SoundWaveChunk : IChunk
 {
