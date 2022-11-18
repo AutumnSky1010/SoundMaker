@@ -1,13 +1,13 @@
 ﻿namespace SoundMaker.WaveFile;
 /// <summary>
-/// フォーマットチャンクを表す構造体
+/// Chunk of format for the .wav file. フォーマットチャンクを表す構造体
 /// </summary>
 public struct FormatChunk : IChunk
 {
     /// <summary>
     /// constructor. コンストラクタ
     /// </summary>
-    /// <param name="samplingFrequency">samplingFrequency. サンプリング周波数</param>
+    /// <param name="samplingFrequency">sampling frequency. サンプリング周波数</param>
     /// <param name="bitRate">bit rate. 量子化ビット数</param>
     /// <param name="channel">type of channels count. チャンネル数</param>
     public FormatChunk(SamplingFrequencyType samplingFrequency, BitRateType bitRate, ChannelType channel)
@@ -25,6 +25,9 @@ public struct FormatChunk : IChunk
 
     private ushort Channel { get; }
 
+    /// <summary>
+    /// sampling frequency. サンプリング周波数
+    /// </summary>
     public uint SamplingFrequency { get; }
 
     private uint ByteSizePerSecond { get; }
@@ -32,14 +35,14 @@ public struct FormatChunk : IChunk
     private ushort BlockSize { get; }
 
     /// <summary>
-    /// 量子化ビット数
+    /// bit rate. 量子化ビット数
     /// </summary>
     public ushort BitRate { get; }
 
     /// <summary>
-    /// フォーマットチャンクのバイト列を取得するメソッド。
+    /// get array of this chunk. フォーマットチャンクのバイト列を取得するメソッド。
     /// </summary>
-    /// <returns>フォーマットチャンクのバイト列 : byte[]</returns>
+    /// <returns>bytes of this chunk. フォーマットチャンクのバイト列 : byte[]</returns>
     public byte[] GetBytes()
     {
         var result = BitConverter.GetBytes(0x20746D66);

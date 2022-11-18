@@ -7,7 +7,7 @@ public class WaveWriter
     /// <summary>
     /// constructor. コンストラクタ
     /// </summary>
-    /// <param name="format">fmt chunk. フォーマットチャンク</param>
+    /// <param name="format">format chunk. フォーマットチャンク</param>
     /// <param name="soundWave">sound wave chunk. 音声波形のチャンク</param>
     public WaveWriter(FormatChunk format, SoundWaveChunk soundWave)
     {

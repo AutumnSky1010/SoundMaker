@@ -1,7 +1,7 @@
 ﻿namespace SoundMaker.WaveFile;
 
 /// <summary>
-/// interface of chunks. チャンクを表すインターフェイス
+/// interface for riff format chunks チャンクを表すインターフェイス
 /// </summary>
 public interface IChunk
 {

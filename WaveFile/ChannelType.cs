@@ -1,6 +1,6 @@
 ﻿namespace SoundMaker.WaveFile;
 /// <summary>
-/// type of channels count. チャンネル数の種類を表す列挙型
+/// the type which is expressed channels count of the sound. チャンネル数の種類を表す列挙型
 /// </summary>
 public enum ChannelType : ushort
 {

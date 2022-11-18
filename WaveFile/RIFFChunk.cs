@@ -7,7 +7,7 @@ public struct RIFFChunk : IChunk
     /// <summary>
     /// constructor. コンストラクタ
     /// </summary>
-    /// <param name="Size">[file size] - 8byte ファイル全体サイズからRIFFとWAVEのバイト数(8B)を引いた数。</param>
+    /// <param name="Size">the number of 8 byte subtracted from the overall file size. ファイル全体サイズからRIFFとWAVEのバイト数(8B)を引いた数。</param>
     public RIFFChunk(uint Size)
     {
         this.Size = Size;
