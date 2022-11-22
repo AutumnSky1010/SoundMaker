@@ -2,7 +2,7 @@
 
 namespace SoundMaker.Sounds.Score;
 /// <summary>
-/// rest. 休符を表すクラス
+/// the rest. 休符を表すクラス
 /// </summary>
 public class Rest : BasicSoundComponentBase
 {
@@ -10,7 +10,7 @@ public class Rest : BasicSoundComponentBase
     /// constructor コンストラクタ
     /// </summary>
     /// <param name="length">length (ex. "quarter" note) 長さ（音楽的な、「四分」音符、「全」休符のような長さを表す。）</param>
-    /// <param name="isDotted">note/rest is dotted. 付点かを表す論理型</param>
+    /// <param name="isDotted">is note/rest dotted. 付点かを表す論理型</param>
     public Rest(LengthType length, bool isDotted = false)
         : base(length, isDotted) { }
 

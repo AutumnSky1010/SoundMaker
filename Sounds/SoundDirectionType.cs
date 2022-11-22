@@ -1,6 +1,6 @@
 ﻿namespace SoundMaker.Sounds;
 /// <summary>
-/// direction of sound. ステレオ音声で音が聞こえる方向の種類を表す列挙型
+/// the type which is expressed direction of the sound. ステレオ音声で音が聞こえる方向の種類を表す列挙型
 /// </summary>
 public enum SoundDirectionType
 {

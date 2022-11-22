@@ -1,6 +1,6 @@
 ﻿namespace SoundMaker.Sounds;
 /// <summary>
-/// type of sampling frequency. サンプリング周波数の種類を表す列挙型
+/// the type which is expressed sampling frequency of the sound. サンプリング周波数の種類を表す列挙型
 /// </summary>
 public enum SamplingFrequencyType
 {

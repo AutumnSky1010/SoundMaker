@@ -7,8 +7,8 @@ public class StereoWave : IWave
     /// <summary>
     /// constructor
     /// </summary>
-    /// <param name="rightWave">wave of right. 右の波形データ</param>
-    /// <param name="leftWave">wave of left. 左の波形データ</param>
+    /// <param name="rightWave">the wave of right. 右の波形データ</param>
+    /// <param name="leftWave">the wave of left. 左の波形データ</param>
     public StereoWave(IReadOnlyCollection<ushort> rightWave, IReadOnlyCollection<ushort> leftWave)
     {
         ushort[] rightArgument = rightWave.ToArray();
@@ -36,7 +36,7 @@ public class StereoWave : IWave
     /// <summary>
     /// volume of the wave. 波形データの音量
     /// </summary>
-    public int Volume { get; private set; }
+    public int Volume { get; private set; } = 100;
 
     /// <summary>
     /// length of the wave. 波形データを表すの配列の長さ。GetBytes()メソッドで得られるバイト列の長さとは異なる
@@ -193,9 +193,9 @@ public class StereoWave : IWave
     }
 
     /// <summary>
-    /// 右側のチャンネルの音の波形データを取得するメソッド。
+    /// get the wave on the right. 右側のチャンネルの音の波形データを取得するメソッド。
     /// </summary>
-    /// <returns>wave of right. 右側のチャンネルの音の波形データ : unsigned short[]</returns>
+    /// <returns>the wave on the right. 右側のチャンネルの音の波形データ : unsigned short[]</returns>
     public ushort[] GetRightWave()
     {
         var resultushorts = new ushort[this.RightWave.Length];
@@ -204,9 +204,9 @@ public class StereoWave : IWave
     }
 
     /// <summary>
-    /// 左側のチャンネルの音の波形データを取得するメソッド。
+    /// get the wave on the left. 左側のチャンネルの音の波形データを取得するメソッド。
     /// </summary>
-    /// <returns>wave of left. 左側のチャンネルの音の波形データ : unsigned short[]</returns>
+    /// <returns>the wave on the left. 左側のチャンネルの音の波形データ : unsigned short[]</returns>
     public ushort[] GetLeftWave()
     {
         var resultushorts = new ushort[this.LeftWave.Length];

@@ -2,7 +2,7 @@
 
 namespace SoundMaker.Sounds.Score;
 /// <summary>
-/// note. 音符を表すクラス
+/// the note. 音符を表すクラス
 /// </summary>
 public class Note : BasicSoundComponentBase
 {
@@ -12,7 +12,7 @@ public class Note : BasicSoundComponentBase
     /// <param name="scale">scale of the note.音の高さ</param>
     /// <param name="scaleNumber">sound height number. (C"4" is middle C.)音の高さの番号（Cの「4」が真ん中のド）</param>
     /// <param name="length">length (ex. "quarter" note) 長さ（音楽的な、「四分」音符、「全」休符のような長さを表す。）</param>
-    /// <param name="isDotted">note/rest is dotted. 付点かを表す論理型</param>
+    /// <param name="isDotted">is note/rest dotted. 付点かを表す論理型</param>
 	public Note(Scale scale, uint scaleNumber, LengthType length, bool isDotted = false)
         : base(length, isDotted)
     {
@@ -51,7 +51,7 @@ public class Note : BasicSoundComponentBase
 
     private int _volume = 100;
     /// <summary>
-    /// volume of the sound. 音の大きさ(0 ~ 100の間)
+    /// volume of the sound.(0 ~ 100) 音の大きさ(0 ~ 100の間)
     /// </summary>
     public int Volume
     {

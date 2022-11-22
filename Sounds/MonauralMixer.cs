@@ -17,7 +17,7 @@ public class MonauralMixer : MixerBase
     /// <summary>
     /// mix ミックスする。
     /// </summary>
-    /// <returns>wave of monaural. モノラルの波形データ : MonauralWave</returns>
+    /// <returns>the mixed wave of monaural. モノラルの波形データ : MonauralWave</returns>
     public MonauralWave Mix()
     {
         ushort[] result = Enumerable.Repeat((ushort)0, this.GetMaxWaveLength()).ToArray();

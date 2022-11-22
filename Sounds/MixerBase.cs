@@ -2,7 +2,7 @@
 
 namespace SoundMaker.Sounds;
 /// <summary>
-/// mixer base. ミキサーの抽象基底クラス
+/// provides a base class for a mixer to inherit from. ミキサーの抽象基底クラス
 /// </summary>
 public abstract class MixerBase
 {

@@ -7,7 +7,7 @@ public class MonauralWave : IWave
     /// <summary>
     /// constructor. コンストラクタ
     /// </summary>
-    /// <param name="wave">array of wave. 波形データを表す配列</param>
+    /// <param name="wave">the collection of wave data. 波形データを表す配列</param>
     public MonauralWave(IReadOnlyCollection<ushort> wave)
     {
         ushort[] argumentIntegers = wave.ToArray();
@@ -21,14 +21,8 @@ public class MonauralWave : IWave
 
     private ushort[] Wave { get; set; }
 
-    /// <summary>
-    /// volume of wave. 波形データの音量(0 ~ 100)
-    /// </summary>
-    public int Volume { get; private set; }
+    public int Volume { get; private set; } = 100;
 
-    /// <summary>
-    /// length of the wave array. 波形データを表す配列の長さ
-    /// </summary>
     public int Length
     {
         get => this.Wave.Length;
@@ -50,7 +44,7 @@ public class MonauralWave : IWave
     }
 
     /// <summary>
-    /// append deferent array. 別の波形データを末尾に繋げるメソッド。
+    /// append deferent MonauralWave. 別の波形データを末尾に繋げるメソッド。
     /// </summary>
     /// <param name="wave">monaural wave.モノラルの波形データ</param>
     public void Append(MonauralWave wave)
@@ -60,11 +54,6 @@ public class MonauralWave : IWave
         Array.Copy(this.Wave, this.OriginalVolumeWave, this.Wave.Length);
     }
 
-    /// <summary>
-    /// get the byte array of wave data. 波形データのバイト列を取得する。
-    /// </summary>
-    /// <param name="bitRate">bitrate. 量子化ビット数</param>
-    /// <returns>byte array of wave data.波形データのバイト列 : byte[]</returns>
     public byte[] GetBytes(BitRateType bitRate)
     {
         if (bitRate == BitRateType.SixteenBit)
@@ -89,5 +78,5 @@ public class MonauralWave : IWave
         }
     }
 
-    public ushort[] GetValues() => this.Wave;
+    private ushort[] GetValues() => this.Wave;
 }

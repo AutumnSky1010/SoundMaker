@@ -2,7 +2,7 @@
 
 namespace SoundMaker.Sounds.Score;
 /// <summary>
-/// basic sound component. 音符・休符など音の基本部品を表す抽象基底クラス
+/// provides a base class for a basic sound component to inherit from. 音符・休符など音の基本部品を表す抽象基底クラス
 /// </summary>
 public abstract class BasicSoundComponentBase : ISoundComponent
 {
@@ -10,7 +10,7 @@ public abstract class BasicSoundComponentBase : ISoundComponent
     /// constructor コンストラクタ
     /// </summary>
     /// <param name="length">length (ex. "quarter" note) 長さ（音楽的な、「四分」音符、「全」休符のような長さを表す。）</param>
-    /// <param name="isDotted">note/rest is dotted. 付点かを表す論理型</param>
+    /// <param name="isDotted">is note/rest dotted. 付点かを表す論理型</param>
     public BasicSoundComponentBase(LengthType length, bool isDotted)
     {
         this.Length = length;

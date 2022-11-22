@@ -1,6 +1,6 @@
 ﻿namespace SoundMaker.Sounds;
 /// <summary>
-/// type of bit rate. 量子化ビット数の種類を表す列挙型
+/// the type which is expressed bit rate of the sound. 量子化ビット数の種類を表す列挙型
 /// </summary>
 public enum BitRateType
 {
