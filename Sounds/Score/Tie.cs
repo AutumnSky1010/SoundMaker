@@ -2,7 +2,7 @@
 
 namespace SoundMaker.Sounds.Score;
 /// <summary>
-/// tie. タイ（同じ高さの音符同士を繋げて、あたかも一つの音符かのように扱う）を表すクラス
+/// tie is joined two notes of same scale. タイ（同じ高さの音符同士を繋げて、あたかも一つの音符かのように扱う）を表すクラス
 /// </summary>
 public class Tie : ISoundComponent
 {
@@ -15,8 +15,24 @@ public class Tie : ISoundComponent
     public Tie(Note baseNote, LengthType additionalLength, bool additionalIsDotted = false)
     {
         this.BaseNote = baseNote;
-        this.AdditionalIsDotted = additionalIsDotted;
-        this.AdditionalLength = additionalLength;
+        this.AdditionalNotes = new List<Note>()
+        {
+            new Note(baseNote.Scale, baseNote.ScaleNumber, additionalLength, additionalIsDotted)
+        };
+    }
+
+    public Tie(Note baseNote, IReadOnlyCollection<Note> additionalNotes)
+    {
+        this.BaseNote = baseNote;
+        this.AdditionalNotes = new List<Note>(additionalNotes);
+    }
+
+    /// <summary>
+    /// count of notes.
+    /// </summary>
+    public int Count
+    {
+        get => this.AdditionalNotes.Count + 1;
     }
 
     /// <summary>
@@ -25,14 +41,9 @@ public class Tie : ISoundComponent
     public Note BaseNote { get; }
 
     /// <summary>
-    /// length of the second note.(ex. "quarter" note) 二つ目の音符の長さ（音楽的な、「四分」音符、「全」休符のような長さを表す。）
+    /// the additional notes. 追加の音符のリスト
     /// </summary>
-    public LengthType AdditionalLength { get; }
-
-    /// <summary>
-    /// the second note/rest is dotted.二つ目の音符が付点かを表す論理型
-    /// </summary>
-    public bool AdditionalIsDotted { get; }
+    public IReadOnlyCollection<Note> AdditionalNotes { get; }
 
     public ushort[] GenerateWave(SoundFormat format, int tempo, int length, WaveTypeBase waveType)
     {
@@ -48,7 +59,10 @@ public class Tie : ISoundComponent
     public int GetWaveArrayLength(SoundFormat format, int tempo)
     {
         int length = this.BaseNote.GetWaveArrayLength(format, tempo);
-        length += SoundWaveLengthCaluclator.Caluclate(format, tempo, this.AdditionalLength, this.AdditionalIsDotted);
+        foreach (var note in this.AdditionalNotes)
+        {
+            length += SoundWaveLengthCaluclator.Caluclate(format, tempo, note.Length, note.IsDotted);
+        }
         return length;
     }
 }

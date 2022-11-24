@@ -12,14 +12,14 @@ public class Tuplet : ISoundComponent
     /// <param name="tupletComponents">components to be tuplet. 連符にする基本の音のリスト</param>
     /// <param name="length">length (ex. "quarter" note) 長さ（音楽的な、「四分」音符、「全」休符のような長さを表す。）</param>
     /// <param name="isDotted">note/rest is dotted. 付点かを表す論理型</param>
-    public Tuplet(IReadOnlyList<BasicSoundComponentBase> tupletComponents, LengthType length, bool isDotted = false)
+    public Tuplet(IReadOnlyList<ISoundComponent> tupletComponents, LengthType length, bool isDotted = false)
     {
-        this.TupletComponents = new List<BasicSoundComponentBase>(tupletComponents);
+        this.TupletComponents = new List<ISoundComponent>(tupletComponents);
         this.Length = length;
         this.IsDotted = isDotted;
     }
 
-    private IReadOnlyList<BasicSoundComponentBase> TupletComponents { get; }
+    private IReadOnlyList<ISoundComponent> TupletComponents { get; }
 
     /// <summary>
     /// length (ex. "quarter" note) 長さ（音楽的な、「四分」音符、「全」休符のような長さを表す。
@@ -44,14 +44,27 @@ public class Tuplet : ISoundComponent
     public ushort[] GenerateWave(SoundFormat format, int tempo, int length, WaveTypeBase waveType)
     {
         var result = new List<ushort>(length);
-        // コンポーネントの数で割って、一個あたりの配列の長さを算出
-        var componentLength = length / this.Count;
+        // 一個あたりの配列の長さを算出
+        int count = this.GetLengthPerOneComponent();
         int i;
+        var componentLengthBase = length / count;
         for (i = 0; i < this.Count - 1; i++)
         {
+            int componentLength;
+            if (this.TupletComponents[i] is Tie tie)
+            {
+                componentLength = componentLengthBase * tie.Count;
+            }
+            else { componentLength = componentLengthBase; }
             result.AddRange(this.TupletComponents[i].GenerateWave(format, tempo, componentLength, waveType));
         }
-        var lastComponentLength = componentLength + length % this.Count;
+
+        int lastComponentLength;
+        if (this.TupletComponents[i] is Tie lastTie)
+        {
+            lastComponentLength = componentLengthBase * lastTie.Count + length % count;
+        }
+        else { lastComponentLength = componentLengthBase + length % count; }
         result.AddRange(this.TupletComponents[i].GenerateWave(format, tempo, lastComponentLength, waveType));
         return result.ToArray();
     }
@@ -60,5 +73,23 @@ public class Tuplet : ISoundComponent
     {
         var length = this.GetWaveArrayLength(format, tempo);
         return this.GenerateWave(format, tempo, length, waveType);
+    }
+
+    private int GetLengthPerOneComponent()
+    {
+        int count = 0;
+        for (int i = 0; i < this.Count; i++)
+        {
+            var component = this.TupletComponents[i];
+            if (component is Tie tie)
+            {
+                count += tie.Count;
+            }
+            else
+            {
+                count++;
+            }
+        }
+        return count;
     }
 }

@@ -1,3 +1,17 @@
 ﻿音符に設定した音量が機能しないバグを修正
 変更前のボリュームが0になっているバグを修正
 矩形波タイプの名前空間をScoreから移動した
+疑似三角波を実装
+
+/// <summary>
+    /// length of the second note.(ex. "quarter" note) 二つ目の音符の長さ（音楽的な、「四分」音符、「全」休符のような長さを表す。）
+    /// </summary>
+    public LengthType AdditionalLength { get; }
+
+    /// <summary>
+    /// the second note/rest is dotted.二つ目の音符が付点かを表す論理型
+    /// </summary>
+    public bool AdditionalIsDotted { get; }
+こいつら消した
+
+タイを複数の音符でできるようにした

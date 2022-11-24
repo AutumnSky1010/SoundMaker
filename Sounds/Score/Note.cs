@@ -13,7 +13,7 @@ public class Note : BasicSoundComponentBase
     /// <param name="scaleNumber">sound height number. (C"4" is middle C.)音の高さの番号（Cの「4」が真ん中のド）</param>
     /// <param name="length">length (ex. "quarter" note) 長さ（音楽的な、「四分」音符、「全」休符のような長さを表す。）</param>
     /// <param name="isDotted">is note/rest dotted. 付点かを表す論理型</param>
-	public Note(Scale scale, uint scaleNumber, LengthType length, bool isDotted = false)
+	public Note(Scale scale, int scaleNumber, LengthType length, bool isDotted = false)
         : base(length, isDotted)
     {
         this.CheckArgument(scale, scaleNumber);
@@ -26,6 +26,8 @@ public class Note : BasicSoundComponentBase
         {
             this.Hertz *= 1.059463094;
         }
+        this.Scale = scale;
+        this.ScaleNumber = scaleNumber;
     }
 
     /// <summary>
@@ -43,6 +45,15 @@ public class Note : BasicSoundComponentBase
         1760.0d,
         3520.0d
     };
+    /// <summary>
+    /// scale of the note. 音の高さ
+    /// </summary>
+    public Scale Scale { get; }
+
+    /// <summary>
+    /// sound height number. (C"4" is middle C.)音の高さの番号（Cの「4」が真ん中のド）
+    /// </summary>
+    public int ScaleNumber { get; }
 
     /// <summary>
     /// hertz of the sound. 音の周波数
@@ -63,9 +74,9 @@ public class Note : BasicSoundComponentBase
         }
     }
 
-    private void CheckArgument(Scale scale, uint scaleNumber)
+    private void CheckArgument(Scale scale, int scaleNumber)
     {
-        if (scaleNumber >= 9)
+        if (scaleNumber >= 9 || scaleNumber <= -1)
         {
             throw new ArgumentException();
         }
