@@ -14,6 +14,8 @@ public class MonauralMixer : MixerBase
     {
     }
 
+    private object LockObject { get; } = new object();
+
     /// <summary>
     /// mix ミックスする。
     /// </summary>
@@ -21,14 +23,17 @@ public class MonauralMixer : MixerBase
     public MonauralWave Mix()
     {
         ushort[] result = Enumerable.Repeat((ushort)0, this.GetMaxWaveLength()).ToArray();
-        foreach (var channel in this.Channels)
+        Parallel.ForEach(this.Channels, channel =>
         {
             var waveNumericData = channel.CreateWave();
-            for (int i = 0; i < waveNumericData.Length; i++)
+            lock (this.LockObject)
             {
-                result[i] += (ushort)(waveNumericData[i] / this.Channels.Count);
+                for (int i = 0; i < waveNumericData.Length; i++)
+                {
+                    result[i] += (ushort)(waveNumericData[i] / this.Channels.Count);
+                }
             }
-        }
+        });
         return new MonauralWave(result);
     }
 }

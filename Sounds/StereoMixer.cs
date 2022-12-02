@@ -1,4 +1,5 @@
 ﻿using SoundMaker.Sounds.SoundChannels;
+using System.Threading.Channels;
 
 namespace SoundMaker.Sounds;
 /// <summary>
@@ -14,6 +15,10 @@ public class StereoMixer : MixerBase
     {
     }
 
+    private object LockLeftObject { get; } = new object();
+
+    private object LockRightObject { get; } = new object();
+
     /// <summary>
     /// mix. ミックスするメソッド。
     /// </summary>
@@ -24,37 +29,51 @@ public class StereoMixer : MixerBase
         var channelCount = this.GetChannelCount();
         ushort[] rightResult = Enumerable.Repeat((ushort)0, max).ToArray();
         ushort[] leftResult = Enumerable.Repeat((ushort)0, max).ToArray();
-        foreach (var channel in this.Channels)
+        Parallel.ForEach (this.Channels, channel =>
         {
-            var waveNumericData = channel.CreateWave();
-            if (channel.PanType is PanType.Left)
-            {
-                for (int i = 0; i < waveNumericData.Length; i++)
-                {
-                    leftResult[i] += (ushort)(waveNumericData[i] / channelCount.Left);
-                }
-            }
-            else if (channel.PanType is PanType.Right)
-            {
-                for (int i = 0; i < waveNumericData.Length; i++)
-                {
-                    rightResult[i] += (ushort)(waveNumericData[i] / channelCount.Right);
-                }
-            }
-            // 両方のチャンネルから音が出る場合
-            else
-            {
-                for (int i = 0; i < waveNumericData.Length; i++)
-                {
-                    rightResult[i] += (ushort)(waveNumericData[i] / channelCount.Right);
-                    leftResult[i] += (ushort)(waveNumericData[i] / channelCount.Left);
-                }
-            }
-
-        }
+            this.Merge(leftResult, rightResult, channel, channelCount);
+        });
         return new StereoWave(rightResult, leftResult);
     }
-
+    private void Merge(ushort[] left, ushort[] right, ISoundChannel channel, ChannelCount channelCount)
+    {
+        var waveNumericData = channel.CreateWave();
+        if (channel.PanType is PanType.Left)
+        {
+            lock (this.LockLeftObject)
+            {
+                for (int i = 0; i < waveNumericData.Length; i++)
+                {
+                    left[i] += (ushort)(waveNumericData[i] / channelCount.Left);
+                }
+            }
+        }
+        else if (channel.PanType is PanType.Right)
+        {
+            lock (this.LockRightObject)
+            {
+                for (int i = 0; i < waveNumericData.Length; i++)
+                {
+                    right[i] += (ushort)(waveNumericData[i] / channelCount.Right);
+                }
+            }
+        }
+        // 両方のチャンネルから音が出る場合
+        else
+        {
+            lock (this.LockLeftObject)
+            {
+                lock (this.LockRightObject)
+                {
+                    for (int i = 0; i < waveNumericData.Length; i++)
+                    {
+                        right[i] += (ushort)(waveNumericData[i] / channelCount.Right);
+                        left[i] += (ushort)(waveNumericData[i] / channelCount.Left);
+                    }
+                }
+            }
+        }
+    }
     /// <summary>
     /// 左右それぞれのチャンネルの個数を数えるメソッド。
     /// </summary>
