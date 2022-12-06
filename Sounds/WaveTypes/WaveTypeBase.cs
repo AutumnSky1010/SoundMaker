@@ -5,6 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace SoundMaker.Sounds.WaveTypes;
+/// <summary>
+/// Provides a base class for a basic wave type to inherit from.
+/// </summary>
 public abstract class WaveTypeBase
 {
     /// <summary>
@@ -15,6 +18,6 @@ public abstract class WaveTypeBase
     /// <param name="length">length of the array. 配列の長さ</param>
     /// <param name="volume">volume 音量（0 ~ 100）</param>
     /// <param name="hertz">hertz of the sound. 音の周波数</param>
-    /// <returns>wave data array : unsigned short[]</returns>
+    /// <returns>the array of wave data. : unsigned short[]</returns>
     public abstract ushort[] GenerateWave(SoundFormat format, int tempo, int length, int volume, double hertz);
 }

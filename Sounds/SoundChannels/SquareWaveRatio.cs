@@ -1,4 +1,4 @@
-﻿namespace SoundMaker.Sounds.WaveTypes;
+﻿namespace SoundMaker.Sounds.SoundChannels;
 /// <summary>
 /// type of duty cycle. デューティ比の列挙型
 /// </summary>

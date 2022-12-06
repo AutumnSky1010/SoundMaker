@@ -16,12 +16,12 @@ public interface ISoundChannel
     public int ComponentCount { get; }
 
     /// <summary>
-    /// wave length 音の波形データを表す配列の長さ
+    /// length of wave data. 音の波形データを表す配列の長さ
     /// </summary>
     public int WaveArrayLength { get; }
 
     /// <summary>
-    /// tempo. 一分間の四分音符・休符の数
+    /// quarter note/rest per minute. 一分間の四分音符・休符の数
     /// </summary>
     public int Tempo { get; }
 
@@ -36,21 +36,21 @@ public interface ISoundChannel
     PanType PanType { get; }
 
     /// <summary>
-    /// create wave data. 音の波形データを生成するメソッド。
+    /// generate wave data. 音の波形データを生成するメソッド。
     /// </summary>
-    /// <returns>音の波形データの配列 : unsigned short[]</returns>
-    ushort[] CreateWave();
+    /// <returns>the array of wave data.音の波形データの配列 : unsigned short[]</returns>
+    ushort[] GenerateWave();
 
     /// <summary>
     /// add sound component to this. サウンドコンポーネントを追加するメソッド。
     /// </summary>
-    /// <param name="components">追加するサウンドコンポーネント</param>
-    void Add(ISoundComponent components);
+    /// <param name="components">the sound component to be added to this. 追加するサウンドコンポーネント</param>
+    void Add(ISoundComponent component);
 
     /// <summary>
     /// remove the sound component at index. index番目のサウンドコンポーネントを削除するメソッド。
     /// </summary>
-    /// <param name="index">削除するサウンドコンポーネントのインデックス</param>
+    /// <param name="index">the index of the sound component to remove. 削除するサウンドコンポーネントのインデックス</param>
     void RemoveAt(int index);
 
     /// <summary>

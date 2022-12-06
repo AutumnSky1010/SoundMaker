@@ -1,4 +1,5 @@
 ﻿using SoundMaker.Sounds.WaveTypes;
+using static System.Formats.Asn1.AsnWriter;
 
 namespace SoundMaker.Sounds.Score;
 /// <summary>
@@ -26,6 +27,20 @@ public class Note : BasicSoundComponentBase
         {
             this.Hertz *= 1.059463094;
         }
+        this.Scale = scale;
+        this.ScaleNumber = scaleNumber;
+    }
+
+    /// <summary>
+    /// easiness constructor(use case: construct Tie).Scale is "A4". 簡易コンストラクタ(使用場面: タイの初期化)。音の高さは"A4"
+    /// </summary>
+    /// <param name="length">length (ex. "quarter" note) 長さ（音楽的な、「四分」音符、「全」休符のような長さを表す。）</param>
+    /// <param name="isDotted">is note/rest dotted. 付点かを表す論理型</param>
+    public Note(LengthType length, bool isDotted = false) : base(length, isDotted)
+    {
+        var scale = Scale.A;
+        var scaleNumber = 4;
+        this.Hertz += this.AHertz[scaleNumber];
         this.Scale = scale;
         this.ScaleNumber = scaleNumber;
     }

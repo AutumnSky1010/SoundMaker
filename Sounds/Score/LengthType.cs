@@ -1,6 +1,6 @@
 ﻿namespace SoundMaker.Sounds.Score;
 /// <summary>
-/// type of length. 長さのタイプを列挙（音楽的な、「四分」音符、「全」休符のような長さを表す。）
+/// type of length.(ex. "quarter" note) 長さのタイプを列挙（音楽的な、「四分」音符、「全」休符のような長さを表す。）
 /// </summary>
 public enum LengthType
 {
@@ -27,7 +27,7 @@ public enum LengthType
     /// <summary>
     /// 32. 三十二分音符・休符
     /// </summary>
-    ThrthirtySecond = 32,
+    ThirtySecond = 32,
     /// <summary>
     /// 64. 六十四分音符・休符
     /// </summary>

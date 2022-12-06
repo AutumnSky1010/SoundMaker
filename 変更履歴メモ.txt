@@ -1,6 +1,5 @@
 ﻿音符に設定した音量が機能しないバグを修正
 変更前のボリュームが0になっているバグを修正
-矩形波タイプの名前空間をScoreから移動した
 疑似三角波を実装
 
 /// <summary>
@@ -14,4 +13,17 @@
     public bool AdditionalIsDotted { get; }
 こいつら消した
 
+public IReadOnlyList<ISoundComponent> TupletComponents { get; }
+公開した
+
 タイを複数の音符でできるようにした
+
+void Add(ISoundComponent components);をcomponentにした
+
+ISoundChannelのCreateWaveをGenerateWaveにした。
+
+SquareWaveRatioの名前空間がSoundMaker.Sounds.SoundChannelsになった
+
+ThrthirtySecondで盛大な誤字LengthTypeのThirtySecond
+
+public ushort[] GetValues() から private ushort[] GetWave()

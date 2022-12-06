@@ -11,7 +11,7 @@ public class Tuplet : ISoundComponent
     /// </summary>
     /// <param name="tupletComponents">components to be tuplet. 連符にする基本の音のリスト</param>
     /// <param name="length">length (ex. "quarter" note) 長さ（音楽的な、「四分」音符、「全」休符のような長さを表す。）</param>
-    /// <param name="isDotted">note/rest is dotted. 付点かを表す論理型</param>
+    /// <param name="isDotted">tuplet is dotted. 付点かを表す論理型</param>
     public Tuplet(IReadOnlyList<ISoundComponent> tupletComponents, LengthType length, bool isDotted = false)
     {
         this.TupletComponents = new List<ISoundComponent>(tupletComponents);
@@ -19,7 +19,28 @@ public class Tuplet : ISoundComponent
         this.IsDotted = isDotted;
     }
 
+    /// <summary>
+    /// components to be tuplet. 連符にする基本の音のリスト
+    /// </summary>
     private IReadOnlyList<ISoundComponent> TupletComponents { get; }
+
+    /// <summary>
+    /// get the component at index. index番目の連符の音を取得する。
+    /// </summary>
+    /// <param name="index">index. 何番目かを表す整数</param>
+    /// <returns>sound component.サウンドコンポーネント</returns>
+    /// <exception cref="IndexOutOfRangeException">index is less than 0 or index is equal to or greater than Count.</exception>
+    public ISoundComponent this[int index]
+    {
+        get
+        {
+            if (index < 0 || index >= this.TupletComponents.Count)
+            {
+                throw new IndexOutOfRangeException("index is less than 0 or index is equal to or greater than Count.");
+            }
+            return this.TupletComponents[index];
+        }
+    }
 
     /// <summary>
     /// length (ex. "quarter" note) 長さ（音楽的な、「四分」音符、「全」休符のような長さを表す。

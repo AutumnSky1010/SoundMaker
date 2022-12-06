@@ -23,7 +23,7 @@ public class TriangleSoundChannel : SoundChannelBase
     /// <param name="panType">sound direction. 左右どちらから音が出るか</param>
     public TriangleSoundChannel(int tempo, SoundFormat format, PanType panType) : base(tempo, format, panType) { }
 
-    public override ushort[] CreateWave()
+    public override ushort[] GenerateWave()
     {
         var result = new List<ushort>();
         foreach (var soundComponent in this.SoundComponents)

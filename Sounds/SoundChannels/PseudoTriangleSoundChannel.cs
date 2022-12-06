@@ -11,7 +11,7 @@ public class PseudoTriangleSoundChannel : SoundChannelBase
     {
     }
 
-    public override ushort[] CreateWave()
+    public override ushort[] GenerateWave()
     {
         var result = new List<ushort>();
         foreach (var soundComponent in this.SoundComponents)

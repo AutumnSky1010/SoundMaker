@@ -37,7 +37,7 @@ public class StereoMixer : MixerBase
     }
     private void Merge(ushort[] left, ushort[] right, ISoundChannel channel, ChannelCount channelCount)
     {
-        var waveNumericData = channel.CreateWave();
+        var waveNumericData = channel.GenerateWave();
         if (channel.PanType is PanType.Left)
         {
             lock (this.LockLeftObject)

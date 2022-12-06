@@ -1,6 +1,6 @@
 ﻿namespace SoundMaker.Sounds.WaveTypes;
 /// <summary>
-/// low bit noise. ロービットノイズ
+/// the low bit noise. ロービットノイズ
 /// </summary>
 public class LowBitNoiseWave : WaveTypeBase
 {

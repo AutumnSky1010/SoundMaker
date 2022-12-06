@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SoundMaker.Sounds.WaveTypes;
 /// <summary>
-/// pseudo triangle wave. 三角波
+/// the pseudo triangle wave. 疑似三角波
 /// </summary>
 public class PseudoTriangleWave : WaveTypeBase
 {

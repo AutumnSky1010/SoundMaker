@@ -38,7 +38,7 @@ public class SquareSoundChannel : SoundChannelBase
     /// </summary>
     private SquareWaveRatio Ratio { get; }
 
-    public override ushort[] CreateWave()
+    public override ushort[] GenerateWave()
     {
         var result = new List<ushort>();
         foreach (var soundComponent in this.SoundComponents)

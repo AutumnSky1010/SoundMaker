@@ -38,9 +38,7 @@ public class StereoWave : IWave
     /// </summary>
     public int Volume { get; private set; } = 100;
 
-    /// <summary>
-    /// length of the wave. 波形データを表すの配列の長さ。GetBytes()メソッドで得られるバイト列の長さとは異なる
-    /// </summary>
+    [Obsolete("if you want to get length of bytes, call GetLengthOfBytes()")]
     public int Length
     {
         get => this.GetMaxAndMinWaveLength().Max;
@@ -240,6 +238,19 @@ public class StereoWave : IWave
             return new MaxAndMin(this.RightWave.Length, this.LeftWave.Length);
         }
         return new MaxAndMin(this.LeftWave.Length, this.RightWave.Length);
+    }
+
+    public int GetLengthOfBytes(BitRateType bitRate)
+    {
+        var maxAndMinLength = this.GetMaxAndMinWaveLength();
+        if (bitRate is BitRateType.SixteenBit)
+        {
+            return maxAndMinLength.Max * 4;
+        }
+        else
+        {
+            return maxAndMinLength.Max * 2;
+        }
     }
 
     private struct MaxAndMin

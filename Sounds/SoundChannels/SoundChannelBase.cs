@@ -12,7 +12,7 @@ public abstract class SoundChannelBase : ISoundChannel
     /// </summary>
     /// <param name="tempo">quarter note/rest per minute. 一分間の四分音符・休符の数</param>
     /// <param name="format">format of the sound.音のフォーマット</param>
-    /// <param name="panType">pan of the sound. 左右どちらから音が出るか</param>
+    /// <param name="panType">direction of hearing. 左右どちらから音が出るか</param>
     /// <param name="componentsCount">count of sound components. サウンドコンポーネントの個数</param>
     public SoundChannelBase(int tempo, SoundFormat format, PanType panType, int componentsCount)
     {
@@ -50,7 +50,23 @@ public abstract class SoundChannelBase : ISoundChannel
 
     public int WaveArrayLength { get; private set; }
 
-    public ISoundComponent this[int index] => this.SoundComponents[index];
+    /// <summary>
+    /// get sound component at index. index番目のサウンドコンポーネントを取得する
+    /// </summary>
+    /// <param name="index">index. 何番目かを表す整数</param>
+    /// <returns>sound component.サウンドコンポーネント</returns>
+    /// <exception cref="IndexOutOfRangeException">index is less than 0 or index is equal to or greater than ComponentCount.</exception>
+    public ISoundComponent this[int index]
+    {
+        get
+        {
+            if (index < 0 || index >= this.SoundComponents.Count)
+            {
+                throw new IndexOutOfRangeException("index is less than 0 or index is equal to or greater than ComponentCount.");
+            }
+            return this.SoundComponents[index];
+        }
+    }
 
     public void Add(ISoundComponent component)
     {
@@ -64,16 +80,21 @@ public abstract class SoundChannelBase : ISoundChannel
         this.WaveArrayLength = 0;
     }
 
+    /// <summary>
+    /// remove the sound component at index. index番目のサウンドコンポーネントを削除するメソッド。
+    /// </summary>
+    /// <param name="index">the index of the sound component to remove. 削除するサウンドコンポーネントのインデックス</param>
+    /// <exception cref="ArgumentOutOfRangeException">index is less than 0 or index is equal to or greater than ComponentCount.</exception>
     public void RemoveAt(int index)
     {
-        if (this.SoundComponents.Count <= index)
+        if (this.SoundComponents.Count <= index || index < 0)
         {
-            return;
+            throw new ArgumentOutOfRangeException("index is less than 0 or index is equal to or greater than ComponentCount.");
         }
         var component = this.SoundComponents[index];
         this.WaveArrayLength -= component.GetWaveArrayLength(this.Format, this.Tempo);
         this.SoundComponents.Remove(component);
     }
 
-    public abstract ushort[] CreateWave();
+    public abstract ushort[] GenerateWave();
 }

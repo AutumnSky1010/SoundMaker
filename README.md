@@ -10,7 +10,7 @@
 - waveファイルにサウンドを書き込む
 
 ## ドキュメント
-準備中
+[Wiki](https://github.com/AutumnSky1010/SoundMaker/wiki)
 
 ## 要件
 .NET 6
@@ -109,7 +109,7 @@ You can do The following content with this library.
 - export sound to a file of wave format.
 
 ## Documentation
-In preparation.
+[Wiki](https://github.com/AutumnSky1010/SoundMaker/wiki)
 
 ## Requirement
 .NET 6

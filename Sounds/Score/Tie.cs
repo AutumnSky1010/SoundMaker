@@ -21,6 +21,11 @@ public class Tie : ISoundComponent
         };
     }
 
+    /// <summary>
+    /// constructor コンストラクタ
+    /// </summary>
+    /// <param name="baseNote">the note of base. 基本となる音符。二つ目の音符の音の高さはこの音符と同じになる。</param>
+    /// <param name="additionalNotes">notes of tie. 追加する音符</param>
     public Tie(Note baseNote, IReadOnlyCollection<Note> additionalNotes)
     {
         this.BaseNote = baseNote;

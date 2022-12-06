@@ -1,8 +1,9 @@
 ﻿using SoundMaker.Sounds.Score;
+using SoundMaker.Sounds.SoundChannels;
 
 namespace SoundMaker.Sounds.WaveTypes;
 /// <summary>
-/// square wave. 矩形波
+/// the square wave. 矩形波
 /// </summary>
 public class SquareWave : WaveTypeBase
 {

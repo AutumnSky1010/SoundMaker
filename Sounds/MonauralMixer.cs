@@ -25,7 +25,7 @@ public class MonauralMixer : MixerBase
         ushort[] result = Enumerable.Repeat((ushort)0, this.GetMaxWaveLength()).ToArray();
         Parallel.ForEach(this.Channels, channel =>
         {
-            var waveNumericData = channel.CreateWave();
+            var waveNumericData = channel.GenerateWave();
             lock (this.LockObject)
             {
                 for (int i = 0; i < waveNumericData.Length; i++)
