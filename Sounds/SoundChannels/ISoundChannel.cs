@@ -11,6 +11,11 @@ public interface ISoundChannel
     ISoundComponent this[int index] { get; }
 
     /// <summary>
+    /// the total number of sound components the internal data structure can hold without resizing. 内部リストがサイズを変えないで保持できるサウンドコンポーネントの個数
+    /// </summary>
+    public int Capacity { get; }
+
+    /// <summary>
     /// count of sound components. サウンドコンポーネントの個数
     /// </summary>
     public int ComponentCount { get; }

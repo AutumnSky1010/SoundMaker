@@ -19,5 +19,29 @@ public abstract class WaveTypeBase
     /// <param name="volume">volume 音量（0 ~ 100）</param>
     /// <param name="hertz">hertz of the sound. 音の周波数</param>
     /// <returns>the array of wave data. : unsigned short[]</returns>
+    /// <exception cref="ArgumentOutOfRangeException">Tempo must be non-negative and greater than 0.</exception>
+    /// <exception cref="ArgumentOutOfRangeException">Length must be non-negative.</exception>
+    /// <exception cref="ArgumentOutOfRangeException">Hertz must be non-negative and greater than 0.</exception>
+    /// <exception cref="ArgumentOutOfRangeException">Volume must be below than 100 and more than 0.</exception>
     public abstract ushort[] GenerateWave(SoundFormat format, int tempo, int length, int volume, double hertz);
+
+    protected void CheckGenerateWaveArgs(int tempo, int length, int volume, double hertz)
+    {
+        if (tempo <= 0)
+        {
+            throw new ArgumentOutOfRangeException(nameof(tempo), "'tempo' must be non-negative and greater than 0.");
+        }
+        if (length < 0)
+        {
+            throw new ArgumentOutOfRangeException(nameof(length), "'length' must be non-negative.");
+        }
+        if (volume > 100 || volume < 0)
+        {
+            throw new ArgumentOutOfRangeException(nameof(volume), "'volume must be below than 100 and more than 0.");
+        }
+        if (hertz <= 0)
+        {
+            throw new ArgumentOutOfRangeException(nameof(hertz), "'hertz must be non-negative and greater than 0.");
+        }
+    }
 }

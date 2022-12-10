@@ -6,6 +6,7 @@ public class LowBitNoiseWave : WaveTypeBase
 {
     public override ushort[] GenerateWave(SoundFormat format, int tempo, int length, int volume, double hertz)
     {
+        this.CheckGenerateWaveArgs(tempo, length, volume, hertz);
         var result = new List<ushort>(length);
         bool mode = false;
         int count = 1;

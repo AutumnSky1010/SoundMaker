@@ -36,7 +36,12 @@ public class StereoWave : IWave
     /// <summary>
     /// volume of the wave. 波形データの音量
     /// </summary>
+    [Obsolete]
     public int Volume { get; private set; } = 100;
+
+    public int RightVolume { get; private set; } = 100;
+
+    public int LeftVolume { get; private set; } = 100;
 
     [Obsolete("if you want to get length of bytes, call GetLengthOfBytes()")]
     public int Length
@@ -60,12 +65,14 @@ public class StereoWave : IWave
                 {
                     this.LeftWave[i] = (ushort)(this.LeftOriginalVolumeWave[i] * (volume / 100d));
                 }
+                this.LeftVolume = volume;
                 break;
             case SoundDirectionType.Right:
                 for (int i = 0; i < this.RightWave.Length; i++)
                 {
                     this.RightWave[i] = (ushort)(this.RightOriginalVolumeWave[i] * (volume / 100d));
                 }
+                this.RightVolume = volume;
                 break;
             default:
                 var maxAndMinLength = this.GetMaxAndMinWaveLength();
@@ -83,6 +90,8 @@ public class StereoWave : IWave
                 {
                     wave[i] = (ushort)(originalWave[i] * (volume / 100d));
                 }
+                this.RightVolume = volume;
+                this.LeftVolume = volume;
                 break;
         }
     }

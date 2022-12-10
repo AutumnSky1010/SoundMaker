@@ -13,6 +13,7 @@ public class PseudoTriangleWave : WaveTypeBase
 {
     public override ushort[] GenerateWave(SoundFormat format, int tempo, int length, int volume, double hertz)
     {
+        this.CheckGenerateWaveArgs(tempo, length, volume, hertz);
         var result = new List<ushort>(length);
         int count = 1;
         // 音の長さまで繰り返す

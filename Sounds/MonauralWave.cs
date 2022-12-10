@@ -40,7 +40,7 @@ public class MonauralWave : IWave
         this.Volume = volume;
         for (int i = 0; i < this.Wave.Length; i++)
         {
-            this.Wave[i] = (ushort)(this.OriginalVolumeWave[i] * volume / 100);
+            this.Wave[i] = (ushort)(this.Wave[i] * (volume / 100d));
         }
     }
 

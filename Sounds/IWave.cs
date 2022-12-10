@@ -7,6 +7,7 @@ public interface IWave
     /// <summary>
     /// volume of mixed wave.(0 ~ 100) ミックス済みの波形の音量
     /// </summary>
+    [Obsolete]
     int Volume { get; }
 
     /// <summary>

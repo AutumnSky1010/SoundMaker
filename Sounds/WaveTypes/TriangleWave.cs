@@ -12,6 +12,7 @@ public class TriangleWave : WaveTypeBase
 {
     public override ushort[] GenerateWave(SoundFormat format, int tempo, int length, int volume, double hertz)
     {
+        this.CheckGenerateWaveArgs(tempo, length, volume, hertz);
         bool mode = false;
         var result = new List<ushort>(length);
         int count = 1;

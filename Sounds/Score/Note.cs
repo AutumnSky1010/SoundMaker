@@ -14,6 +14,7 @@ public class Note : BasicSoundComponentBase
     /// <param name="scaleNumber">sound height number. (C"4" is middle C.)音の高さの番号（Cの「4」が真ん中のド）</param>
     /// <param name="length">length (ex. "quarter" note) 長さ（音楽的な、「四分」音符、「全」休符のような長さを表す。）</param>
     /// <param name="isDotted">is note/rest dotted. 付点かを表す論理型</param>
+    /// <exception cref="ArgumentException">Scale and scale number must be only the range of sound that the piano can produce.</exception>
 	public Note(Scale scale, int scaleNumber, LengthType length, bool isDotted = false)
         : base(length, isDotted)
     {
@@ -84,24 +85,32 @@ public class Note : BasicSoundComponentBase
         get { return this._volume; }
         set
         {
-            this._volume = value < 0 ? 0 : value;
-            this._volume = value > 100 ? 100 : value;
+            if (value < 0)
+            {
+                value = 0;
+            }
+            else if (value > 100)
+            {
+                value = 100;
+            }
+            this._volume = value;
         }
     }
 
     private void CheckArgument(Scale scale, int scaleNumber)
     {
+        string message = "'scale' and 'scaleNumber' must be only the range of sound that the piano can produce.";
         if (scaleNumber >= 9 || scaleNumber <= -1)
         {
-            throw new ArgumentException();
+            throw new ArgumentException(message);
         }
         if (scale != Scale.A && scale != Scale.B && scale != Scale.ASharp && scaleNumber == 0)
         {
-            throw new ArgumentException();
+            throw new ArgumentException(message);
         }
         if (scale != Scale.C && scaleNumber == 8)
         {
-            throw new ArgumentException();
+            throw new ArgumentException(message);
         }
     }
 
