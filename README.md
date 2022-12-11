@@ -1,8 +1,8 @@
-﻿# SoundMaker
-![icon](https://github.com/AutumnSky1010/SoundMaker/blob/master/SoundMakerIcon.png)
+![SoundMakerCover](https://user-images.githubusercontent.com/66455966/206901705-974f5a63-46db-435c-bdb1-1717e8bb7883.png)  
+
 ## 言語(Language)
 1) [日本語](#概要)
-2) [English](#Overview)
+2) [English](#overview)
 
 ## 概要
 本ライブラリを用いると、以下の事が可能です。
@@ -98,7 +98,7 @@ public static class YourClass
 - Monaural 1ch
 
 ## 作った人のツイッター
-[Twitter](https://twitter.com/DTB_AutumnSky)
+[Twitter](https://twitter.com/DTB_AutumnSky)  
 
 ## ライセンス
 MIT License
