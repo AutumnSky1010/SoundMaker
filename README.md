@@ -1,26 +1,26 @@
 ![SoundMakerCover](https://user-images.githubusercontent.com/66455966/206901705-974f5a63-46db-435c-bdb1-1717e8bb7883.png)  
 
-## 言語(Language)
+## 🗺️言語(Language)
 1) [日本語](#概要)
 2) [English](#overview)
 
-## 概要
+## 🎵概要
 本ライブラリを用いると、以下の事が可能です。
 - チップチューンサウンド？を作成する
 - waveファイルにサウンドを書き込む
 
-## ドキュメント
+## 📑ドキュメント
 [Wiki](https://github.com/AutumnSky1010/SoundMaker/wiki)
 
-## 要件
+## ⛰️要件
 .NET 6
 
-## インストール方法
+## ⏬インストール方法
 ### NuGet
 
 [SoundMaker](https://www.nuget.org/packages/SoundMaker/)
 
-## 簡単な使い方
+## 🎶簡単な使い方
 ```CSharp
 using SoundMaker.Sounds;
 using SoundMaker.Sounds.Score;
@@ -83,7 +83,7 @@ public static class YourClass
 
 ```
 
-## 詳細
+## 👀詳細
 ### 出力形式
 **サンプリング周波数**
 - 48000Hz
@@ -97,29 +97,29 @@ public static class YourClass
 - Stereo 2ch
 - Monaural 1ch
 
-## 作った人のツイッター
+## 🍄作った人のツイッター
 [Twitter](https://twitter.com/DTB_AutumnSky)  
 
-## ライセンス
+## ©️ライセンス
 MIT License
 
-## Overview
+## 🎵Overview
 You can do The following content with this library.
 - make the sound of chiptune
 - export sound to a file of wave format.
 
-## Documentation
+## 📑Documentation
 [Wiki](https://github.com/AutumnSky1010/SoundMaker/wiki)
 
-## Requirement
+## ⛰️Requirement
 .NET 6
 
-## Installation
+## ⏬Installation
 ### NuGet
 
 [SoundMaker](https://www.nuget.org/packages/SoundMaker/)
 
-## Usage
+## 🎶Usage
 ```CSharp
 using SoundMaker.Sounds;
 using SoundMaker.Sounds.Score;
@@ -182,7 +182,7 @@ public static class YourClass
 
 ```
 
-## Features
+## 👀Features
 ### Output format
 **Sampling frequency**
 - 48000Hz
@@ -196,9 +196,9 @@ public static class YourClass
 - Stereo 2ch
 - Monaural 1ch
 
-## Author
+## 🍄Author
 [Twitter](https://twitter.com/DTB_AutumnSky)
 
-## License
+## ©️License
 SoundMaker is licensed under the MIT License.
 
