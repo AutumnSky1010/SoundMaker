@@ -23,6 +23,11 @@ public class PseudoTriangleWave : WaveTypeBase
             double triangleWidth = (int)format.SamplingFrequency / hertz;
             // 32段階で値の大きさを変えるために、上を32で割る。
             int repeatNumber = (int)(triangleWidth / 32d);
+            // 疑似三角波に出来ない場合は三角波を生成する。
+            if (triangleWidth <= 64)
+            {
+                return new TriangleWave().GenerateWave(format, tempo, length, volume, hertz);
+            }
             // △最後にできる謎の空白地帯を無くすために、余りを算出する。この余りを各フェーズに1ずつ振り分ける
             int repeatRemainderNumber = (int)triangleWidth % 32;
             if (count + triangleWidth >= length)
@@ -31,11 +36,18 @@ public class PseudoTriangleWave : WaveTypeBase
                 count++;
                 continue;
             }
+
+
             int phase = 0;
             bool mode = true;
             for (int j = 1; j <= triangleWidth && count <= length; j++, count++)
             {
-                ushort sound = (ushort)(ushort.MaxValue * (phase / 15d));
+                if (mode && phase == 16)
+                {
+                    mode = !mode;
+                }
+
+                ushort sound = (ushort)(ushort.MaxValue * (phase / 16d));
                 sound = (ushort)(sound * (volume / 100d));
                 result.Add(sound);
                 
@@ -45,11 +57,6 @@ public class PseudoTriangleWave : WaveTypeBase
                     phase = mode ? phase + 1 : phase - 1;
                     phase = phase == -1 ? 0 : phase;
                     repeatRemainderNumber = repeatRemainderNumber != 0 ? repeatRemainderNumber - 1 : repeatRemainderNumber;
-                }
-                if (mode && phase == 16)
-                {
-                    phase = 15;
-                    mode = !mode;
                 }
             }
         }
