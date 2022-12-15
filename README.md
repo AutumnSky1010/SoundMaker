@@ -49,7 +49,7 @@ public static class YourClass
 		// 一分間の四分音符の個数
 		int tempo = 100;
 		// まず、音のチャンネルを作成する必要がある。
-		// 現段階では矩形波、三角波に対応している。
+		// 現段階では矩形波、三角波、疑似三角波、ロービットノイズに対応している。
 		var rightChannel = new SquareSoundChannel(tempo, format, SquareWaveRatio.Point25, PanType.Right);
 		var rightChannel2 = new SquareSoundChannel(tempo, format, SquareWaveRatio.Point125, PanType.Right);
 		var leftChannel = new TriangleSoundChannel(tempo, format, PanType.Left);
@@ -148,7 +148,7 @@ public static class YourClass
 		// number of quarter notes per minute.
 		int tempo = 100;
 		// first, you should make the channel of sound.
-		// can use square wave and triangle wave at this stage.
+		// can use square wave, triangle wave, pseudo triangle wave and low bit noise wave at this stage.
 		var rightChannel = new SquareSoundChannel(tempo, format, SquareWaveRatio.Point25, PanType.Right);
 		var rightChannel2 = new SquareSoundChannel(tempo, format, SquareWaveRatio.Point125, PanType.Right);
 		var leftChannel = new TriangleSoundChannel(tempo, format, PanType.Left);
