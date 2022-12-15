@@ -23,6 +23,7 @@ public class SoundWaveChunk : IChunk
 
     public byte[] GetBytes()
     {
+        // 0x61746164 は dataになる
         var result = BitConverter.GetBytes(0x61746164);
         result = result.Concat(BitConverter.GetBytes(this.Size)).ToArray();
         return result.Concat(this.SoundWaveData).ToArray();

@@ -116,7 +116,7 @@ public class Note : BasicSoundComponentBase
 
     public override ushort[] GenerateWave(SoundFormat format, int tempo, int length, WaveTypeBase waveType)
     {
-        return waveType.GenerateWave(format, tempo, length, this.Volume, this.Hertz);
+        return waveType.GenerateWave(format, length, this.Volume, this.Hertz);
     }
 
     public override ushort[] GenerateWave(SoundFormat format, int tempo, WaveTypeBase waveType)

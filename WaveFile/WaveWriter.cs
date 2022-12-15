@@ -12,6 +12,7 @@ public class WaveWriter
     public WaveWriter(FormatChunk format, SoundWaveChunk soundWave)
     {
         // ファイル全体サイズ = 音声波形データ + 44B
+        // 実際にRIFFチャンクに書き込むのは、(ファイル全体サイズ - "WAVE"の文字列の大きさである8B)になる
         this.Chunks.Add(new RIFFChunk(soundWave.Size + 36));
         this.Chunks.Add(format);
         this.Chunks.Add(soundWave);

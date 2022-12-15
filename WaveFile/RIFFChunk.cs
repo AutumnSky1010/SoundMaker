@@ -14,9 +14,11 @@ public struct RIFFChunk : IChunk
     }
 
     private uint Size { get; }
+    // 0x45564157 は WAVEの意味
     private uint Format { get; } = 0x45564157;
     public byte[] GetBytes()
     {
+        // 0x46464952 は RIFF
         var result = BitConverter.GetBytes(0x46464952);
         result = result.Concat(BitConverter.GetBytes(this.Size)).ToArray();
         return result.Concat(BitConverter.GetBytes(this.Format)).ToArray();

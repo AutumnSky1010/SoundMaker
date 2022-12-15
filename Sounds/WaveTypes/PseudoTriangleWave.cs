@@ -11,9 +11,16 @@ namespace SoundMaker.Sounds.WaveTypes;
 /// </summary>
 public class PseudoTriangleWave : WaveTypeBase
 {
+    [Obsolete("Use 'GenerateWave(SoundFormat format, int length, int volume, double hertz)'")]
     public override ushort[] GenerateWave(SoundFormat format, int tempo, int length, int volume, double hertz)
     {
         this.CheckGenerateWaveArgs(tempo, length, volume, hertz);
+        return this.GenerateWave(format, length, volume, hertz);
+    }
+
+    public override ushort[] GenerateWave(SoundFormat format, int length, int volume, double hertz)
+    {
+        this.CheckGenerateWaveArgs(length, volume, hertz);
         var result = new List<ushort>(length);
         int count = 1;
         // 音の長さまで繰り返す
@@ -26,7 +33,7 @@ public class PseudoTriangleWave : WaveTypeBase
             // 疑似三角波に出来ない場合は三角波を生成する。
             if (triangleWidth <= 64)
             {
-                return new TriangleWave().GenerateWave(format, tempo, length, volume, hertz);
+                return new TriangleWave().GenerateWave(format, length, volume, hertz);
             }
             // △最後にできる謎の空白地帯を無くすために、余りを算出する。この余りを各フェーズに1ずつ振り分ける
             int repeatRemainderNumber = (int)triangleWidth % 32;
@@ -50,8 +57,8 @@ public class PseudoTriangleWave : WaveTypeBase
                 ushort sound = (ushort)(ushort.MaxValue * (phase / 16d));
                 sound = (ushort)(sound * (volume / 100d));
                 result.Add(sound);
-                
-                if ((repeatRemainderNumber == 0 && j % repeatNumber == 0) || 
+
+                if ((repeatRemainderNumber == 0 && j % repeatNumber == 0) ||
                     (repeatRemainderNumber != 0 && j % (repeatNumber + 1) == 0))
                 {
                     phase = mode ? phase + 1 : phase - 1;

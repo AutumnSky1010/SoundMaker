@@ -19,6 +19,7 @@ public struct FormatChunk : IChunk
         this.ByteSizePerSecond = this.BlockSize * this.SamplingFrequency;
     }
 
+    // チャンクサイズは16byte
     private uint ChankSize { get; } = 0x00000010;
 
     private ushort SoundFormat { get; } = 0x0001;
