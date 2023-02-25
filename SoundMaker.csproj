@@ -20,7 +20,7 @@
     <PackageIcon>SoundMakerIcon.png</PackageIcon>
     <Copyright>Copyright ©2022 AutumnSky1010</Copyright>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageReleaseNotes>https://github.com/AutumnSky1010/SoundMaker/releases/tag/SoundMaker-ver.2.0.0</PackageReleaseNotes>
+    <PackageReleaseNotes>https://github.com/AutumnSky1010/SoundMaker/releases/tag/SoundMaker-ver.2.0.1</PackageReleaseNotes>
     <PackageProjectUrl>https://github.com/AutumnSky1010/SoundMaker/wiki</PackageProjectUrl>
   </PropertyGroup>
 
