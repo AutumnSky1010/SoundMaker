@@ -26,13 +26,20 @@ public class WaveWriter
     /// <param name="path">path of .wav file.</param>
     public void Write(string path)
     {
-        using (var stream = new FileStream(path, FileMode.Create, FileAccess.Write))
-        using (var writer = new BinaryWriter(stream))
+        using var stream = new FileStream(path, FileMode.Create, FileAccess.Write);
+        Write(stream);
+    }
+
+    /// <summary>
+    /// write to stream. ストリームに書き込む
+    /// </summary>
+    /// <param name="stream">stream</param>
+    public void Write(Stream stream)
+    {
+        using var writer = new BinaryWriter(stream);
+        foreach(var chunk in this.Chunks)
         {
-            foreach (var chunk in this.Chunks)
-            {
-                writer.Write(chunk.GetBytes());
-            }
+            writer.Write(chunk.GetBytes());
         }
     }
 }
