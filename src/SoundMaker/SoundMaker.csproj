@@ -1,0 +1,57 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Title>SoundMaker</Title>
+    <RepositoryUrl>https://github.com/AutumnSky1010/SoundMaker</RepositoryUrl>
+    <PackageTags>C#;.NET;game;music;sound;chiptune;audio;wave;wav;</PackageTags>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+    <Version>2.1.0</Version>
+    <Authors>AutumnSky1010</Authors>
+    <Description>You can do The following content with this library.
+
+1. make the sound of chiptune(old game sound)
+2. export sound to a file of wave format.</Description>
+    <PackageIcon>SoundMakerIcon.png</PackageIcon>
+    <Copyright>Copyright ©2023 AutumnSky1010</Copyright>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageReleaseNotes>https://github.com/AutumnSky1010/SoundMaker/releases/tag/SoundMaker-ver.2.1.0</PackageReleaseNotes>
+    <PackageProjectUrl>https://github.com/AutumnSky1010/SoundMaker/wiki</PackageProjectUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\LICENSE.txt">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\..\SoundMakerIcon.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="LICENSE.txt">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Update="SoundMakerIcon.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
