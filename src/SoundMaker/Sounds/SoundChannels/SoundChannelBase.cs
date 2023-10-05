@@ -1,5 +1,6 @@
 ﻿
 using SoundMaker.Sounds.Score;
+using System.Collections;
 
 namespace SoundMaker.Sounds.SoundChannels;
 /// <summary>
@@ -115,4 +116,14 @@ public abstract class SoundChannelBase : ISoundChannel
     }
 
     public abstract ushort[] GenerateWave();
+
+    public IEnumerator<ISoundComponent> GetEnumerator()
+    {
+        return this.SoundComponents.GetEnumerator();
+    }
+
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+        return this.SoundComponents.GetEnumerator();
+    }
 }
