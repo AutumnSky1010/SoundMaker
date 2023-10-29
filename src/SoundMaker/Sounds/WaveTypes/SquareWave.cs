@@ -1,5 +1,4 @@
-﻿using SoundMaker.Sounds.Score;
-using SoundMaker.Sounds.SoundChannels;
+﻿using SoundMaker.Sounds.SoundChannels;
 
 namespace SoundMaker.Sounds.WaveTypes;
 /// <summary>
@@ -38,34 +37,37 @@ public class SquareWave : WaveTypeBase
     public override ushort[] GenerateWave(SoundFormat format, int length, int volume, double hertz)
     {
         var result = new List<ushort>(length);
-        bool mode = false;
-        int count = 1;
-        int ratioIndex = (int)this.SquareWaveRatio;
-        while (count <= length)
+        var unitWave = GenerateUnitWave(format, volume, hertz);
+        for (int i = 0; i < length / unitWave.Count; i++)
         {
-            int allRepeatTimes = (int)((int)format.SamplingFrequency / hertz);
-            int firstRepeatTimes = (int)(allRepeatTimes * this.Ratio[ratioIndex].Item1);
-
-            if (count + allRepeatTimes >= length)
-            {
-                result.Add(0);
-                count++;
-                continue;
-            }
-
-            for (int i = 1; i <= firstRepeatTimes && mode && count <= length; i++, count++)
-            {
-                ushort sound = (ushort)(ushort.MaxValue * volume / 100);
-                result.Add(sound);
-            }
-
-            for (int i = 1; i <= allRepeatTimes - firstRepeatTimes && !mode && count <= length; i++, count++)
-            {
-                ushort sound = 0;
-                result.Add(sound);
-            }
-            mode = !mode;
+            result.AddRange(unitWave);
+        }
+        for (int i = 0; i < length % unitWave.Count; i++)
+        {
+            result.Add(0);
         }
         return result.ToArray();
+    }
+
+    private List<ushort> GenerateUnitWave(SoundFormat format, int volume, double hertz)
+    {
+        int ratioIndex = (int)this.SquareWaveRatio;
+        int allRepeatTimes = (int)((int)format.SamplingFrequency / hertz);
+        int firstRepeatTimes = (int)(allRepeatTimes * this.Ratio[ratioIndex].Item1);
+        // なぜか配列よりリストの方が早い
+        var result = new List<ushort>(allRepeatTimes);
+        // 音量の倍率(1.00 ~ 0.00)
+        double volumeMagnification = volume / 100d;
+
+        for (int i = 0; i < firstRepeatTimes; i++)
+        {
+            result.Add(0);
+        }
+        for (int i = 0; i < allRepeatTimes - firstRepeatTimes; i++)
+        {
+            ushort sound = (ushort)(ushort.MaxValue * volumeMagnification);
+            result.Add(sound);
+        }
+        return result;
     }
 }

@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SoundMaker", "src\SoundMake
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SoundMakerTests", "test\SoundMakerTests.csproj", "{5D14FD06-A259-461A-B45F-EB69898F457C}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SoundMakerConsole", "src\SoundMakerConsole\SoundMakerConsole.csproj", "{56C904EC-478C-4219-9599-63C1F2041DB4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{5D14FD06-A259-461A-B45F-EB69898F457C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D14FD06-A259-461A-B45F-EB69898F457C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D14FD06-A259-461A-B45F-EB69898F457C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56C904EC-478C-4219-9599-63C1F2041DB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56C904EC-478C-4219-9599-63C1F2041DB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56C904EC-478C-4219-9599-63C1F2041DB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56C904EC-478C-4219-9599-63C1F2041DB4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
