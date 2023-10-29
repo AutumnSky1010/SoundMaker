@@ -7,16 +7,16 @@ public class PseudoTriangleWave : WaveTypeBase
     [Obsolete("Use 'GenerateWave(SoundFormat format, int length, int volume, double hertz)'")]
     public override ushort[] GenerateWave(SoundFormat format, int tempo, int length, int volume, double hertz)
     {
-        this.CheckGenerateWaveArgs(tempo, length, volume, hertz);
-        return this.GenerateWave(format, length, volume, hertz);
+        CheckGenerateWaveArgs(tempo, length, volume, hertz);
+        return GenerateWave(format, length, volume, hertz);
     }
 
     public override ushort[] GenerateWave(SoundFormat format, int length, int volume, double hertz)
     {
-        this.CheckGenerateWaveArgs(length, volume, hertz);
+        CheckGenerateWaveArgs(length, volume, hertz);
 
         // △の波形を作るための繰り返し回数
-        int triangleWidth = (int)((int)format.SamplingFrequency / hertz);
+        var triangleWidth = (int)((int)format.SamplingFrequency / hertz);
         // 疑似三角波に出来ない場合は普通の三角波を生成する。
         if (triangleWidth <= 64)
         {
@@ -25,11 +25,11 @@ public class PseudoTriangleWave : WaveTypeBase
 
         var result = new List<ushort>(length);
         var unitWave = GenerateUnitWave(format, volume, hertz);
-        for (int i = 0; i < length / unitWave.Count; i++)
+        for (var i = 0; i < length / unitWave.Count; i++)
         {
             result.AddRange(unitWave);
         }
-        for (int i = 0; i < length % unitWave.Count; i++)
+        for (var i = 0; i < length % unitWave.Count; i++)
         {
             result.Add(0);
         }
@@ -38,22 +38,22 @@ public class PseudoTriangleWave : WaveTypeBase
 
     private List<ushort> GenerateUnitWave(SoundFormat format, int volume, double hertz)
     {
-        int repeatNumber = (int)((int)format.SamplingFrequency / hertz);
+        var repeatNumber = (int)((int)format.SamplingFrequency / hertz);
         // なぜか配列よりリストの方が早い
-        var result = new List<ushort>((int)repeatNumber);
+        var result = new List<ushort>(repeatNumber);
         // 音量の倍率(1.00 ~ 0.00)
-        double volumeMagnification = volume / 100d;
+        var volumeMagnification = volume / 100d;
         // 階段の幅
-        int stairsWidth = repeatNumber / 32;
+        var stairsWidth = repeatNumber / 32;
         // 幅の余り
-        int r = repeatNumber % 32;
+        var r = repeatNumber % 32;
 
         // 上り波形
-        for (int i = 0; i < 16; i++)
+        for (var i = 0; i < 16; i++)
         {
-            ushort sound = (ushort)(ushort.MaxValue * (i / 15d));
+            var sound = (ushort)(ushort.MaxValue * (i / 15d));
             sound = (ushort)(sound * volumeMagnification);
-            for (int j = 0; j < stairsWidth; j++)
+            for (var j = 0; j < stairsWidth; j++)
             {
                 result.Add(sound);
             }
@@ -66,19 +66,19 @@ public class PseudoTriangleWave : WaveTypeBase
         }
         // 下り波形
         // 下り波形では上り波形より数値を減らす
-        ushort negativeDiff = (ushort)(ushort.MaxValue * (1 / 30d));
-        for (int i = 15; i >= 0; i--)
+        var negativeDiff = (ushort)(ushort.MaxValue * (1 / 30d));
+        for (var i = 15; i >= 0; i--)
         {
-            ushort sound = (ushort)(ushort.MaxValue * (i / 15d));
+            var sound = (ushort)(ushort.MaxValue * (i / 15d));
             sound = sound != 0 ? (ushort)(sound - negativeDiff) : sound;
             sound = (ushort)(sound * volumeMagnification);
-            for (int j = 0; j < stairsWidth; j++)
+            for (var j = 0; j < stairsWidth; j++)
             {
                 result.Add(sound);
             }
             // 余りがある場合は足す。波形の後ろ側の部分に足す
             // ex. r = 31の場合、i = 15 ~ 0の時足す。
-            if (i < r / 2 + r % 2)
+            if (i < (r / 2) + (r % 2))
             {
                 result.Add(sound);
             }

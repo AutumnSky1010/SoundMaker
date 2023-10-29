@@ -1,7 +1,6 @@
-﻿using Xunit.Abstractions;
-using SoundMaker.Sounds;
-using SoundMaker.Sounds.SoundChannels;
+﻿using SoundMaker.Sounds;
 using SoundMaker.Sounds.Score;
+using SoundMaker.Sounds.SoundChannels;
 using SoundMaker.Sounds.WaveTypes;
 //using SoundMaker.Sounds.Score.Parsers;
 
@@ -22,38 +21,47 @@ public class TestSoundChannelBase
 
     private class SoundComponent : ISoundComponent
     {
-        public ushort[] GenerateWave(SoundFormat format, int tempo, int length, WaveTypeBase waveType) => new ushort[0];
+        public ushort[] GenerateWave(SoundFormat format, int tempo, int length, WaveTypeBase waveType)
+        {
+            return new ushort[0];
+        }
 
-        public ushort[] GenerateWave(SoundFormat format, int tempo, WaveTypeBase waveType) => new ushort[0];
+        public ushort[] GenerateWave(SoundFormat format, int tempo, WaveTypeBase waveType)
+        {
+            return new ushort[0];
+        }
 
-        public int GetWaveArrayLength(SoundFormat format, int tempo) => 0;
+        public int GetWaveArrayLength(SoundFormat format, int tempo)
+        {
+            return 0;
+        }
     }
 
     [Fact(DisplayName = "初期化が正しく行われているかをテストする。")]
     public void InitializeTest()
     {
-        int tempo = 100;
-        SoundFormat format = new SoundFormat(SamplingFrequencyType.FourtyEightKHz, BitRateType.SixteenBit, ChannelType.Stereo);
+        var tempo = 100;
+        var format = new SoundFormat(SamplingFrequencyType.FourtyEightKHz, BitRateType.SixteenBit, ChannelType.Stereo);
         var panType = PanType.Both;
-        int capacity = 1;
+        var capacity = 1;
         var soundChannel = new SoundChannelBaseDerived(tempo, format, panType, capacity);
         Assert.Equal(soundChannel.Tempo, tempo);
         Assert.Equal(soundChannel.Format, format);
         Assert.Equal(soundChannel.PanType, panType);
         Assert.Equal(soundChannel.Capacity, capacity);
 
-        Assert.Throws<ArgumentOutOfRangeException>(() => new SoundChannelBaseDerived(-100, format, panType, capacity));
-        Assert.Throws<ArgumentOutOfRangeException>(() => new SoundChannelBaseDerived(0, format, panType, capacity));
+        _ = Assert.Throws<ArgumentOutOfRangeException>(() => new SoundChannelBaseDerived(-100, format, panType, capacity));
+        _ = Assert.Throws<ArgumentOutOfRangeException>(() => new SoundChannelBaseDerived(0, format, panType, capacity));
 
-        Assert.Throws<ArgumentOutOfRangeException>(() => new SoundChannelBaseDerived(tempo, format, panType, -1));
+        _ = Assert.Throws<ArgumentOutOfRangeException>(() => new SoundChannelBaseDerived(tempo, format, panType, -1));
     }
 
     [Fact(DisplayName = "サウンドコンポーネントが末尾に追加されるかのテスト。")]
     public void AddTest()
     {
-        SoundChannelBase soundChannel = GetSoundChannel();
+        var soundChannel = GetSoundChannel();
 
-        int countOfBefore = soundChannel.ComponentCount;
+        var countOfBefore = soundChannel.ComponentCount;
         var lastSoundComponent = new SoundComponent();
         soundChannel.Add(new SoundComponent());
         soundChannel.Add(lastSoundComponent);
@@ -64,12 +72,12 @@ public class TestSoundChannelBase
     [Fact(DisplayName = "インデックスによるサウンドコンポーネントを取り除くテスト。例外が正しく投げられるかも調べる。")]
     public void RemoveAtTest()
     {
-        SoundChannelBase soundChannel = GetSoundChannel();
+        var soundChannel = GetSoundChannel();
 
-        int countOfBefore = soundChannel.ComponentCount;
+        var countOfBefore = soundChannel.ComponentCount;
         soundChannel.Add(new SoundComponent());
-        Assert.Throws<ArgumentOutOfRangeException>(() => soundChannel.RemoveAt(-1));
-        Assert.Throws<ArgumentOutOfRangeException>(() => soundChannel.RemoveAt(1));
+        _ = Assert.Throws<ArgumentOutOfRangeException>(() => soundChannel.RemoveAt(-1));
+        _ = Assert.Throws<ArgumentOutOfRangeException>(() => soundChannel.RemoveAt(1));
         soundChannel.RemoveAt(0);
         Assert.Equal(0, soundChannel.ComponentCount);
     }
@@ -77,7 +85,7 @@ public class TestSoundChannelBase
     [Fact(DisplayName = "チャンネル内のサウンドコンポーネントが全て削除されるかを調べる。")]
     public void ClearTest()
     {
-        SoundChannelBase soundChannel = GetSoundChannel();
+        var soundChannel = GetSoundChannel();
         soundChannel.Add(new SoundComponent());
         soundChannel.Add(new SoundComponent());
         soundChannel.Add(new SoundComponent());
@@ -124,10 +132,10 @@ public class TestSoundChannelBase
 
     private SoundChannelBase GetSoundChannel()
     {
-        int tempo = 100;
-        SoundFormat format = new SoundFormat(SamplingFrequencyType.FourtyEightKHz, BitRateType.SixteenBit, ChannelType.Stereo);
+        var tempo = 100;
+        var format = new SoundFormat(SamplingFrequencyType.FourtyEightKHz, BitRateType.SixteenBit, ChannelType.Stereo);
         var panType = PanType.Both;
-        int capacity = 1;
+        var capacity = 1;
         return new SoundChannelBaseDerived(tempo, format, panType, capacity);
     }
 }

@@ -2,21 +2,21 @@
 /// <summary>
 /// Chunk of format for the .wav file. フォーマットチャンクを表す構造体
 /// </summary>
-public struct FormatChunk : IChunk
+public readonly struct FormatChunk : IChunk
 {
     /// <summary>
     /// constructor. コンストラクタ
     /// </summary>
     /// <param name="samplingFrequency">sampling frequency. サンプリング周波数</param>
-    /// <param name="bitRate">quantization bit rate. 量子化ビット数</param>
+    /// <param name="bitRate">bit rate. 量子化ビット数</param>
     /// <param name="channel">type of channels count. チャンネル数</param>
     public FormatChunk(SamplingFrequencyType samplingFrequency, BitRateType bitRate, ChannelType channel)
     {
-        this.Channel = (ushort)channel;
-        this.BitRate = (ushort)bitRate;
-        this.SamplingFrequency = (uint)samplingFrequency;
-        this.BlockSize = (ushort)(this.BitRate * this.Channel / 8);
-        this.ByteSizePerSecond = this.BlockSize * this.SamplingFrequency;
+        Channel = (ushort)channel;
+        BitRate = (ushort)bitRate;
+        SamplingFrequency = (uint)samplingFrequency;
+        BlockSize = (ushort)(BitRate * Channel / 8);
+        ByteSizePerSecond = BlockSize * SamplingFrequency;
     }
 
     // チャンクサイズは16byte
@@ -36,7 +36,7 @@ public struct FormatChunk : IChunk
     private ushort BlockSize { get; }
 
     /// <summary>
-    /// quantization bit rate. 量子化ビット数
+    /// bit rate. 量子化ビット数
     /// </summary>
     public ushort BitRate { get; }
 
@@ -47,12 +47,12 @@ public struct FormatChunk : IChunk
     public byte[] GetBytes()
     {
         var result = BitConverter.GetBytes(0x20746D66);
-        result = result.Concat(BitConverter.GetBytes(this.ChankSize)).ToArray();
-        result = result.Concat(BitConverter.GetBytes(this.SoundFormat)).ToArray();
-        result = result.Concat(BitConverter.GetBytes(this.Channel)).ToArray();
-        result = result.Concat(BitConverter.GetBytes(this.SamplingFrequency)).ToArray();
-        result = result.Concat(BitConverter.GetBytes(this.ByteSizePerSecond)).ToArray();
-        result = result.Concat(BitConverter.GetBytes(this.BlockSize)).ToArray();
-        return result.Concat(BitConverter.GetBytes(this.BitRate)).ToArray();
+        result = result.Concat(BitConverter.GetBytes(ChankSize)).ToArray();
+        result = result.Concat(BitConverter.GetBytes(SoundFormat)).ToArray();
+        result = result.Concat(BitConverter.GetBytes(Channel)).ToArray();
+        result = result.Concat(BitConverter.GetBytes(SamplingFrequency)).ToArray();
+        result = result.Concat(BitConverter.GetBytes(ByteSizePerSecond)).ToArray();
+        result = result.Concat(BitConverter.GetBytes(BlockSize)).ToArray();
+        return result.Concat(BitConverter.GetBytes(BitRate)).ToArray();
     }
 }

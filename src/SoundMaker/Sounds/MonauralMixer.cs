@@ -22,15 +22,15 @@ public class MonauralMixer : MixerBase
     /// <returns>the mixed wave of monaural. モノラルの波形データ : MonauralWave</returns>
     public MonauralWave Mix()
     {
-        ushort[] result = Enumerable.Repeat((ushort)0, this.GetMaxWaveLength()).ToArray();
-        Parallel.ForEach(this.Channels, channel =>
+        var result = Enumerable.Repeat((ushort)0, GetMaxWaveLength()).ToArray();
+        _ = Parallel.ForEach(Channels, channel =>
         {
             var waveNumericData = channel.GenerateWave();
-            lock (this.LockObject)
+            lock (LockObject)
             {
-                for (int i = 0; i < waveNumericData.Length; i++)
+                for (var i = 0; i < waveNumericData.Length; i++)
                 {
-                    result[i] += (ushort)(waveNumericData[i] / this.Channels.Count);
+                    result[i] += (ushort)(waveNumericData[i] / Channels.Count);
                 }
             }
         });

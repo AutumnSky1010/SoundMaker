@@ -13,13 +13,13 @@ public class WaveWriter
     {
         // ファイル全体サイズ = 音声波形データ + 44B
         // 実際にRIFFチャンクに書き込むのは、(ファイル全体サイズ - "WAVE"の文字列の大きさである8B)になる
-        this.Chunks.Add(new RIFFChunk(soundWave.Size + 36));
-        this.Chunks.Add(format);
-        this.Chunks.Add(soundWave);
+        Chunks.Add(new RIFFChunk(soundWave.Size + 36));
+        Chunks.Add(format);
+        Chunks.Add(soundWave);
     }
 
     private List<IChunk> Chunks { get; } = new(3);
-    
+
     /// <summary>
     /// write to .wav file. .wavファイルに書き込む
     /// </summary>
@@ -37,7 +37,7 @@ public class WaveWriter
     public void Write(Stream stream)
     {
         using var writer = new BinaryWriter(stream);
-        foreach(var chunk in this.Chunks)
+        foreach (var chunk in Chunks)
         {
             writer.Write(chunk.GetBytes());
         }

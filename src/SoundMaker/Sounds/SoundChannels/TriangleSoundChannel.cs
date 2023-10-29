@@ -29,9 +29,9 @@ public class TriangleSoundChannel : SoundChannelBase
     public override ushort[] GenerateWave()
     {
         var result = new List<ushort>();
-        foreach (var soundComponent in this.SoundComponents)
+        foreach (var soundComponent in SoundComponents)
         {
-            result.AddRange(soundComponent.GenerateWave(this.Format, this.Tempo, new TriangleWave()));
+            result.AddRange(soundComponent.GenerateWave(Format, Tempo, new TriangleWave()));
         }
         return result.ToArray();
     }

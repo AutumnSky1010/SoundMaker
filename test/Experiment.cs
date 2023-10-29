@@ -10,7 +10,7 @@ public class Experiment
 {
     public Experiment(ITestOutputHelper output)
     {
-        this.Output = output;
+        Output = output;
     }
 
     private ITestOutputHelper Output { get; }
@@ -30,20 +30,20 @@ public class Experiment
             .WithChannelCount(2);
 
         var soundFormat = builder.ToSoundFormat();
-        StereoWave wave = MakeStereoWave(soundFormat);
+        var wave = MakeStereoWave(soundFormat);
 
         // Write to a file.
         var sound = new SoundWaveChunk(wave.GetBytes(soundFormat.BitRate));
         var waveFileFormat = builder.ToFormatChunk();
         var writer = new WaveWriter(waveFileFormat, sound);
-        string filePath = "sample.wav";
+        var filePath = "sample.wav";
         writer.Write(filePath);
     }
 
     private StereoWave MakeStereoWave(SoundFormat format)
     {
         // The number of quarter notes per minute
-        int tempo = 100;
+        var tempo = 100;
         // First, you need to create sound channels.
         // Currently, it supports square wave, triangle wave, pseudo-triangle wave, and low-bit noise.
         var rightChannel = new SquareSoundChannel(tempo, format, SquareWaveRatio.Point25, PanType.Right)

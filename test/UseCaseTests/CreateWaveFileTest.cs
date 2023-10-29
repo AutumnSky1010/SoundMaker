@@ -1,20 +1,14 @@
-﻿using SoundMaker.Sounds.Score;
+﻿using SoundMaker.Sounds;
+using SoundMaker.Sounds.Score;
 using SoundMaker.Sounds.SoundChannels;
-using SoundMaker.Sounds;
 using SoundMaker.WaveFile;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SoundMakerTests.UseCaseTests;
 public class CreateWaveFileTest
 {
     private List<WaveCase> MonauralWaveCases { get; } = new List<WaveCase>
     {
-        new WaveCase() 
+        new WaveCase()
         {
             FormatChunk = new FormatChunk(
                 SoundMaker.WaveFile.SamplingFrequencyType.FourtyEightKHz,
@@ -120,10 +114,10 @@ public class CreateWaveFileTest
     [Fact(DisplayName = "音量が正しく変わるかをテストする")]
     public void ChangeVolume()
     {
-        Directory.CreateDirectory("Sounds");
-        int tempo = 150;
-        PanType panType = PanType.Both;
-        var waveCase = this.StereoWaveCases[0];
+        _ = Directory.CreateDirectory("Sounds");
+        var tempo = 150;
+        var panType = PanType.Both;
+        var waveCase = StereoWaveCases[0];
         var waves = new List<StereoWave>()
         {
             GetStereo(SetAllScale(new SquareSoundChannel(tempo, waveCase.SoundFormat, SquareWaveRatio.Point5, panType))),
@@ -145,10 +139,10 @@ public class CreateWaveFileTest
     [Fact(DisplayName = "全ての音程が正しく出力され、ファイルに書き込めるかのテスト。", Skip = "処理に時間がかかるので、使うときのみ外してください。")]
     public void CreateAllScaleWave()
     {
-        Directory.CreateDirectory("Sounds");
-        int tempo = 150;
-        PanType panType = PanType.Both;
-        foreach (var waveCase in this.MonauralWaveCases)
+        _ = Directory.CreateDirectory("Sounds");
+        var tempo = 150;
+        var panType = PanType.Both;
+        foreach (var waveCase in MonauralWaveCases)
         {
             var squareChan5 = GetMonaural(SetAllScale(new SquareSoundChannel(tempo, waveCase.SoundFormat, SquareWaveRatio.Point5, panType)));
             var squareChan25 = GetMonaural(SetAllScale(new SquareSoundChannel(tempo, waveCase.SoundFormat, SquareWaveRatio.Point25, panType)));
@@ -164,7 +158,7 @@ public class CreateWaveFileTest
             WriteFile(pseudoTriangleChan.GetBytes(waveCase.SoundFormat.BitRate), waveCase.FormatChunk, $"{waveCase.Path}-PseudoTriangele-AllScale");
             WriteFile(noiseChan.GetBytes(waveCase.SoundFormat.BitRate), waveCase.FormatChunk, $"{waveCase.Path}-Noise-AllScale");
         }
-        foreach (var waveCase in this.StereoWaveCases)
+        foreach (var waveCase in StereoWaveCases)
         {
             var squareChan5 = GetStereo(SetAllScale(new SquareSoundChannel(tempo, waveCase.SoundFormat, SquareWaveRatio.Point5, panType)));
             var squareChan25 = GetStereo(SetAllScale(new SquareSoundChannel(tempo, waveCase.SoundFormat, SquareWaveRatio.Point25, panType)));
@@ -186,7 +180,7 @@ public class CreateWaveFileTest
     {
         var sound = new SoundWaveChunk(wave);
         var writer = new WaveWriter(format, sound);
-        string filePath = $"{name}.wav";
+        var filePath = $"{name}.wav";
         writer.Write(filePath);
         Console.WriteLine($"{filePath}を書き込んだよ");
     }
@@ -203,11 +197,11 @@ public class CreateWaveFileTest
 
     private static ISoundChannel SetAllScale(ISoundChannel channel)
     {
-		channel.Add(new Note(Scale.A, 0, LengthType.Quarter));
+        channel.Add(new Note(Scale.A, 0, LengthType.Quarter));
         //channel.Add(new Note(Scale.ASharp, 0, LengthType.Quarter));
         channel.Add(new Note(Scale.B, 0, LengthType.Quarter));
-		for (int i = 1; i <= 7; i++)
-		{
+        for (var i = 1; i <= 7; i++)
+        {
             channel.Add(new Note(Scale.C, i, LengthType.Quarter));
             //channel.Add(new Note(Scale.CSharp, i, LengthType.Quarter));
             channel.Add(new Note(Scale.D, i, LengthType.Quarter));
@@ -221,7 +215,7 @@ public class CreateWaveFileTest
             //channel.Add(new Note(Scale.ASharp, i, LengthType.Quarter));
             channel.Add(new Note(Scale.B, i, LengthType.Quarter));
         }
-		channel.Add(new Note(Scale.C, 8, LengthType.Quarter));
+        channel.Add(new Note(Scale.C, 8, LengthType.Quarter));
         return channel;
     }
 }

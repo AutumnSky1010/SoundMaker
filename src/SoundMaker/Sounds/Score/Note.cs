@@ -1,5 +1,4 @@
 ﻿using SoundMaker.Sounds.WaveTypes;
-using static System.Formats.Asn1.AsnWriter;
 
 namespace SoundMaker.Sounds.Score;
 /// <summary>
@@ -18,18 +17,18 @@ public class Note : BasicSoundComponentBase
 	public Note(Scale scale, int scaleNumber, LengthType length, bool isDotted = false)
         : base(length, isDotted)
     {
-        this.CheckArgument(scale, scaleNumber);
+        CheckArgument(scale, scaleNumber);
         if ((int)scale >= 3)
         {
             scaleNumber--;
         }
-        this.Hertz += this.AHertz[scaleNumber];
-        for (int i = 0; i < (int)scale; i++)
+        Hertz += AHertz[scaleNumber];
+        for (var i = 0; i < (int)scale; i++)
         {
-            this.Hertz *= 1.059463094;
+            Hertz *= 1.059463094;
         }
-        this.Scale = scale;
-        this.ScaleNumber = scaleNumber;
+        Scale = scale;
+        ScaleNumber = scaleNumber;
     }
 
     /// <summary>
@@ -41,9 +40,9 @@ public class Note : BasicSoundComponentBase
     {
         var scale = Scale.A;
         var scaleNumber = 4;
-        this.Hertz += this.AHertz[scaleNumber];
-        this.Scale = scale;
-        this.ScaleNumber = scaleNumber;
+        Hertz += AHertz[scaleNumber];
+        Scale = scale;
+        ScaleNumber = scaleNumber;
     }
 
     /// <summary>
@@ -82,7 +81,7 @@ public class Note : BasicSoundComponentBase
     /// </summary>
     public int Volume
     {
-        get { return this._volume; }
+        get => _volume;
         set
         {
             if (value < 0)
@@ -93,14 +92,14 @@ public class Note : BasicSoundComponentBase
             {
                 value = 100;
             }
-            this._volume = value;
+            _volume = value;
         }
     }
 
     private void CheckArgument(Scale scale, int scaleNumber)
     {
-        string message = "'scale' and 'scaleNumber' must be only the range of sound that the piano can produce.";
-        if (scaleNumber >= 9 || scaleNumber <= -1)
+        var message = "'scale' and 'scaleNumber' must be only the range of sound that the piano can produce.";
+        if (scaleNumber is >= 9 or <= (-1))
         {
             throw new ArgumentException(message);
         }
@@ -116,12 +115,12 @@ public class Note : BasicSoundComponentBase
 
     public override ushort[] GenerateWave(SoundFormat format, int tempo, int length, WaveTypeBase waveType)
     {
-        return waveType.GenerateWave(format, length, this.Volume, this.Hertz);
+        return waveType.GenerateWave(format, length, Volume, Hertz);
     }
 
     public override ushort[] GenerateWave(SoundFormat format, int tempo, WaveTypeBase waveType)
     {
-        int length = this.GetWaveArrayLength(format, tempo);
-        return this.GenerateWave(format, tempo, length, waveType);
+        var length = GetWaveArrayLength(format, tempo);
+        return GenerateWave(format, tempo, length, waveType);
     }
 }

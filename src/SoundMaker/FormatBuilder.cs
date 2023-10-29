@@ -1,6 +1,5 @@
 ﻿using SoundMaker.Sounds;
 using SoundMaker.WaveFile;
-using System.Collections.ObjectModel;
 
 namespace SoundMaker;
 /// <summary>
@@ -20,7 +19,7 @@ public class FormatBuilder
     {
         internal BitDepthBuilder(FormatBuilder builder)
         {
-            this.Builder = builder;
+            Builder = builder;
         }
 
         private FormatBuilder Builder { get; }
@@ -41,8 +40,8 @@ public class FormatBuilder
         {
             if (BitRates.TryGetValue(bitDepth, out var setting))
             {
-                this.Builder.BitRateTypePair = setting;
-                return new ChannelTypeBuilder(this.Builder);
+                Builder.BitRateTypePair = setting;
+                return new ChannelTypeBuilder(Builder);
             }
             throw new ArgumentException("The bitDepth value must be either 8 or 16.", nameof(bitDepth));
         }
@@ -52,7 +51,7 @@ public class FormatBuilder
     {
         internal SamplingFrequencyBuilder(FormatBuilder builder)
         {
-            this.Builder = builder;
+            Builder = builder;
         }
 
         private FormatBuilder Builder { get; }
@@ -73,8 +72,8 @@ public class FormatBuilder
         {
             if (SamplingFrequencies.TryGetValue(frequency, out var setting))
             {
-                this.Builder.SamplingFrequencyTypePair = setting;
-                return new BitDepthBuilder(this.Builder);
+                Builder.SamplingFrequencyTypePair = setting;
+                return new BitDepthBuilder(Builder);
             }
             throw new ArgumentException("The frequency value must be either 48000 or 44100.", nameof(frequency));
         }
@@ -84,7 +83,7 @@ public class FormatBuilder
     {
         internal ChannelTypeBuilder(FormatBuilder builder)
         {
-            this.Builder = builder;
+            Builder = builder;
         }
 
         private FormatBuilder Builder { get; }
@@ -105,8 +104,8 @@ public class FormatBuilder
         {
             if (Channels.TryGetValue(count, out var setting))
             {
-                this.Builder.ChannelTypePair = setting;
-                return this.Builder;
+                Builder.ChannelTypePair = setting;
+                return Builder;
             }
             throw new ArgumentException("The count value must be either 1 or 2.", nameof(count));
         }
@@ -128,7 +127,7 @@ public class FormatBuilder
     /// <returns>FormatChunk</returns>
     public FormatChunk ToFormatChunk()
     {
-        return new FormatChunk(this.SamplingFrequencyTypePair.wave, this.BitRateTypePair.wave, this.ChannelTypePair.wave);
+        return new FormatChunk(SamplingFrequencyTypePair.wave, BitRateTypePair.wave, ChannelTypePair.wave);
     }
 
     /// <summary>
@@ -137,6 +136,6 @@ public class FormatBuilder
     /// <returns>SoundFormat</returns>
     public SoundFormat ToSoundFormat()
     {
-        return new SoundFormat(this.SamplingFrequencyTypePair.sounds, this.BitRateTypePair.sounds, this.ChannelTypePair.sounds);
+        return new SoundFormat(SamplingFrequencyTypePair.sounds, BitRateTypePair.sounds, ChannelTypePair.sounds);
     }
 }

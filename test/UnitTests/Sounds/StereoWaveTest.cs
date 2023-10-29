@@ -6,7 +6,7 @@ public class StereoWaveTest
 {
     public StereoWaveTest(ITestOutputHelper output)
     {
-        this.Output = output;
+        Output = output;
     }
 
     private ITestOutputHelper Output { get; }
@@ -37,15 +37,15 @@ public class StereoWaveTest
         var defaultWaveValue = ushort.MaxValue;
         var wave = GetTestStereoWave(defaultWaveValue, 100, 100);
         // 音量を二分の一にする。波形データの値も半分になるはず。
-        int volume = 50;
-        double volumeMultiplier = volume / 100d;
+        var volume = 50;
+        var volumeMultiplier = volume / 100d;
         wave.ChangeVolume(volume, SoundDirectionType.Both);
-        this.Output.WriteLine("ボリューム: 50, 方向: 両方でテストする。");
-        this.Output.WriteLine("右の波形をテストする。");
+        Output.WriteLine("ボリューム: 50, 方向: 両方でテストする。");
+        Output.WriteLine("右の波形をテストする。");
         WaveAssert.Equal((ushort)(defaultWaveValue * volumeMultiplier), wave.GetRightWave());
 
-        this.Output.WriteLine("ボリューム: 50, 方向: 両方でテストする。");
-        this.Output.WriteLine("左の波形をテストする。");
+        Output.WriteLine("ボリューム: 50, 方向: 両方でテストする。");
+        Output.WriteLine("左の波形をテストする。");
         WaveAssert.Equal((ushort)(defaultWaveValue * volumeMultiplier), wave.GetLeftWave());
     }
 
@@ -55,40 +55,40 @@ public class StereoWaveTest
         var defaultWaveValue = ushort.MaxValue;
         var wave = GetTestStereoWave(defaultWaveValue, 100, 100);
         // 音量を二分の一にする。波形データの値も半分になるはず。
-        int volume = 50;
-        double volumeMultiplier = volume / 100d;
+        var volume = 50;
+        var volumeMultiplier = volume / 100d;
         wave.ChangeVolume(volume, SoundDirectionType.Right);
-        this.Output.WriteLine("ボリューム: 50, 方向: 右でテストする。");
-        this.Output.WriteLine("右の波形をテストする。");
+        Output.WriteLine("ボリューム: 50, 方向: 右でテストする。");
+        Output.WriteLine("右の波形をテストする。");
         WaveAssert.Equal((ushort)(defaultWaveValue * volumeMultiplier), wave.GetRightWave());
 
-        this.Output.WriteLine("ボリューム: 50, 方向: 右でテストする。");
-        this.Output.WriteLine("左の波形をテストする。");
+        Output.WriteLine("ボリューム: 50, 方向: 右でテストする。");
+        Output.WriteLine("左の波形をテストする。");
         WaveAssert.Equal(defaultWaveValue, wave.GetLeftWave());
     }
-    
+
     [Fact(DisplayName = "ステレオ波形の右のボリュームが変更されるかのテスト")]
     public void TestChangeVolumeLeft()
     {
         var defaultWaveValue = ushort.MaxValue;
         var wave = GetTestStereoWave(defaultWaveValue, 100, 100);
         // 音量を二分の一にする。波形データの値も半分になるはず。
-        int volume = 50;
-        double volumeMultiplier = volume / 100d;
+        var volume = 50;
+        var volumeMultiplier = volume / 100d;
         wave.ChangeVolume(volume, SoundDirectionType.Left);
-        this.Output.WriteLine("ボリューム: 50, 方向: 左でテストする。");
-        this.Output.WriteLine("右の波形をテストする。");
+        Output.WriteLine("ボリューム: 50, 方向: 左でテストする。");
+        Output.WriteLine("右の波形をテストする。");
         WaveAssert.Equal(defaultWaveValue, wave.GetRightWave());
 
-        this.Output.WriteLine("ボリューム: 50, 方向: 左でテストする。");
-        this.Output.WriteLine("左の波形をテストする。");
+        Output.WriteLine("ボリューム: 50, 方向: 左でテストする。");
+        Output.WriteLine("左の波形をテストする。");
         WaveAssert.Equal((ushort)(defaultWaveValue * volumeMultiplier), wave.GetLeftWave());
     }
 
     [Fact(DisplayName = "生成したバイト列の長さを正しく取得できるかをテストする。")]
     public void TestGetLengthOfBytes()
     {
-        var wave = this.GetTestStereoWave(defaultWaveValue: 0, leftWaveLength: 1, rightWaveLength: 100);
+        var wave = GetTestStereoWave(defaultWaveValue: 0, leftWaveLength: 1, rightWaveLength: 100);
         // 16bitの場合
         var bitRate = BitRateType.SixteenBit;
         Assert.Equal(wave.GetLengthOfBytes(bitRate), wave.GetLengthOfBytes(bitRate));
@@ -100,15 +100,15 @@ public class StereoWaveTest
     [Fact(DisplayName = "二つの同じ長さの波形が正しく追加されているかをテストする。")]
     public void TestAppendWave()
     {
-        var stereoWave1 = this.GetTestStereoWave(defaultWaveValue: ushort.MinValue, leftWaveLength: 1, rightWaveLength: 100);
-        var stereoWave2 = this.GetTestStereoWave(defaultWaveValue: ushort.MaxValue, leftWaveLength: 1, rightWaveLength: 100);
+        var stereoWave1 = GetTestStereoWave(defaultWaveValue: ushort.MinValue, leftWaveLength: 1, rightWaveLength: 100);
+        var stereoWave2 = GetTestStereoWave(defaultWaveValue: ushort.MaxValue, leftWaveLength: 1, rightWaveLength: 100);
         // 16bitの場合
         var bitRate = BitRateType.SixteenBit;
         // 期待する長さを計算する。
-        int lengthOf16bit = stereoWave1.GetLengthOfBytes(bitRate) + stereoWave2.GetLengthOfBytes(bitRate);
+        var lengthOf16bit = stereoWave1.GetLengthOfBytes(bitRate) + stereoWave2.GetLengthOfBytes(bitRate);
         // 8bitの場合
         bitRate = BitRateType.EightBit;
-        int lengthOf8bit = stereoWave1.GetLengthOfBytes(bitRate) + stereoWave2.GetLengthOfBytes(bitRate);
+        var lengthOf8bit = stereoWave1.GetLengthOfBytes(bitRate) + stereoWave2.GetLengthOfBytes(bitRate);
 
         // 追加する
         stereoWave1.Append(stereoWave2);
@@ -117,16 +117,16 @@ public class StereoWaveTest
         Assert.Equal(stereoWave1.GetLengthOfBytes(BitRateType.EightBit), lengthOf8bit);
 
         // 末尾に追加されていることを確認する。先頭の値はusort.MinValue、末尾の値はushort.MaxValueになっているはず。
-        ushort[] wave = stereoWave1.GetLeftWave();
-        Assert.True(wave[0] == ushort.MinValue && wave[wave.Length - 1] == ushort.MaxValue);
+        var wave = stereoWave1.GetLeftWave();
+        Assert.True(wave[0] == ushort.MinValue && wave[^1] == ushort.MaxValue);
         wave = stereoWave1.GetRightWave();
-        Assert.True(wave[0] == ushort.MinValue && wave[wave.Length - 1] == ushort.MaxValue);
+        Assert.True(wave[0] == ushort.MinValue && wave[^1] == ushort.MaxValue);
     }
 
     private StereoWave GetTestStereoWave(ushort defaultWaveValue, int leftWaveLength, int rightWaveLength)
     {
-        ushort[] rightWave = Enumerable.Repeat<ushort>(defaultWaveValue, rightWaveLength).ToArray();
-        ushort[] leftWave = Enumerable.Repeat<ushort>(defaultWaveValue, leftWaveLength).ToArray();
+        var rightWave = Enumerable.Repeat<ushort>(defaultWaveValue, rightWaveLength).ToArray();
+        var leftWave = Enumerable.Repeat<ushort>(defaultWaveValue, leftWaveLength).ToArray();
         return new StereoWave(rightWave, leftWave);
     }
 }

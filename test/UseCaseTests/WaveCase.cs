@@ -1,10 +1,5 @@
 ﻿using SoundMaker.Sounds;
 using SoundMaker.WaveFile;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SoundMakerTests.UseCaseTests;
 internal class WaveCase

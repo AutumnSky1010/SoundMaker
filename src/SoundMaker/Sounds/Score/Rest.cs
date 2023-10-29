@@ -15,10 +15,14 @@ public class Rest : BasicSoundComponentBase
         : base(length, isDotted) { }
 
     public override ushort[] GenerateWave(SoundFormat format, int tempo, int length, WaveTypeBase waveType)
-        => this.GetWave(format, tempo, length);
+    {
+        return GetWave(format, tempo, length);
+    }
 
     public override ushort[] GenerateWave(SoundFormat format, int tempo, WaveTypeBase waveType)
-        => this.GetWave(format, tempo);
+    {
+        return GetWave(format, tempo);
+    }
 
     /// <summary>
     /// 長さの分休む（０埋めの配列を返す）
@@ -28,8 +32,8 @@ public class Rest : BasicSoundComponentBase
     /// <returns>0埋めされた配列 : unsigned short[]</returns>
     private ushort[] GetWave(SoundFormat format, int tempo)
     {
-        int length = this.GetWaveArrayLength(format, tempo);
-        return this.GetWave(format, tempo, length);
+        var length = GetWaveArrayLength(format, tempo);
+        return GetWave(format, tempo, length);
     }
 
     /// <summary>
@@ -40,5 +44,7 @@ public class Rest : BasicSoundComponentBase
     /// <param name="length">length of the array. 配列の長さ</param>
     /// <returns>0埋めされた配列 : unsigned short[]</returns>
     private ushort[] GetWave(SoundFormat format, int tempo, int length)
-        => Enumerable.Repeat<ushort>(0, length).ToArray();
+    {
+        return Enumerable.Repeat<ushort>(0, length).ToArray();
+    }
 }

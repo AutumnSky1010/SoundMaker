@@ -11,18 +11,18 @@ public class StereoWave : IWave
     /// <param name="leftWave">the wave of left. 左の波形データ</param>
     public StereoWave(IReadOnlyCollection<ushort> rightWave, IReadOnlyCollection<ushort> leftWave)
     {
-        ushort[] rightArgument = rightWave.ToArray();
-        ushort[] leftArgument = leftWave.ToArray();
+        var rightArgument = rightWave.ToArray();
+        var leftArgument = leftWave.ToArray();
 
-        this.RightOriginalVolumeWave = new ushort[rightWave.Count];
-        this.LeftOriginalVolumeWave = new ushort[leftWave.Count];
-        Array.Copy(rightArgument, this.RightOriginalVolumeWave, rightArgument.Length);
-        Array.Copy(leftArgument, this.LeftOriginalVolumeWave, leftArgument.Length);
+        RightOriginalVolumeWave = new ushort[rightWave.Count];
+        LeftOriginalVolumeWave = new ushort[leftWave.Count];
+        Array.Copy(rightArgument, RightOriginalVolumeWave, rightArgument.Length);
+        Array.Copy(leftArgument, LeftOriginalVolumeWave, leftArgument.Length);
 
-        this.RightWave = new ushort[rightWave.Count];
-        this.LeftWave = new ushort[leftWave.Count];
-        Array.Copy(rightArgument, this.RightWave, rightArgument.Length);
-        Array.Copy(leftArgument, this.LeftWave, leftArgument.Length);
+        RightWave = new ushort[rightWave.Count];
+        LeftWave = new ushort[leftWave.Count];
+        Array.Copy(rightArgument, RightWave, rightArgument.Length);
+        Array.Copy(leftArgument, LeftWave, leftArgument.Length);
     }
 
     private ushort[] RightOriginalVolumeWave { get; set; }
@@ -44,10 +44,7 @@ public class StereoWave : IWave
     public int LeftVolume { get; private set; } = 100;
 
     [Obsolete("if you want to get length of bytes, call GetLengthOfBytes()")]
-    public int Length
-    {
-        get => this.GetMaxAndMinWaveLength().Max;
-    }
+    public int Length => GetMaxAndMinWaveLength().Max;
 
     /// <summary>
     /// change the volume this. 音量を変更するメソッド。
@@ -61,37 +58,37 @@ public class StereoWave : IWave
         switch (channelType)
         {
             case SoundDirectionType.Left:
-                for (int i = 0; i < this.LeftWave.Length; i++)
+                for (var i = 0; i < LeftWave.Length; i++)
                 {
-                    this.LeftWave[i] = (ushort)(this.LeftOriginalVolumeWave[i] * (volume / 100d));
+                    LeftWave[i] = (ushort)(LeftOriginalVolumeWave[i] * (volume / 100d));
                 }
-                this.LeftVolume = volume;
+                LeftVolume = volume;
                 break;
             case SoundDirectionType.Right:
-                for (int i = 0; i < this.RightWave.Length; i++)
+                for (var i = 0; i < RightWave.Length; i++)
                 {
-                    this.RightWave[i] = (ushort)(this.RightOriginalVolumeWave[i] * (volume / 100d));
+                    RightWave[i] = (ushort)(RightOriginalVolumeWave[i] * (volume / 100d));
                 }
-                this.RightVolume = volume;
+                RightVolume = volume;
                 break;
             default:
-                var maxAndMinLength = this.GetMaxAndMinWaveLength();
-                for (int i = 0; i < maxAndMinLength.Min; i++)
+                var maxAndMinLength = GetMaxAndMinWaveLength();
+                for (var i = 0; i < maxAndMinLength.Min; i++)
                 {
-                    this.RightWave[i] = (ushort)(this.RightOriginalVolumeWave[i] * (volume / 100d));
-                    this.LeftWave[i] = (ushort)(this.LeftOriginalVolumeWave[i] * (volume / 100d));
+                    RightWave[i] = (ushort)(RightOriginalVolumeWave[i] * (volume / 100d));
+                    LeftWave[i] = (ushort)(LeftOriginalVolumeWave[i] * (volume / 100d));
                 }
 
                 // 残りを処理する。
-                ushort[] wave = this.RightWave.Length == maxAndMinLength.Max ? this.RightWave : this.LeftWave;
-                ushort[] originalWave = this.RightWave.Length == maxAndMinLength.Max ?
-                    this.RightOriginalVolumeWave : this.LeftOriginalVolumeWave;
-                for (int i = maxAndMinLength.Min; i < maxAndMinLength.Max; i++)
+                var wave = RightWave.Length == maxAndMinLength.Max ? RightWave : LeftWave;
+                var originalWave = RightWave.Length == maxAndMinLength.Max ?
+                    RightOriginalVolumeWave : LeftOriginalVolumeWave;
+                for (var i = maxAndMinLength.Min; i < maxAndMinLength.Max; i++)
                 {
                     wave[i] = (ushort)(originalWave[i] * (volume / 100d));
                 }
-                this.RightVolume = volume;
-                this.LeftVolume = volume;
+                RightVolume = volume;
+                LeftVolume = volume;
                 break;
         }
     }
@@ -103,14 +100,7 @@ public class StereoWave : IWave
     /// <returns>byte array of wave data. 波形データのバイト列 : byte[]</returns>
     public byte[] GetBytes(BitRateType bitRate)
     {
-        if (bitRate == BitRateType.SixteenBit)
-        {
-            return this.Get16BitBytes().ToArray();
-        }
-        else
-        {
-            return this.Get8BitBytes().ToArray();
-        }
+        return bitRate == BitRateType.SixteenBit ? Get16BitBytes().ToArray() : Get8BitBytes().ToArray();
     }
 
     /// <summary>
@@ -119,29 +109,29 @@ public class StereoWave : IWave
     /// <returns>量子化ビット数が8bitの場合の波形データのバイト列 : byte[]</returns>
     private List<byte> Get8BitBytes()
     {
-        var maxAndMinLength = this.GetMaxAndMinWaveLength();
+        var maxAndMinLength = GetMaxAndMinWaveLength();
         var resultWave = new List<byte>(maxAndMinLength.Max * 2);
-        for (int i = 0; i < maxAndMinLength.Min; i++)
+        for (var i = 0; i < maxAndMinLength.Min; i++)
         {
             // Point : ステレオの波は左右左右左右左右・・・・・・左右
-            resultWave.Add((byte)(this.LeftWave[i] / 256));
-            resultWave.Add((byte)(this.RightWave[i] / 256));
+            resultWave.Add((byte)(LeftWave[i] / 256));
+            resultWave.Add((byte)(RightWave[i] / 256));
         }
         // 追加しきれていない波形データを追加する
-        if (this.LeftWave.Length == maxAndMinLength.Max)
+        if (LeftWave.Length == maxAndMinLength.Max)
         {
-            for (int i = maxAndMinLength.Min; i < maxAndMinLength.Max; i++)
+            for (var i = maxAndMinLength.Min; i < maxAndMinLength.Max; i++)
             {
-                resultWave.Add((byte)(this.LeftWave[i] / 256));
+                resultWave.Add((byte)(LeftWave[i] / 256));
                 resultWave.Add(0);
             }
         }
         else
         {
-            for (int i = maxAndMinLength.Min; i < maxAndMinLength.Max; i++)
+            for (var i = maxAndMinLength.Min; i < maxAndMinLength.Max; i++)
             {
                 resultWave.Add(0);
-                resultWave.Add((byte)(this.RightWave[i] / 256));
+                resultWave.Add((byte)(RightWave[i] / 256));
             }
         }
         return resultWave;
@@ -153,16 +143,16 @@ public class StereoWave : IWave
     /// <returns>量子化ビット数が16bitの場合の波形データのバイト列 : byte[]</returns>
     private List<byte> Get16BitBytes()
     {
-        var maxAndMinLength = this.GetMaxAndMinWaveLength();
+        var maxAndMinLength = GetMaxAndMinWaveLength();
         var resultWave = new List<byte>(maxAndMinLength.Max * 4);
-        for (int i = 0; i < maxAndMinLength.Min; i++)
+        for (var i = 0; i < maxAndMinLength.Min; i++)
         {
-            short left = this.LeftWave[i] == ushort.MaxValue ? 
-                (short)(this.LeftWave[i] - short.MaxValue - 1) : (short)(this.LeftWave[i] - short.MaxValue);
-            short right = this.RightWave[i] == ushort.MaxValue ?
-                (short)(this.RightWave[i] - short.MaxValue - 1) : (short)(this.RightWave[i] - short.MaxValue);
-            byte[] leftBytes = BitConverter.GetBytes(left);
-            byte[] rightBytes = BitConverter.GetBytes(right);
+            var left = LeftWave[i] == ushort.MaxValue ?
+                (short)(LeftWave[i] - short.MaxValue - 1) : (short)(LeftWave[i] - short.MaxValue);
+            var right = RightWave[i] == ushort.MaxValue ?
+                (short)(RightWave[i] - short.MaxValue - 1) : (short)(RightWave[i] - short.MaxValue);
+            var leftBytes = BitConverter.GetBytes(left);
+            var rightBytes = BitConverter.GetBytes(right);
             // Point : ステレオの波は左右左右左右左右・・・・・・左右
             resultWave.Add(leftBytes[0]);
             resultWave.Add(leftBytes[1]);
@@ -170,13 +160,13 @@ public class StereoWave : IWave
             resultWave.Add(rightBytes[1]);
         }
         // 追加しきれていない波形データを追加する
-        if (this.LeftWave.Length == maxAndMinLength.Max)
+        if (LeftWave.Length == maxAndMinLength.Max)
         {
-            for (int i = maxAndMinLength.Min; i < maxAndMinLength.Max; i++)
+            for (var i = maxAndMinLength.Min; i < maxAndMinLength.Max; i++)
             {
-                short left = this.LeftWave[i] == ushort.MaxValue ?
-                (short)(this.LeftWave[i] - short.MaxValue - 1) : (short)(this.LeftWave[i] - short.MaxValue);
-                byte[] leftBytes = BitConverter.GetBytes(left);
+                var left = LeftWave[i] == ushort.MaxValue ?
+                (short)(LeftWave[i] - short.MaxValue - 1) : (short)(LeftWave[i] - short.MaxValue);
+                var leftBytes = BitConverter.GetBytes(left);
                 resultWave.Add(leftBytes[0]);
                 resultWave.Add(leftBytes[1]);
                 resultWave.Add(0);
@@ -185,11 +175,11 @@ public class StereoWave : IWave
         }
         else
         {
-            for (int i = maxAndMinLength.Min; i < maxAndMinLength.Max; i += 2)
+            for (var i = maxAndMinLength.Min; i < maxAndMinLength.Max; i += 2)
             {
-                short right = this.RightWave[i] == ushort.MaxValue ?
-                    (short)(this.RightWave[i] - short.MaxValue - 1) : (short)(this.RightWave[i] - short.MaxValue);
-                byte[] rightBytes = BitConverter.GetBytes(right);
+                var right = RightWave[i] == ushort.MaxValue ?
+                    (short)(RightWave[i] - short.MaxValue - 1) : (short)(RightWave[i] - short.MaxValue);
+                var rightBytes = BitConverter.GetBytes(right);
                 resultWave.Add(0);
                 resultWave.Add(0);
                 resultWave.Add(rightBytes[0]);
@@ -205,8 +195,8 @@ public class StereoWave : IWave
     /// <returns>the wave on the right. 右側のチャンネルの音の波形データ : unsigned short[]</returns>
     public ushort[] GetRightWave()
     {
-        var resultushorts = new ushort[this.RightWave.Length];
-        Array.Copy(this.RightWave, resultushorts, this.RightWave.Length);
+        var resultushorts = new ushort[RightWave.Length];
+        Array.Copy(RightWave, resultushorts, RightWave.Length);
         return resultushorts;
     }
 
@@ -216,8 +206,8 @@ public class StereoWave : IWave
     /// <returns>the wave on the left. 左側のチャンネルの音の波形データ : unsigned short[]</returns>
     public ushort[] GetLeftWave()
     {
-        var resultushorts = new ushort[this.LeftWave.Length];
-        Array.Copy(this.LeftWave, resultushorts, this.LeftWave.Length);
+        var resultushorts = new ushort[LeftWave.Length];
+        Array.Copy(LeftWave, resultushorts, LeftWave.Length);
         return resultushorts;
     }
 
@@ -227,13 +217,13 @@ public class StereoWave : IWave
     /// <param name="wave">wave</param>
     public void Append(StereoWave wave)
     {
-        this.RightWave = this.RightWave.Concat(wave.GetRightWave()).ToArray();
-        this.RightOriginalVolumeWave = new ushort[this.RightWave.Length];
-        Array.Copy(this.RightWave, this.RightOriginalVolumeWave, this.RightWave.Length);
+        RightWave = RightWave.Concat(wave.GetRightWave()).ToArray();
+        RightOriginalVolumeWave = new ushort[RightWave.Length];
+        Array.Copy(RightWave, RightOriginalVolumeWave, RightWave.Length);
 
-        this.LeftWave = this.LeftWave.Concat(wave.GetLeftWave()).ToArray();
-        this.LeftOriginalVolumeWave = new ushort[this.LeftWave.Length];
-        Array.Copy(this.LeftWave, this.LeftOriginalVolumeWave, this.LeftWave.Length);
+        LeftWave = LeftWave.Concat(wave.GetLeftWave()).ToArray();
+        LeftOriginalVolumeWave = new ushort[LeftWave.Length];
+        Array.Copy(LeftWave, LeftOriginalVolumeWave, LeftWave.Length);
     }
 
     /// <summary>
@@ -242,32 +232,23 @@ public class StereoWave : IWave
     /// <returns>配列の長さを比較し、最大・最小を格納した構造体 : MaxAndMin</returns>
     private MaxAndMin GetMaxAndMinWaveLength()
     {
-        if (this.RightWave.Length > this.LeftWave.Length)
-        {
-            return new MaxAndMin(this.RightWave.Length, this.LeftWave.Length);
-        }
-        return new MaxAndMin(this.LeftWave.Length, this.RightWave.Length);
+        return RightWave.Length > LeftWave.Length
+            ? new MaxAndMin(RightWave.Length, LeftWave.Length)
+            : new MaxAndMin(LeftWave.Length, RightWave.Length);
     }
 
     public int GetLengthOfBytes(BitRateType bitRate)
     {
-        var maxAndMinLength = this.GetMaxAndMinWaveLength();
-        if (bitRate is BitRateType.SixteenBit)
-        {
-            return maxAndMinLength.Max * 4;
-        }
-        else
-        {
-            return maxAndMinLength.Max * 2;
-        }
+        var maxAndMinLength = GetMaxAndMinWaveLength();
+        return bitRate is BitRateType.SixteenBit ? maxAndMinLength.Max * 4 : maxAndMinLength.Max * 2;
     }
 
-    private struct MaxAndMin
+    private readonly struct MaxAndMin
     {
         public MaxAndMin(int max, int min)
         {
-            this.Min = min;
-            this.Max = max;
+            Min = min;
+            Max = max;
         }
 
         public int Max { get; }

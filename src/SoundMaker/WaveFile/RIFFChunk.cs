@@ -2,7 +2,7 @@
 /// <summary>
 /// chunk of riff. RIFFチャンクを表す構造体
 /// </summary>
-public struct RIFFChunk : IChunk
+public readonly struct RIFFChunk : IChunk
 {
     /// <summary>
     /// constructor. コンストラクタ
@@ -20,7 +20,7 @@ public struct RIFFChunk : IChunk
     {
         // 0x46464952 は RIFF
         var result = BitConverter.GetBytes(0x46464952);
-        result = result.Concat(BitConverter.GetBytes(this.Size)).ToArray();
-        return result.Concat(BitConverter.GetBytes(this.Format)).ToArray();
+        result = result.Concat(BitConverter.GetBytes(Size)).ToArray();
+        return result.Concat(BitConverter.GetBytes(Format)).ToArray();
     }
 }
