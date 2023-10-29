@@ -136,7 +136,7 @@ public class CreateWaveFileTest
         WriteFile(result.GetBytes(waveCase.SoundFormat.BitRate), waveCase.FormatChunk, $"{waveCase.Path}-volume1-AllScale");
     }
 
-    [Fact(DisplayName = "全ての音程が正しく出力され、ファイルに書き込めるかのテスト。", Skip = "処理に時間がかかるので、使うときのみ外してください。")]
+    [Fact(DisplayName = "全ての音程が正しく出力され、ファイルに書き込めるかのテスト。")]
     public void CreateAllScaleWave()
     {
         _ = Directory.CreateDirectory("Sounds");
