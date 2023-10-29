@@ -8,7 +8,7 @@ public struct SoundFormat
     /// constructor. コンストラクタ
     /// </summary>
     /// <param name="samplingFrequency">sampling frequency. サンプリング周波数</param>
-    /// <param name="bitRate">bit rate.量子化ビット数</param>
+    /// <param name="bitRate">quantization bit rate. 量子化ビット数</param>
     /// <param name="channel">type of channels count. チャンネル数</param>
     public SoundFormat(SamplingFrequencyType samplingFrequency, BitRateType bitRate, ChannelType channel)
     {
@@ -28,7 +28,7 @@ public struct SoundFormat
     public SamplingFrequencyType SamplingFrequency { get; }
 
     /// <summary>
-    /// bit rate. 量子化ビット数
+    /// quantization bit rate. 量子化ビット数
     /// </summary>
     public BitRateType BitRate { get; }
 }

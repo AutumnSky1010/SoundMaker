@@ -8,7 +8,7 @@ public struct FormatChunk : IChunk
     /// constructor. コンストラクタ
     /// </summary>
     /// <param name="samplingFrequency">sampling frequency. サンプリング周波数</param>
-    /// <param name="bitRate">bit rate. 量子化ビット数</param>
+    /// <param name="bitRate">quantization bit rate. 量子化ビット数</param>
     /// <param name="channel">type of channels count. チャンネル数</param>
     public FormatChunk(SamplingFrequencyType samplingFrequency, BitRateType bitRate, ChannelType channel)
     {
@@ -36,7 +36,7 @@ public struct FormatChunk : IChunk
     private ushort BlockSize { get; }
 
     /// <summary>
-    /// bit rate. 量子化ビット数
+    /// quantization bit rate. 量子化ビット数
     /// </summary>
     public ushort BitRate { get; }
 
