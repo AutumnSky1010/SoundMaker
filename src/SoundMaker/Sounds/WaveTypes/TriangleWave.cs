@@ -1,12 +1,4 @@
-﻿using SoundMaker.Sounds.Score;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Formats.Asn1.AsnWriter;
-
-namespace SoundMaker.Sounds.WaveTypes;
+﻿namespace SoundMaker.Sounds.WaveTypes;
 /// <summary>
 /// the triangle wave. 三角波
 /// </summary>

@@ -1,5 +1,4 @@
-﻿using SoundMaker.Sounds.Score;
-using SoundMaker.Sounds.SoundChannels;
+﻿using SoundMaker.Sounds.SoundChannels;
 
 namespace SoundMaker.Sounds.WaveTypes;
 /// <summary>
