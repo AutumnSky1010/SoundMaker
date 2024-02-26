@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SoundMaker.Sounds.WaveTypes;
+﻿namespace SoundMaker.Sounds.WaveTypes;
 /// <summary>
 /// Provides a base class for a basic wave type to inherit from.
 /// </summary>
@@ -46,7 +40,7 @@ public abstract class WaveTypeBase
         {
             throw new ArgumentOutOfRangeException(nameof(tempo), "'tempo' must be non-negative and greater than 0.");
         }
-        this.CheckGenerateWaveArgs(length, volume, hertz);
+        CheckGenerateWaveArgs(length, volume, hertz);
     }
 
     protected void CheckGenerateWaveArgs(int length, int volume, double hertz)
@@ -55,7 +49,7 @@ public abstract class WaveTypeBase
         {
             throw new ArgumentOutOfRangeException(nameof(length), "'length' must be non-negative.");
         }
-        if (volume > 100 || volume < 0)
+        if (volume is > 100 or < 0)
         {
             throw new ArgumentOutOfRangeException(nameof(volume), "'volume must be below than 100 and more than 0.");
         }

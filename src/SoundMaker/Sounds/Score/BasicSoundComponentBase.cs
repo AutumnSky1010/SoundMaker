@@ -13,8 +13,8 @@ public abstract class BasicSoundComponentBase : ISoundComponent
     /// <param name="isDotted">is note/rest dotted. 付点かを表す論理型</param>
     public BasicSoundComponentBase(LengthType length, bool isDotted)
     {
-        this.Length = length;
-        this.IsDotted = isDotted;
+        Length = length;
+        IsDotted = isDotted;
     }
 
     /// <summary>
@@ -33,6 +33,6 @@ public abstract class BasicSoundComponentBase : ISoundComponent
 
     public int GetWaveArrayLength(SoundFormat format, int tempo)
     {
-        return SoundWaveLengthCaluclator.Caluclate(format, tempo, this.Length, this.IsDotted);
+        return SoundWaveLengthCaluclator.Caluclate(format, tempo, Length, IsDotted);
     }
 }

@@ -2,7 +2,7 @@
 /// <summary>
 /// format of the sound. 音のフォーマットを表す構造体
 /// </summary>
-public struct SoundFormat
+public readonly struct SoundFormat
 {
     /// <summary>
     /// constructor. コンストラクタ
@@ -12,9 +12,9 @@ public struct SoundFormat
     /// <param name="channel">type of channels count. チャンネル数</param>
     public SoundFormat(SamplingFrequencyType samplingFrequency, BitRateType bitRate, ChannelType channel)
     {
-        this.Channel = channel;
-        this.SamplingFrequency = samplingFrequency;
-        this.BitRate = bitRate;
+        Channel = channel;
+        SamplingFrequency = samplingFrequency;
+        BitRate = bitRate;
     }
 
     /// <summary>

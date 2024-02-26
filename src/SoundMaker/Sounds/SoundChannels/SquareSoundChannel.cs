@@ -1,5 +1,4 @@
-﻿using SoundMaker.Sounds.Score;
-using SoundMaker.Sounds.WaveTypes;
+﻿using SoundMaker.Sounds.WaveTypes;
 
 namespace SoundMaker.Sounds.SoundChannels;
 /// <summary>
@@ -17,7 +16,7 @@ public class SquareSoundChannel : SoundChannelBase
     /// <exception cref="ArgumentOutOfRangeException">Tempo must be non-negative and greater than 0.</exception>
     public SquareSoundChannel(int tempo, SoundFormat format, SquareWaveRatio ratio, PanType panType) : base(tempo, format, panType)
     {
-        this.Ratio = ratio;
+        Ratio = ratio;
     }
 
     /// <summary>
@@ -33,7 +32,7 @@ public class SquareSoundChannel : SoundChannelBase
     public SquareSoundChannel(int tempo, SoundFormat format, SquareWaveRatio ratio, PanType panType, int capacity)
         : base(tempo, format, panType, capacity)
     {
-        this.Ratio = ratio;
+        Ratio = ratio;
     }
 
     /// <summary>
@@ -44,9 +43,9 @@ public class SquareSoundChannel : SoundChannelBase
     public override ushort[] GenerateWave()
     {
         var result = new List<ushort>();
-        foreach (var soundComponent in this.SoundComponents)
+        foreach (var soundComponent in SoundComponents)
         {
-            result.AddRange(soundComponent.GenerateWave(this.Format, this.Tempo, new SquareWave(this.Ratio)));
+            result.AddRange(soundComponent.GenerateWave(Format, Tempo, new SquareWave(Ratio)));
         }
         return result.ToArray();
     }

@@ -1,5 +1,4 @@
-﻿using SoundMaker.Sounds.Score;
-using SoundMaker.Sounds.SoundChannels;
+﻿using SoundMaker.Sounds.SoundChannels;
 
 namespace SoundMaker.Sounds.WaveTypes;
 /// <summary>
@@ -13,7 +12,7 @@ public class SquareWave : WaveTypeBase
     /// <param name="squareWaveRatio">duty cycle. デューティ比</param>
     public SquareWave(SquareWaveRatio squareWaveRatio)
     {
-        this.SquareWaveRatio = squareWaveRatio;
+        SquareWaveRatio = squareWaveRatio;
     }
 
     private SquareWaveRatio SquareWaveRatio { get; }
@@ -31,41 +30,44 @@ public class SquareWave : WaveTypeBase
     [Obsolete("Use 'GenerateWave(SoundFormat format, int length, int volume, double hertz)'")]
     public override ushort[] GenerateWave(SoundFormat format, int tempo, int length, int volume, double hertz)
     {
-        this.CheckGenerateWaveArgs(tempo, length, volume, hertz);
-        return this.GenerateWave(format, length, volume, hertz);
+        CheckGenerateWaveArgs(tempo, length, volume, hertz);
+        return GenerateWave(format, length, volume, hertz);
     }
 
     public override ushort[] GenerateWave(SoundFormat format, int length, int volume, double hertz)
     {
         var result = new List<ushort>(length);
-        bool mode = false;
-        int count = 1;
-        int ratioIndex = (int)this.SquareWaveRatio;
-        while (count <= length)
+        var unitWave = GenerateUnitWave(format, volume, hertz);
+        for (var i = 0; i < length / unitWave.Count; i++)
         {
-            int allRepeatTimes = (int)((int)format.SamplingFrequency / hertz);
-            int firstRepeatTimes = (int)(allRepeatTimes * this.Ratio[ratioIndex].Item1);
-
-            if (count + allRepeatTimes >= length)
-            {
-                result.Add(0);
-                count++;
-                continue;
-            }
-
-            for (int i = 1; i <= firstRepeatTimes && mode && count <= length; i++, count++)
-            {
-                ushort sound = (ushort)(ushort.MaxValue * volume / 100);
-                result.Add(sound);
-            }
-
-            for (int i = 1; i <= allRepeatTimes - firstRepeatTimes && !mode && count <= length; i++, count++)
-            {
-                ushort sound = 0;
-                result.Add(sound);
-            }
-            mode = !mode;
+            result.AddRange(unitWave);
+        }
+        for (var i = 0; i < length % unitWave.Count; i++)
+        {
+            result.Add(0);
         }
         return result.ToArray();
+    }
+
+    private List<ushort> GenerateUnitWave(SoundFormat format, int volume, double hertz)
+    {
+        var ratioIndex = (int)SquareWaveRatio;
+        var allRepeatTimes = (int)((int)format.SamplingFrequency / hertz);
+        var firstRepeatTimes = (int)(allRepeatTimes * Ratio[ratioIndex].Item1);
+        // なぜか配列よりリストの方が早い
+        var result = new List<ushort>(allRepeatTimes);
+        // 音量の倍率(1.00 ~ 0.00)
+        var volumeMagnification = volume / 100d;
+
+        for (var i = 0; i < firstRepeatTimes; i++)
+        {
+            result.Add(0);
+        }
+        for (var i = 0; i < allRepeatTimes - firstRepeatTimes; i++)
+        {
+            var sound = (ushort)(ushort.MaxValue * volumeMagnification);
+            result.Add(sound);
+        }
+        return result;
     }
 }

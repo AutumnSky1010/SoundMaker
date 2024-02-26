@@ -1,7 +1,7 @@
 ﻿using SoundMaker.Sounds.Score;
 
 namespace SoundMaker.Sounds.SoundChannels;
-public interface ISoundChannel
+public interface ISoundChannel : IEnumerable<ISoundComponent>
 {
     /// <summary>
     /// get sound component at index. index番目のサウンドコンポーネントを取得する

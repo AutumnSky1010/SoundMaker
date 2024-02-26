@@ -22,62 +22,69 @@
 
 ## 🎶簡単な使い方
 ```CSharp
-using SoundMaker.Sounds;
-using SoundMaker.Sounds.Score;
-using SoundMaker.Sounds.SoundChannels;
-using SoundMaker.WaveFile;
-
 namespace YourNamespace;
 public static class YourClass
 {
-	private static void Main()
-	{
-		// サウンドの形式を作成する。
-		var soundFormat = new SoundFormat(SoundMaker.Sounds.SamplingFrequencyType.FourtyEightKHz, SoundMaker.Sounds.BitRateType.SixteenBit, SoundMaker.Sounds.ChannelType.Stereo);
-		StereoWave wave = MakeStereoWave(soundFormat);
+    private static void Main()
+    {
+        // サウンドの形式を作成する。
+        var builder = FormatBuilder.Create()
+            .WithFrequency(48000)
+            .WithBitDepth(16)
+            .WithChannelCount(2);
 
-		// ファイルに書き込む。
-		var sound = new SoundWaveChunk(wave.GetBytes(soundFormat.BitRate));
-		var waveFileFormat = new FormatChunk(SoundMaker.WaveFile.SamplingFrequencyType.FourtyEightKHz, SoundMaker.WaveFile.BitRateType.SixteenBit, SoundMaker.WaveFile.ChannelType.Stereo);
-		var writer = new WaveWriter(waveFileFormat, sound);
-		string filePath = "sample.wav";
-		writer.Write(filePath);
-	}
+        var soundFormat = builder.ToSoundFormat();
+        StereoWave wave = MakeStereoWave(soundFormat);
 
-	private static StereoWave MakeStereoWave(SoundFormat format)
-	{
-		// 一分間の四分音符の個数
-		int tempo = 100;
-		// まず、音のチャンネルを作成する必要がある。
-		// 現段階では矩形波、三角波、疑似三角波、ロービットノイズに対応している。
-		var rightChannel = new SquareSoundChannel(tempo, format, SquareWaveRatio.Point25, PanType.Right);
-		var rightChannel2 = new SquareSoundChannel(tempo, format, SquareWaveRatio.Point125, PanType.Right);
-		var leftChannel = new TriangleSoundChannel(tempo, format, PanType.Left);
+        // ファイルに書き込む。
+        var sound = new SoundWaveChunk(wave.GetBytes(soundFormat.BitRate));
+        var waveFileFormat = builder.ToFormatChunk();
+        var writer = new WaveWriter(waveFileFormat, sound);
+        string filePath = "sample.wav";
+        writer.Write(filePath);
+    }
 
-		// ISoundComponentを実装したクラスのオブジェクトをチャンネルに追加していく。
-		// 現段階では普通の音符、休符、タイ、連符を使うことができる。
-		rightChannel.Add(new Note(Scale.C, 5, LengthType.Eighth, isDotted: true));
-		rightChannel.Add(new Tie(new Note(Scale.D, 5, LengthType.Eighth), LengthType.Eighth));
-		var notes = new List<BasicSoundComponentBase>()
-		{
-			new Note(Scale.E, 5, LengthType.Eighth),
-			new Note(Scale.F, 5, LengthType.Eighth),
-			new Note(Scale.G, 5, LengthType.Eighth),
-		};
-		rightChannel.Add(new Tuplet(notes, LengthType.Quarter));
+    private static StereoWave MakeStereoWave(SoundFormat format)
+    {
+        // 一分間の四分音符の個数
+        int tempo = 100;
+        // まず、音のチャンネルを作成する必要がある。
+        // 現段階では矩形波、三角波、疑似三角波、ロービットノイズに対応している。
+        var rightChannel = new SquareSoundChannel(tempo, format, SquareWaveRatio.Point25, PanType.Right)
+        {
+            // ISoundComponentを実装したクラスのオブジェクトをチャンネルに追加していく。
+            // 現段階では普通の音符、休符、タイ、連符を使うことができる。
+            new Note(Scale.C, 5, LengthType.Eighth, isDotted: true),
+            new Tie(new Note(Scale.D, 5, LengthType.Eighth), LengthType.Eighth),
+            new Tuplet(GetComponents(), LengthType.Quarter)
+        };
+        var rightChannel2 = new SquareSoundChannel(tempo, format, SquareWaveRatio.Point125, PanType.Right)
+        {
+            new Note(Scale.C, 4, LengthType.Eighth, isDotted: true),
+            new Note(Scale.D, 4, LengthType.Quarter),
+            new Rest(LengthType.Quarter)
+        };
+        var leftChannel = new TriangleSoundChannel(tempo, format, PanType.Left)
+        {
+            new Note(Scale.C, 3, LengthType.Eighth, isDotted: true),
+            new Note(Scale.D, 3, LengthType.Quarter),
+            new Rest(LengthType.Quarter)
+        };
 
-		rightChannel2.Add(new Note(Scale.C, 4, LengthType.Eighth, isDotted: true));
-		rightChannel2.Add(new Note(Scale.D, 4, LengthType.Quarter));
-		rightChannel2.Add(new Rest(LengthType.Quarter));
+        var channels = new List<ISoundChannel>() { rightChannel, rightChannel2, leftChannel };
+        // ミックスは'StereoMixer'クラスで行う。 
+        return new StereoMixer(channels).Mix();
+    }
 
-		leftChannel.Add(new Note(Scale.C, 3, LengthType.Eighth, isDotted: true));
-		leftChannel.Add(new Note(Scale.D, 3, LengthType.Quarter));
-		leftChannel.Add(new Rest(LengthType.Quarter));
-
-		var channels = new List<ISoundChannel>() { rightChannel, rightChannel2, leftChannel };
-		// ミックスは'StereoMixer'クラスで行う。 
-		return new StereoMixer(channels).Mix();
-	}
+    private static IReadOnlyList<BasicSoundComponentBase> GetComponents()
+    {
+        return new List<BasicSoundComponentBase>()
+        {
+            new Note(Scale.E, 5, LengthType.Eighth),
+            new Note(Scale.F, 5, LengthType.Eighth),
+            new Note(Scale.G, 5, LengthType.Eighth),
+        };
+    }
 }
 
 
@@ -121,65 +128,70 @@ You can do The following content with this library.
 
 ## 🎶Usage
 ```CSharp
-using SoundMaker.Sounds;
-using SoundMaker.Sounds.Score;
-using SoundMaker.Sounds.SoundChannels;
-using SoundMaker.WaveFile;
-
 namespace YourNamespace;
 public static class YourClass
 {
-	private static void Main()
-	{
-		// make sound format.
-		var soundFormat = new SoundFormat(SoundMaker.Sounds.SamplingFrequencyType.FourtyEightKHz, SoundMaker.Sounds.BitRateType.SixteenBit, SoundMaker.Sounds.ChannelType.Stereo);
-		StereoWave wave = MakeStereoWave(soundFormat);
+    private static void Main()
+    {
+        // Create a sound format.
+        var builder = FormatBuilder.Create()
+            .WithFrequency(48000)
+            .WithBitDepth(16)
+            .WithChannelCount(2);
 
-		// write.
-		var sound = new SoundWaveChunk(wave.GetBytes(soundFormat.BitRate));
-		var waveFileFormat = new FormatChunk(SoundMaker.WaveFile.SamplingFrequencyType.FourtyEightKHz, SoundMaker.WaveFile.BitRateType.SixteenBit, SoundMaker.WaveFile.ChannelType.Stereo);
-		var writer = new WaveWriter(waveFileFormat, sound);
-		string filePath = "sample.wav";
-		writer.Write(filePath);
-	}
+        var soundFormat = builder.ToSoundFormat();
+        StereoWave wave = MakeStereoWave(soundFormat);
 
-	private static StereoWave MakeStereoWave(SoundFormat format)
-	{
-		// number of quarter notes per minute.
-		int tempo = 100;
-		// first, you should make the channel of sound.
-		// can use square wave, triangle wave, pseudo triangle wave and low bit noise wave at this stage.
-		var rightChannel = new SquareSoundChannel(tempo, format, SquareWaveRatio.Point25, PanType.Right);
-		var rightChannel2 = new SquareSoundChannel(tempo, format, SquareWaveRatio.Point125, PanType.Right);
-		var leftChannel = new TriangleSoundChannel(tempo, format, PanType.Left);
+        // Write to a file.
+        var sound = new SoundWaveChunk(wave.GetBytes(soundFormat.BitRate));
+        var waveFileFormat = builder.ToFormatChunk();
+        var writer = new WaveWriter(waveFileFormat, sound);
+        string filePath = "sample.wav";
+        writer.Write(filePath);
+    }
 
-		// add the object implemented 'ISoundComponent' to the channel.
-		// can use Note, Rest, Tuplet, Tie at this stage.
-		rightChannel.Add(new Note(Scale.C, 5, LengthType.Eighth, isDotted: true));
-		rightChannel.Add(new Tie(new Note(Scale.D, 5, LengthType.Eighth), LengthType.Eighth));
-		var notes = new List<BasicSoundComponentBase>()
-		{
-			new Note(Scale.E, 5, LengthType.Eighth),
-			new Note(Scale.F, 5, LengthType.Eighth),
-			new Note(Scale.G, 5, LengthType.Eighth),
-		};
-		rightChannel.Add(new Tuplet(notes, LengthType.Quarter));
+    private static StereoWave MakeStereoWave(SoundFormat format)
+    {
+        // The number of quarter notes per minute
+        int tempo = 100;
+        // First, you need to create sound channels.
+        // Currently, it supports square wave, triangle wave, pseudo-triangle wave, and low-bit noise.
+        var rightChannel = new SquareSoundChannel(tempo, format, SquareWaveRatio.Point25, PanType.Right)
+        {
+            // Add objects of classes that implement ISoundComponent to the channel.
+            // Currently, you can use normal notes, rests, ties, and tuplets.
+            new Note(Scale.C, 5, LengthType.Eighth, isDotted: true),
+            new Tie(new Note(Scale.D, 5, LengthType.Eighth), LengthType.Eighth),
+            new Tuplet(GetComponents(), LengthType.Quarter)
+        };
+        var rightChannel2 = new SquareSoundChannel(tempo, format, SquareWaveRatio.Point125, PanType.Right)
+        {
+            new Note(Scale.C, 4, LengthType.Eighth, isDotted: true),
+            new Note(Scale.D, 4, LengthType.Quarter),
+            new Rest(LengthType.Quarter)
+        };
+        var leftChannel = new TriangleSoundChannel(tempo, format, PanType.Left)
+        {
+            new Note(Scale.C, 3, LengthType.Eighth, isDotted: true),
+            new Note(Scale.D, 3, LengthType.Quarter),
+            new Rest(LengthType.Quarter)
+        };
 
-		rightChannel2.Add(new Note(Scale.C, 4, LengthType.Eighth, isDotted: true));
-		rightChannel2.Add(new Note(Scale.D, 4, LengthType.Quarter));
-		rightChannel2.Add(new Rest(LengthType.Quarter));
+        var channels = new List<ISoundChannel>() { rightChannel, rightChannel2, leftChannel };
+        // Mixing is done by the 'StereoMixer' class. 
+        return new StereoMixer(channels).Mix();
+    }
 
-		leftChannel.Add(new Note(Scale.C, 3, LengthType.Eighth, isDotted: true));
-		leftChannel.Add(new Note(Scale.D, 3, LengthType.Quarter));
-		leftChannel.Add(new Rest(LengthType.Quarter));
-
-		var channels = new List<ISoundChannel>() { rightChannel, rightChannel2, leftChannel };
-		// can mix with StereoMixer class. 
-		return new StereoMixer(channels).Mix();
-	}
+    private static IReadOnlyList<BasicSoundComponentBase> GetComponents()
+    {
+        return new List<BasicSoundComponentBase>()
+        {
+            new Note(Scale.E, 5, LengthType.Eighth),
+            new Note(Scale.F, 5, LengthType.Eighth),
+            new Note(Scale.G, 5, LengthType.Eighth),
+        };
+    }
 }
-
-
 ```
 
 ## 👀Features
@@ -188,7 +200,7 @@ public static class YourClass
 - 48000Hz
 - 44100Hz
 
-**Bit rate**
+**Quantization bit rate**
 - 16bit
 - 8bit
 

@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SoundMaker.Sounds.WaveTypes;
+﻿namespace SoundMaker.Sounds.WaveTypes;
 /// <summary>
 /// the pseudo triangle wave. 疑似三角波
 /// </summary>
@@ -14,59 +7,82 @@ public class PseudoTriangleWave : WaveTypeBase
     [Obsolete("Use 'GenerateWave(SoundFormat format, int length, int volume, double hertz)'")]
     public override ushort[] GenerateWave(SoundFormat format, int tempo, int length, int volume, double hertz)
     {
-        this.CheckGenerateWaveArgs(tempo, length, volume, hertz);
-        return this.GenerateWave(format, length, volume, hertz);
+        CheckGenerateWaveArgs(tempo, length, volume, hertz);
+        return GenerateWave(format, length, volume, hertz);
     }
 
     public override ushort[] GenerateWave(SoundFormat format, int length, int volume, double hertz)
     {
-        this.CheckGenerateWaveArgs(length, volume, hertz);
-        var result = new List<ushort>(length);
-        int count = 1;
-        // 音の長さまで繰り返す
-        while (count <= length)
+        CheckGenerateWaveArgs(length, volume, hertz);
+
+        // △の波形を作るための繰り返し回数
+        var triangleWidth = (int)((int)format.SamplingFrequency / hertz);
+        // 疑似三角波に出来ない場合は普通の三角波を生成する。
+        if (triangleWidth <= 64)
         {
-            // △の波形を作るための繰り返し回数
-            double triangleWidth = (int)format.SamplingFrequency / hertz;
-            // 32段階で値の大きさを変えるために、上を32で割る。
-            int repeatNumber = (int)(triangleWidth / 32d);
-            // 疑似三角波に出来ない場合は三角波を生成する。
-            if (triangleWidth <= 64)
-            {
-                return new TriangleWave().GenerateWave(format, length, volume, hertz);
-            }
-            // △最後にできる謎の空白地帯を無くすために、余りを算出する。この余りを各フェーズに1ずつ振り分ける
-            int repeatRemainderNumber = (int)triangleWidth % 32;
-            if (count + triangleWidth >= length)
-            {
-                result.Add(0);
-                count++;
-                continue;
-            }
+            return new TriangleWave().GenerateWave(format, length, volume, hertz);
+        }
 
-
-            int phase = 0;
-            bool mode = true;
-            for (int j = 1; j <= triangleWidth && count <= length; j++, count++)
-            {
-                if (mode && phase == 16)
-                {
-                    mode = !mode;
-                }
-
-                ushort sound = (ushort)(ushort.MaxValue * (phase / 16d));
-                sound = (ushort)(sound * (volume / 100d));
-                result.Add(sound);
-
-                if ((repeatRemainderNumber == 0 && j % repeatNumber == 0) ||
-                    (repeatRemainderNumber != 0 && j % (repeatNumber + 1) == 0))
-                {
-                    phase = mode ? phase + 1 : phase - 1;
-                    phase = phase == -1 ? 0 : phase;
-                    repeatRemainderNumber = repeatRemainderNumber != 0 ? repeatRemainderNumber - 1 : repeatRemainderNumber;
-                }
-            }
+        var result = new List<ushort>(length);
+        var unitWave = GenerateUnitWave(format, volume, hertz);
+        for (var i = 0; i < length / unitWave.Count; i++)
+        {
+            result.AddRange(unitWave);
+        }
+        for (var i = 0; i < length % unitWave.Count; i++)
+        {
+            result.Add(0);
         }
         return result.ToArray();
+    }
+
+    private List<ushort> GenerateUnitWave(SoundFormat format, int volume, double hertz)
+    {
+        var repeatNumber = (int)((int)format.SamplingFrequency / hertz);
+        // なぜか配列よりリストの方が早い
+        var result = new List<ushort>(repeatNumber);
+        // 音量の倍率(1.00 ~ 0.00)
+        var volumeMagnification = volume / 100d;
+        // 階段の幅
+        var stairsWidth = repeatNumber / 32;
+        // 幅の余り
+        var r = repeatNumber % 32;
+
+        // 上り波形
+        for (var i = 0; i < 16; i++)
+        {
+            var sound = (ushort)(ushort.MaxValue * (i / 15d));
+            sound = (ushort)(sound * volumeMagnification);
+            for (var j = 0; j < stairsWidth; j++)
+            {
+                result.Add(sound);
+            }
+            // 余りがある場合は足す。波形の後ろ側の部分に足す
+            // ex. r = 31の場合、i = 1 ~ 15の時足す。
+            if (i <= r / 2 && i != 0)
+            {
+                result.Add(sound);
+            }
+        }
+        // 下り波形
+        // 下り波形では上り波形より数値を減らす
+        var negativeDiff = (ushort)(ushort.MaxValue * (1 / 30d));
+        for (var i = 15; i >= 0; i--)
+        {
+            var sound = (ushort)(ushort.MaxValue * (i / 15d));
+            sound = sound != 0 ? (ushort)(sound - negativeDiff) : sound;
+            sound = (ushort)(sound * volumeMagnification);
+            for (var j = 0; j < stairsWidth; j++)
+            {
+                result.Add(sound);
+            }
+            // 余りがある場合は足す。波形の後ろ側の部分に足す
+            // ex. r = 31の場合、i = 15 ~ 0の時足す。
+            if (i < (r / 2) + (r % 2))
+            {
+                result.Add(sound);
+            }
+        }
+        return result;
     }
 }

@@ -12,7 +12,7 @@ public abstract class MixerBase
     /// <param name="channels">音声チャンネルのリスト(読み取り専用)</param>
     public MixerBase(IReadOnlyList<ISoundChannel> channels)
     {
-        this.Channels = channels;
+        Channels = channels;
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ public abstract class MixerBase
     /// <returns>最長の配列の長さ : int</returns>
     protected int GetMaxWaveLength()
     {
-        int max = 0;
-        foreach (var channel in this.Channels)
+        var max = 0;
+        foreach (var channel in Channels)
         {
             max = max < channel.WaveArrayLength ? channel.WaveArrayLength : max;
         }

@@ -1,5 +1,6 @@
 ﻿
 using SoundMaker.Sounds.Score;
+using System.Collections;
 
 namespace SoundMaker.Sounds.SoundChannels;
 /// <summary>
@@ -23,14 +24,14 @@ public abstract class SoundChannelBase : ISoundChannel
         {
             throw new ArgumentOutOfRangeException(nameof(capacity), "'capacity' must be non-negative.");
         }
-        this.SoundComponents = new List<ISoundComponent>(capacity);
-        this.Format = format;
-        this.PanType = panType;
+        SoundComponents = new List<ISoundComponent>(capacity);
+        Format = format;
+        PanType = panType;
         if (tempo <= 0)
         {
             throw new ArgumentOutOfRangeException(nameof(tempo), "'tempo' must be non-negative and greater than 0.");
         }
-        this.Tempo = tempo;
+        Tempo = tempo;
     }
 
     /// <summary>
@@ -42,13 +43,13 @@ public abstract class SoundChannelBase : ISoundChannel
     /// <exception cref="ArgumentOutOfRangeException">Tempo must be non-negative and greater than 0.</exception>
     public SoundChannelBase(int tempo, SoundFormat format, PanType panType)
     {
-        this.PanType = panType;
-        this.Format = format;
+        PanType = panType;
+        Format = format;
         if (tempo <= 0)
         {
             throw new ArgumentOutOfRangeException("'tempo' must be non-negative and greater than 0.");
         }
-        this.Tempo = tempo;
+        Tempo = tempo;
     }
 
     /// <summary>
@@ -60,9 +61,9 @@ public abstract class SoundChannelBase : ISoundChannel
 
     public PanType PanType { get; }
 
-    public int Capacity => this.SoundComponents.Capacity;
+    public int Capacity => SoundComponents.Capacity;
 
-    public int ComponentCount => this.SoundComponents.Count;
+    public int ComponentCount => SoundComponents.Count;
 
     public int Tempo { get; }
 
@@ -74,28 +75,20 @@ public abstract class SoundChannelBase : ISoundChannel
     /// <param name="index">index. 何番目かを表す整数</param>
     /// <returns>sound component.サウンドコンポーネント</returns>
     /// <exception cref="IndexOutOfRangeException">index is less than 0 or index is equal to or greater than ComponentCount.</exception>
-    public ISoundComponent this[int index]
-    {
-        get
-        {
-            if (index < 0 || index >= this.SoundComponents.Count)
-            {
-                throw new IndexOutOfRangeException("index is less than 0 or index is equal to or greater than ComponentCount.");
-            }
-            return this.SoundComponents[index];
-        }
-    }
+    public ISoundComponent this[int index] => index < 0 || index >= SoundComponents.Count
+                ? throw new IndexOutOfRangeException("index is less than 0 or index is equal to or greater than ComponentCount.")
+                : SoundComponents[index];
 
     public void Add(ISoundComponent component)
     {
-        this.SoundComponents.Add(component);
-        this.WaveArrayLength += component.GetWaveArrayLength(this.Format, this.Tempo);
+        SoundComponents.Add(component);
+        WaveArrayLength += component.GetWaveArrayLength(Format, Tempo);
     }
 
     public void Clear()
     {
-        this.SoundComponents.Clear();
-        this.WaveArrayLength = 0;
+        SoundComponents.Clear();
+        WaveArrayLength = 0;
     }
 
     /// <summary>
@@ -105,14 +98,24 @@ public abstract class SoundChannelBase : ISoundChannel
     /// <exception cref="ArgumentOutOfRangeException">index is less than 0 or index is equal to or greater than ComponentCount.</exception>
     public void RemoveAt(int index)
     {
-        if (this.SoundComponents.Count <= index || index < 0)
+        if (SoundComponents.Count <= index || index < 0)
         {
             throw new ArgumentOutOfRangeException("index is less than 0 or index is equal to or greater than ComponentCount.");
         }
-        var component = this.SoundComponents[index];
-        this.WaveArrayLength -= component.GetWaveArrayLength(this.Format, this.Tempo);
-        this.SoundComponents.Remove(component);
+        var component = SoundComponents[index];
+        WaveArrayLength -= component.GetWaveArrayLength(Format, Tempo);
+        _ = SoundComponents.Remove(component);
     }
 
     public abstract ushort[] GenerateWave();
+
+    public IEnumerator<ISoundComponent> GetEnumerator()
+    {
+        return SoundComponents.GetEnumerator();
+    }
+
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+        return SoundComponents.GetEnumerator();
+    }
 }

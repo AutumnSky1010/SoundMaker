@@ -14,8 +14,8 @@ public class Tie : ISoundComponent
     /// <param name="additionalIsDotted">the second note/rest is dotted. 二つ目の音符が付点かを表す論理型</param>
     public Tie(Note baseNote, LengthType additionalLength, bool additionalIsDotted = false)
     {
-        this.BaseNote = baseNote;
-        this.AdditionalNotes = new List<Note>()
+        BaseNote = baseNote;
+        AdditionalNotes = new List<Note>()
         {
             new Note(baseNote.Scale, baseNote.ScaleNumber, additionalLength, additionalIsDotted)
         };
@@ -28,17 +28,14 @@ public class Tie : ISoundComponent
     /// <param name="additionalNotes">notes of tie. 追加する音符</param>
     public Tie(Note baseNote, IReadOnlyCollection<Note> additionalNotes)
     {
-        this.BaseNote = baseNote;
-        this.AdditionalNotes = new List<Note>(additionalNotes);
+        BaseNote = baseNote;
+        AdditionalNotes = new List<Note>(additionalNotes);
     }
 
     /// <summary>
     /// count of notes.
     /// </summary>
-    public int Count
-    {
-        get => this.AdditionalNotes.Count + 1;
-    }
+    public int Count => AdditionalNotes.Count + 1;
 
     /// <summary>
     /// the base note. 基本の音符
@@ -52,19 +49,19 @@ public class Tie : ISoundComponent
 
     public ushort[] GenerateWave(SoundFormat format, int tempo, int length, WaveTypeBase waveType)
     {
-        return this.BaseNote.GenerateWave(format, tempo, length, waveType);
+        return BaseNote.GenerateWave(format, tempo, length, waveType);
     }
 
     public ushort[] GenerateWave(SoundFormat format, int tempo, WaveTypeBase waveType)
     {
-        int length = this.GetWaveArrayLength(format, tempo);
-        return this.GenerateWave(format, tempo, length, waveType);
+        var length = GetWaveArrayLength(format, tempo);
+        return GenerateWave(format, tempo, length, waveType);
     }
 
     public int GetWaveArrayLength(SoundFormat format, int tempo)
     {
-        int length = this.BaseNote.GetWaveArrayLength(format, tempo);
-        foreach (var note in this.AdditionalNotes)
+        var length = BaseNote.GetWaveArrayLength(format, tempo);
+        foreach (var note in AdditionalNotes)
         {
             length += SoundWaveLengthCaluclator.Caluclate(format, tempo, note.Length, note.IsDotted);
         }

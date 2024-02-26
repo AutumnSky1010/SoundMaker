@@ -1,5 +1,4 @@
 ﻿using SoundMaker.Sounds.SoundChannels;
-using System.Threading.Channels;
 
 namespace SoundMaker.Sounds;
 /// <summary>
@@ -25,13 +24,13 @@ public class StereoMixer : MixerBase
     /// <returns>ステレオ波形データ</returns>
     public StereoWave Mix()
     {
-        int max = this.GetMaxWaveLength();
-        var channelCount = this.GetChannelCount();
-        ushort[] rightResult = Enumerable.Repeat((ushort)0, max).ToArray();
-        ushort[] leftResult = Enumerable.Repeat((ushort)0, max).ToArray();
-        Parallel.ForEach (this.Channels, channel =>
+        var max = GetMaxWaveLength();
+        var channelCount = GetChannelCount();
+        var rightResult = Enumerable.Repeat((ushort)0, max).ToArray();
+        var leftResult = Enumerable.Repeat((ushort)0, max).ToArray();
+        _ = Parallel.ForEach(Channels, channel =>
         {
-            this.Merge(leftResult, rightResult, channel, channelCount);
+            Merge(leftResult, rightResult, channel, channelCount);
         });
         return new StereoWave(rightResult, leftResult);
     }
@@ -40,9 +39,9 @@ public class StereoMixer : MixerBase
         var waveNumericData = channel.GenerateWave();
         if (channel.PanType is PanType.Left)
         {
-            lock (this.LockLeftObject)
+            lock (LockLeftObject)
             {
-                for (int i = 0; i < waveNumericData.Length; i++)
+                for (var i = 0; i < waveNumericData.Length; i++)
                 {
                     left[i] += (ushort)(waveNumericData[i] / channelCount.Left);
                 }
@@ -50,9 +49,9 @@ public class StereoMixer : MixerBase
         }
         else if (channel.PanType is PanType.Right)
         {
-            lock (this.LockRightObject)
+            lock (LockRightObject)
             {
-                for (int i = 0; i < waveNumericData.Length; i++)
+                for (var i = 0; i < waveNumericData.Length; i++)
                 {
                     right[i] += (ushort)(waveNumericData[i] / channelCount.Right);
                 }
@@ -61,11 +60,11 @@ public class StereoMixer : MixerBase
         // 両方のチャンネルから音が出る場合
         else
         {
-            lock (this.LockLeftObject)
+            lock (LockLeftObject)
             {
-                lock (this.LockRightObject)
+                lock (LockRightObject)
                 {
-                    for (int i = 0; i < waveNumericData.Length; i++)
+                    for (var i = 0; i < waveNumericData.Length; i++)
                     {
                         right[i] += (ushort)(waveNumericData[i] / channelCount.Right);
                         left[i] += (ushort)(waveNumericData[i] / channelCount.Left);
@@ -80,9 +79,9 @@ public class StereoMixer : MixerBase
     /// <returns>左右それぞれのチャンネルの個数</returns>
     private ChannelCount GetChannelCount()
     {
-        int right = 0;
-        int left = 0;
-        foreach (var channel in this.Channels)
+        var right = 0;
+        var left = 0;
+        foreach (var channel in Channels)
         {
             // 両方の場合は両方インクリメントする。
             if (channel.PanType is PanType.Left || channel.PanType is PanType.Both)
@@ -97,12 +96,12 @@ public class StereoMixer : MixerBase
         return new ChannelCount(left, right);
     }
 
-    private struct ChannelCount
+    private readonly struct ChannelCount
     {
         public ChannelCount(int left, int right)
         {
-            this.Left = left;
-            this.Right = right;
+            Left = left;
+            Right = right;
         }
 
         public int Right { get; }
