@@ -1,10 +1,12 @@
-﻿using System.Text;
+﻿using System.Runtime.CompilerServices;
+using System.Text;
 using System.Text.RegularExpressions;
+[assembly: InternalsVisibleTo("SoundMakerTests")]
 
 namespace SoundMaker.ScoreData.SMSC;
 internal class Lexer
 {
-    private readonly Regex _alphaRegex = new("[a-z]|[A-z]");
+    private readonly Regex _alphaRegex = new("[a-z]|[A-Z]");
 
     private readonly string _data = "";
 
@@ -16,56 +18,96 @@ internal class Lexer
     public List<Token> ReadAll()
     {
         var tokens = new List<Token>();
-        foreach (var line in _data.Split('\n'))
+        var data = _data.Replace("\r\n", "\n").Replace('\r', '\n');
+        var lines = data.Split('\n');
+        for (var i = 0; i < lines.Length; i++)
         {
+            var line = lines[i];
+            var lineNumber = i + 1;
             var chars = line.ToCharArray();
             var otherTypeLiteralBuilder = new StringBuilder();
-            for (var i = 0; i < chars.Length; i++)
+            var numberLiteralBuilder = new StringBuilder();
+            for (var j = 0; j < chars.Length; j++)
             {
-                char? next = i + 1 < chars.Length ? chars[i + 1] : null;
-                // others
-                if (IsOtherChar(chars[i], next))
+                char? next = j + 1 < chars.Length ? chars[j + 1] : null;
+                // numbers
+                if (char.IsNumber(chars[j]))
                 {
-                    _ = otherTypeLiteralBuilder.Append(chars[i]);
+                    _ = numberLiteralBuilder.Append(chars[j]);
+                    if (otherTypeLiteralBuilder.Length != 0)
+                    {
+                        var literal = otherTypeLiteralBuilder.ToString();
+                        var type = MatchOtherType(literal);
+                        tokens.Add(new(type, otherTypeLiteralBuilder.ToString(), lineNumber));
+                        _ = otherTypeLiteralBuilder.Clear();
+                    }
+                    continue;
                 }
-                else if (otherTypeLiteralBuilder.Length != 0)
+                // others
+                if (IsOtherChar(chars[j], next))
+                {
+                    _ = otherTypeLiteralBuilder.Append(chars[j]);
+                    if (numberLiteralBuilder.Length != 0)
+                    {
+                        var literal = numberLiteralBuilder.ToString();
+                        tokens.Add(new(TokenType.Number, literal, lineNumber));
+                        _ = numberLiteralBuilder.Clear();
+                    }
+                    continue;
+                }
+
+                if (numberLiteralBuilder.Length != 0)
+                {
+                    var literal = numberLiteralBuilder.ToString();
+                    tokens.Add(new(TokenType.Number, literal, lineNumber));
+                    _ = numberLiteralBuilder.Clear();
+                }
+                if (otherTypeLiteralBuilder.Length != 0)
                 {
                     var literal = otherTypeLiteralBuilder.ToString();
                     var type = MatchOtherType(literal);
-                    tokens.Add(new(type, otherTypeLiteralBuilder.ToString()));
+                    tokens.Add(new(type, literal, lineNumber));
                     _ = otherTypeLiteralBuilder.Clear();
                 }
 
                 // comment out
-                if (i + 1 < chars.Length && chars[i] is '/' && next is '/')
+                if (j + 1 < chars.Length && IsCommentPrefix(chars[j], next))
                 {
                     break;
                 }
 
                 // space
-                if (char.IsWhiteSpace(chars[i]))
+                if (char.IsWhiteSpace(chars[j]))
                 {
-                    continue;
-                }
-
-                // number
-                if (char.IsDigit(chars[i]))
-                {
-                    tokens.Add(new(TokenType.Number, chars[i].ToString()));
                     continue;
                 }
 
                 // symbols
-                Token token = chars[i] switch
+                Token token = chars[j] switch
                 {
-                    '.' => new(TokenType.Dot, "."),
-                    '#' => new(TokenType.Sharp, "#"),
-                    '(' => new(TokenType.LeftParentheses, "("),
-                    ')' => new(TokenType.RightParentheses, ")"),
-                    ',' => new(TokenType.Comma, ","),
-                    _ => new(TokenType.Unknown, chars[i].ToString()),
+                    '.' => new(TokenType.Dot, ".", lineNumber),
+                    '#' => new(TokenType.Sharp, "#", lineNumber),
+                    '(' => new(TokenType.LeftParentheses, "(", lineNumber),
+                    ')' => new(TokenType.RightParentheses, ")", lineNumber),
+                    ',' => new(TokenType.Comma, ",", lineNumber),
+                    _ => new(TokenType.Unknown, chars[j].ToString(), lineNumber),
                 };
                 tokens.Add(token);
+            }
+
+            if (numberLiteralBuilder.Length != 0)
+            {
+                var literal = numberLiteralBuilder.ToString();
+                tokens.Add(new(TokenType.Number, literal, lineNumber));
+                _ = numberLiteralBuilder.Clear();
+            }
+
+            if (otherTypeLiteralBuilder.Length != 0)
+            {
+                var literal = otherTypeLiteralBuilder.ToString();
+                var type = MatchOtherType(literal);
+                tokens.Add(new(type, literal, lineNumber));
+                _ = otherTypeLiteralBuilder.Clear();
             }
         }
         return tokens;
@@ -73,12 +115,17 @@ internal class Lexer
 
     private TokenType MatchOtherType(string other)
     {
+        if (int.TryParse(other, out _))
+        {
+            return TokenType.Number;
+        }
         if (_alphaRegex.IsMatch(other))
         {
             return other switch
             {
                 "tie" => TokenType.Tie,
                 "tup" => TokenType.Tuplet,
+                "rest" => TokenType.Rest,
                 _ => TokenType.Alphabet,
             };
         }
@@ -91,11 +138,10 @@ internal class Lexer
         return
             !IsSymbol(character) &&
             !IsCommentPrefix(character, next) &&
-            !char.IsWhiteSpace(character) &&
-            !char.IsDigit(character);
+            !char.IsWhiteSpace(character);
     }
 
-    private bool IsCommentPrefix(char character, char nextCharacter)
+    private bool IsCommentPrefix(char character, char? nextCharacter)
     {
         return character is '/' && nextCharacter is '/';
     }
