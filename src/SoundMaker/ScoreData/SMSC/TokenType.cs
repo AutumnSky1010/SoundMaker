@@ -14,6 +14,8 @@ internal enum TokenType
     Tie,
     Tuplet,
     Rest,
+    // line break
+    LineBreak,
     // ?
     Unknown,
 }
