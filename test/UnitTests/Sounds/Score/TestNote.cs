@@ -3,26 +3,31 @@
 namespace SoundMakerTests.UnitTests.Sounds.Score;
 public class TestNote
 {
-    [Fact(DisplayName = "初期化が正しく行えるかのテスト")]
-    public void InitializeTest()
+    [Theory(DisplayName = "初期化が正しく行えるかのテスト")]
+    [InlineData(Scale.A, 4, LengthType.Whole, true)]
+    [InlineData(Scale.C, 4, LengthType.SixtyFourth, true)]
+    public void InitializeTest(Scale scale, int scaleNumber, LengthType lengthType, bool isDotted)
     {
-        var isDotted = true;
-        var lengthType = LengthType.Whole;
-        var scaleNum = 4;
-        var scale = Scale.A;
-        var note = new Note(scale, scaleNum, lengthType, isDotted);
+        var note = new Note(scale, scaleNumber, lengthType, isDotted);
         Assert.Equal(scale, note.Scale);
-        Assert.Equal(scaleNum, note.ScaleNumber);
+        Assert.Equal(scaleNumber, note.ScaleNumber);
         Assert.Equal(lengthType, note.Length);
         Assert.Equal(isDotted, note.IsDotted);
         Assert.Equal(100, note.Volume);
+    }
 
+    [Fact(DisplayName = "例外のテスト")]
+    public void InitializeExceptionTest()
+    {
+        var isDotted = true;
+        var lengthType = LengthType.Whole;
         // 例外のテスト
         _ = Assert.Throws<ArgumentException>(() => new Note(Scale.G, 0, lengthType, isDotted));
         _ = Assert.Throws<ArgumentException>(() => new Note(Scale.D, 8, lengthType, isDotted));
         _ = Assert.Throws<ArgumentException>(() => new Note(Scale.G, 9, lengthType, isDotted));
         _ = Assert.Throws<ArgumentException>(() => new Note(Scale.G, -1, lengthType, isDotted));
     }
+
     [Fact(DisplayName = "簡単なコンストラクタで初期化が正しく行えるかのテスト")]
     public void EasinessInitializeTest()
     {
