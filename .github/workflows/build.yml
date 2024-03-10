@@ -42,7 +42,7 @@ jobs:
 
     # Build the test project
     - name: Build the test project
-      run: dotnet build test/SoundMakerTests/SoundMakerTests.csproj --no-restore
+      run: dotnet build test/SoundMakerTests.csproj --no-restore
 
     # Execute all unit tests in the solution
     - name: Execute unit tests
