@@ -32,9 +32,11 @@ jobs:
       with:
         dotnet-version: 6.0.x
 
-    # Add  MSBuild to the PATH: https://github.com/microsoft/setup-msbuild
-    - name: Setup MSBuild.exe
-      uses: microsoft/setup-msbuild@v1.0.2
+    - name: Restore dependencies
+      run: dotnet restore
+
+    - name: Execute build with warn as error
+      run: dotnet build --no-restore /warnaserror
 
     # Execute all unit tests in the solution
     - name: Execute unit tests
