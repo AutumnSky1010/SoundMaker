@@ -17,7 +17,7 @@ public class TestFormatBuilder
     }
 
     [Fact()]
-    public void TestToFormatChunc()
+    public void TestToFormatChunk()
     {
         var formatBuilder = FormatBuilder.Create()
             .WithFrequency(48000)
