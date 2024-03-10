@@ -8,7 +8,7 @@ public class CreateWaveFileTest
 {
     private List<WaveCase> MonauralWaveCases { get; } = new List<WaveCase>
     {
-        new WaveCase()
+        new()
         {
             FormatChunk = new FormatChunk(
                 SoundMaker.WaveFile.SamplingFrequencyType.FourtyEightKHz,
@@ -20,7 +20,7 @@ public class CreateWaveFileTest
                 SoundMaker.Sounds.ChannelType.Monaural),
             Path = @"Sounds\48000hz16bit1ch"
         },
-        new WaveCase()
+        new()
         {
             FormatChunk = new FormatChunk(
                 SoundMaker.WaveFile.SamplingFrequencyType.FourtyEightKHz,
@@ -33,7 +33,7 @@ public class CreateWaveFileTest
             Path = @"Sounds\48000hz8bit1ch"
         },
 
-        new WaveCase()
+        new()
         {
             FormatChunk = new FormatChunk(
                 SoundMaker.WaveFile.SamplingFrequencyType.FourtyFourKHz,
@@ -45,7 +45,7 @@ public class CreateWaveFileTest
                 SoundMaker.Sounds.ChannelType.Monaural),
             Path = @"Sounds\44100hz16bit1ch"
         },
-        new WaveCase()
+        new()
         {
             FormatChunk = new FormatChunk(
                 SoundMaker.WaveFile.SamplingFrequencyType.FourtyFourKHz,
@@ -62,7 +62,7 @@ public class CreateWaveFileTest
     private List<WaveCase> StereoWaveCases { get; } = new List<WaveCase>
     {
 
-        new WaveCase()
+        new()
         {
             FormatChunk = new FormatChunk(
                 SoundMaker.WaveFile.SamplingFrequencyType.FourtyEightKHz,
@@ -74,7 +74,7 @@ public class CreateWaveFileTest
                 SoundMaker.Sounds.ChannelType.Stereo),
             Path = @"Sounds\48000hz16bit2ch"
         },
-        new WaveCase()
+        new()
         {
             FormatChunk = new FormatChunk(
                 SoundMaker.WaveFile.SamplingFrequencyType.FourtyEightKHz,
@@ -86,7 +86,7 @@ public class CreateWaveFileTest
                 SoundMaker.Sounds.ChannelType.Stereo),
             Path = @"Sounds\48000hz8bit2ch"
         },
-        new WaveCase()
+        new()
         {
             FormatChunk = new FormatChunk(
                 SoundMaker.WaveFile.SamplingFrequencyType.FourtyFourKHz,
@@ -98,7 +98,7 @@ public class CreateWaveFileTest
                 SoundMaker.Sounds.ChannelType.Stereo),
             Path = @"Sounds\44100hz16bit2ch"
         },
-        new WaveCase()
+        new()
         {
             FormatChunk = new FormatChunk(
                 SoundMaker.WaveFile.SamplingFrequencyType.FourtyFourKHz,
@@ -182,7 +182,7 @@ public class CreateWaveFileTest
         var writer = new WaveWriter(format, sound);
         var filePath = $"{name}.wav";
         writer.Write(filePath);
-        Console.WriteLine($"{filePath}を書き込んだよ");
+        Console.WriteLine($"Success: Write {filePath}");
     }
 
     private static StereoWave GetStereo(ISoundChannel channel)

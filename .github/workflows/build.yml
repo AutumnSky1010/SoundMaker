@@ -1,0 +1,49 @@
+name: .NET Core Desktop
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+
+  build:
+
+    strategy:
+      matrix:
+        configuration: [Release]
+
+    runs-on: ubuntu-latest  
+
+    env:
+      Solution_Name: SoundMaker.sln                         # Replace with your solution name, i.e. MyWpfApp.sln.
+      Test_Project_Path: test/SoundMakerTests.csproj               # Replace with the path to your test project, i.e. MyWpfApp.Tests\MyWpfApp.Tests.csproj.
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+
+    # Install the .NET Core workload
+    - name: Install .NET Core
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 6.0.x
+    
+    # Restore dependencies
+    - name: Restore dependencies
+      run: dotnet restore src/SoundMaker/SoundMaker.csproj; dotnet restore test/SoundMakerTests.csproj
+
+    # Build the SoundMaker project
+    - name: Build the SoundMaker project with warns as errors
+      run: dotnet build src/SoundMaker/SoundMaker.csproj --no-restore --warnaserror
+
+    # Build the test project
+    - name: Build the test project
+      run: dotnet build test/SoundMakerTests.csproj --no-restore
+
+    # Execute all unit tests in the solution
+    - name: Execute unit tests
+      run: dotnet test

@@ -1,4 +1,5 @@
 ![SoundMakerCover](https://user-images.githubusercontent.com/66455966/206901705-974f5a63-46db-435c-bdb1-1717e8bb7883.png)  
+[![Pipeline](https://github.com/AutumnSky1010/SoundMaker/actions/workflows/build.yml/badge.svg)](https://github.com/AutumnSky1010/SoundMaker/actions/workflows/build.yml)  
 
 ## 🗺️言語(Language)
 1) [日本語](#概要)
