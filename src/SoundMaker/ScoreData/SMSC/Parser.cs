@@ -1,7 +1,5 @@
 ﻿using SoundMaker.Sounds.Score;
 using System.Diagnostics.CodeAnalysis;
-using System.Runtime.CompilerServices;
-[assembly: InternalsVisibleTo("SoundMakerTests")]
 
 namespace SoundMaker.ScoreData.SMSC;
 
@@ -178,12 +176,12 @@ internal class Parser
         // 個数が1個の場合はadditionalNotesに空配列を渡す
         else if (notes.Count == 1)
         {
-            tie = new Tie(notes[0], Array.Empty<Note>());
+            tie = new(notes[0], Array.Empty<Note>());
         }
         // 個数が2個以上の場合は、先頭をbaseとし、残りをadditionalNotesとする。
         else
         {
-            tie = new Tie(notes[0], notes.GetRange(1, notes.Count - 1));
+            tie = new(notes[0], notes.GetRange(1, notes.Count - 1));
         }
         // 解析結果を返す。
         return new(tie, null);

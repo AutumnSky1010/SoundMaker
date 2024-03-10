@@ -69,26 +69,11 @@ public class Note : BasicSoundComponentBase
     {
         var scale = Scale.A;
         var scaleNumber = 4;
-        Hertz += AHertz[scaleNumber];
+        Hertz += _hertz[(scale, scaleNumber)];
         Scale = scale;
         ScaleNumber = scaleNumber;
     }
 
-    /// <summary>
-    /// 「ラ」の周波数
-    /// </summary>
-    private double[] AHertz { get; } = new double[]
-    {
-        // A0からA
-        27.5d,
-        55.0d,
-        110.0d,
-        220.0d,
-        440.0d,
-        880.0d,
-        1760.0d,
-        3520.0d
-    };
     /// <summary>
     /// scale of the note. 音の高さ
     /// </summary>
@@ -125,21 +110,18 @@ public class Note : BasicSoundComponentBase
         }
     }
 
-    private void CheckArgument(Scale scale, int scaleNumber)
+    private static void CheckArgument(Scale scale, int scaleNumber)
     {
         var message = "'scale' and 'scaleNumber' must be only the range of sound that the piano can produce.";
-        if (scaleNumber is >= 9 or <= (-1))
+        if (!IsValidScale(scale, scaleNumber))
         {
             throw new ArgumentException(message);
         }
-        if (scale != Scale.A && scale != Scale.B && scale != Scale.ASharp && scaleNumber == 0)
-        {
-            throw new ArgumentException(message);
-        }
-        if (scale != Scale.C && scaleNumber == 8)
-        {
-            throw new ArgumentException(message);
-        }
+    }
+
+    internal static bool IsValidScale(Scale scale, int scaleNumber)
+    {
+        return _hertz.ContainsKey((scale, scaleNumber));
     }
 
     public override ushort[] GenerateWave(SoundFormat format, int tempo, int length, WaveTypeBase waveType)

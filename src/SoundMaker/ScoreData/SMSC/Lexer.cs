@@ -1,7 +1,5 @@
-﻿using System.Runtime.CompilerServices;
-using System.Text;
+﻿using System.Text;
 using System.Text.RegularExpressions;
-[assembly: InternalsVisibleTo("SoundMakerTests")]
 
 namespace SoundMaker.ScoreData.SMSC;
 internal class Lexer
