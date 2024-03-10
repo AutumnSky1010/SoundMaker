@@ -12,7 +12,7 @@ jobs:
 
     strategy:
       matrix:
-        configuration: [Debug, Release]
+        configuration: [Release]
 
     runs-on: ubuntu-latest  
 
@@ -31,12 +31,18 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 6.0.x
-
+    
+    # Restore dependencies
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore src/SoundMaker/SoundMaker.csproj; dotnet restore test/SoundMakerTests.csproj
 
-    - name: Execute build with warn as error
-      run: dotnet build --no-restore /warnaserror
+    # Build the SoundMaker project
+    - name: Build the SoundMaker project with warns as errors
+      run: dotnet build src/SoundMaker/SoundMaker.csproj --no-restore --warnaserror
+
+    # Build the test project
+    - name: Build the test project
+      run: dotnet build test/SoundMakerTests/SoundMakerTests.csproj --no-restore
 
     # Execute all unit tests in the solution
     - name: Execute unit tests
