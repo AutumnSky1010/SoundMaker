@@ -14,7 +14,7 @@ public class Note : BasicSoundComponentBase
     /// <param name="length">length (ex. "quarter" note) 長さ（音楽的な、「四分」音符、「全」休符のような長さを表す。）</param>
     /// <param name="isDotted">is note/rest dotted. 付点かを表す論理型</param>
     /// <exception cref="ArgumentException">Scale and scale number must be only the range of sound that the piano can produce.</exception>
-	public Note(Scale scale, int scaleNumber, LengthType length, bool isDotted = false)
+    public Note(Scale scale, int scaleNumber, LengthType length, bool isDotted = false)
         : base(length, isDotted)
     {
         CheckArgument(scale, scaleNumber);
@@ -50,8 +50,8 @@ public class Note : BasicSoundComponentBase
     /// </summary>
     private double[] AHertz { get; } = new double[]
     {
-		// A0からA
-		27.5d,
+        // A0からA
+        27.5d,
         55.0d,
         110.0d,
         220.0d,

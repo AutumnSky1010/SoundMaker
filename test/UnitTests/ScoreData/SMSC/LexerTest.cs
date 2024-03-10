@@ -2,7 +2,7 @@
 
 namespace SoundMakerTests.UnitTests.ScoreData.SMSC;
 
-public class TestLexer
+public class LexerTest
 {
     [Fact(DisplayName = "コメントは解析しないか")]
     public void TestReadAll_Comment()

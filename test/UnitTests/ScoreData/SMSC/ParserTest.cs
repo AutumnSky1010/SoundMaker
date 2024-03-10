@@ -3,7 +3,7 @@ using SoundMaker.Sounds.Score;
 
 namespace SoundMakerTests.UnitTests.ScoreData.SMSC;
 
-public class TestParser
+public class ParserTest
 {
     [Fact(DisplayName = "普通の音符を解析できるか")]
     public void TestParse_Note()
@@ -17,7 +17,10 @@ public class TestParser
         {
             new Note(Scale.C, 4, LengthType.Sixteenth),
         };
-        var actualCollection = parser.Parse();
+
+        var result = parser.Parse();
+        Assert.True(result.IsSuccess);
+        var actualCollection = result.Unwrap();
         Assert.Equal(expectedCollection.Count, actualCollection.Count);
 
         var expected = (Note)expectedCollection[0];
@@ -40,7 +43,9 @@ public class TestParser
         {
             new Note(Scale.C, 4, LengthType.Sixteenth, true),
         };
-        var actualCollection = parser.Parse();
+        var result = parser.Parse();
+        Assert.True(result.IsSuccess);
+        var actualCollection = result.Unwrap();
         Assert.Equal(expectedCollection.Count, actualCollection.Count);
 
         var expected = (Note)expectedCollection[0];
@@ -63,7 +68,9 @@ public class TestParser
         {
             new Note(Scale.CSharp, 4, LengthType.Sixteenth),
         };
-        var actualCollection = parser.Parse();
+        var result = parser.Parse();
+        Assert.True(result.IsSuccess);
+        var actualCollection = result.Unwrap();
         Assert.Equal(expectedCollection.Count, actualCollection.Count);
 
         var expected = (Note)expectedCollection[0];
@@ -86,7 +93,9 @@ public class TestParser
         {
             new Rest(LengthType.Sixteenth),
         };
-        var actualCollection = parser.Parse();
+        var result = parser.Parse();
+        Assert.True(result.IsSuccess);
+        var actualCollection = result.Unwrap();
         Assert.Equal(expectedCollection.Count, actualCollection.Count);
 
         var expected = (Rest)expectedCollection[0];
@@ -107,7 +116,9 @@ public class TestParser
         {
             new Rest(LengthType.Sixteenth, true),
         };
-        var actualCollection = parser.Parse();
+        var result = parser.Parse();
+        Assert.True(result.IsSuccess);
+        var actualCollection = result.Unwrap();
         Assert.Equal(expectedCollection.Count, actualCollection.Count);
 
         var expected = (Rest)expectedCollection[0];
@@ -133,7 +144,9 @@ public class TestParser
                 new(LengthType.Eighth, true),
             }),
         };
-        var actualCollection = parser.Parse();
+        var result = parser.Parse();
+        Assert.True(result.IsSuccess);
+        var actualCollection = result.Unwrap();
         Assert.Equal(expectedCollection.Count, actualCollection.Count);
 
         var expected = (Tie)expectedCollection[0];
@@ -158,7 +171,9 @@ public class TestParser
                 new Note(Scale.E, 4,LengthType.Whole, true),
             }, LengthType.Sixteenth),
         };
-        var actualCollection = parser.Parse();
+        var result = parser.Parse();
+        Assert.True(result.IsSuccess);
+        var actualCollection = result.Unwrap();
         Assert.Equal(expectedCollection.Count, actualCollection.Count);
 
         var expected = (Tuplet)expectedCollection[0];
@@ -191,7 +206,9 @@ public class TestParser
                 }),
             }, LengthType.Sixteenth),
         };
-        var actualCollection = parser.Parse();
+        var result = parser.Parse();
+        Assert.True(result.IsSuccess);
+        var actualCollection = result.Unwrap();
         Assert.Equal(expectedCollection.Count, actualCollection.Count);
 
         var expected = (Tuplet)expectedCollection[0];
