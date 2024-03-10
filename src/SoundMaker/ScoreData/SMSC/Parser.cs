@@ -69,10 +69,10 @@ internal class Parser
     /// 解析する
     /// </summary>
     /// <returns>解析結果</returns>
-    public List<ISoundComponent> Parse()
+    public SMSCReadResult Parse()
     {
         var statements = new List<ISoundComponent>();
-        _ = new List<Error>();
+        var errors = new List<Error>();
         while (_tokens.Count > 0)
         {
             var statementResult = ParseStatement();
@@ -81,7 +81,10 @@ internal class Parser
                 statements.Add(statement);
             }
         }
-        return statements;
+        var result = errors.Any() ?
+            SMSCReadResult.Failure(errors) :
+            SMSCReadResult.Success(statements);
+        return result;
     }
 
     /// <summary>
