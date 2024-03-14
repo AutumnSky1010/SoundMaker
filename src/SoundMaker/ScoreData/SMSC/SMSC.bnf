@@ -29,7 +29,7 @@ tuplet ::= 'tup' '(' <length> ',' {<scale> '.'?}|{'rest' '.'?}|<tie> {',' {<scal
 endOfStatement ::= ';'|\n|\r|\r\n
 
 # 文の定義 - Sentence definition
-statement ::= { <note>|<rest>|<tie>|<tuplet> }?<endOfStatement>
+statement ::= { <note>|<rest>|<tie>|<tuplet> }? <endOfStatement>
 
 # SMSC(SoundMaker SCore)データ - SMSC(SoundMaker SCore) data
 smsc ::= <statement>*
