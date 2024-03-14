@@ -55,7 +55,7 @@ public abstract class SoundChannelBase : ISoundChannel
     /// <summary>
     /// サウンドコンポーネントのリスト
     /// </summary>
-    protected List<ISoundComponent> SoundComponents { get; } = new List<ISoundComponent>();
+    protected List<ISoundComponent> SoundComponents { get; private set; } = new List<ISoundComponent>();
 
     public SoundFormat Format { get; }
 
@@ -105,6 +105,16 @@ public abstract class SoundChannelBase : ISoundChannel
         var component = SoundComponents[index];
         WaveArrayLength -= component.GetWaveArrayLength(Format, Tempo);
         _ = SoundComponents.Remove(component);
+    }
+
+    /// <summary>
+    /// Import sound components. サウンドコンポーネントをインポートする。
+    /// </summary>
+    /// <param name="components">Sound components. サウンドコンポーネント</param>
+    public void Import(IEnumerable<ISoundComponent> components)
+    {
+        SoundComponents = new List<ISoundComponent>(components);
+        WaveArrayLength = components.Sum(component => component.GetWaveArrayLength(Format, Tempo));
     }
 
     public abstract ushort[] GenerateWave();
