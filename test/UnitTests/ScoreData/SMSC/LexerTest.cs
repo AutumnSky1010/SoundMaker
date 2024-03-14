@@ -26,6 +26,7 @@ C4, 16
             new(TokenType.Number, "4", 2),
             new(TokenType.Comma, ",", 2),
             new(TokenType.Number, "16", 2),
+            new(TokenType.LineBreak, "\n", 2),
         };
         var tokens = lexer.ReadAll();
         Assert.Equal(expected.Count, tokens.Count);
@@ -34,6 +35,7 @@ C4, 16
         AssertToken(expected[1], tokens[1]);
         AssertToken(expected[2], tokens[2]);
         AssertToken(expected[3], tokens[3]);
+        AssertToken(expected[4], tokens[4]);
     }
 
     [Fact(DisplayName = "付点音符を解析できるか")]
@@ -50,6 +52,7 @@ C4, 16.
             new(TokenType.Comma, ",", 2),
             new(TokenType.Number, "16", 2),
             new(TokenType.Dot, ".", 2),
+            new(TokenType.LineBreak, "\n", 2),
         };
         var tokens = lexer.ReadAll();
         Assert.Equal(expected.Count, tokens.Count);
@@ -59,6 +62,7 @@ C4, 16.
         AssertToken(expected[2], tokens[2]);
         AssertToken(expected[3], tokens[3]);
         AssertToken(expected[4], tokens[4]);
+        AssertToken(expected[5], tokens[5]);
     }
 
     [Fact(DisplayName = "半音上の音符を解析できるか")]
@@ -75,6 +79,7 @@ C#4, 16
             new(TokenType.Number, "4", 2),
             new(TokenType.Comma, ",", 2),
             new(TokenType.Number, "16", 2),
+            new(TokenType.LineBreak, "\n", 2),
         };
         var tokens = lexer.ReadAll();
         Assert.Equal(expected.Count, tokens.Count);
@@ -84,6 +89,7 @@ C#4, 16
         AssertToken(expected[2], tokens[2]);
         AssertToken(expected[3], tokens[3]);
         AssertToken(expected[4], tokens[4]);
+        AssertToken(expected[5], tokens[5]);
     }
 
     private void AssertToken(Token expected, Token actual)

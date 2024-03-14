@@ -2,11 +2,12 @@
 internal enum TokenType
 {
     // Symbols
-    Dot,              // .
-    Sharp,            // #
-    LeftParentheses,  // (
-    RightParentheses, // )
-    Comma,            // ,
+    Dot,
+    Sharp,
+    LeftParentheses,
+    RightParentheses,
+    Semicolon,
+    Comma,
     // Characters
     Alphabet,
     Number,

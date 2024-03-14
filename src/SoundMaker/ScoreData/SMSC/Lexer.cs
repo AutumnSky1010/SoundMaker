@@ -17,10 +17,18 @@ internal class Lexer
     {
         var tokens = new List<Token>();
         var data = _data.Replace("\r\n", "\n").Replace('\r', '\n');
-        var lines = data.Split('\n');
+        // 空白、空文字列、コメントだけの行をあらかじめ除外する
+        var lines = data.Split('\n').ToArray();
         for (var i = 0; i < lines.Length; i++)
         {
             var line = lines[i];
+
+            // 空白またはコメントだけの行はスキップする
+            if (string.IsNullOrWhiteSpace(line) || line.StartsWith("//"))
+            {
+                continue;
+            }
+
             var lineNumber = i + 1;
             var chars = line.ToCharArray();
             var otherTypeLiteralBuilder = new StringBuilder();
@@ -88,6 +96,7 @@ internal class Lexer
                     '(' => new(TokenType.LeftParentheses, "(", lineNumber),
                     ')' => new(TokenType.RightParentheses, ")", lineNumber),
                     ',' => new(TokenType.Comma, ",", lineNumber),
+                    ';' => new(TokenType.Semicolon, ";", lineNumber),
                     _ => new(TokenType.Unknown, chars[j].ToString(), lineNumber),
                 };
                 tokens.Add(token);
@@ -107,6 +116,8 @@ internal class Lexer
                 tokens.Add(new(type, literal, lineNumber));
                 _ = otherTypeLiteralBuilder.Clear();
             }
+
+            tokens.Add(new(TokenType.LineBreak, "\n", lineNumber));
         }
         return tokens;
     }
@@ -146,6 +157,6 @@ internal class Lexer
 
     private bool IsSymbol(char character)
     {
-        return character is '.' or '#' or '(' or ')' or ',';
+        return character is '.' or '#' or '(' or ')' or ',' or ';';
     }
 }

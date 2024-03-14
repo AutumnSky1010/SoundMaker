@@ -73,10 +73,21 @@ internal class Parser
         var errors = new List<Error>();
         while (_tokens.Count > 0)
         {
-            var statementResult = ParseStatement();
-            if (statementResult.TryGetValue(out var statement))
+            var statementResultNullable = ParseStatement();
+
+            // 文末だった場合はスキップする。
+            if (statementResultNullable is null)
+            {
+                continue;
+            }
+
+            if (statementResultNullable.TryGetValue(out var statement))
             {
                 statements.Add(statement);
+            }
+            else if (statementResultNullable.Error is not null)
+            {
+                errors.Add(statementResultNullable.Error);
             }
         }
         var result = errors.Any() ?
@@ -88,23 +99,39 @@ internal class Parser
     /// <summary>
     /// 文を解析する
     /// </summary>
-    /// <returns>解析結果</returns>
-    private ParseResult<ISoundComponent> ParseStatement()
+    /// <returns>解析結果(文末だった場合はnull)</returns>
+    private ParseResult<ISoundComponent>? ParseStatement()
     {
         // 現在のトークンの種類を見たいだけなのでPeekする。
         if (!_tokens.TryPeek(out var current))
         {
             return new(null, new(SMSCReadErrorType.UndefinedStatement, _tokens.PrevToken?.LineNumber ?? 0));
         }
-        // 文の解析を現在のトークンに基づいて行う。
-        var statementResult = current.Type switch
+
+        ParseResult<ISoundComponent>? statementResult = null;
+        // 文末ではない場合のみ解析を行う。
+        if (!IsEndOfStatement(current))
         {
-            TokenType.Tie => ParseTie(),
-            TokenType.Tuplet => ParseTuplet(),
-            TokenType.Rest => ParseRest(),
-            // 上記に当てはまらない場合は音符として解析する。
-            _ => ParseNote()
-        };
+            // 文の解析を現在のトークンに基づいて行う。
+            statementResult = current.Type switch
+            {
+                TokenType.Tie => ParseTie(),
+                TokenType.Tuplet => ParseTuplet(),
+                TokenType.Rest => ParseRest(),
+                // 上記に当てはまらない場合は音符として解析する。
+                _ => ParseNote()
+            };
+        }
+
+        // 文の終わりまで進める
+        while (_tokens.TryDequeue(out current))
+        {
+            if (IsEndOfStatement(current))
+            {
+                break;
+            }
+        }
+
         return statementResult;
     }
 
@@ -131,10 +158,10 @@ internal class Parser
             return new(null, scaleResult.Error);
         }
 
-        // 引数内の長さを表す情報を解析する。トークンがなくなるか')'になるまで解析する。
+        // 引数内の長さを表す情報を解析する。トークンがなくなるか')'や文の終わりになるまで解析する。
         // 長さの情報は可変長引数として取る。
         var notes = new List<Note>();
-        while (_tokens.TryPeek(out current) && current.Type is not TokenType.RightParentheses)
+        while (_tokens.TryPeek(out current) && current.Type is not TokenType.RightParentheses && !IsEndOfStatement(current))
         {
             // ','の場合はDequeueする。tie(音程, 長さ, 長さ, ...)という並びなので、while文の先頭にこの処理を置く。
             // 音程解析はwhileの前で実装済みなので、", 長さ, 長さ, ..."という部分をここで解析する。
@@ -158,11 +185,12 @@ internal class Parser
             var note = new Note(scale.Scale, scale.ScaleNumber, length.LengthType, length.IsDotted);
             notes.Add(note);
         }
-        // トークンが空になっている場合、')'が存在していないので、エラーを出力。
-        if (_tokens.Count == 0)
+        // ')'でない場合、エラーを出力。
+        if (!_tokens.TryPeek(out current) || current.Type is not TokenType.RightParentheses)
         {
             return new(null, new(SMSCReadErrorType.NotFoundRightParentheses, _tokens.PrevToken?.LineNumber ?? 0));
         }
+
         // ')'を破棄
         _ = _tokens.Dequeue();
 
@@ -208,9 +236,9 @@ internal class Parser
 
         // 連符にするSoundComponentを解析する
         var components = new List<ISoundComponent>();
-        // 引数内の長さを表す情報を解析する。トークンがなくなるか')'になるまで解析する。
+        // 引数内の長さを表す情報を解析する。トークンがなくなるか')'や文の終わりになるまで解析する。
         // 情報は可変長引数として取る。
-        while (_tokens.TryPeek(out current) && current.Type is not TokenType.RightParentheses)
+        while (_tokens.TryPeek(out current) && current.Type is not TokenType.RightParentheses && !IsEndOfStatement(current))
         {
             // ','の場合はDequeueする。tup(長さ, 音の部品, 音の部品, ...)という並びなので、while文の先頭にこの処理を置く。
             // 長さの解析はwhileの前で実装済みなので、", 音の部品, 音の部品, ..."という部分をここで解析する。
@@ -287,11 +315,12 @@ internal class Parser
             }
         }
 
-        // トークンが空になっている場合、')'が存在していない
-        if (_tokens.Count == 0)
+        // ')'でない場合、エラーを出力。
+        if (!_tokens.TryPeek(out current) || current.Type is not TokenType.RightParentheses)
         {
             return new(null, new(SMSCReadErrorType.NotFoundRightParentheses, _tokens.PrevToken?.LineNumber ?? 0));
         }
+
         // ')'を破棄
         _ = _tokens.Dequeue();
 
@@ -430,7 +459,11 @@ internal class Parser
             }
 
             var scaleResult = new ScaleResult(scaleNullable.Value, scaleNumber);
-            return new(scaleResult, null);
+
+            if (ScaleHertzDictionary.IsValidScale(scaleResult.Scale, scaleResult.ScaleNumber))
+            {
+                return new(scaleResult, null);
+            }
         }
         // 上記条件に当てはまらない場合はエラー
         return new(null, new(SMSCReadErrorType.InvalidScale, current.LineNumber));
@@ -484,5 +517,10 @@ internal class Parser
 
         var length = new LengthResult(lengthTypeNullable.Value, isDotted);
         return new(length, null);
+    }
+
+    private static bool IsEndOfStatement(Token token)
+    {
+        return token.Type is TokenType.LineBreak or TokenType.Semicolon;
     }
 }

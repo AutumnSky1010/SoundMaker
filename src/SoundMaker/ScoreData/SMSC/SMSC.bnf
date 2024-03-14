@@ -23,10 +23,13 @@ rest ::= 'rest' ',' <length>
 tie ::= 'tie' '(' <scale> ',' <length>|'rest' {',' <length>|'rest'}* ')'
 
 # 連符の表記方法 - Tuplet notation
-tuplet ::= 'tup' '(' <length> ',' {<scale> '.'?}|{'rest' '.'?}|<tie> {',' <scale> '.'?}* ')'
+tuplet ::= 'tup' '(' <length> ',' {<scale> '.'?}|{'rest' '.'?}|<tie> {',' {<scale> '.'?}|{'rest' '.'?}|<tie>}* ')'
+
+# 文末 - End of statement
+endOfStatement ::= ';'|\n|\r|\r\n
 
 # 文の定義 - Sentence definition
-statement ::= <note>|<rest>|<tie>|<tuplet>
+statement ::= { <note>|<rest>|<tie>|<tuplet> }?<endOfStatement>
 
 # SMSC(SoundMaker SCore)データ - SMSC(SoundMaker SCore) data
 smsc ::= <statement>*
