@@ -8,7 +8,7 @@ public class ParserTest
     [Fact(DisplayName = "普通の音符を解析できるか")]
     public void TestParse_Note()
     {
-        var data = @"C4, 16";
+        var data = "C4, 16";
         var lexer = new Lexer(data);
         var tokens = lexer.ReadAll();
         var parser = new Parser(tokens);
@@ -34,7 +34,7 @@ public class ParserTest
     [Fact(DisplayName = "付点音符を解析できるか")]
     public void TestParse_DottedNote()
     {
-        var data = @"C4, 16.";
+        var data = "C4, 16.";
         var lexer = new Lexer(data);
         var tokens = lexer.ReadAll();
         var parser = new Parser(tokens);
@@ -59,7 +59,7 @@ public class ParserTest
     [Fact(DisplayName = "半音上の音符を解析できるか")]
     public void TestParse_SharpNote()
     {
-        var data = @"C#4, 16";
+        var data = "C#4, 16";
         var lexer = new Lexer(data);
         var tokens = lexer.ReadAll();
         var parser = new Parser(tokens);
@@ -84,7 +84,7 @@ public class ParserTest
     [Fact(DisplayName = "普通の休符を解析できるか")]
     public void TestParse_Rest()
     {
-        var data = @"rest, 16";
+        var data = "rest, 16";
         var lexer = new Lexer(data);
         var tokens = lexer.ReadAll();
         var parser = new Parser(tokens);
@@ -107,7 +107,7 @@ public class ParserTest
     [Fact(DisplayName = "付点休符を解析できるか")]
     public void TestParse_DottedRest()
     {
-        var data = @"rest, 16.";
+        var data = "rest, 16.";
         var lexer = new Lexer(data);
         var tokens = lexer.ReadAll();
         var parser = new Parser(tokens);
@@ -130,7 +130,7 @@ public class ParserTest
     [Fact(DisplayName = "タイを解析できるか")]
     public void TestParse_Tie()
     {
-        var data = @"tie(C#4, 16, 8.)";
+        var data = "tie(C#4, 16, 8.)";
         var lexer = new Lexer(data);
         var tokens = lexer.ReadAll();
         var parser = new Parser(tokens);
@@ -155,7 +155,7 @@ public class ParserTest
     [Fact(DisplayName = "連符を解析できるか")]
     public void TestParse_Tuplet()
     {
-        var data = @"tup(16, C#4, rest, E4.)";
+        var data = "tup(16, C#4, rest, E4.)";
         var lexer = new Lexer(data);
         var tokens = lexer.ReadAll();
         var parser = new Parser(tokens);
@@ -182,7 +182,7 @@ public class ParserTest
     [Fact(DisplayName = "連符内のタイや連符を解析できるか")]
     public void TestParse_TupletInTupletAndTie()
     {
-        var data = @"tup(16, tup(16, rest, rest), tie(C#4, 16, 8, 8, 8.))";
+        var data = "tup(16, tup(16, rest, rest), tie(C#4, 16, 8, 8, 8.))";
         var lexer = new Lexer(data);
         var tokens = lexer.ReadAll();
         var parser = new Parser(tokens);
@@ -217,7 +217,7 @@ public class ParserTest
     // ------------------エラーのテスト---------------------------
 
     [Fact(DisplayName = "空の文でエラーが発生しないか")]
-    public void TestEmptyStatment()
+    public void Test_EmptyStatment()
     {
         var data = ";;;";
         var lexer = new Lexer(data);
@@ -264,7 +264,7 @@ public class ParserTest
 
     [Theory(DisplayName = ")が見つからないエラーのテスト")]
     [InlineData("tie(C4,1;tup(4.,C4.", 2)]
-    public void TestNotFoundRightParenthesesErrors(string data, int expectedCount)
+    public void Test_NotFoundRightParenthesesErrors(string data, int expectedCount)
     {
         var lexer = new Lexer(data);
         var tokens = lexer.ReadAll();
@@ -275,7 +275,7 @@ public class ParserTest
 
     [Theory(DisplayName = "(が見つからないエラーのテスト")]
     [InlineData("tie)C4,1;tup4.,C4.", 2)]
-    public void TestNotFoundLeftParenthesesErrors(string data, int expectedCount)
+    public void Test_NotFoundLeftParenthesesErrors(string data, int expectedCount)
     {
         var lexer = new Lexer(data);
         var tokens = lexer.ReadAll();
