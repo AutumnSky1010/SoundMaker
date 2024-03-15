@@ -8,11 +8,11 @@ public class SMSCSerializerTest
     public void TestSerialize()
     {
         var note = new Note(Scale.C, 4, LengthType.Whole, true);
-
+        var tupletNote = new Note(Scale.C, 4, LengthType.Whole);
         var expected = @"C4,1.
 rest,4
 tie(C4,1.,1.,1.)
-tup(2,C4.,C4.,C4.)
+tup(2,C4,C4,C4)
 ";
 
         var components = new List<ISoundComponent>()
@@ -23,7 +23,7 @@ tup(2,C4.,C4.,C4.)
             {
                 note, note
             }),
-            new Tuplet(new List<ISoundComponent>() {note, note, note}, LengthType.Half, false)
+            new Tuplet(new List<ISoundComponent>() { tupletNote, tupletNote, tupletNote}, LengthType.Half, false)
         };
 
         var actual = SMSCSerializer.Serialize(components);

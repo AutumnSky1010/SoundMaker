@@ -155,7 +155,7 @@ public class ParserTest
     [Fact(DisplayName = "連符を解析できるか")]
     public void TestParse_Tuplet()
     {
-        var data = "tup(16, C#4, rest, E4.)";
+        var data = "tup(16, C#4, rest, E4)";
         var lexer = new Lexer(data);
         var tokens = lexer.ReadAll();
         var parser = new Parser(tokens);
@@ -263,7 +263,7 @@ public class ParserTest
     }
 
     [Theory(DisplayName = ")が見つからないエラーのテスト")]
-    [InlineData("tie(C4,1;tup(4.,C4.", 2)]
+    [InlineData("tie(C4,1;tup(4,C4", 2)]
     public void Test_NotFoundRightParenthesesErrors(string data, int expectedCount)
     {
         var lexer = new Lexer(data);
@@ -274,7 +274,7 @@ public class ParserTest
     }
 
     [Theory(DisplayName = "(が見つからないエラーのテスト")]
-    [InlineData("tie)C4,1;tup4.,C4.", 2)]
+    [InlineData("tie)C4,1;tup.4,C4", 2)]
     public void Test_NotFoundLeftParenthesesErrors(string data, int expectedCount)
     {
         var lexer = new Lexer(data);

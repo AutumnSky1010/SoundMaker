@@ -248,15 +248,8 @@ internal class Parser
             {
                 // 'rest'のトークンを破棄
                 _ = _tokens.Dequeue();
-                var isDottedRest = false;
-                // '.'の場合は付点休符とする
-                if (_tokens.TryPeek(out var dotToken) && dotToken.Type is TokenType.Dot)
-                {
-                    _ = _tokens.Dequeue();
-                    isDottedRest = true;
-                }
                 // 連符なので長さは適当に入れる
-                var rest = new Rest(LengthType.Whole, isDottedRest);
+                var rest = new Rest(LengthType.Whole, false);
                 components.Add(rest);
             }
             // 上記以外は音符として解析するが、連符専用の書き方なのでここで実装する。
@@ -268,15 +261,8 @@ internal class Parser
                 {
                     return new(null, scaleResult.Error);
                 }
-                var isDottedNote = false;
-                // '.'の場合は付点音符とする
-                if (_tokens.TryPeek(out var dotToken) && dotToken.Type is TokenType.Dot)
-                {
-                    _ = _tokens.Dequeue();
-                    isDottedNote = true;
-                }
                 // 連符なので長さは適当に入れる
-                var note = new Note(scale.Scale, scale.ScaleNumber, LengthType.Whole, isDottedNote);
+                var note = new Note(scale.Scale, scale.ScaleNumber, LengthType.Whole, false);
                 components.Add(note);
             }
         }

@@ -17,7 +17,7 @@ internal static class SMSCSerializer
                 Tuplet tuplet => SerializeTuplet(tuplet),
                 _ => "",
             };
-            _ = smscBuilder.AppendLine(line);
+            _ = smscBuilder.Append(line).Append('\n');
         }
         return smscBuilder.ToString();
     }
