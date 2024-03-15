@@ -22,7 +22,7 @@ public class Tuplet : ISoundComponent
     /// <summary>
     /// components to be tuplet. 連符にする基本の音のリスト
     /// </summary>
-    private IReadOnlyList<ISoundComponent> TupletComponents { get; }
+    internal IReadOnlyList<ISoundComponent> TupletComponents { get; }
 
     /// <summary>
     /// get the component at index. index番目の連符の音を取得する。
@@ -51,7 +51,7 @@ public class Tuplet : ISoundComponent
 
     public int GetWaveArrayLength(SoundFormat format, int tempo)
     {
-        return SoundWaveLengthCaluclator.Caluclate(format, tempo, Length, IsDotted);
+        return SoundWaveLengthCalclator.Calclate(format, tempo, Length, IsDotted);
     }
 
     public ushort[] GenerateWave(SoundFormat format, int tempo, int length, WaveTypeBase waveType)

@@ -33,6 +33,6 @@ public abstract class BasicSoundComponentBase : ISoundComponent
 
     public int GetWaveArrayLength(SoundFormat format, int tempo)
     {
-        return SoundWaveLengthCaluclator.Caluclate(format, tempo, Length, IsDotted);
+        return SoundWaveLengthCalclator.Calclate(format, tempo, Length, IsDotted);
     }
 }

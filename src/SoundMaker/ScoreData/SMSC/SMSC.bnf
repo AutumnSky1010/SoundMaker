@@ -1,0 +1,35 @@
+# 音階を表すアルファベット('C4'の'C'の部分) - Scale symbol (the 'C' part of 'C4')
+scaleSymbol ::= A|B|C|D|E|F|G
+
+# 音階の数字('C4'の'4'の部分) - Scale number (the '4' part of 'C4')
+scaleNumber ::= 0|1|2|3|4|5|6|7|8
+
+# 音の長さの数字(全音符: 1, 16分音符: 16) - Length number (whole note: 1, sixteenth note: 16)
+lengthCount ::= 1|2|4|8|16|32|64
+
+# 長さを表す(16.など) - Length representation (16., etc.)
+length ::= <lengthCount> '.'?
+
+# 音階(C#4など) - Scale (C#4, etc.)
+scale ::= <scaleSymbol> '#'? <scaleNumber>
+
+# 音符 - Note
+note ::= <scale> ',' <length>
+
+# 休符 - Rest
+rest ::= 'rest' ',' <length>
+
+# タイの表記方法 - Tie notation
+tie ::= 'tie' '(' <scale> ',' <length>|'rest' {',' <length>|'rest'}* ')'
+
+# 連符の表記方法 - Tuplet notation
+tuplet ::= 'tup' '(' <length> ',' <scale>|'rest'|<tie> {',' <scale>|'rest'|<tie>}* ')'
+
+# 文末 - End of statement
+endOfStatement ::= ';'|\n|\r|\r\n
+
+# 文の定義 - Sentence definition
+statement ::= { <note>|<rest>|<tie>|<tuplet> }? <endOfStatement>
+
+# SMSC(SoundMaker SCore)データ - SMSC(SoundMaker SCore) data
+smsc ::= <statement>*
