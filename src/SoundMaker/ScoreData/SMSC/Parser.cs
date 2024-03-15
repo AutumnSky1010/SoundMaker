@@ -71,7 +71,7 @@ internal class Parser
         // 現在のトークンの種類を見たいだけなのでPeekする。
         if (!_tokens.TryPeek(out var current))
         {
-            return new(null, new(SMSCReadErrorType.UndefinedStatement, _tokens.PrevToken?.LineNumber ?? 0));
+            return new(null, new(SMSCReadErrorType.UndefinedStatement, _tokens.PrevToken));
         }
 
         ParseResult<ISoundComponent>? statementResult = null;
@@ -110,12 +110,12 @@ internal class Parser
         // トークンが'tie'かを確認する
         if (!_tokens.TryDequeue(out var current) || current.Type is not TokenType.Tie)
         {
-            return new(null, new(SMSCReadErrorType.UndefinedStatement, _tokens.PrevToken?.LineNumber ?? 0));
+            return new(null, new(SMSCReadErrorType.UndefinedStatement, _tokens.PrevToken));
         }
         // トークンが'('かを確認する
         if (!_tokens.TryDequeue(out current) || current.Type is not TokenType.LeftParentheses)
         {
-            return new(null, new(SMSCReadErrorType.NotFoundLeftParentheses, _tokens.PrevToken?.LineNumber ?? 0));
+            return new(null, new(SMSCReadErrorType.NotFoundLeftParentheses, _tokens.PrevToken));
         }
         // 音程を解析する
         var scaleResult = ParseScale();
@@ -137,7 +137,7 @@ internal class Parser
             }
             else
             {
-                return new(null, new(SMSCReadErrorType.NotFoundComma, current.LineNumber));
+                return new(null, new(SMSCReadErrorType.NotFoundComma, current));
             }
 
             // 長さを解析する。
@@ -154,7 +154,7 @@ internal class Parser
         // ')'でない場合、エラーを出力。
         if (!_tokens.TryPeek(out current) || current.Type is not TokenType.RightParentheses)
         {
-            return new(null, new(SMSCReadErrorType.NotFoundRightParentheses, _tokens.PrevToken?.LineNumber ?? 0));
+            return new(null, new(SMSCReadErrorType.NotFoundRightParentheses, _tokens.PrevToken));
         }
 
         // ')'を破棄
@@ -165,7 +165,7 @@ internal class Parser
         // 音符が0個の場合は解析できていない。
         if (notes.Count == 0)
         {
-            return new(null, new(SMSCReadErrorType.UndefinedStatement, _tokens.PrevToken?.LineNumber ?? 0));
+            return new(null, new(SMSCReadErrorType.UndefinedStatement, _tokens.PrevToken));
         }
         // 個数が1個の場合はadditionalNotesに空配列を渡す
         else if (notes.Count == 1)
@@ -190,12 +190,12 @@ internal class Parser
         // トークンが'tup'かを確認する
         if (!_tokens.TryDequeue(out var current) || current.Type is not TokenType.Tuplet)
         {
-            return new(null, new(SMSCReadErrorType.UndefinedStatement, _tokens.PrevToken?.LineNumber ?? 0));
+            return new(null, new(SMSCReadErrorType.UndefinedStatement, _tokens.PrevToken));
         }
         // トークンが'('かを確認する
         if (!_tokens.TryDequeue(out current) || current.Type is not TokenType.LeftParentheses)
         {
-            return new(null, new(SMSCReadErrorType.NotFoundLeftParentheses, _tokens.PrevToken?.LineNumber ?? 0));
+            return new(null, new(SMSCReadErrorType.NotFoundLeftParentheses, _tokens.PrevToken));
         }
         // 長さを解析する
         var lengthResult = ParseLength();
@@ -214,13 +214,13 @@ internal class Parser
             }
             else
             {
-                return new(null, new(SMSCReadErrorType.NotFoundComma, current.LineNumber));
+                return new(null, new(SMSCReadErrorType.NotFoundComma, current));
             }
 
             // 条件分岐の為にトークンをピークする
             if (!_tokens.TryPeek(out current))
             {
-                return new(null, new(SMSCReadErrorType.UndefinedStatement, _tokens.PrevToken?.LineNumber ?? 0));
+                return new(null, new(SMSCReadErrorType.UndefinedStatement, _tokens.PrevToken));
             }
 
             // タイの場合はタイを解析する
@@ -270,7 +270,7 @@ internal class Parser
         // ')'でない場合、エラーを出力。
         if (!_tokens.TryPeek(out current) || current.Type is not TokenType.RightParentheses)
         {
-            return new(null, new(SMSCReadErrorType.NotFoundRightParentheses, _tokens.PrevToken?.LineNumber ?? 0));
+            return new(null, new(SMSCReadErrorType.NotFoundRightParentheses, _tokens.PrevToken));
         }
 
         // ')'を破棄
@@ -299,7 +299,7 @@ internal class Parser
         // ','かを判定する
         if (!_tokens.TryDequeue(out var current) || current.Type is not TokenType.Comma)
         {
-            return new(null, new Error(SMSCReadErrorType.NotFoundComma, _tokens.PrevToken?.LineNumber ?? 0));
+            return new(null, new Error(SMSCReadErrorType.NotFoundComma, _tokens.PrevToken));
         }
         // 長さを解析する
         var lengthResult = ParseLength();
@@ -320,12 +320,12 @@ internal class Parser
         // 'rest'かを判定する
         if (!_tokens.TryDequeue(out var current) || current.Type is not TokenType.Rest)
         {
-            return new(null, new(SMSCReadErrorType.UndefinedStatement, _tokens.PrevToken?.LineNumber ?? 0));
+            return new(null, new(SMSCReadErrorType.UndefinedStatement, _tokens.PrevToken));
         }
         // ','かを判定する
         if (!_tokens.TryDequeue(out current) || current.Type is not TokenType.Comma)
         {
-            return new(null, new(SMSCReadErrorType.NotFoundComma, _tokens.PrevToken?.LineNumber ?? 0));
+            return new(null, new(SMSCReadErrorType.NotFoundComma, _tokens.PrevToken));
         }
         // 長さを解析する
         var lengthResult = ParseLength();
@@ -346,14 +346,14 @@ internal class Parser
         // 最低でもトークンが2つ取れないと解析できないので、ここで判定する。
         if (!_tokens.TryDequeue(out var current) || !_tokens.TryDequeue(out var next))
         {
-            return new(null, new Error(SMSCReadErrorType.InvalidScale, _tokens.PrevToken?.LineNumber ?? 0));
+            return new(null, new Error(SMSCReadErrorType.InvalidScale, _tokens.PrevToken));
         }
 
         Scale? scaleNullable;
         // 音程はアルファベットで書かれている
         if (current.Type is not TokenType.Alphabet)
         {
-            return new(null, new Error(SMSCReadErrorType.InvalidScale, current.LineNumber));
+            return new(null, new Error(SMSCReadErrorType.InvalidScale, current));
         }
 
         int scaleNumber;
@@ -362,11 +362,11 @@ internal class Parser
         {
             if (!_tokens.TryDequeue(out var nextNext))
             {
-                return new(null, new Error(SMSCReadErrorType.InvalidScale, next.LineNumber));
+                return new(null, new Error(SMSCReadErrorType.InvalidScale, next));
             }
             if (nextNext.Type is not TokenType.Number)
             {
-                return new(null, new Error(SMSCReadErrorType.InvalidScale, nextNext.LineNumber));
+                return new(null, new Error(SMSCReadErrorType.InvalidScale, nextNext));
             }
 
             scaleNullable = current.Literal switch
@@ -381,7 +381,7 @@ internal class Parser
 
             if (scaleNullable is null)
             {
-                return new(null, new Error(SMSCReadErrorType.InvalidScale, current.LineNumber));
+                return new(null, new Error(SMSCReadErrorType.InvalidScale, current));
             }
 
             scaleNumber = int.Parse(nextNext.Literal);
@@ -407,7 +407,7 @@ internal class Parser
 
             if (scaleNullable is null)
             {
-                return new(null, new Error(SMSCReadErrorType.InvalidScale, current.LineNumber));
+                return new(null, new Error(SMSCReadErrorType.InvalidScale, current));
             }
 
             var scaleResult = new ScaleResult(scaleNullable.Value, scaleNumber);
@@ -418,7 +418,7 @@ internal class Parser
             }
         }
         // 上記条件に当てはまらない場合はエラー
-        return new(null, new(SMSCReadErrorType.InvalidScale, current.LineNumber));
+        return new(null, new(SMSCReadErrorType.InvalidScale, current));
     }
 
     /// <summary>
@@ -432,13 +432,13 @@ internal class Parser
 
         if (!_tokens.TryDequeue(out var current))
         {
-            return new(null, new Error(SMSCReadErrorType.InvalidLength, _tokens.PrevToken?.LineNumber ?? 0));
+            return new(null, new Error(SMSCReadErrorType.InvalidLength, _tokens.PrevToken));
         }
 
         // 数字かを判定する
         if (current.Type is not TokenType.Number)
         {
-            return new(null, new Error(SMSCReadErrorType.InvalidLength, current.LineNumber));
+            return new(null, new Error(SMSCReadErrorType.InvalidLength, current));
         }
 
         lengthTypeNullable = int.Parse(current.Literal) switch
@@ -464,7 +464,7 @@ internal class Parser
         // 不正な長さの場合
         if (lengthTypeNullable is null)
         {
-            return new(null, new Error(SMSCReadErrorType.InvalidLength, _tokens.PrevToken?.LineNumber ?? 0));
+            return new(null, new Error(SMSCReadErrorType.InvalidLength, _tokens.PrevToken));
         }
 
         var length = new LengthResult(lengthTypeNullable.Value, isDotted);

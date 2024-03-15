@@ -1,6 +1,11 @@
 ﻿using SoundMaker.Sounds.Score;
 
 namespace SoundMaker.ScoreData.SMSC;
+
+/// <summary>
+/// Result of reading SMSC data<br/>
+/// SMSCデータの読み取り結果
+/// </summary>
 public class SMSCReadResult
 {
     private readonly IReadOnlyList<ISoundComponent> _value;
