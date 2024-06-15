@@ -10,8 +10,8 @@ public static class SMSCFormat
     /// Reads SMSC data.<br/>
     /// SMSCデータを読み込む。
     /// </summary>
-    /// <param name="data"></param>
-    /// <returns></returns>
+    /// <param name="data">SMSC data. SMSCデータ</param>
+    /// <returns>The read results. 読み取り結果</returns>
     public static SMSCReadResult Read(string data)
     {
         var lexer = new Lexer(data);

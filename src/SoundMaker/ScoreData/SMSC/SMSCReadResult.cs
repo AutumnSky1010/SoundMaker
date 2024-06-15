@@ -57,7 +57,7 @@ public class SMSCReadResult
     }
 
     /// <summary>
-    /// Returns the result assuming the reading was successful. If it fails, an empty array is returned. <br/>
+    /// Returns the result assuming the reading was successful. If it fails or empty, an empty array is returned. <br/>
     /// 読み込みに成功した前提で結果を返す。失敗時は空の配列が戻る。
     /// </summary>
     /// <returns>On success: result, On failure: empty array</returns>

@@ -1,4 +1,8 @@
 ﻿namespace SoundMaker.ScoreData.SMSC;
+/// <summary>
+/// Error of reading SMSC data<br/>
+/// SMSCデータの読み取り結果
+/// </summary>
 public record Error
 {
     internal Error(SMSCReadErrorType type, Token? token)

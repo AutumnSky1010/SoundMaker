@@ -14,7 +14,7 @@
 [Wiki](https://github.com/AutumnSky1010/SoundMaker/wiki)
 
 ## ⛰️要件
-.NET 6
+.NET 6 以降
 
 ## ⏬インストール方法
 ### NuGet
@@ -23,6 +23,12 @@
 
 ## 🎶簡単な使い方
 ```CSharp
+using SoundMaker;
+using SoundMaker.Sounds;
+using SoundMaker.Sounds.Score;
+using SoundMaker.Sounds.SoundChannels;
+using SoundMaker.WaveFile;
+
 namespace YourNamespace;
 public static class YourClass
 {
@@ -106,7 +112,7 @@ public static class YourClass
 - Monaural 1ch
 
 ## 🍄作った人のツイッター
-[Twitter](https://twitter.com/DTB_AutumnSky)  
+[Twitter(X)](https://x.com/DTB_AutumnSky)  
 
 ## ©️ライセンス
 MIT License
@@ -120,7 +126,7 @@ You can do The following content with this library.
 [Wiki](https://github.com/AutumnSky1010/SoundMaker/wiki)
 
 ## ⛰️Requirement
-.NET 6
+.NET 6 or later
 
 ## ⏬Installation
 ### NuGet
@@ -129,6 +135,12 @@ You can do The following content with this library.
 
 ## 🎶Usage
 ```CSharp
+using SoundMaker;
+using SoundMaker.Sounds;
+using SoundMaker.Sounds.Score;
+using SoundMaker.Sounds.SoundChannels;
+using SoundMaker.WaveFile;
+
 namespace YourNamespace;
 public static class YourClass
 {
@@ -210,7 +222,7 @@ public static class YourClass
 - Monaural 1ch
 
 ## 🍄Author
-[Twitter](https://twitter.com/DTB_AutumnSky)
+[Twitter(X)](https://x.com/DTB_AutumnSky)
 
 ## ©️License
 SoundMaker is licensed under the MIT License.
