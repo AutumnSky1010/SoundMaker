@@ -45,6 +45,8 @@ public class SquareSoundChannel : SoundChannelBase
         var result = new List<ushort>();
         foreach (var soundComponent in SoundComponents)
         {
+            var wave = soundComponent.GenerateWave(Format, Tempo, new SquareWave(Ratio));
+            FadeInOut(wave);
             result.AddRange(soundComponent.GenerateWave(Format, Tempo, new SquareWave(Ratio)));
         }
         return result.ToArray();

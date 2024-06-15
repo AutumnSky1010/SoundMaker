@@ -119,6 +119,20 @@ public abstract class SoundChannelBase : ISoundChannel
 
     public abstract ushort[] GenerateWave();
 
+    protected void FadeInOut(ushort[] wave)
+    {
+        var tenMSCount = (int)((double)Format.SamplingFrequency * 0.01);
+        if (wave.Length > tenMSCount << 1)
+        {
+            for (int i = 0; i < tenMSCount; i++)
+            {
+                double magnification = (1.0 / tenMSCount) * (i + 1);
+                wave[i] = (ushort)(((short)(wave[i] - short.MaxValue - 1) * magnification) + short.MaxValue + 1);
+                wave[wave.Length - i - 1] = (ushort)(((short)(wave[wave.Length - i - 1] - short.MaxValue - 1) * magnification) + short.MaxValue + 1);
+            }
+        }
+    }
+
     public IEnumerator<ISoundComponent> GetEnumerator()
     {
         return SoundComponents.GetEnumerator();
