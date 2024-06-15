@@ -31,7 +31,9 @@ public class TriangleSoundChannel : SoundChannelBase
         var result = new List<ushort>();
         foreach (var soundComponent in SoundComponents)
         {
-            result.AddRange(soundComponent.GenerateWave(Format, Tempo, new TriangleWave()));
+            var wave = soundComponent.GenerateWave(Format, Tempo, new TriangleWave());
+            FadeInOut(wave);
+            result.AddRange(wave);
         }
         return result.ToArray();
     }
