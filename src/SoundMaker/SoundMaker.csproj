@@ -11,7 +11,7 @@
     <PackageTags>C#;.NET;game;music;sound;chiptune;audio;wave;wav;</PackageTags>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
-    <Version>2.3.1</Version>
+    <Version>2.3.2</Version>
     <Authors>AutumnSky1010</Authors>
     <Description>You can do The following content with this library.
 
@@ -20,7 +20,7 @@
     <PackageIcon>SoundMakerIcon.png</PackageIcon>
     <Copyright>Copyright ©2024 AutumnSky1010</Copyright>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageReleaseNotes>https://github.com/AutumnSky1010/SoundMaker/releases/tag/SoundMaker-ver.2.3.1</PackageReleaseNotes>
+    <PackageReleaseNotes>https://github.com/AutumnSky1010/SoundMaker/releases/tag/SoundMaker-ver.2.3.2</PackageReleaseNotes>
     <PackageProjectUrl>https://github.com/AutumnSky1010/SoundMaker/wiki</PackageProjectUrl>
   </PropertyGroup>
 
