@@ -36,7 +36,7 @@ public class WaveWriter
     /// <param name="stream">stream</param>
     public void Write(Stream stream)
     {
-        using var writer = new BinaryWriter(stream);
+        var writer = new BinaryWriter(stream);
         foreach (var chunk in Chunks)
         {
             writer.Write(chunk.GetBytes());
