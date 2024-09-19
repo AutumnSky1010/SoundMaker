@@ -114,15 +114,15 @@ public class StereoWave : IWave
         for (var i = 0; i < maxAndMinLength.Min; i++)
         {
             // Point : ステレオの波は左右左右左右左右・・・・・・左右
-            resultWave.Add((byte)(LeftWave[i] / 256 + 127));
-            resultWave.Add((byte)(RightWave[i] / 256 + 127));
+            resultWave.Add((byte)(LeftWave[i] / 256 + 128));
+            resultWave.Add((byte)(RightWave[i] / 256 + 128));
         }
         // 追加しきれていない波形データを追加する
         if (LeftWave.Length == maxAndMinLength.Max)
         {
             for (var i = maxAndMinLength.Min; i < maxAndMinLength.Max; i++)
             {
-                resultWave.Add((byte)(LeftWave[i] / 256 + 127));
+                resultWave.Add((byte)(LeftWave[i] / 256 + 128));
                 resultWave.Add(0);
             }
         }
