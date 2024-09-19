@@ -18,7 +18,7 @@ public abstract class WaveTypeBase
     /// <exception cref="ArgumentOutOfRangeException">Hertz must be non-negative and greater than 0.</exception>
     /// <exception cref="ArgumentOutOfRangeException">Volume must be below than 100 and more than 0.</exception>
     [Obsolete("Use 'GenerateWave(SoundFormat format, int length, int volume, double hertz)'")]
-    public abstract ushort[] GenerateWave(SoundFormat format, int tempo, int length, int volume, double hertz);
+    public abstract short[] GenerateWave(SoundFormat format, int tempo, int length, int volume, double hertz);
 
     /// <summary>
     /// generate array of wave data. 波形データの配列を生成する。
@@ -31,7 +31,7 @@ public abstract class WaveTypeBase
     /// <exception cref="ArgumentOutOfRangeException">Length must be non-negative.</exception>
     /// <exception cref="ArgumentOutOfRangeException">Hertz must be non-negative and greater than 0.</exception>
     /// <exception cref="ArgumentOutOfRangeException">Volume must be below than 100 and more than 0.</exception>
-    public abstract ushort[] GenerateWave(SoundFormat format, int length, int volume, double hertz);
+    public abstract short[] GenerateWave(SoundFormat format, int length, int volume, double hertz);
 
     [Obsolete("Use 'CheckGenerateWaveArgs(int length, int volume, double hertz)'")]
     protected void CheckGenerateWaveArgs(int tempo, int length, int volume, double hertz)
