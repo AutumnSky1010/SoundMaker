@@ -8,18 +8,18 @@ public class MonauralWave : IWave
     /// constructor. コンストラクタ
     /// </summary>
     /// <param name="wave">the collection of wave data. 波形データを表す配列</param>
-    public MonauralWave(IReadOnlyCollection<ushort> wave)
+    public MonauralWave(IReadOnlyCollection<short> wave)
     {
         var argumentIntegers = wave.ToArray();
-        OriginalVolumeWave = new ushort[wave.Count];
-        Wave = new ushort[wave.Count];
+        OriginalVolumeWave = new short[wave.Count];
+        Wave = new short[wave.Count];
         Array.Copy(argumentIntegers, OriginalVolumeWave, argumentIntegers.Length);
         Array.Copy(argumentIntegers, Wave, argumentIntegers.Length);
     }
 
-    private ushort[] OriginalVolumeWave { get; set; }
+    private short[] OriginalVolumeWave { get; set; }
 
-    private ushort[] Wave { get; set; }
+    private short[] Wave { get; set; }
 
     public int Volume { get; private set; } = 100;
 
@@ -37,7 +37,7 @@ public class MonauralWave : IWave
         Volume = volume;
         for (var i = 0; i < Wave.Length; i++)
         {
-            Wave[i] = (ushort)(Wave[i] * (volume / 100d));
+            Wave[i] = (short)(Wave[i] * (volume / 100d));
         }
     }
 
@@ -48,7 +48,7 @@ public class MonauralWave : IWave
     public void Append(MonauralWave wave)
     {
         Wave = Wave.Concat(wave.GetWave()).ToArray();
-        OriginalVolumeWave = new ushort[Wave.Length];
+        OriginalVolumeWave = new short[Wave.Length];
         Array.Copy(Wave, OriginalVolumeWave, Wave.Length);
     }
 
@@ -59,7 +59,7 @@ public class MonauralWave : IWave
             var result = new List<byte>(Wave.Length * 2);
             foreach (var value in Wave)
             {
-                var bytes = BitConverter.GetBytes((short)((value - short.MaxValue) / 2));
+                var bytes = BitConverter.GetBytes(value);
                 result.Add(bytes[0]);
                 result.Add(bytes[1]);
             }
@@ -70,7 +70,7 @@ public class MonauralWave : IWave
             var result = new List<byte>(Wave.Length);
             foreach (var value in Wave)
             {
-                result.Add((byte)(value / 256));
+                result.Add((byte)(value / 256 + 128));
             }
             return result.ToArray();
         }
@@ -79,10 +79,10 @@ public class MonauralWave : IWave
     /// <summary>
     /// get the wave. 音の波形データを取得するメソッド。
     /// </summary>
-    /// <returns>the wave. 波形データ : unsigned short[]</returns>
-    public ushort[] GetWave()
+    /// <returns>the wave. 波形データ : short[]</returns>
+    public short[] GetWave()
     {
-        var result = new ushort[Wave.Length];
+        var result = new short[Wave.Length];
         Array.Copy(Wave, result, Wave.Length);
         return result;
     }

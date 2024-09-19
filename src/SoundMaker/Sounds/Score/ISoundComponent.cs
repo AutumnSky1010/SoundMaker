@@ -23,10 +23,10 @@ public interface ISoundComponent
     /// <param name="tempo">quarter note/rest per minute. 一分間の四分音符・休符の数</param>
     /// <param name="length">length of the array. 配列の長さ</param>
     /// <param name="waveType">type of wave.波形の種類</param>
-    /// <returns>data of wave. 波形データ : unsigned short[]</returns>
+    /// <returns>data of wave. 波形データ :  short[]</returns>
     /// <exception cref="ArgumentOutOfRangeException">Tempo must be non-negative and greater than 0.</exception>
     /// <exception cref="ArgumentOutOfRangeException">Length must be non-negative.</exception>
-    ushort[] GenerateWave(SoundFormat format, int tempo, int length, WaveTypeBase waveType);
+    short[] GenerateWave(SoundFormat format, int tempo, int length, WaveTypeBase waveType);
 
     /// <summary>
     /// generate the wave of wave type. 波形の種類に基づいて波形データの配列を生成するメソッド。
@@ -34,7 +34,7 @@ public interface ISoundComponent
     /// <param name="format">format of the sound.音のフォーマット</param>
     /// <param name="tempo">quarter note/rest per minute. 一分間の四分音符・休符の数</param>
     /// <param name="waveType">type of wave.波形の種類</param>
-    /// <returns>data of wave. 波形データ : unsigned short[]</returns>
+    /// <returns>data of wave. 波形データ :  short[]</returns>
     /// <exception cref="ArgumentOutOfRangeException">Tempo must be non-negative and greater than 0.</exception>
-    ushort[] GenerateWave(SoundFormat format, int tempo, WaveTypeBase waveType);
+    short[] GenerateWave(SoundFormat format, int tempo, WaveTypeBase waveType);
 }

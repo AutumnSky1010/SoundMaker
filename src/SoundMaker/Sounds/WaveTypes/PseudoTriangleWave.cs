@@ -4,14 +4,23 @@
 /// </summary>
 public class PseudoTriangleWave : WaveTypeBase
 {
+    private static readonly short[] _leftHeights = new short[]
+    {
+        0, -4096, -8192, -12288, -16384, -20480, -24576, -28672, -28672, -24576, -20480, -16384, -12288, -8192, -4096, 0,
+    };
+    private static readonly short[] _rightHeights = new short[]
+    {
+        4095, 8191, 12287, 16383, 20479, 24575, 28671, short.MaxValue, short.MaxValue, 28671, 24575, 20479, 16383, 12287, 8191, 4095
+    };
+
     [Obsolete("Use 'GenerateWave(SoundFormat format, int length, int volume, double hertz)'")]
-    public override ushort[] GenerateWave(SoundFormat format, int tempo, int length, int volume, double hertz)
+    public override short[] GenerateWave(SoundFormat format, int tempo, int length, int volume, double hertz)
     {
         CheckGenerateWaveArgs(tempo, length, volume, hertz);
         return GenerateWave(format, length, volume, hertz);
     }
 
-    public override ushort[] GenerateWave(SoundFormat format, int length, int volume, double hertz)
+    public override short[] GenerateWave(SoundFormat format, int length, int volume, double hertz)
     {
         CheckGenerateWaveArgs(length, volume, hertz);
 
@@ -23,7 +32,7 @@ public class PseudoTriangleWave : WaveTypeBase
             return new TriangleWave().GenerateWave(format, length, volume, hertz);
         }
 
-        var result = new List<ushort>(length);
+        var result = new List<short>(length);
         var unitWave = GenerateUnitWave(format, volume, hertz);
         for (var i = 0; i < length / unitWave.Count; i++)
         {
@@ -36,53 +45,40 @@ public class PseudoTriangleWave : WaveTypeBase
         return result.ToArray();
     }
 
-    private List<ushort> GenerateUnitWave(SoundFormat format, int volume, double hertz)
+    private List<short> GenerateUnitWave(SoundFormat format, int volume, double hertz)
     {
         var repeatNumber = (int)((int)format.SamplingFrequency / hertz);
-        // なぜか配列よりリストの方が早い
-        var result = new List<ushort>(repeatNumber);
+
+        var result = new short[repeatNumber];
+        var steps = 32;
         // 音量の倍率(1.00 ~ 0.00)
         var volumeMagnification = volume / 100d;
         // 階段の幅
-        var stairsWidth = repeatNumber / 32;
+        var stairsWidth = repeatNumber / steps;
         // 幅の余り
-        var r = repeatNumber % 32;
+        var r = repeatNumber % steps;
 
-        // 上り波形
-        for (var i = 0; i < 16; i++)
+        int position = 0;
+        for (int i = 0; i < _leftHeights.Length; i++)
         {
-            var sound = (ushort)(ushort.MaxValue * (i / 15d));
-            sound = (ushort)(sound * volumeMagnification);
-            for (var j = 0; j < stairsWidth; j++)
+            var leftHeight = (short)(_leftHeights[i] * volumeMagnification);
+            var rightHeight = (short)(_rightHeights[i] * volumeMagnification);
+
+            for (int j = 0; j < stairsWidth; j++)
             {
-                result.Add(sound);
+                result[position] = leftHeight;
+                result[result.Length - 1 - position] = rightHeight;
+                position++;
             }
-            // 余りがある場合は足す。波形の後ろ側の部分に足す
-            // ex. r = 31の場合、i = 1 ~ 15の時足す。
-            if (i <= r / 2 && i != 0)
+            if (r > 0)
             {
-                result.Add(sound);
+                result[position] = leftHeight;
+                result[result.Length - 1 - position] = rightHeight;
+                r -= 2;
+                position++;
             }
         }
-        // 下り波形
-        // 下り波形では上り波形より数値を減らす
-        var negativeDiff = (ushort)(ushort.MaxValue * (1 / 30d));
-        for (var i = 15; i >= 0; i--)
-        {
-            var sound = (ushort)(ushort.MaxValue * (i / 15d));
-            sound = sound != 0 ? (ushort)(sound - negativeDiff) : sound;
-            sound = (ushort)(sound * volumeMagnification);
-            for (var j = 0; j < stairsWidth; j++)
-            {
-                result.Add(sound);
-            }
-            // 余りがある場合は足す。波形の後ろ側の部分に足す
-            // ex. r = 31の場合、i = 15 ~ 0の時足す。
-            if (i < (r / 2) + (r % 2))
-            {
-                result.Add(sound);
-            }
-        }
-        return result;
+
+        return result.ToList();
     }
 }

@@ -27,9 +27,9 @@ public abstract class BasicSoundComponentBase : ISoundComponent
     /// </summary>
     public bool IsDotted { get; }
 
-    public abstract ushort[] GenerateWave(SoundFormat format, int tempo, int length, WaveTypeBase waveType);
+    public abstract short[] GenerateWave(SoundFormat format, int tempo, int length, WaveTypeBase waveType);
 
-    public abstract ushort[] GenerateWave(SoundFormat format, int tempo, WaveTypeBase waveType);
+    public abstract short[] GenerateWave(SoundFormat format, int tempo, WaveTypeBase waveType);
 
     public int GetWaveArrayLength(SoundFormat format, int tempo)
     {

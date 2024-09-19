@@ -28,15 +28,15 @@ public class SquareWave : WaveTypeBase
     };
 
     [Obsolete("Use 'GenerateWave(SoundFormat format, int length, int volume, double hertz)'")]
-    public override ushort[] GenerateWave(SoundFormat format, int tempo, int length, int volume, double hertz)
+    public override short[] GenerateWave(SoundFormat format, int tempo, int length, int volume, double hertz)
     {
         CheckGenerateWaveArgs(tempo, length, volume, hertz);
         return GenerateWave(format, length, volume, hertz);
     }
 
-    public override ushort[] GenerateWave(SoundFormat format, int length, int volume, double hertz)
+    public override short[] GenerateWave(SoundFormat format, int length, int volume, double hertz)
     {
-        var result = new List<ushort>(length);
+        var result = new List<short>(length);
         var unitWave = GenerateUnitWave(format, volume, hertz);
         for (var i = 0; i < length / unitWave.Count; i++)
         {
@@ -49,24 +49,26 @@ public class SquareWave : WaveTypeBase
         return result.ToArray();
     }
 
-    private List<ushort> GenerateUnitWave(SoundFormat format, int volume, double hertz)
+    private List<short> GenerateUnitWave(SoundFormat format, int volume, double hertz)
     {
         var ratioIndex = (int)SquareWaveRatio;
         var allRepeatTimes = (int)((int)format.SamplingFrequency / hertz);
         var firstRepeatTimes = (int)(allRepeatTimes * Ratio[ratioIndex].Item1);
         // なぜか配列よりリストの方が早い
-        var result = new List<ushort>(allRepeatTimes);
+        var result = new List<short>(allRepeatTimes);
         // 音量の倍率(1.00 ~ 0.00)
         var volumeMagnification = volume / 100d;
 
+        var top = (short)(short.MaxValue * volumeMagnification);
+        var bottom = (short)(-top);
+
         for (var i = 0; i < firstRepeatTimes; i++)
         {
-            result.Add(0);
+            result.Add(top);
         }
         for (var i = 0; i < allRepeatTimes - firstRepeatTimes; i++)
         {
-            var sound = (ushort)(ushort.MaxValue * volumeMagnification);
-            result.Add(sound);
+            result.Add(bottom);
         }
         return result;
     }

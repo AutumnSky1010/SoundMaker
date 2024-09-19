@@ -26,15 +26,15 @@ public class StereoMixer : MixerBase
     {
         var max = GetMaxWaveLength();
         var channelCount = GetChannelCount();
-        var rightResult = Enumerable.Repeat((ushort)0, max).ToArray();
-        var leftResult = Enumerable.Repeat((ushort)0, max).ToArray();
+        var rightResult = Enumerable.Repeat((short)0, max).ToArray();
+        var leftResult = Enumerable.Repeat((short)0, max).ToArray();
         _ = Parallel.ForEach(Channels, channel =>
         {
             Merge(leftResult, rightResult, channel, channelCount);
         });
         return new StereoWave(rightResult, leftResult);
     }
-    private void Merge(ushort[] left, ushort[] right, ISoundChannel channel, ChannelCount channelCount)
+    private void Merge(short[] left, short[] right, ISoundChannel channel, ChannelCount channelCount)
     {
         var waveNumericData = channel.GenerateWave();
         if (channel.PanType is PanType.Left)
@@ -43,7 +43,7 @@ public class StereoMixer : MixerBase
             {
                 for (var i = 0; i < waveNumericData.Length; i++)
                 {
-                    left[i] += (ushort)(waveNumericData[i] / channelCount.Left);
+                    left[i] += (short)(waveNumericData[i] / channelCount.Left);
                 }
             }
         }
@@ -53,7 +53,7 @@ public class StereoMixer : MixerBase
             {
                 for (var i = 0; i < waveNumericData.Length; i++)
                 {
-                    right[i] += (ushort)(waveNumericData[i] / channelCount.Right);
+                    right[i] += (short)(waveNumericData[i] / channelCount.Right);
                 }
             }
         }
@@ -66,8 +66,8 @@ public class StereoMixer : MixerBase
                 {
                     for (var i = 0; i < waveNumericData.Length; i++)
                     {
-                        right[i] += (ushort)(waveNumericData[i] / channelCount.Right);
-                        left[i] += (ushort)(waveNumericData[i] / channelCount.Left);
+                        right[i] += (short)(waveNumericData[i] / channelCount.Right);
+                        left[i] += (short)(waveNumericData[i] / channelCount.Left);
                     }
                 }
             }

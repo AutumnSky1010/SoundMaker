@@ -26,9 +26,9 @@ public class TriangleSoundChannel : SoundChannelBase
     /// <exception cref="ArgumentOutOfRangeException">Tempo must be non-negative and greater than 0.</exception>
     public TriangleSoundChannel(int tempo, SoundFormat format, PanType panType) : base(tempo, format, panType) { }
 
-    public override ushort[] GenerateWave()
+    public override short[] GenerateWave()
     {
-        var result = new List<ushort>();
+        var result = new List<short>();
         foreach (var soundComponent in SoundComponents)
         {
             var wave = soundComponent.GenerateWave(Format, Tempo, new TriangleWave());

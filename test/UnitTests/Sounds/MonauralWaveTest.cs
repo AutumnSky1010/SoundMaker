@@ -14,7 +14,7 @@ public class MonauralWaveTest
     [Fact(DisplayName = "ボリュームの大きさが正しく反映されているかのテスト。ボリュームは0から100の間の整数値")]
     public void TestReflectedVolume()
     {
-        var wave = GetTestMonauralWave(defaultWaveValue: ushort.MinValue, waveLength: 100);
+        var wave = GetTestMonauralWave(defaultWaveValue: short.MinValue, waveLength: 100);
         wave.ChangeVolume(-1);
         // -1になってたらやばい
         Assert.Equal(0, wave.Volume);
@@ -30,7 +30,7 @@ public class MonauralWaveTest
     [Fact(DisplayName = "波形のボリュームが変更されるかのテスト")]
     public void TestChangeVolume()
     {
-        var defaultWaveValue = ushort.MaxValue;
+        var defaultWaveValue = short.MaxValue;
         var wave = GetTestMonauralWave(defaultWaveValue: defaultWaveValue, waveLength: 100);
         // 音量を二分の一にする。波形データの値も半分になるはず。
         var volume = 50;
@@ -39,7 +39,7 @@ public class MonauralWaveTest
 
         Output.WriteLine("ボリューム: 50");
         Output.WriteLine("波形をテストする。");
-        WaveAssert.Equal((ushort)(defaultWaveValue * volumeMultiplier), wave.GetWave());
+        WaveAssert.Equal((short)(defaultWaveValue * volumeMultiplier), wave.GetWave());
     }
 
     [Fact(DisplayName = "生成したバイト列の長さを正しく取得できるかをテストする。")]
@@ -57,8 +57,8 @@ public class MonauralWaveTest
     [Fact(DisplayName = "二つの同じ長さの波形が正しく追加されているかをテストする。")]
     public void TestAppendWave()
     {
-        var monauralWave1 = GetTestMonauralWave(defaultWaveValue: ushort.MinValue, waveLength: 100);
-        var monauralWave2 = GetTestMonauralWave(defaultWaveValue: ushort.MaxValue, waveLength: 100);
+        var monauralWave1 = GetTestMonauralWave(defaultWaveValue: short.MinValue, waveLength: 100);
+        var monauralWave2 = GetTestMonauralWave(defaultWaveValue: short.MaxValue, waveLength: 100);
         // 16bitの場合
         var bitRate = BitRateType.SixteenBit;
         // 期待する長さを計算する。
@@ -73,12 +73,12 @@ public class MonauralWaveTest
         Assert.Equal(monauralWave1.GetLengthOfBytes(BitRateType.SixteenBit), lengthOf16bit);
         Assert.Equal(monauralWave1.GetLengthOfBytes(BitRateType.EightBit), lengthOf8bit);
 
-        // 末尾に追加されていることを確認する。先頭の値はusort.MinValue、末尾の値はushort.MaxValueになっているはず。
+        // 末尾に追加されていることを確認する。先頭の値はusort.MinValue、末尾の値はshort.MaxValueになっているはず。
         var wave = monauralWave1.GetWave();
-        Assert.True(wave[0] == ushort.MinValue && wave[^1] == ushort.MaxValue);
+        Assert.True(wave[0] == short.MinValue && wave[^1] == short.MaxValue);
     }
 
-    private MonauralWave GetTestMonauralWave(ushort defaultWaveValue, int waveLength)
+    private MonauralWave GetTestMonauralWave(short defaultWaveValue, int waveLength)
     {
         var rightWave = Enumerable.Repeat(defaultWaveValue, waveLength).ToArray();
         return new MonauralWave(rightWave);
