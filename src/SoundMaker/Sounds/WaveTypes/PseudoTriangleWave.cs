@@ -13,13 +13,6 @@ public class PseudoTriangleWave : WaveTypeBase
         4095, 8191, 12287, 16383, 20479, 24575, 28671, short.MaxValue, short.MaxValue, 28671, 24575, 20479, 16383, 12287, 8191, 4095
     };
 
-    [Obsolete("Use 'GenerateWave(SoundFormat format, int length, int volume, double hertz)'")]
-    public override short[] GenerateWave(SoundFormat format, int tempo, int length, int volume, double hertz)
-    {
-        CheckGenerateWaveArgs(tempo, length, volume, hertz);
-        return GenerateWave(format, length, volume, hertz);
-    }
-
     public override short[] GenerateWave(SoundFormat format, int length, int volume, double hertz)
     {
         CheckGenerateWaveArgs(length, volume, hertz);

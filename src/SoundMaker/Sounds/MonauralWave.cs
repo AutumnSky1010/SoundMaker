@@ -23,9 +23,6 @@ public class MonauralWave : IWave
 
     public int Volume { get; private set; } = 100;
 
-    [Obsolete("if you want to get length of bytes, call GetLengthOfBytes()")]
-    public int Length => Wave.Length;
-
     /// <summary>
     /// change volume this. 音量を変更するメソッド
     /// </summary>

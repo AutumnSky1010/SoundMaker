@@ -27,13 +27,6 @@ public class SquareWave : WaveTypeBase
         (0.5, 0.5),
     };
 
-    [Obsolete("Use 'GenerateWave(SoundFormat format, int length, int volume, double hertz)'")]
-    public override short[] GenerateWave(SoundFormat format, int tempo, int length, int volume, double hertz)
-    {
-        CheckGenerateWaveArgs(tempo, length, volume, hertz);
-        return GenerateWave(format, length, volume, hertz);
-    }
-
     public override short[] GenerateWave(SoundFormat format, int length, int volume, double hertz)
     {
         var result = new List<short>(length);
