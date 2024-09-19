@@ -33,18 +33,9 @@ public class StereoWave : IWave
 
     private short[] LeftWave { get; set; }
 
-    /// <summary>
-    /// volume of the wave. 波形データの音量
-    /// </summary>
-    [Obsolete]
-    public int Volume { get; private set; } = 100;
-
     public int RightVolume { get; private set; } = 100;
 
     public int LeftVolume { get; private set; } = 100;
-
-    [Obsolete("if you want to get length of bytes, call GetLengthOfBytes()")]
-    public int Length => GetMaxAndMinWaveLength().Max;
 
     /// <summary>
     /// change the volume this. 音量を変更するメソッド。
