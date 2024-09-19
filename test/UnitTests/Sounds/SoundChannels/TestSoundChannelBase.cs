@@ -13,22 +13,22 @@ public class TestSoundChannelBase
         {
         }
 
-        public override ushort[] GenerateWave()
+        public override short[] GenerateWave()
         {
-            return new ushort[0];
+            return new short[0];
         }
     }
 
     private class SoundComponent : ISoundComponent
     {
-        public ushort[] GenerateWave(SoundFormat format, int tempo, int length, WaveTypeBase waveType)
+        public short[] GenerateWave(SoundFormat format, int tempo, int length, WaveTypeBase waveType)
         {
-            return new ushort[0];
+            return new short[0];
         }
 
-        public ushort[] GenerateWave(SoundFormat format, int tempo, WaveTypeBase waveType)
+        public short[] GenerateWave(SoundFormat format, int tempo, WaveTypeBase waveType)
         {
-            return new ushort[0];
+            return new short[0];
         }
 
         public int GetWaveArrayLength(SoundFormat format, int tempo)

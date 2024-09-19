@@ -127,7 +127,7 @@ public class CreateWaveFileTest
             GetStereo(SetAllScale(new PseudoTriangleSoundChannel(tempo, waveCase.SoundFormat, panType))),
             GetStereo(SetAllScale(new LowBitNoiseSoundChannel(tempo, waveCase.SoundFormat, panType)))
         };
-        var result = new StereoWave(new ushort[0], new ushort[0]);
+        var result = new StereoWave(new short[0], new short[0]);
         foreach (var wave in waves)
         {
             wave.ChangeVolume(1, SoundDirectionType.Both);
