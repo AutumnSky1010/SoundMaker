@@ -43,8 +43,8 @@ public interface ISoundChannel : IEnumerable<ISoundComponent>
     /// <summary>
     /// generate wave data. 音の波形データを生成するメソッド。
     /// </summary>
-    /// <returns>the array of wave data.音の波形データの配列 : unsigned short[]</returns>
-    ushort[] GenerateWave();
+    /// <returns>the array of wave data.音の波形データの配列 :  short[]</returns>
+    short[] GenerateWave();
 
     /// <summary>
     /// add sound component to this. サウンドコンポーネントを追加するメソッド。

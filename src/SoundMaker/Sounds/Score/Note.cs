@@ -82,12 +82,12 @@ public class Note : BasicSoundComponentBase
         }
     }
 
-    public override ushort[] GenerateWave(SoundFormat format, int tempo, int length, WaveTypeBase waveType)
+    public override short[] GenerateWave(SoundFormat format, int tempo, int length, WaveTypeBase waveType)
     {
         return waveType.GenerateWave(format, length, Volume, Hertz);
     }
 
-    public override ushort[] GenerateWave(SoundFormat format, int tempo, WaveTypeBase waveType)
+    public override short[] GenerateWave(SoundFormat format, int tempo, WaveTypeBase waveType)
     {
         var length = GetWaveArrayLength(format, tempo);
         return GenerateWave(format, tempo, length, waveType);

@@ -47,12 +47,12 @@ public class Tie : ISoundComponent
     /// </summary>
     public IReadOnlyCollection<Note> AdditionalNotes { get; }
 
-    public ushort[] GenerateWave(SoundFormat format, int tempo, int length, WaveTypeBase waveType)
+    public short[] GenerateWave(SoundFormat format, int tempo, int length, WaveTypeBase waveType)
     {
         return BaseNote.GenerateWave(format, tempo, length, waveType);
     }
 
-    public ushort[] GenerateWave(SoundFormat format, int tempo, WaveTypeBase waveType)
+    public short[] GenerateWave(SoundFormat format, int tempo, WaveTypeBase waveType)
     {
         var length = GetWaveArrayLength(format, tempo);
         return GenerateWave(format, tempo, length, waveType);

@@ -54,9 +54,9 @@ public class Tuplet : ISoundComponent
         return SoundWaveLengthCalclator.Calclate(format, tempo, Length, IsDotted);
     }
 
-    public ushort[] GenerateWave(SoundFormat format, int tempo, int length, WaveTypeBase waveType)
+    public short[] GenerateWave(SoundFormat format, int tempo, int length, WaveTypeBase waveType)
     {
-        var result = new List<ushort>(length);
+        var result = new List<short>(length);
         // 一個あたりの配列の長さを算出
         var count = GetLengthPerOneComponent();
         int i;
@@ -74,7 +74,7 @@ public class Tuplet : ISoundComponent
         return result.ToArray();
     }
 
-    public ushort[] GenerateWave(SoundFormat format, int tempo, WaveTypeBase waveType)
+    public short[] GenerateWave(SoundFormat format, int tempo, WaveTypeBase waveType)
     {
         var length = GetWaveArrayLength(format, tempo);
         return GenerateWave(format, tempo, length, waveType);

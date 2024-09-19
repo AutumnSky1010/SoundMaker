@@ -12,7 +12,7 @@ public abstract class WaveTypeBase
     /// <param name="length">length of the array. 配列の長さ</param>
     /// <param name="volume">volume 音量（0 ~ 100）</param>
     /// <param name="hertz">hertz of the sound. 音の周波数</param>
-    /// <returns>the array of wave data. : unsigned short[]</returns>
+    /// <returns>the array of wave data. :  short[]</returns>
     /// <exception cref="ArgumentOutOfRangeException">Tempo must be non-negative and greater than 0.</exception>
     /// <exception cref="ArgumentOutOfRangeException">Length must be non-negative.</exception>
     /// <exception cref="ArgumentOutOfRangeException">Hertz must be non-negative and greater than 0.</exception>
@@ -27,7 +27,7 @@ public abstract class WaveTypeBase
     /// <param name="length">length of the array. 配列の長さ</param>
     /// <param name="volume">volume 音量（0 ~ 100）</param>
     /// <param name="hertz">hertz of the sound. 音の周波数</param>
-    /// <returns>the array of wave data. : unsigned short[]</returns>
+    /// <returns>the array of wave data. :  short[]</returns>
     /// <exception cref="ArgumentOutOfRangeException">Length must be non-negative.</exception>
     /// <exception cref="ArgumentOutOfRangeException">Hertz must be non-negative and greater than 0.</exception>
     /// <exception cref="ArgumentOutOfRangeException">Volume must be below than 100 and more than 0.</exception>

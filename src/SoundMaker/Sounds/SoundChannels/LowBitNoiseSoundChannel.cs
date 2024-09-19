@@ -29,9 +29,9 @@ public class LowBitNoiseSoundChannel : SoundChannelBase
     {
     }
 
-    public override ushort[] GenerateWave()
+    public override short[] GenerateWave()
     {
-        var result = new List<ushort>();
+        var result = new List<short>();
         foreach (var soundComponent in SoundComponents)
         {
             result.AddRange(soundComponent.GenerateWave(Format, Tempo, new LowBitNoiseWave()));
