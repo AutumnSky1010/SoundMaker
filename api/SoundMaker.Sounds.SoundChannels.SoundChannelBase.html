@@ -1,0 +1,799 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class SoundChannelBase | SoundMaker API Reference </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class SoundChannelBase | SoundMaker API Reference ">
+      
+      <meta name="description" content="sound channel base. サウンドチャンネルの抽象基底クラス。">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/AutumnSky1010/SoundMaker/new/master/apiSpec/new?filename=SoundMaker_Sounds_SoundChannels_SoundChannelBase.md&amp;value=---%0Auid%3A%20SoundMaker.Sounds.SoundChannels.SoundChannelBase%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="SoundMaker API Reference">
+            SoundMaker API Reference
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="SoundMaker.Sounds.SoundChannels.SoundChannelBase">
+
+
+
+  <h1 id="SoundMaker_Sounds_SoundChannels_SoundChannelBase" data-uid="SoundMaker.Sounds.SoundChannels.SoundChannelBase" class="text-break">
+Class SoundChannelBase  <a class="header-action link-secondary" title="View source" href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/SoundChannels/SoundChannelBase.cs/#L9"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="SoundMaker.html">SoundMaker</a>.<a class="xref" href="SoundMaker.Sounds.html">Sounds</a>.<a class="xref" href="SoundMaker.Sounds.SoundChannels.html">SoundChannels</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>SoundMaker.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>sound channel base. サウンドチャンネルの抽象基底クラス。</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class SoundChannelBase : ISoundChannel, IEnumerable&lt;ISoundComponent&gt;, IEnumerable</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">SoundChannelBase</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="SoundMaker.Sounds.SoundChannels.ISoundChannel.html">ISoundChannel</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="SoundMaker.Sounds.Score.ISoundComponent.html">ISoundComponent</a>&gt;</div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist derived">
+    <dt>Derived</dt>
+    <dd>
+      <div><a class="xref" href="SoundMaker.Sounds.SoundChannels.LowBitNoiseSoundChannel.html">LowBitNoiseSoundChannel</a></div>
+      <div><a class="xref" href="SoundMaker.Sounds.SoundChannels.PseudoTriangleSoundChannel.html">PseudoTriangleSoundChannel</a></div>
+      <div><a class="xref" href="SoundMaker.Sounds.SoundChannels.SquareSoundChannel.html">SquareSoundChannel</a></div>
+      <div><a class="xref" href="SoundMaker.Sounds.SoundChannels.TriangleSoundChannel.html">TriangleSoundChannel</a></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="SoundMaker_Sounds_SoundChannels_SoundChannelBase__ctor_" data-uid="SoundMaker.Sounds.SoundChannels.SoundChannelBase.#ctor*"></a>
+
+  <h3 id="SoundMaker_Sounds_SoundChannels_SoundChannelBase__ctor_System_Int32_SoundMaker_Sounds_SoundFormat_SoundMaker_Sounds_SoundChannels_PanType_" data-uid="SoundMaker.Sounds.SoundChannels.SoundChannelBase.#ctor(System.Int32,SoundMaker.Sounds.SoundFormat,SoundMaker.Sounds.SoundChannels.PanType)">
+  SoundChannelBase(int, SoundFormat, PanType)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/SoundChannels/SoundChannelBase.cs/#L44"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>constructor. コンストラクタ。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SoundChannelBase(int tempo, SoundFormat format, PanType panType)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tempo</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>quarter note/rest per minute. 一分間の四分音符・休符の数</p>
+</dd>
+    <dt><code>format</code> <a class="xref" href="SoundMaker.Sounds.SoundFormat.html">SoundFormat</a></dt>
+    <dd><p>format of the sound.音のフォーマット</p>
+</dd>
+    <dt><code>panType</code> <a class="xref" href="SoundMaker.Sounds.SoundChannels.PanType.html">PanType</a></dt>
+    <dd><p>pan of the sound. 左右どちらから音が出るか</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p>Tempo must be non-negative and greater than 0.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="SoundMaker_Sounds_SoundChannels_SoundChannelBase__ctor_" data-uid="SoundMaker.Sounds.SoundChannels.SoundChannelBase.#ctor*"></a>
+
+  <h3 id="SoundMaker_Sounds_SoundChannels_SoundChannelBase__ctor_System_Int32_SoundMaker_Sounds_SoundFormat_SoundMaker_Sounds_SoundChannels_PanType_System_Int32_" data-uid="SoundMaker.Sounds.SoundChannels.SoundChannelBase.#ctor(System.Int32,SoundMaker.Sounds.SoundFormat,SoundMaker.Sounds.SoundChannels.PanType,System.Int32)">
+  SoundChannelBase(int, SoundFormat, PanType, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/SoundChannels/SoundChannelBase.cs/#L21"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>constructor. コンストラクタ。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SoundChannelBase(int tempo, SoundFormat format, PanType panType, int capacity)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tempo</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>quarter note/rest per minute. 一分間の四分音符・休符の数</p>
+</dd>
+    <dt><code>format</code> <a class="xref" href="SoundMaker.Sounds.SoundFormat.html">SoundFormat</a></dt>
+    <dd><p>format of the sound.音のフォーマット</p>
+</dd>
+    <dt><code>panType</code> <a class="xref" href="SoundMaker.Sounds.SoundChannels.PanType.html">PanType</a></dt>
+    <dd><p>direction of hearing. 左右どちらから音が出るか</p>
+</dd>
+    <dt><code>capacity</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>the total number of sound components the internal data structure can hold without resizing. 内部データ構造がリサイズされずに保持できるサウンドコンポーネントの総数。</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p>Tempo must be non-negative and greater than 0.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p>Capacity must be non-negative.</p>
+</dd>
+  </dl>
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="SoundMaker_Sounds_SoundChannels_SoundChannelBase_Capacity_" data-uid="SoundMaker.Sounds.SoundChannels.SoundChannelBase.Capacity*"></a>
+
+  <h3 id="SoundMaker_Sounds_SoundChannels_SoundChannelBase_Capacity" data-uid="SoundMaker.Sounds.SoundChannels.SoundChannelBase.Capacity">
+  Capacity
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/SoundChannels/SoundChannelBase.cs/#L64"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>the total number of sound components the internal data structure can hold without resizing. 内部リストがサイズを変えないで保持できるサウンドコンポーネントの個数</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Capacity { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SoundMaker_Sounds_SoundChannels_SoundChannelBase_ComponentCount_" data-uid="SoundMaker.Sounds.SoundChannels.SoundChannelBase.ComponentCount*"></a>
+
+  <h3 id="SoundMaker_Sounds_SoundChannels_SoundChannelBase_ComponentCount" data-uid="SoundMaker.Sounds.SoundChannels.SoundChannelBase.ComponentCount">
+  ComponentCount
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/SoundChannels/SoundChannelBase.cs/#L66"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>count of sound components. サウンドコンポーネントの個数</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int ComponentCount { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SoundMaker_Sounds_SoundChannels_SoundChannelBase_Format_" data-uid="SoundMaker.Sounds.SoundChannels.SoundChannelBase.Format*"></a>
+
+  <h3 id="SoundMaker_Sounds_SoundChannels_SoundChannelBase_Format" data-uid="SoundMaker.Sounds.SoundChannels.SoundChannelBase.Format">
+  Format
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/SoundChannels/SoundChannelBase.cs/#L60"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>format of the sound. 音のフォーマット</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SoundFormat Format { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SoundMaker.Sounds.SoundFormat.html">SoundFormat</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SoundMaker_Sounds_SoundChannels_SoundChannelBase_Item_" data-uid="SoundMaker.Sounds.SoundChannels.SoundChannelBase.Item*"></a>
+
+  <h3 id="SoundMaker_Sounds_SoundChannels_SoundChannelBase_Item_System_Int32_" data-uid="SoundMaker.Sounds.SoundChannels.SoundChannelBase.Item(System.Int32)">
+  this[int]
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/SoundChannels/SoundChannelBase.cs/#L78"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>get sound component at index. index番目のサウンドコンポーネントを取得する</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ISoundComponent this[int index] { get; }</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>index</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>index. 何番目かを表す整数</p>
+</dd>
+  </dl>
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SoundMaker.Sounds.Score.ISoundComponent.html">ISoundComponent</a></dt>
+    <dd><p>sound component.サウンドコンポーネント</p>
+</dd>
+  </dl>
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.indexoutofrangeexception">IndexOutOfRangeException</a></dt>
+    <dd><p>index is less than 0 or index is equal to or greater than ComponentCount.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="SoundMaker_Sounds_SoundChannels_SoundChannelBase_PanType_" data-uid="SoundMaker.Sounds.SoundChannels.SoundChannelBase.PanType*"></a>
+
+  <h3 id="SoundMaker_Sounds_SoundChannels_SoundChannelBase_PanType" data-uid="SoundMaker.Sounds.SoundChannels.SoundChannelBase.PanType">
+  PanType
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/SoundChannels/SoundChannelBase.cs/#L62"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>direction of hearing. ステレオサウンドの場合、左右どちらから音が出るか</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PanType PanType { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SoundMaker.Sounds.SoundChannels.PanType.html">PanType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SoundMaker_Sounds_SoundChannels_SoundChannelBase_SoundComponents_" data-uid="SoundMaker.Sounds.SoundChannels.SoundChannelBase.SoundComponents*"></a>
+
+  <h3 id="SoundMaker_Sounds_SoundChannels_SoundChannelBase_SoundComponents" data-uid="SoundMaker.Sounds.SoundChannels.SoundChannelBase.SoundComponents">
+  SoundComponents
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/SoundChannels/SoundChannelBase.cs/#L58"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>サウンドコンポーネントのリスト</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected List&lt;ISoundComponent&gt; SoundComponents { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="SoundMaker.Sounds.Score.ISoundComponent.html">ISoundComponent</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SoundMaker_Sounds_SoundChannels_SoundChannelBase_Tempo_" data-uid="SoundMaker.Sounds.SoundChannels.SoundChannelBase.Tempo*"></a>
+
+  <h3 id="SoundMaker_Sounds_SoundChannels_SoundChannelBase_Tempo" data-uid="SoundMaker.Sounds.SoundChannels.SoundChannelBase.Tempo">
+  Tempo
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/SoundChannels/SoundChannelBase.cs/#L68"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>quarter note/rest per minute. 一分間の四分音符・休符の数</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Tempo { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SoundMaker_Sounds_SoundChannels_SoundChannelBase_WaveArrayLength_" data-uid="SoundMaker.Sounds.SoundChannels.SoundChannelBase.WaveArrayLength*"></a>
+
+  <h3 id="SoundMaker_Sounds_SoundChannels_SoundChannelBase_WaveArrayLength" data-uid="SoundMaker.Sounds.SoundChannels.SoundChannelBase.WaveArrayLength">
+  WaveArrayLength
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/SoundChannels/SoundChannelBase.cs/#L70"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>length of wave data. 音の波形データを表す配列の長さ</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int WaveArrayLength { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="SoundMaker_Sounds_SoundChannels_SoundChannelBase_Add_" data-uid="SoundMaker.Sounds.SoundChannels.SoundChannelBase.Add*"></a>
+
+  <h3 id="SoundMaker_Sounds_SoundChannels_SoundChannelBase_Add_SoundMaker_Sounds_Score_ISoundComponent_" data-uid="SoundMaker.Sounds.SoundChannels.SoundChannelBase.Add(SoundMaker.Sounds.Score.ISoundComponent)">
+  Add(ISoundComponent)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/SoundChannels/SoundChannelBase.cs/#L82"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>add sound component to this. サウンドコンポーネントを追加するメソッド。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Add(ISoundComponent component)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>component</code> <a class="xref" href="SoundMaker.Sounds.Score.ISoundComponent.html">ISoundComponent</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SoundMaker_Sounds_SoundChannels_SoundChannelBase_Clear_" data-uid="SoundMaker.Sounds.SoundChannels.SoundChannelBase.Clear*"></a>
+
+  <h3 id="SoundMaker_Sounds_SoundChannels_SoundChannelBase_Clear" data-uid="SoundMaker.Sounds.SoundChannels.SoundChannelBase.Clear">
+  Clear()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/SoundChannels/SoundChannelBase.cs/#L88"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>clear sound components in this. チャンネル内のサウンドコンポーネントを空にするメソッド。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Clear()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SoundMaker_Sounds_SoundChannels_SoundChannelBase_FadeInOut_" data-uid="SoundMaker.Sounds.SoundChannels.SoundChannelBase.FadeInOut*"></a>
+
+  <h3 id="SoundMaker_Sounds_SoundChannels_SoundChannelBase_FadeInOut_System_Int16___" data-uid="SoundMaker.Sounds.SoundChannels.SoundChannelBase.FadeInOut(System.Int16[])">
+  FadeInOut(short[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/SoundChannels/SoundChannelBase.cs/#L122"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void FadeInOut(short[] wave)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>wave</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int16">short</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SoundMaker_Sounds_SoundChannels_SoundChannelBase_GenerateWave_" data-uid="SoundMaker.Sounds.SoundChannels.SoundChannelBase.GenerateWave*"></a>
+
+  <h3 id="SoundMaker_Sounds_SoundChannels_SoundChannelBase_GenerateWave" data-uid="SoundMaker.Sounds.SoundChannels.SoundChannelBase.GenerateWave">
+  GenerateWave()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/SoundChannels/SoundChannelBase.cs/#L120"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>generate wave data. 音の波形データを生成するメソッド。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract short[] GenerateWave()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int16">short</a>[]</dt>
+    <dd><p>the array of wave data.音の波形データの配列 :  short[]</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SoundMaker_Sounds_SoundChannels_SoundChannelBase_GetEnumerator_" data-uid="SoundMaker.Sounds.SoundChannels.SoundChannelBase.GetEnumerator*"></a>
+
+  <h3 id="SoundMaker_Sounds_SoundChannels_SoundChannelBase_GetEnumerator" data-uid="SoundMaker.Sounds.SoundChannels.SoundChannelBase.GetEnumerator">
+  GetEnumerator()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/SoundChannels/SoundChannelBase.cs/#L137"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns an enumerator that iterates through the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerator&lt;ISoundComponent&gt; GetEnumerator()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1">IEnumerator</a>&lt;<a class="xref" href="SoundMaker.Sounds.Score.ISoundComponent.html">ISoundComponent</a>&gt;</dt>
+    <dd><p>An enumerator that can be used to iterate through the collection.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SoundMaker_Sounds_SoundChannels_SoundChannelBase_Import_" data-uid="SoundMaker.Sounds.SoundChannels.SoundChannelBase.Import*"></a>
+
+  <h3 id="SoundMaker_Sounds_SoundChannels_SoundChannelBase_Import_System_Collections_Generic_IEnumerable_SoundMaker_Sounds_Score_ISoundComponent__" data-uid="SoundMaker.Sounds.SoundChannels.SoundChannelBase.Import(System.Collections.Generic.IEnumerable{SoundMaker.Sounds.Score.ISoundComponent})">
+  Import(IEnumerable&lt;ISoundComponent&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/SoundChannels/SoundChannelBase.cs/#L114"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Import sound components. サウンドコンポーネントをインポートする。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Import(IEnumerable&lt;ISoundComponent&gt; components)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>components</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="SoundMaker.Sounds.Score.ISoundComponent.html">ISoundComponent</a>&gt;</dt>
+    <dd><p>Sound components. サウンドコンポーネント</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SoundMaker_Sounds_SoundChannels_SoundChannelBase_RemoveAt_" data-uid="SoundMaker.Sounds.SoundChannels.SoundChannelBase.RemoveAt*"></a>
+
+  <h3 id="SoundMaker_Sounds_SoundChannels_SoundChannelBase_RemoveAt_System_Int32_" data-uid="SoundMaker.Sounds.SoundChannels.SoundChannelBase.RemoveAt(System.Int32)">
+  RemoveAt(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/SoundChannels/SoundChannelBase.cs/#L99"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>remove the sound component at index. index番目のサウンドコンポーネントを削除するメソッド。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RemoveAt(int index)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>index</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>the index of the sound component to remove. 削除するサウンドコンポーネントのインデックス</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p>index is less than 0 or index is equal to or greater than ComponentCount.</p>
+</dd>
+  </dl>
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/SoundChannels/SoundChannelBase.cs/#L9" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

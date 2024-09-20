@@ -1,0 +1,638 @@
+{
+  "source_base_path": "/home/runner/work/SoundMaker/SoundMaker/docs",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SoundMaker.FormatBuilder.BitDepthBuilder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SoundMaker.FormatBuilder.BitDepthBuilder.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SoundMaker.FormatBuilder.ChannelTypeBuilder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SoundMaker.FormatBuilder.ChannelTypeBuilder.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SoundMaker.FormatBuilder.SamplingFrequencyBuilder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SoundMaker.FormatBuilder.SamplingFrequencyBuilder.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SoundMaker.FormatBuilder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SoundMaker.FormatBuilder.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SoundMaker.ScoreData.SMSC.Error.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SoundMaker.ScoreData.SMSC.Error.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SoundMaker.ScoreData.SMSC.SMSCFormat.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SoundMaker.ScoreData.SMSC.SMSCFormat.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SoundMaker.ScoreData.SMSC.SMSCReadErrorType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SoundMaker.ScoreData.SMSC.SMSCReadErrorType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SoundMaker.ScoreData.SMSC.SMSCReadResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SoundMaker.ScoreData.SMSC.SMSCReadResult.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SoundMaker.ScoreData.SMSC.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SoundMaker.ScoreData.SMSC.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SoundMaker.Sounds.BitRateType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SoundMaker.Sounds.BitRateType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SoundMaker.Sounds.ChannelType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SoundMaker.Sounds.ChannelType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SoundMaker.Sounds.IWave.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SoundMaker.Sounds.IWave.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SoundMaker.Sounds.MixerBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SoundMaker.Sounds.MixerBase.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SoundMaker.Sounds.MonauralMixer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SoundMaker.Sounds.MonauralMixer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SoundMaker.Sounds.MonauralWave.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SoundMaker.Sounds.MonauralWave.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SoundMaker.Sounds.SamplingFrequencyType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SoundMaker.Sounds.SamplingFrequencyType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SoundMaker.Sounds.Score.BasicSoundComponentBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SoundMaker.Sounds.Score.BasicSoundComponentBase.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SoundMaker.Sounds.Score.ISoundComponent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SoundMaker.Sounds.Score.ISoundComponent.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SoundMaker.Sounds.Score.LengthType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SoundMaker.Sounds.Score.LengthType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SoundMaker.Sounds.Score.Note.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SoundMaker.Sounds.Score.Note.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SoundMaker.Sounds.Score.Rest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SoundMaker.Sounds.Score.Rest.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SoundMaker.Sounds.Score.Scale.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SoundMaker.Sounds.Score.Scale.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SoundMaker.Sounds.Score.Tie.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SoundMaker.Sounds.Score.Tie.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SoundMaker.Sounds.Score.Tuplet.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SoundMaker.Sounds.Score.Tuplet.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SoundMaker.Sounds.Score.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SoundMaker.Sounds.Score.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SoundMaker.Sounds.SoundChannels.ISoundChannel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SoundMaker.Sounds.SoundChannels.ISoundChannel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SoundMaker.Sounds.SoundChannels.LowBitNoiseSoundChannel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SoundMaker.Sounds.SoundChannels.LowBitNoiseSoundChannel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SoundMaker.Sounds.SoundChannels.PanType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SoundMaker.Sounds.SoundChannels.PanType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SoundMaker.Sounds.SoundChannels.PseudoTriangleSoundChannel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SoundMaker.Sounds.SoundChannels.PseudoTriangleSoundChannel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SoundMaker.Sounds.SoundChannels.SoundChannelBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SoundMaker.Sounds.SoundChannels.SoundChannelBase.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SoundMaker.Sounds.SoundChannels.SquareSoundChannel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SoundMaker.Sounds.SoundChannels.SquareSoundChannel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SoundMaker.Sounds.SoundChannels.SquareWaveRatio.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SoundMaker.Sounds.SoundChannels.SquareWaveRatio.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SoundMaker.Sounds.SoundChannels.TriangleSoundChannel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SoundMaker.Sounds.SoundChannels.TriangleSoundChannel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SoundMaker.Sounds.SoundChannels.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SoundMaker.Sounds.SoundChannels.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SoundMaker.Sounds.SoundDirectionType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SoundMaker.Sounds.SoundDirectionType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SoundMaker.Sounds.SoundFormat.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SoundMaker.Sounds.SoundFormat.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SoundMaker.Sounds.StereoMixer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SoundMaker.Sounds.StereoMixer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SoundMaker.Sounds.StereoWave.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SoundMaker.Sounds.StereoWave.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SoundMaker.Sounds.WaveTypes.LowBitNoiseWave.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SoundMaker.Sounds.WaveTypes.LowBitNoiseWave.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SoundMaker.Sounds.WaveTypes.PseudoTriangleWave.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SoundMaker.Sounds.WaveTypes.PseudoTriangleWave.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SoundMaker.Sounds.WaveTypes.SquareWave.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SoundMaker.Sounds.WaveTypes.SquareWave.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SoundMaker.Sounds.WaveTypes.TriangleWave.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SoundMaker.Sounds.WaveTypes.TriangleWave.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SoundMaker.Sounds.WaveTypes.WaveTypeBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SoundMaker.Sounds.WaveTypes.WaveTypeBase.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SoundMaker.Sounds.WaveTypes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SoundMaker.Sounds.WaveTypes.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SoundMaker.Sounds.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SoundMaker.Sounds.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SoundMaker.WaveFile.BitRateType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SoundMaker.WaveFile.BitRateType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SoundMaker.WaveFile.ChannelType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SoundMaker.WaveFile.ChannelType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SoundMaker.WaveFile.FormatChunk.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SoundMaker.WaveFile.FormatChunk.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SoundMaker.WaveFile.IChunk.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SoundMaker.WaveFile.IChunk.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SoundMaker.WaveFile.RIFFChunk.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SoundMaker.WaveFile.RIFFChunk.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SoundMaker.WaveFile.SamplingFrequencyType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SoundMaker.WaveFile.SamplingFrequencyType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SoundMaker.WaveFile.SoundWaveChunk.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SoundMaker.WaveFile.SoundWaveChunk.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SoundMaker.WaveFile.WaveWriter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SoundMaker.WaveFile.WaveWriter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SoundMaker.WaveFile.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SoundMaker.WaveFile.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SoundMaker.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SoundMaker.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".json": {
+          "relative_path": "api/toc.json"
+        },
+        ".html": {
+          "relative_path": "api/toc.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "markdowns/getting-started.md",
+      "output": {
+        ".html": {
+          "relative_path": "markdowns/getting-started.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "markdowns/introduction.md",
+      "output": {
+        ".html": {
+          "relative_path": "markdowns/introduction.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "markdowns/toc.yml",
+      "output": {
+        ".json": {
+          "relative_path": "markdowns/toc.json"
+        },
+        ".html": {
+          "relative_path": "markdowns/toc.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".json": {
+          "relative_path": "toc.json"
+        },
+        ".html": {
+          "relative_path": "toc.html"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

@@ -1,0 +1,458 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class BasicSoundComponentBase | SoundMaker API Reference </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class BasicSoundComponentBase | SoundMaker API Reference ">
+      
+      <meta name="description" content="provides a base class for a basic sound component to inherit from. 音符・休符など音の基本部品を表す抽象基底クラス">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/AutumnSky1010/SoundMaker/new/master/apiSpec/new?filename=SoundMaker_Sounds_Score_BasicSoundComponentBase.md&amp;value=---%0Auid%3A%20SoundMaker.Sounds.Score.BasicSoundComponentBase%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="SoundMaker API Reference">
+            SoundMaker API Reference
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="SoundMaker.Sounds.Score.BasicSoundComponentBase">
+
+
+
+  <h1 id="SoundMaker_Sounds_Score_BasicSoundComponentBase" data-uid="SoundMaker.Sounds.Score.BasicSoundComponentBase" class="text-break">
+Class BasicSoundComponentBase  <a class="header-action link-secondary" title="View source" href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/Score/BasicSoundComponentBase.cs/#L7"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="SoundMaker.html">SoundMaker</a>.<a class="xref" href="SoundMaker.Sounds.html">Sounds</a>.<a class="xref" href="SoundMaker.Sounds.Score.html">Score</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>SoundMaker.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>provides a base class for a basic sound component to inherit from. 音符・休符など音の基本部品を表す抽象基底クラス</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class BasicSoundComponentBase : ISoundComponent</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">BasicSoundComponentBase</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="SoundMaker.Sounds.Score.ISoundComponent.html">ISoundComponent</a></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist derived">
+    <dt>Derived</dt>
+    <dd>
+      <div><a class="xref" href="SoundMaker.Sounds.Score.Note.html">Note</a></div>
+      <div><a class="xref" href="SoundMaker.Sounds.Score.Rest.html">Rest</a></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="SoundMaker_Sounds_Score_BasicSoundComponentBase__ctor_" data-uid="SoundMaker.Sounds.Score.BasicSoundComponentBase.#ctor*"></a>
+
+  <h3 id="SoundMaker_Sounds_Score_BasicSoundComponentBase__ctor_SoundMaker_Sounds_Score_LengthType_System_Boolean_" data-uid="SoundMaker.Sounds.Score.BasicSoundComponentBase.#ctor(SoundMaker.Sounds.Score.LengthType,System.Boolean)">
+  BasicSoundComponentBase(LengthType, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/Score/BasicSoundComponentBase.cs/#L14"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>constructor コンストラクタ</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public BasicSoundComponentBase(LengthType length, bool isDotted)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>length</code> <a class="xref" href="SoundMaker.Sounds.Score.LengthType.html">LengthType</a></dt>
+    <dd><p>length (ex. &quot;quarter&quot; note) 長さ（音楽的な、「四分」音符、「全」休符のような長さを表す。）</p>
+</dd>
+    <dt><code>isDotted</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>is note/rest dotted. 付点かを表す論理型</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="SoundMaker_Sounds_Score_BasicSoundComponentBase_IsDotted_" data-uid="SoundMaker.Sounds.Score.BasicSoundComponentBase.IsDotted*"></a>
+
+  <h3 id="SoundMaker_Sounds_Score_BasicSoundComponentBase_IsDotted" data-uid="SoundMaker.Sounds.Score.BasicSoundComponentBase.IsDotted">
+  IsDotted
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/Score/BasicSoundComponentBase.cs/#L28"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>note/rest is dotted. 付点かを表す論理型</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsDotted { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SoundMaker_Sounds_Score_BasicSoundComponentBase_Length_" data-uid="SoundMaker.Sounds.Score.BasicSoundComponentBase.Length*"></a>
+
+  <h3 id="SoundMaker_Sounds_Score_BasicSoundComponentBase_Length" data-uid="SoundMaker.Sounds.Score.BasicSoundComponentBase.Length">
+  Length
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/Score/BasicSoundComponentBase.cs/#L23"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>length (ex. &quot;quarter&quot; note) 長さ（音楽的な、「四分」音符、「全」休符のような長さを表す。）</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public LengthType Length { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SoundMaker.Sounds.Score.LengthType.html">LengthType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="SoundMaker_Sounds_Score_BasicSoundComponentBase_GenerateWave_" data-uid="SoundMaker.Sounds.Score.BasicSoundComponentBase.GenerateWave*"></a>
+
+  <h3 id="SoundMaker_Sounds_Score_BasicSoundComponentBase_GenerateWave_SoundMaker_Sounds_SoundFormat_System_Int32_SoundMaker_Sounds_WaveTypes_WaveTypeBase_" data-uid="SoundMaker.Sounds.Score.BasicSoundComponentBase.GenerateWave(SoundMaker.Sounds.SoundFormat,System.Int32,SoundMaker.Sounds.WaveTypes.WaveTypeBase)">
+  GenerateWave(SoundFormat, int, WaveTypeBase)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/Score/BasicSoundComponentBase.cs/#L32"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>generate the wave of wave type. 波形の種類に基づいて波形データの配列を生成するメソッド。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract short[] GenerateWave(SoundFormat format, int tempo, WaveTypeBase waveType)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>format</code> <a class="xref" href="SoundMaker.Sounds.SoundFormat.html">SoundFormat</a></dt>
+    <dd><p>format of the sound.音のフォーマット</p>
+</dd>
+    <dt><code>tempo</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>quarter note/rest per minute. 一分間の四分音符・休符の数</p>
+</dd>
+    <dt><code>waveType</code> <a class="xref" href="SoundMaker.Sounds.WaveTypes.WaveTypeBase.html">WaveTypeBase</a></dt>
+    <dd><p>type of wave.波形の種類</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int16">short</a>[]</dt>
+    <dd><p>data of wave. 波形データ :  short[]</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p>Tempo must be non-negative and greater than 0.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="SoundMaker_Sounds_Score_BasicSoundComponentBase_GenerateWave_" data-uid="SoundMaker.Sounds.Score.BasicSoundComponentBase.GenerateWave*"></a>
+
+  <h3 id="SoundMaker_Sounds_Score_BasicSoundComponentBase_GenerateWave_SoundMaker_Sounds_SoundFormat_System_Int32_System_Int32_SoundMaker_Sounds_WaveTypes_WaveTypeBase_" data-uid="SoundMaker.Sounds.Score.BasicSoundComponentBase.GenerateWave(SoundMaker.Sounds.SoundFormat,System.Int32,System.Int32,SoundMaker.Sounds.WaveTypes.WaveTypeBase)">
+  GenerateWave(SoundFormat, int, int, WaveTypeBase)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/Score/BasicSoundComponentBase.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>generate the wave of wave type. 波形の種類に基づいて波形データの配列を生成するメソッド。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract short[] GenerateWave(SoundFormat format, int tempo, int length, WaveTypeBase waveType)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>format</code> <a class="xref" href="SoundMaker.Sounds.SoundFormat.html">SoundFormat</a></dt>
+    <dd><p>format of the sound.音のフォーマット</p>
+</dd>
+    <dt><code>tempo</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>quarter note/rest per minute. 一分間の四分音符・休符の数</p>
+</dd>
+    <dt><code>length</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>length of the array. 配列の長さ</p>
+</dd>
+    <dt><code>waveType</code> <a class="xref" href="SoundMaker.Sounds.WaveTypes.WaveTypeBase.html">WaveTypeBase</a></dt>
+    <dd><p>type of wave.波形の種類</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int16">short</a>[]</dt>
+    <dd><p>data of wave. 波形データ :  short[]</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p>Tempo must be non-negative and greater than 0.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p>Length must be non-negative.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="SoundMaker_Sounds_Score_BasicSoundComponentBase_GetWaveArrayLength_" data-uid="SoundMaker.Sounds.Score.BasicSoundComponentBase.GetWaveArrayLength*"></a>
+
+  <h3 id="SoundMaker_Sounds_Score_BasicSoundComponentBase_GetWaveArrayLength_SoundMaker_Sounds_SoundFormat_System_Int32_" data-uid="SoundMaker.Sounds.Score.BasicSoundComponentBase.GetWaveArrayLength(SoundMaker.Sounds.SoundFormat,System.Int32)">
+  GetWaveArrayLength(SoundFormat, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/Score/BasicSoundComponentBase.cs/#L34"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>return length of the sound array. 音の配列の長さを取得するメソッド。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int GetWaveArrayLength(SoundFormat format, int tempo)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>format</code> <a class="xref" href="SoundMaker.Sounds.SoundFormat.html">SoundFormat</a></dt>
+    <dd><p>format of the sound.音のフォーマット</p>
+</dd>
+    <dt><code>tempo</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>quarter note/rest per minute. 一分間の四分音符・休符の数</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>length of array. 配列の長さ : int</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p>Tempo must be non-negative and greater than 0.</p>
+</dd>
+  </dl>
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/Score/BasicSoundComponentBase.cs/#L7" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

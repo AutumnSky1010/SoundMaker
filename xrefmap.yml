@@ -1,0 +1,2614 @@
+### YamlMime:XRefMap
+sorted: true
+references:
+- uid: SoundMaker
+  name: SoundMaker
+  href: api/SoundMaker.html
+  commentId: N:SoundMaker
+  fullName: SoundMaker
+  nameWithType: SoundMaker
+- uid: SoundMaker.FormatBuilder
+  name: FormatBuilder
+  href: api/SoundMaker.FormatBuilder.html
+  commentId: T:SoundMaker.FormatBuilder
+  fullName: SoundMaker.FormatBuilder
+  nameWithType: FormatBuilder
+- uid: SoundMaker.FormatBuilder.BitDepthBuilder
+  name: FormatBuilder.BitDepthBuilder
+  href: api/SoundMaker.FormatBuilder.BitDepthBuilder.html
+  commentId: T:SoundMaker.FormatBuilder.BitDepthBuilder
+  fullName: SoundMaker.FormatBuilder.BitDepthBuilder
+  nameWithType: FormatBuilder.BitDepthBuilder
+- uid: SoundMaker.FormatBuilder.BitDepthBuilder.WithBitDepth(System.Int32)
+  name: WithBitDepth(int)
+  href: api/SoundMaker.FormatBuilder.BitDepthBuilder.html#SoundMaker_FormatBuilder_BitDepthBuilder_WithBitDepth_System_Int32_
+  commentId: M:SoundMaker.FormatBuilder.BitDepthBuilder.WithBitDepth(System.Int32)
+  name.vb: WithBitDepth(Integer)
+  fullName: SoundMaker.FormatBuilder.BitDepthBuilder.WithBitDepth(int)
+  fullName.vb: SoundMaker.FormatBuilder.BitDepthBuilder.WithBitDepth(Integer)
+  nameWithType: FormatBuilder.BitDepthBuilder.WithBitDepth(int)
+  nameWithType.vb: FormatBuilder.BitDepthBuilder.WithBitDepth(Integer)
+- uid: SoundMaker.FormatBuilder.BitDepthBuilder.WithBitDepth*
+  name: WithBitDepth
+  href: api/SoundMaker.FormatBuilder.BitDepthBuilder.html#SoundMaker_FormatBuilder_BitDepthBuilder_WithBitDepth_
+  commentId: Overload:SoundMaker.FormatBuilder.BitDepthBuilder.WithBitDepth
+  isSpec: "True"
+  fullName: SoundMaker.FormatBuilder.BitDepthBuilder.WithBitDepth
+  nameWithType: FormatBuilder.BitDepthBuilder.WithBitDepth
+- uid: SoundMaker.FormatBuilder.ChannelTypeBuilder
+  name: FormatBuilder.ChannelTypeBuilder
+  href: api/SoundMaker.FormatBuilder.ChannelTypeBuilder.html
+  commentId: T:SoundMaker.FormatBuilder.ChannelTypeBuilder
+  fullName: SoundMaker.FormatBuilder.ChannelTypeBuilder
+  nameWithType: FormatBuilder.ChannelTypeBuilder
+- uid: SoundMaker.FormatBuilder.ChannelTypeBuilder.WithChannelCount(System.Int32)
+  name: WithChannelCount(int)
+  href: api/SoundMaker.FormatBuilder.ChannelTypeBuilder.html#SoundMaker_FormatBuilder_ChannelTypeBuilder_WithChannelCount_System_Int32_
+  commentId: M:SoundMaker.FormatBuilder.ChannelTypeBuilder.WithChannelCount(System.Int32)
+  name.vb: WithChannelCount(Integer)
+  fullName: SoundMaker.FormatBuilder.ChannelTypeBuilder.WithChannelCount(int)
+  fullName.vb: SoundMaker.FormatBuilder.ChannelTypeBuilder.WithChannelCount(Integer)
+  nameWithType: FormatBuilder.ChannelTypeBuilder.WithChannelCount(int)
+  nameWithType.vb: FormatBuilder.ChannelTypeBuilder.WithChannelCount(Integer)
+- uid: SoundMaker.FormatBuilder.ChannelTypeBuilder.WithChannelCount*
+  name: WithChannelCount
+  href: api/SoundMaker.FormatBuilder.ChannelTypeBuilder.html#SoundMaker_FormatBuilder_ChannelTypeBuilder_WithChannelCount_
+  commentId: Overload:SoundMaker.FormatBuilder.ChannelTypeBuilder.WithChannelCount
+  isSpec: "True"
+  fullName: SoundMaker.FormatBuilder.ChannelTypeBuilder.WithChannelCount
+  nameWithType: FormatBuilder.ChannelTypeBuilder.WithChannelCount
+- uid: SoundMaker.FormatBuilder.Create
+  name: Create()
+  href: api/SoundMaker.FormatBuilder.html#SoundMaker_FormatBuilder_Create
+  commentId: M:SoundMaker.FormatBuilder.Create
+  fullName: SoundMaker.FormatBuilder.Create()
+  nameWithType: FormatBuilder.Create()
+- uid: SoundMaker.FormatBuilder.Create*
+  name: Create
+  href: api/SoundMaker.FormatBuilder.html#SoundMaker_FormatBuilder_Create_
+  commentId: Overload:SoundMaker.FormatBuilder.Create
+  isSpec: "True"
+  fullName: SoundMaker.FormatBuilder.Create
+  nameWithType: FormatBuilder.Create
+- uid: SoundMaker.FormatBuilder.SamplingFrequencyBuilder
+  name: FormatBuilder.SamplingFrequencyBuilder
+  href: api/SoundMaker.FormatBuilder.SamplingFrequencyBuilder.html
+  commentId: T:SoundMaker.FormatBuilder.SamplingFrequencyBuilder
+  fullName: SoundMaker.FormatBuilder.SamplingFrequencyBuilder
+  nameWithType: FormatBuilder.SamplingFrequencyBuilder
+- uid: SoundMaker.FormatBuilder.SamplingFrequencyBuilder.WithFrequency(System.Int32)
+  name: WithFrequency(int)
+  href: api/SoundMaker.FormatBuilder.SamplingFrequencyBuilder.html#SoundMaker_FormatBuilder_SamplingFrequencyBuilder_WithFrequency_System_Int32_
+  commentId: M:SoundMaker.FormatBuilder.SamplingFrequencyBuilder.WithFrequency(System.Int32)
+  name.vb: WithFrequency(Integer)
+  fullName: SoundMaker.FormatBuilder.SamplingFrequencyBuilder.WithFrequency(int)
+  fullName.vb: SoundMaker.FormatBuilder.SamplingFrequencyBuilder.WithFrequency(Integer)
+  nameWithType: FormatBuilder.SamplingFrequencyBuilder.WithFrequency(int)
+  nameWithType.vb: FormatBuilder.SamplingFrequencyBuilder.WithFrequency(Integer)
+- uid: SoundMaker.FormatBuilder.SamplingFrequencyBuilder.WithFrequency*
+  name: WithFrequency
+  href: api/SoundMaker.FormatBuilder.SamplingFrequencyBuilder.html#SoundMaker_FormatBuilder_SamplingFrequencyBuilder_WithFrequency_
+  commentId: Overload:SoundMaker.FormatBuilder.SamplingFrequencyBuilder.WithFrequency
+  isSpec: "True"
+  fullName: SoundMaker.FormatBuilder.SamplingFrequencyBuilder.WithFrequency
+  nameWithType: FormatBuilder.SamplingFrequencyBuilder.WithFrequency
+- uid: SoundMaker.FormatBuilder.ToFormatChunk
+  name: ToFormatChunk()
+  href: api/SoundMaker.FormatBuilder.html#SoundMaker_FormatBuilder_ToFormatChunk
+  commentId: M:SoundMaker.FormatBuilder.ToFormatChunk
+  fullName: SoundMaker.FormatBuilder.ToFormatChunk()
+  nameWithType: FormatBuilder.ToFormatChunk()
+- uid: SoundMaker.FormatBuilder.ToFormatChunk*
+  name: ToFormatChunk
+  href: api/SoundMaker.FormatBuilder.html#SoundMaker_FormatBuilder_ToFormatChunk_
+  commentId: Overload:SoundMaker.FormatBuilder.ToFormatChunk
+  isSpec: "True"
+  fullName: SoundMaker.FormatBuilder.ToFormatChunk
+  nameWithType: FormatBuilder.ToFormatChunk
+- uid: SoundMaker.FormatBuilder.ToSoundFormat
+  name: ToSoundFormat()
+  href: api/SoundMaker.FormatBuilder.html#SoundMaker_FormatBuilder_ToSoundFormat
+  commentId: M:SoundMaker.FormatBuilder.ToSoundFormat
+  fullName: SoundMaker.FormatBuilder.ToSoundFormat()
+  nameWithType: FormatBuilder.ToSoundFormat()
+- uid: SoundMaker.FormatBuilder.ToSoundFormat*
+  name: ToSoundFormat
+  href: api/SoundMaker.FormatBuilder.html#SoundMaker_FormatBuilder_ToSoundFormat_
+  commentId: Overload:SoundMaker.FormatBuilder.ToSoundFormat
+  isSpec: "True"
+  fullName: SoundMaker.FormatBuilder.ToSoundFormat
+  nameWithType: FormatBuilder.ToSoundFormat
+- uid: SoundMaker.ScoreData.SMSC
+  name: SoundMaker.ScoreData.SMSC
+  href: api/SoundMaker.ScoreData.SMSC.html
+  commentId: N:SoundMaker.ScoreData.SMSC
+  fullName: SoundMaker.ScoreData.SMSC
+  nameWithType: SoundMaker.ScoreData.SMSC
+- uid: SoundMaker.ScoreData.SMSC.Error
+  name: Error
+  href: api/SoundMaker.ScoreData.SMSC.Error.html
+  commentId: T:SoundMaker.ScoreData.SMSC.Error
+  fullName: SoundMaker.ScoreData.SMSC.Error
+  nameWithType: Error
+- uid: SoundMaker.ScoreData.SMSC.Error.LineNumber
+  name: LineNumber
+  href: api/SoundMaker.ScoreData.SMSC.Error.html#SoundMaker_ScoreData_SMSC_Error_LineNumber
+  commentId: P:SoundMaker.ScoreData.SMSC.Error.LineNumber
+  fullName: SoundMaker.ScoreData.SMSC.Error.LineNumber
+  nameWithType: Error.LineNumber
+- uid: SoundMaker.ScoreData.SMSC.Error.LineNumber*
+  name: LineNumber
+  href: api/SoundMaker.ScoreData.SMSC.Error.html#SoundMaker_ScoreData_SMSC_Error_LineNumber_
+  commentId: Overload:SoundMaker.ScoreData.SMSC.Error.LineNumber
+  isSpec: "True"
+  fullName: SoundMaker.ScoreData.SMSC.Error.LineNumber
+  nameWithType: Error.LineNumber
+- uid: SoundMaker.ScoreData.SMSC.Error.Literal
+  name: Literal
+  href: api/SoundMaker.ScoreData.SMSC.Error.html#SoundMaker_ScoreData_SMSC_Error_Literal
+  commentId: P:SoundMaker.ScoreData.SMSC.Error.Literal
+  fullName: SoundMaker.ScoreData.SMSC.Error.Literal
+  nameWithType: Error.Literal
+- uid: SoundMaker.ScoreData.SMSC.Error.Literal*
+  name: Literal
+  href: api/SoundMaker.ScoreData.SMSC.Error.html#SoundMaker_ScoreData_SMSC_Error_Literal_
+  commentId: Overload:SoundMaker.ScoreData.SMSC.Error.Literal
+  isSpec: "True"
+  fullName: SoundMaker.ScoreData.SMSC.Error.Literal
+  nameWithType: Error.Literal
+- uid: SoundMaker.ScoreData.SMSC.Error.Type
+  name: Type
+  href: api/SoundMaker.ScoreData.SMSC.Error.html#SoundMaker_ScoreData_SMSC_Error_Type
+  commentId: P:SoundMaker.ScoreData.SMSC.Error.Type
+  fullName: SoundMaker.ScoreData.SMSC.Error.Type
+  nameWithType: Error.Type
+- uid: SoundMaker.ScoreData.SMSC.Error.Type*
+  name: Type
+  href: api/SoundMaker.ScoreData.SMSC.Error.html#SoundMaker_ScoreData_SMSC_Error_Type_
+  commentId: Overload:SoundMaker.ScoreData.SMSC.Error.Type
+  isSpec: "True"
+  fullName: SoundMaker.ScoreData.SMSC.Error.Type
+  nameWithType: Error.Type
+- uid: SoundMaker.ScoreData.SMSC.SMSCFormat
+  name: SMSCFormat
+  href: api/SoundMaker.ScoreData.SMSC.SMSCFormat.html
+  commentId: T:SoundMaker.ScoreData.SMSC.SMSCFormat
+  fullName: SoundMaker.ScoreData.SMSC.SMSCFormat
+  nameWithType: SMSCFormat
+- uid: SoundMaker.ScoreData.SMSC.SMSCFormat.Read(System.String)
+  name: Read(string)
+  href: api/SoundMaker.ScoreData.SMSC.SMSCFormat.html#SoundMaker_ScoreData_SMSC_SMSCFormat_Read_System_String_
+  commentId: M:SoundMaker.ScoreData.SMSC.SMSCFormat.Read(System.String)
+  name.vb: Read(String)
+  fullName: SoundMaker.ScoreData.SMSC.SMSCFormat.Read(string)
+  fullName.vb: SoundMaker.ScoreData.SMSC.SMSCFormat.Read(String)
+  nameWithType: SMSCFormat.Read(string)
+  nameWithType.vb: SMSCFormat.Read(String)
+- uid: SoundMaker.ScoreData.SMSC.SMSCFormat.Read*
+  name: Read
+  href: api/SoundMaker.ScoreData.SMSC.SMSCFormat.html#SoundMaker_ScoreData_SMSC_SMSCFormat_Read_
+  commentId: Overload:SoundMaker.ScoreData.SMSC.SMSCFormat.Read
+  isSpec: "True"
+  fullName: SoundMaker.ScoreData.SMSC.SMSCFormat.Read
+  nameWithType: SMSCFormat.Read
+- uid: SoundMaker.ScoreData.SMSC.SMSCFormat.Serialize(System.Collections.Generic.IEnumerable{SoundMaker.Sounds.Score.ISoundComponent})
+  name: Serialize(IEnumerable<ISoundComponent>)
+  href: api/SoundMaker.ScoreData.SMSC.SMSCFormat.html#SoundMaker_ScoreData_SMSC_SMSCFormat_Serialize_System_Collections_Generic_IEnumerable_SoundMaker_Sounds_Score_ISoundComponent__
+  commentId: M:SoundMaker.ScoreData.SMSC.SMSCFormat.Serialize(System.Collections.Generic.IEnumerable{SoundMaker.Sounds.Score.ISoundComponent})
+  name.vb: Serialize(IEnumerable(Of ISoundComponent))
+  fullName: SoundMaker.ScoreData.SMSC.SMSCFormat.Serialize(System.Collections.Generic.IEnumerable<SoundMaker.Sounds.Score.ISoundComponent>)
+  fullName.vb: SoundMaker.ScoreData.SMSC.SMSCFormat.Serialize(System.Collections.Generic.IEnumerable(Of SoundMaker.Sounds.Score.ISoundComponent))
+  nameWithType: SMSCFormat.Serialize(IEnumerable<ISoundComponent>)
+  nameWithType.vb: SMSCFormat.Serialize(IEnumerable(Of ISoundComponent))
+- uid: SoundMaker.ScoreData.SMSC.SMSCFormat.Serialize*
+  name: Serialize
+  href: api/SoundMaker.ScoreData.SMSC.SMSCFormat.html#SoundMaker_ScoreData_SMSC_SMSCFormat_Serialize_
+  commentId: Overload:SoundMaker.ScoreData.SMSC.SMSCFormat.Serialize
+  isSpec: "True"
+  fullName: SoundMaker.ScoreData.SMSC.SMSCFormat.Serialize
+  nameWithType: SMSCFormat.Serialize
+- uid: SoundMaker.ScoreData.SMSC.SMSCReadErrorType
+  name: SMSCReadErrorType
+  href: api/SoundMaker.ScoreData.SMSC.SMSCReadErrorType.html
+  commentId: T:SoundMaker.ScoreData.SMSC.SMSCReadErrorType
+  fullName: SoundMaker.ScoreData.SMSC.SMSCReadErrorType
+  nameWithType: SMSCReadErrorType
+- uid: SoundMaker.ScoreData.SMSC.SMSCReadErrorType.InvalidLength
+  name: InvalidLength
+  href: api/SoundMaker.ScoreData.SMSC.SMSCReadErrorType.html#SoundMaker_ScoreData_SMSC_SMSCReadErrorType_InvalidLength
+  commentId: F:SoundMaker.ScoreData.SMSC.SMSCReadErrorType.InvalidLength
+  fullName: SoundMaker.ScoreData.SMSC.SMSCReadErrorType.InvalidLength
+  nameWithType: SMSCReadErrorType.InvalidLength
+- uid: SoundMaker.ScoreData.SMSC.SMSCReadErrorType.InvalidScale
+  name: InvalidScale
+  href: api/SoundMaker.ScoreData.SMSC.SMSCReadErrorType.html#SoundMaker_ScoreData_SMSC_SMSCReadErrorType_InvalidScale
+  commentId: F:SoundMaker.ScoreData.SMSC.SMSCReadErrorType.InvalidScale
+  fullName: SoundMaker.ScoreData.SMSC.SMSCReadErrorType.InvalidScale
+  nameWithType: SMSCReadErrorType.InvalidScale
+- uid: SoundMaker.ScoreData.SMSC.SMSCReadErrorType.NotFoundComma
+  name: NotFoundComma
+  href: api/SoundMaker.ScoreData.SMSC.SMSCReadErrorType.html#SoundMaker_ScoreData_SMSC_SMSCReadErrorType_NotFoundComma
+  commentId: F:SoundMaker.ScoreData.SMSC.SMSCReadErrorType.NotFoundComma
+  fullName: SoundMaker.ScoreData.SMSC.SMSCReadErrorType.NotFoundComma
+  nameWithType: SMSCReadErrorType.NotFoundComma
+- uid: SoundMaker.ScoreData.SMSC.SMSCReadErrorType.NotFoundLeftParentheses
+  name: NotFoundLeftParentheses
+  href: api/SoundMaker.ScoreData.SMSC.SMSCReadErrorType.html#SoundMaker_ScoreData_SMSC_SMSCReadErrorType_NotFoundLeftParentheses
+  commentId: F:SoundMaker.ScoreData.SMSC.SMSCReadErrorType.NotFoundLeftParentheses
+  fullName: SoundMaker.ScoreData.SMSC.SMSCReadErrorType.NotFoundLeftParentheses
+  nameWithType: SMSCReadErrorType.NotFoundLeftParentheses
+- uid: SoundMaker.ScoreData.SMSC.SMSCReadErrorType.NotFoundRightParentheses
+  name: NotFoundRightParentheses
+  href: api/SoundMaker.ScoreData.SMSC.SMSCReadErrorType.html#SoundMaker_ScoreData_SMSC_SMSCReadErrorType_NotFoundRightParentheses
+  commentId: F:SoundMaker.ScoreData.SMSC.SMSCReadErrorType.NotFoundRightParentheses
+  fullName: SoundMaker.ScoreData.SMSC.SMSCReadErrorType.NotFoundRightParentheses
+  nameWithType: SMSCReadErrorType.NotFoundRightParentheses
+- uid: SoundMaker.ScoreData.SMSC.SMSCReadErrorType.UndefinedStatement
+  name: UndefinedStatement
+  href: api/SoundMaker.ScoreData.SMSC.SMSCReadErrorType.html#SoundMaker_ScoreData_SMSC_SMSCReadErrorType_UndefinedStatement
+  commentId: F:SoundMaker.ScoreData.SMSC.SMSCReadErrorType.UndefinedStatement
+  fullName: SoundMaker.ScoreData.SMSC.SMSCReadErrorType.UndefinedStatement
+  nameWithType: SMSCReadErrorType.UndefinedStatement
+- uid: SoundMaker.ScoreData.SMSC.SMSCReadResult
+  name: SMSCReadResult
+  href: api/SoundMaker.ScoreData.SMSC.SMSCReadResult.html
+  commentId: T:SoundMaker.ScoreData.SMSC.SMSCReadResult
+  fullName: SoundMaker.ScoreData.SMSC.SMSCReadResult
+  nameWithType: SMSCReadResult
+- uid: SoundMaker.ScoreData.SMSC.SMSCReadResult.Errors
+  name: Errors
+  href: api/SoundMaker.ScoreData.SMSC.SMSCReadResult.html#SoundMaker_ScoreData_SMSC_SMSCReadResult_Errors
+  commentId: P:SoundMaker.ScoreData.SMSC.SMSCReadResult.Errors
+  fullName: SoundMaker.ScoreData.SMSC.SMSCReadResult.Errors
+  nameWithType: SMSCReadResult.Errors
+- uid: SoundMaker.ScoreData.SMSC.SMSCReadResult.Errors*
+  name: Errors
+  href: api/SoundMaker.ScoreData.SMSC.SMSCReadResult.html#SoundMaker_ScoreData_SMSC_SMSCReadResult_Errors_
+  commentId: Overload:SoundMaker.ScoreData.SMSC.SMSCReadResult.Errors
+  isSpec: "True"
+  fullName: SoundMaker.ScoreData.SMSC.SMSCReadResult.Errors
+  nameWithType: SMSCReadResult.Errors
+- uid: SoundMaker.ScoreData.SMSC.SMSCReadResult.IsSuccess
+  name: IsSuccess
+  href: api/SoundMaker.ScoreData.SMSC.SMSCReadResult.html#SoundMaker_ScoreData_SMSC_SMSCReadResult_IsSuccess
+  commentId: P:SoundMaker.ScoreData.SMSC.SMSCReadResult.IsSuccess
+  fullName: SoundMaker.ScoreData.SMSC.SMSCReadResult.IsSuccess
+  nameWithType: SMSCReadResult.IsSuccess
+- uid: SoundMaker.ScoreData.SMSC.SMSCReadResult.IsSuccess*
+  name: IsSuccess
+  href: api/SoundMaker.ScoreData.SMSC.SMSCReadResult.html#SoundMaker_ScoreData_SMSC_SMSCReadResult_IsSuccess_
+  commentId: Overload:SoundMaker.ScoreData.SMSC.SMSCReadResult.IsSuccess
+  isSpec: "True"
+  fullName: SoundMaker.ScoreData.SMSC.SMSCReadResult.IsSuccess
+  nameWithType: SMSCReadResult.IsSuccess
+- uid: SoundMaker.ScoreData.SMSC.SMSCReadResult.TryGetValue(System.Collections.Generic.IReadOnlyList{SoundMaker.Sounds.Score.ISoundComponent}@)
+  name: TryGetValue(out IReadOnlyList<ISoundComponent>)
+  href: api/SoundMaker.ScoreData.SMSC.SMSCReadResult.html#SoundMaker_ScoreData_SMSC_SMSCReadResult_TryGetValue_System_Collections_Generic_IReadOnlyList_SoundMaker_Sounds_Score_ISoundComponent___
+  commentId: M:SoundMaker.ScoreData.SMSC.SMSCReadResult.TryGetValue(System.Collections.Generic.IReadOnlyList{SoundMaker.Sounds.Score.ISoundComponent}@)
+  name.vb: TryGetValue(IReadOnlyList(Of ISoundComponent))
+  fullName: SoundMaker.ScoreData.SMSC.SMSCReadResult.TryGetValue(out System.Collections.Generic.IReadOnlyList<SoundMaker.Sounds.Score.ISoundComponent>)
+  fullName.vb: SoundMaker.ScoreData.SMSC.SMSCReadResult.TryGetValue(System.Collections.Generic.IReadOnlyList(Of SoundMaker.Sounds.Score.ISoundComponent))
+  nameWithType: SMSCReadResult.TryGetValue(out IReadOnlyList<ISoundComponent>)
+  nameWithType.vb: SMSCReadResult.TryGetValue(IReadOnlyList(Of ISoundComponent))
+- uid: SoundMaker.ScoreData.SMSC.SMSCReadResult.TryGetValue*
+  name: TryGetValue
+  href: api/SoundMaker.ScoreData.SMSC.SMSCReadResult.html#SoundMaker_ScoreData_SMSC_SMSCReadResult_TryGetValue_
+  commentId: Overload:SoundMaker.ScoreData.SMSC.SMSCReadResult.TryGetValue
+  isSpec: "True"
+  fullName: SoundMaker.ScoreData.SMSC.SMSCReadResult.TryGetValue
+  nameWithType: SMSCReadResult.TryGetValue
+- uid: SoundMaker.ScoreData.SMSC.SMSCReadResult.Unwrap
+  name: Unwrap()
+  href: api/SoundMaker.ScoreData.SMSC.SMSCReadResult.html#SoundMaker_ScoreData_SMSC_SMSCReadResult_Unwrap
+  commentId: M:SoundMaker.ScoreData.SMSC.SMSCReadResult.Unwrap
+  fullName: SoundMaker.ScoreData.SMSC.SMSCReadResult.Unwrap()
+  nameWithType: SMSCReadResult.Unwrap()
+- uid: SoundMaker.ScoreData.SMSC.SMSCReadResult.Unwrap*
+  name: Unwrap
+  href: api/SoundMaker.ScoreData.SMSC.SMSCReadResult.html#SoundMaker_ScoreData_SMSC_SMSCReadResult_Unwrap_
+  commentId: Overload:SoundMaker.ScoreData.SMSC.SMSCReadResult.Unwrap
+  isSpec: "True"
+  fullName: SoundMaker.ScoreData.SMSC.SMSCReadResult.Unwrap
+  nameWithType: SMSCReadResult.Unwrap
+- uid: SoundMaker.Sounds
+  name: SoundMaker.Sounds
+  href: api/SoundMaker.Sounds.html
+  commentId: N:SoundMaker.Sounds
+  fullName: SoundMaker.Sounds
+  nameWithType: SoundMaker.Sounds
+- uid: SoundMaker.Sounds.BitRateType
+  name: BitRateType
+  href: api/SoundMaker.Sounds.BitRateType.html
+  commentId: T:SoundMaker.Sounds.BitRateType
+  fullName: SoundMaker.Sounds.BitRateType
+  nameWithType: BitRateType
+- uid: SoundMaker.Sounds.BitRateType.EightBit
+  name: EightBit
+  href: api/SoundMaker.Sounds.BitRateType.html#SoundMaker_Sounds_BitRateType_EightBit
+  commentId: F:SoundMaker.Sounds.BitRateType.EightBit
+  fullName: SoundMaker.Sounds.BitRateType.EightBit
+  nameWithType: BitRateType.EightBit
+- uid: SoundMaker.Sounds.BitRateType.SixteenBit
+  name: SixteenBit
+  href: api/SoundMaker.Sounds.BitRateType.html#SoundMaker_Sounds_BitRateType_SixteenBit
+  commentId: F:SoundMaker.Sounds.BitRateType.SixteenBit
+  fullName: SoundMaker.Sounds.BitRateType.SixteenBit
+  nameWithType: BitRateType.SixteenBit
+- uid: SoundMaker.Sounds.ChannelType
+  name: ChannelType
+  href: api/SoundMaker.Sounds.ChannelType.html
+  commentId: T:SoundMaker.Sounds.ChannelType
+  fullName: SoundMaker.Sounds.ChannelType
+  nameWithType: ChannelType
+- uid: SoundMaker.Sounds.ChannelType.Monaural
+  name: Monaural
+  href: api/SoundMaker.Sounds.ChannelType.html#SoundMaker_Sounds_ChannelType_Monaural
+  commentId: F:SoundMaker.Sounds.ChannelType.Monaural
+  fullName: SoundMaker.Sounds.ChannelType.Monaural
+  nameWithType: ChannelType.Monaural
+- uid: SoundMaker.Sounds.ChannelType.Stereo
+  name: Stereo
+  href: api/SoundMaker.Sounds.ChannelType.html#SoundMaker_Sounds_ChannelType_Stereo
+  commentId: F:SoundMaker.Sounds.ChannelType.Stereo
+  fullName: SoundMaker.Sounds.ChannelType.Stereo
+  nameWithType: ChannelType.Stereo
+- uid: SoundMaker.Sounds.IWave
+  name: IWave
+  href: api/SoundMaker.Sounds.IWave.html
+  commentId: T:SoundMaker.Sounds.IWave
+  fullName: SoundMaker.Sounds.IWave
+  nameWithType: IWave
+- uid: SoundMaker.Sounds.IWave.GetBytes(SoundMaker.Sounds.BitRateType)
+  name: GetBytes(BitRateType)
+  href: api/SoundMaker.Sounds.IWave.html#SoundMaker_Sounds_IWave_GetBytes_SoundMaker_Sounds_BitRateType_
+  commentId: M:SoundMaker.Sounds.IWave.GetBytes(SoundMaker.Sounds.BitRateType)
+  fullName: SoundMaker.Sounds.IWave.GetBytes(SoundMaker.Sounds.BitRateType)
+  nameWithType: IWave.GetBytes(BitRateType)
+- uid: SoundMaker.Sounds.IWave.GetBytes*
+  name: GetBytes
+  href: api/SoundMaker.Sounds.IWave.html#SoundMaker_Sounds_IWave_GetBytes_
+  commentId: Overload:SoundMaker.Sounds.IWave.GetBytes
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.IWave.GetBytes
+  nameWithType: IWave.GetBytes
+- uid: SoundMaker.Sounds.IWave.GetLengthOfBytes(SoundMaker.Sounds.BitRateType)
+  name: GetLengthOfBytes(BitRateType)
+  href: api/SoundMaker.Sounds.IWave.html#SoundMaker_Sounds_IWave_GetLengthOfBytes_SoundMaker_Sounds_BitRateType_
+  commentId: M:SoundMaker.Sounds.IWave.GetLengthOfBytes(SoundMaker.Sounds.BitRateType)
+  fullName: SoundMaker.Sounds.IWave.GetLengthOfBytes(SoundMaker.Sounds.BitRateType)
+  nameWithType: IWave.GetLengthOfBytes(BitRateType)
+- uid: SoundMaker.Sounds.IWave.GetLengthOfBytes*
+  name: GetLengthOfBytes
+  href: api/SoundMaker.Sounds.IWave.html#SoundMaker_Sounds_IWave_GetLengthOfBytes_
+  commentId: Overload:SoundMaker.Sounds.IWave.GetLengthOfBytes
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.IWave.GetLengthOfBytes
+  nameWithType: IWave.GetLengthOfBytes
+- uid: SoundMaker.Sounds.MixerBase
+  name: MixerBase
+  href: api/SoundMaker.Sounds.MixerBase.html
+  commentId: T:SoundMaker.Sounds.MixerBase
+  fullName: SoundMaker.Sounds.MixerBase
+  nameWithType: MixerBase
+- uid: SoundMaker.Sounds.MixerBase.#ctor(System.Collections.Generic.IReadOnlyList{SoundMaker.Sounds.SoundChannels.ISoundChannel})
+  name: MixerBase(IReadOnlyList<ISoundChannel>)
+  href: api/SoundMaker.Sounds.MixerBase.html#SoundMaker_Sounds_MixerBase__ctor_System_Collections_Generic_IReadOnlyList_SoundMaker_Sounds_SoundChannels_ISoundChannel__
+  commentId: M:SoundMaker.Sounds.MixerBase.#ctor(System.Collections.Generic.IReadOnlyList{SoundMaker.Sounds.SoundChannels.ISoundChannel})
+  name.vb: New(IReadOnlyList(Of ISoundChannel))
+  fullName: SoundMaker.Sounds.MixerBase.MixerBase(System.Collections.Generic.IReadOnlyList<SoundMaker.Sounds.SoundChannels.ISoundChannel>)
+  fullName.vb: SoundMaker.Sounds.MixerBase.New(System.Collections.Generic.IReadOnlyList(Of SoundMaker.Sounds.SoundChannels.ISoundChannel))
+  nameWithType: MixerBase.MixerBase(IReadOnlyList<ISoundChannel>)
+  nameWithType.vb: MixerBase.New(IReadOnlyList(Of ISoundChannel))
+- uid: SoundMaker.Sounds.MixerBase.#ctor*
+  name: MixerBase
+  href: api/SoundMaker.Sounds.MixerBase.html#SoundMaker_Sounds_MixerBase__ctor_
+  commentId: Overload:SoundMaker.Sounds.MixerBase.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: SoundMaker.Sounds.MixerBase.MixerBase
+  fullName.vb: SoundMaker.Sounds.MixerBase.New
+  nameWithType: MixerBase.MixerBase
+  nameWithType.vb: MixerBase.New
+- uid: SoundMaker.Sounds.MixerBase.Channels
+  name: Channels
+  href: api/SoundMaker.Sounds.MixerBase.html#SoundMaker_Sounds_MixerBase_Channels
+  commentId: P:SoundMaker.Sounds.MixerBase.Channels
+  fullName: SoundMaker.Sounds.MixerBase.Channels
+  nameWithType: MixerBase.Channels
+- uid: SoundMaker.Sounds.MixerBase.Channels*
+  name: Channels
+  href: api/SoundMaker.Sounds.MixerBase.html#SoundMaker_Sounds_MixerBase_Channels_
+  commentId: Overload:SoundMaker.Sounds.MixerBase.Channels
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.MixerBase.Channels
+  nameWithType: MixerBase.Channels
+- uid: SoundMaker.Sounds.MixerBase.Format
+  name: Format
+  href: api/SoundMaker.Sounds.MixerBase.html#SoundMaker_Sounds_MixerBase_Format
+  commentId: P:SoundMaker.Sounds.MixerBase.Format
+  fullName: SoundMaker.Sounds.MixerBase.Format
+  nameWithType: MixerBase.Format
+- uid: SoundMaker.Sounds.MixerBase.Format*
+  name: Format
+  href: api/SoundMaker.Sounds.MixerBase.html#SoundMaker_Sounds_MixerBase_Format_
+  commentId: Overload:SoundMaker.Sounds.MixerBase.Format
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.MixerBase.Format
+  nameWithType: MixerBase.Format
+- uid: SoundMaker.Sounds.MixerBase.GetMaxWaveLength
+  name: GetMaxWaveLength()
+  href: api/SoundMaker.Sounds.MixerBase.html#SoundMaker_Sounds_MixerBase_GetMaxWaveLength
+  commentId: M:SoundMaker.Sounds.MixerBase.GetMaxWaveLength
+  fullName: SoundMaker.Sounds.MixerBase.GetMaxWaveLength()
+  nameWithType: MixerBase.GetMaxWaveLength()
+- uid: SoundMaker.Sounds.MixerBase.GetMaxWaveLength*
+  name: GetMaxWaveLength
+  href: api/SoundMaker.Sounds.MixerBase.html#SoundMaker_Sounds_MixerBase_GetMaxWaveLength_
+  commentId: Overload:SoundMaker.Sounds.MixerBase.GetMaxWaveLength
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.MixerBase.GetMaxWaveLength
+  nameWithType: MixerBase.GetMaxWaveLength
+- uid: SoundMaker.Sounds.MonauralMixer
+  name: MonauralMixer
+  href: api/SoundMaker.Sounds.MonauralMixer.html
+  commentId: T:SoundMaker.Sounds.MonauralMixer
+  fullName: SoundMaker.Sounds.MonauralMixer
+  nameWithType: MonauralMixer
+- uid: SoundMaker.Sounds.MonauralMixer.#ctor(System.Collections.Generic.IReadOnlyList{SoundMaker.Sounds.SoundChannels.ISoundChannel})
+  name: MonauralMixer(IReadOnlyList<ISoundChannel>)
+  href: api/SoundMaker.Sounds.MonauralMixer.html#SoundMaker_Sounds_MonauralMixer__ctor_System_Collections_Generic_IReadOnlyList_SoundMaker_Sounds_SoundChannels_ISoundChannel__
+  commentId: M:SoundMaker.Sounds.MonauralMixer.#ctor(System.Collections.Generic.IReadOnlyList{SoundMaker.Sounds.SoundChannels.ISoundChannel})
+  name.vb: New(IReadOnlyList(Of ISoundChannel))
+  fullName: SoundMaker.Sounds.MonauralMixer.MonauralMixer(System.Collections.Generic.IReadOnlyList<SoundMaker.Sounds.SoundChannels.ISoundChannel>)
+  fullName.vb: SoundMaker.Sounds.MonauralMixer.New(System.Collections.Generic.IReadOnlyList(Of SoundMaker.Sounds.SoundChannels.ISoundChannel))
+  nameWithType: MonauralMixer.MonauralMixer(IReadOnlyList<ISoundChannel>)
+  nameWithType.vb: MonauralMixer.New(IReadOnlyList(Of ISoundChannel))
+- uid: SoundMaker.Sounds.MonauralMixer.#ctor*
+  name: MonauralMixer
+  href: api/SoundMaker.Sounds.MonauralMixer.html#SoundMaker_Sounds_MonauralMixer__ctor_
+  commentId: Overload:SoundMaker.Sounds.MonauralMixer.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: SoundMaker.Sounds.MonauralMixer.MonauralMixer
+  fullName.vb: SoundMaker.Sounds.MonauralMixer.New
+  nameWithType: MonauralMixer.MonauralMixer
+  nameWithType.vb: MonauralMixer.New
+- uid: SoundMaker.Sounds.MonauralMixer.Mix
+  name: Mix()
+  href: api/SoundMaker.Sounds.MonauralMixer.html#SoundMaker_Sounds_MonauralMixer_Mix
+  commentId: M:SoundMaker.Sounds.MonauralMixer.Mix
+  fullName: SoundMaker.Sounds.MonauralMixer.Mix()
+  nameWithType: MonauralMixer.Mix()
+- uid: SoundMaker.Sounds.MonauralMixer.Mix*
+  name: Mix
+  href: api/SoundMaker.Sounds.MonauralMixer.html#SoundMaker_Sounds_MonauralMixer_Mix_
+  commentId: Overload:SoundMaker.Sounds.MonauralMixer.Mix
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.MonauralMixer.Mix
+  nameWithType: MonauralMixer.Mix
+- uid: SoundMaker.Sounds.MonauralWave
+  name: MonauralWave
+  href: api/SoundMaker.Sounds.MonauralWave.html
+  commentId: T:SoundMaker.Sounds.MonauralWave
+  fullName: SoundMaker.Sounds.MonauralWave
+  nameWithType: MonauralWave
+- uid: SoundMaker.Sounds.MonauralWave.#ctor(System.Collections.Generic.IReadOnlyCollection{System.Int16})
+  name: MonauralWave(IReadOnlyCollection<short>)
+  href: api/SoundMaker.Sounds.MonauralWave.html#SoundMaker_Sounds_MonauralWave__ctor_System_Collections_Generic_IReadOnlyCollection_System_Int16__
+  commentId: M:SoundMaker.Sounds.MonauralWave.#ctor(System.Collections.Generic.IReadOnlyCollection{System.Int16})
+  name.vb: New(IReadOnlyCollection(Of Short))
+  fullName: SoundMaker.Sounds.MonauralWave.MonauralWave(System.Collections.Generic.IReadOnlyCollection<short>)
+  fullName.vb: SoundMaker.Sounds.MonauralWave.New(System.Collections.Generic.IReadOnlyCollection(Of Short))
+  nameWithType: MonauralWave.MonauralWave(IReadOnlyCollection<short>)
+  nameWithType.vb: MonauralWave.New(IReadOnlyCollection(Of Short))
+- uid: SoundMaker.Sounds.MonauralWave.#ctor*
+  name: MonauralWave
+  href: api/SoundMaker.Sounds.MonauralWave.html#SoundMaker_Sounds_MonauralWave__ctor_
+  commentId: Overload:SoundMaker.Sounds.MonauralWave.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: SoundMaker.Sounds.MonauralWave.MonauralWave
+  fullName.vb: SoundMaker.Sounds.MonauralWave.New
+  nameWithType: MonauralWave.MonauralWave
+  nameWithType.vb: MonauralWave.New
+- uid: SoundMaker.Sounds.MonauralWave.Append(SoundMaker.Sounds.MonauralWave)
+  name: Append(MonauralWave)
+  href: api/SoundMaker.Sounds.MonauralWave.html#SoundMaker_Sounds_MonauralWave_Append_SoundMaker_Sounds_MonauralWave_
+  commentId: M:SoundMaker.Sounds.MonauralWave.Append(SoundMaker.Sounds.MonauralWave)
+  fullName: SoundMaker.Sounds.MonauralWave.Append(SoundMaker.Sounds.MonauralWave)
+  nameWithType: MonauralWave.Append(MonauralWave)
+- uid: SoundMaker.Sounds.MonauralWave.Append*
+  name: Append
+  href: api/SoundMaker.Sounds.MonauralWave.html#SoundMaker_Sounds_MonauralWave_Append_
+  commentId: Overload:SoundMaker.Sounds.MonauralWave.Append
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.MonauralWave.Append
+  nameWithType: MonauralWave.Append
+- uid: SoundMaker.Sounds.MonauralWave.ChangeVolume(System.Int32)
+  name: ChangeVolume(int)
+  href: api/SoundMaker.Sounds.MonauralWave.html#SoundMaker_Sounds_MonauralWave_ChangeVolume_System_Int32_
+  commentId: M:SoundMaker.Sounds.MonauralWave.ChangeVolume(System.Int32)
+  name.vb: ChangeVolume(Integer)
+  fullName: SoundMaker.Sounds.MonauralWave.ChangeVolume(int)
+  fullName.vb: SoundMaker.Sounds.MonauralWave.ChangeVolume(Integer)
+  nameWithType: MonauralWave.ChangeVolume(int)
+  nameWithType.vb: MonauralWave.ChangeVolume(Integer)
+- uid: SoundMaker.Sounds.MonauralWave.ChangeVolume*
+  name: ChangeVolume
+  href: api/SoundMaker.Sounds.MonauralWave.html#SoundMaker_Sounds_MonauralWave_ChangeVolume_
+  commentId: Overload:SoundMaker.Sounds.MonauralWave.ChangeVolume
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.MonauralWave.ChangeVolume
+  nameWithType: MonauralWave.ChangeVolume
+- uid: SoundMaker.Sounds.MonauralWave.GetBytes(SoundMaker.Sounds.BitRateType)
+  name: GetBytes(BitRateType)
+  href: api/SoundMaker.Sounds.MonauralWave.html#SoundMaker_Sounds_MonauralWave_GetBytes_SoundMaker_Sounds_BitRateType_
+  commentId: M:SoundMaker.Sounds.MonauralWave.GetBytes(SoundMaker.Sounds.BitRateType)
+  fullName: SoundMaker.Sounds.MonauralWave.GetBytes(SoundMaker.Sounds.BitRateType)
+  nameWithType: MonauralWave.GetBytes(BitRateType)
+- uid: SoundMaker.Sounds.MonauralWave.GetBytes*
+  name: GetBytes
+  href: api/SoundMaker.Sounds.MonauralWave.html#SoundMaker_Sounds_MonauralWave_GetBytes_
+  commentId: Overload:SoundMaker.Sounds.MonauralWave.GetBytes
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.MonauralWave.GetBytes
+  nameWithType: MonauralWave.GetBytes
+- uid: SoundMaker.Sounds.MonauralWave.GetLengthOfBytes(SoundMaker.Sounds.BitRateType)
+  name: GetLengthOfBytes(BitRateType)
+  href: api/SoundMaker.Sounds.MonauralWave.html#SoundMaker_Sounds_MonauralWave_GetLengthOfBytes_SoundMaker_Sounds_BitRateType_
+  commentId: M:SoundMaker.Sounds.MonauralWave.GetLengthOfBytes(SoundMaker.Sounds.BitRateType)
+  fullName: SoundMaker.Sounds.MonauralWave.GetLengthOfBytes(SoundMaker.Sounds.BitRateType)
+  nameWithType: MonauralWave.GetLengthOfBytes(BitRateType)
+- uid: SoundMaker.Sounds.MonauralWave.GetLengthOfBytes*
+  name: GetLengthOfBytes
+  href: api/SoundMaker.Sounds.MonauralWave.html#SoundMaker_Sounds_MonauralWave_GetLengthOfBytes_
+  commentId: Overload:SoundMaker.Sounds.MonauralWave.GetLengthOfBytes
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.MonauralWave.GetLengthOfBytes
+  nameWithType: MonauralWave.GetLengthOfBytes
+- uid: SoundMaker.Sounds.MonauralWave.GetWave
+  name: GetWave()
+  href: api/SoundMaker.Sounds.MonauralWave.html#SoundMaker_Sounds_MonauralWave_GetWave
+  commentId: M:SoundMaker.Sounds.MonauralWave.GetWave
+  fullName: SoundMaker.Sounds.MonauralWave.GetWave()
+  nameWithType: MonauralWave.GetWave()
+- uid: SoundMaker.Sounds.MonauralWave.GetWave*
+  name: GetWave
+  href: api/SoundMaker.Sounds.MonauralWave.html#SoundMaker_Sounds_MonauralWave_GetWave_
+  commentId: Overload:SoundMaker.Sounds.MonauralWave.GetWave
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.MonauralWave.GetWave
+  nameWithType: MonauralWave.GetWave
+- uid: SoundMaker.Sounds.MonauralWave.Volume
+  name: Volume
+  href: api/SoundMaker.Sounds.MonauralWave.html#SoundMaker_Sounds_MonauralWave_Volume
+  commentId: P:SoundMaker.Sounds.MonauralWave.Volume
+  fullName: SoundMaker.Sounds.MonauralWave.Volume
+  nameWithType: MonauralWave.Volume
+- uid: SoundMaker.Sounds.MonauralWave.Volume*
+  name: Volume
+  href: api/SoundMaker.Sounds.MonauralWave.html#SoundMaker_Sounds_MonauralWave_Volume_
+  commentId: Overload:SoundMaker.Sounds.MonauralWave.Volume
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.MonauralWave.Volume
+  nameWithType: MonauralWave.Volume
+- uid: SoundMaker.Sounds.SamplingFrequencyType
+  name: SamplingFrequencyType
+  href: api/SoundMaker.Sounds.SamplingFrequencyType.html
+  commentId: T:SoundMaker.Sounds.SamplingFrequencyType
+  fullName: SoundMaker.Sounds.SamplingFrequencyType
+  nameWithType: SamplingFrequencyType
+- uid: SoundMaker.Sounds.SamplingFrequencyType.FourtyEightKHz
+  name: FourtyEightKHz
+  href: api/SoundMaker.Sounds.SamplingFrequencyType.html#SoundMaker_Sounds_SamplingFrequencyType_FourtyEightKHz
+  commentId: F:SoundMaker.Sounds.SamplingFrequencyType.FourtyEightKHz
+  fullName: SoundMaker.Sounds.SamplingFrequencyType.FourtyEightKHz
+  nameWithType: SamplingFrequencyType.FourtyEightKHz
+- uid: SoundMaker.Sounds.SamplingFrequencyType.FourtyFourKHz
+  name: FourtyFourKHz
+  href: api/SoundMaker.Sounds.SamplingFrequencyType.html#SoundMaker_Sounds_SamplingFrequencyType_FourtyFourKHz
+  commentId: F:SoundMaker.Sounds.SamplingFrequencyType.FourtyFourKHz
+  fullName: SoundMaker.Sounds.SamplingFrequencyType.FourtyFourKHz
+  nameWithType: SamplingFrequencyType.FourtyFourKHz
+- uid: SoundMaker.Sounds.Score
+  name: SoundMaker.Sounds.Score
+  href: api/SoundMaker.Sounds.Score.html
+  commentId: N:SoundMaker.Sounds.Score
+  fullName: SoundMaker.Sounds.Score
+  nameWithType: SoundMaker.Sounds.Score
+- uid: SoundMaker.Sounds.Score.BasicSoundComponentBase
+  name: BasicSoundComponentBase
+  href: api/SoundMaker.Sounds.Score.BasicSoundComponentBase.html
+  commentId: T:SoundMaker.Sounds.Score.BasicSoundComponentBase
+  fullName: SoundMaker.Sounds.Score.BasicSoundComponentBase
+  nameWithType: BasicSoundComponentBase
+- uid: SoundMaker.Sounds.Score.BasicSoundComponentBase.#ctor(SoundMaker.Sounds.Score.LengthType,System.Boolean)
+  name: BasicSoundComponentBase(LengthType, bool)
+  href: api/SoundMaker.Sounds.Score.BasicSoundComponentBase.html#SoundMaker_Sounds_Score_BasicSoundComponentBase__ctor_SoundMaker_Sounds_Score_LengthType_System_Boolean_
+  commentId: M:SoundMaker.Sounds.Score.BasicSoundComponentBase.#ctor(SoundMaker.Sounds.Score.LengthType,System.Boolean)
+  name.vb: New(LengthType, Boolean)
+  fullName: SoundMaker.Sounds.Score.BasicSoundComponentBase.BasicSoundComponentBase(SoundMaker.Sounds.Score.LengthType, bool)
+  fullName.vb: SoundMaker.Sounds.Score.BasicSoundComponentBase.New(SoundMaker.Sounds.Score.LengthType, Boolean)
+  nameWithType: BasicSoundComponentBase.BasicSoundComponentBase(LengthType, bool)
+  nameWithType.vb: BasicSoundComponentBase.New(LengthType, Boolean)
+- uid: SoundMaker.Sounds.Score.BasicSoundComponentBase.#ctor*
+  name: BasicSoundComponentBase
+  href: api/SoundMaker.Sounds.Score.BasicSoundComponentBase.html#SoundMaker_Sounds_Score_BasicSoundComponentBase__ctor_
+  commentId: Overload:SoundMaker.Sounds.Score.BasicSoundComponentBase.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: SoundMaker.Sounds.Score.BasicSoundComponentBase.BasicSoundComponentBase
+  fullName.vb: SoundMaker.Sounds.Score.BasicSoundComponentBase.New
+  nameWithType: BasicSoundComponentBase.BasicSoundComponentBase
+  nameWithType.vb: BasicSoundComponentBase.New
+- uid: SoundMaker.Sounds.Score.BasicSoundComponentBase.GenerateWave(SoundMaker.Sounds.SoundFormat,System.Int32,SoundMaker.Sounds.WaveTypes.WaveTypeBase)
+  name: GenerateWave(SoundFormat, int, WaveTypeBase)
+  href: api/SoundMaker.Sounds.Score.BasicSoundComponentBase.html#SoundMaker_Sounds_Score_BasicSoundComponentBase_GenerateWave_SoundMaker_Sounds_SoundFormat_System_Int32_SoundMaker_Sounds_WaveTypes_WaveTypeBase_
+  commentId: M:SoundMaker.Sounds.Score.BasicSoundComponentBase.GenerateWave(SoundMaker.Sounds.SoundFormat,System.Int32,SoundMaker.Sounds.WaveTypes.WaveTypeBase)
+  name.vb: GenerateWave(SoundFormat, Integer, WaveTypeBase)
+  fullName: SoundMaker.Sounds.Score.BasicSoundComponentBase.GenerateWave(SoundMaker.Sounds.SoundFormat, int, SoundMaker.Sounds.WaveTypes.WaveTypeBase)
+  fullName.vb: SoundMaker.Sounds.Score.BasicSoundComponentBase.GenerateWave(SoundMaker.Sounds.SoundFormat, Integer, SoundMaker.Sounds.WaveTypes.WaveTypeBase)
+  nameWithType: BasicSoundComponentBase.GenerateWave(SoundFormat, int, WaveTypeBase)
+  nameWithType.vb: BasicSoundComponentBase.GenerateWave(SoundFormat, Integer, WaveTypeBase)
+- uid: SoundMaker.Sounds.Score.BasicSoundComponentBase.GenerateWave(SoundMaker.Sounds.SoundFormat,System.Int32,System.Int32,SoundMaker.Sounds.WaveTypes.WaveTypeBase)
+  name: GenerateWave(SoundFormat, int, int, WaveTypeBase)
+  href: api/SoundMaker.Sounds.Score.BasicSoundComponentBase.html#SoundMaker_Sounds_Score_BasicSoundComponentBase_GenerateWave_SoundMaker_Sounds_SoundFormat_System_Int32_System_Int32_SoundMaker_Sounds_WaveTypes_WaveTypeBase_
+  commentId: M:SoundMaker.Sounds.Score.BasicSoundComponentBase.GenerateWave(SoundMaker.Sounds.SoundFormat,System.Int32,System.Int32,SoundMaker.Sounds.WaveTypes.WaveTypeBase)
+  name.vb: GenerateWave(SoundFormat, Integer, Integer, WaveTypeBase)
+  fullName: SoundMaker.Sounds.Score.BasicSoundComponentBase.GenerateWave(SoundMaker.Sounds.SoundFormat, int, int, SoundMaker.Sounds.WaveTypes.WaveTypeBase)
+  fullName.vb: SoundMaker.Sounds.Score.BasicSoundComponentBase.GenerateWave(SoundMaker.Sounds.SoundFormat, Integer, Integer, SoundMaker.Sounds.WaveTypes.WaveTypeBase)
+  nameWithType: BasicSoundComponentBase.GenerateWave(SoundFormat, int, int, WaveTypeBase)
+  nameWithType.vb: BasicSoundComponentBase.GenerateWave(SoundFormat, Integer, Integer, WaveTypeBase)
+- uid: SoundMaker.Sounds.Score.BasicSoundComponentBase.GenerateWave*
+  name: GenerateWave
+  href: api/SoundMaker.Sounds.Score.BasicSoundComponentBase.html#SoundMaker_Sounds_Score_BasicSoundComponentBase_GenerateWave_
+  commentId: Overload:SoundMaker.Sounds.Score.BasicSoundComponentBase.GenerateWave
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.Score.BasicSoundComponentBase.GenerateWave
+  nameWithType: BasicSoundComponentBase.GenerateWave
+- uid: SoundMaker.Sounds.Score.BasicSoundComponentBase.GetWaveArrayLength(SoundMaker.Sounds.SoundFormat,System.Int32)
+  name: GetWaveArrayLength(SoundFormat, int)
+  href: api/SoundMaker.Sounds.Score.BasicSoundComponentBase.html#SoundMaker_Sounds_Score_BasicSoundComponentBase_GetWaveArrayLength_SoundMaker_Sounds_SoundFormat_System_Int32_
+  commentId: M:SoundMaker.Sounds.Score.BasicSoundComponentBase.GetWaveArrayLength(SoundMaker.Sounds.SoundFormat,System.Int32)
+  name.vb: GetWaveArrayLength(SoundFormat, Integer)
+  fullName: SoundMaker.Sounds.Score.BasicSoundComponentBase.GetWaveArrayLength(SoundMaker.Sounds.SoundFormat, int)
+  fullName.vb: SoundMaker.Sounds.Score.BasicSoundComponentBase.GetWaveArrayLength(SoundMaker.Sounds.SoundFormat, Integer)
+  nameWithType: BasicSoundComponentBase.GetWaveArrayLength(SoundFormat, int)
+  nameWithType.vb: BasicSoundComponentBase.GetWaveArrayLength(SoundFormat, Integer)
+- uid: SoundMaker.Sounds.Score.BasicSoundComponentBase.GetWaveArrayLength*
+  name: GetWaveArrayLength
+  href: api/SoundMaker.Sounds.Score.BasicSoundComponentBase.html#SoundMaker_Sounds_Score_BasicSoundComponentBase_GetWaveArrayLength_
+  commentId: Overload:SoundMaker.Sounds.Score.BasicSoundComponentBase.GetWaveArrayLength
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.Score.BasicSoundComponentBase.GetWaveArrayLength
+  nameWithType: BasicSoundComponentBase.GetWaveArrayLength
+- uid: SoundMaker.Sounds.Score.BasicSoundComponentBase.IsDotted
+  name: IsDotted
+  href: api/SoundMaker.Sounds.Score.BasicSoundComponentBase.html#SoundMaker_Sounds_Score_BasicSoundComponentBase_IsDotted
+  commentId: P:SoundMaker.Sounds.Score.BasicSoundComponentBase.IsDotted
+  fullName: SoundMaker.Sounds.Score.BasicSoundComponentBase.IsDotted
+  nameWithType: BasicSoundComponentBase.IsDotted
+- uid: SoundMaker.Sounds.Score.BasicSoundComponentBase.IsDotted*
+  name: IsDotted
+  href: api/SoundMaker.Sounds.Score.BasicSoundComponentBase.html#SoundMaker_Sounds_Score_BasicSoundComponentBase_IsDotted_
+  commentId: Overload:SoundMaker.Sounds.Score.BasicSoundComponentBase.IsDotted
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.Score.BasicSoundComponentBase.IsDotted
+  nameWithType: BasicSoundComponentBase.IsDotted
+- uid: SoundMaker.Sounds.Score.BasicSoundComponentBase.Length
+  name: Length
+  href: api/SoundMaker.Sounds.Score.BasicSoundComponentBase.html#SoundMaker_Sounds_Score_BasicSoundComponentBase_Length
+  commentId: P:SoundMaker.Sounds.Score.BasicSoundComponentBase.Length
+  fullName: SoundMaker.Sounds.Score.BasicSoundComponentBase.Length
+  nameWithType: BasicSoundComponentBase.Length
+- uid: SoundMaker.Sounds.Score.BasicSoundComponentBase.Length*
+  name: Length
+  href: api/SoundMaker.Sounds.Score.BasicSoundComponentBase.html#SoundMaker_Sounds_Score_BasicSoundComponentBase_Length_
+  commentId: Overload:SoundMaker.Sounds.Score.BasicSoundComponentBase.Length
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.Score.BasicSoundComponentBase.Length
+  nameWithType: BasicSoundComponentBase.Length
+- uid: SoundMaker.Sounds.Score.ISoundComponent
+  name: ISoundComponent
+  href: api/SoundMaker.Sounds.Score.ISoundComponent.html
+  commentId: T:SoundMaker.Sounds.Score.ISoundComponent
+  fullName: SoundMaker.Sounds.Score.ISoundComponent
+  nameWithType: ISoundComponent
+- uid: SoundMaker.Sounds.Score.ISoundComponent.GenerateWave(SoundMaker.Sounds.SoundFormat,System.Int32,SoundMaker.Sounds.WaveTypes.WaveTypeBase)
+  name: GenerateWave(SoundFormat, int, WaveTypeBase)
+  href: api/SoundMaker.Sounds.Score.ISoundComponent.html#SoundMaker_Sounds_Score_ISoundComponent_GenerateWave_SoundMaker_Sounds_SoundFormat_System_Int32_SoundMaker_Sounds_WaveTypes_WaveTypeBase_
+  commentId: M:SoundMaker.Sounds.Score.ISoundComponent.GenerateWave(SoundMaker.Sounds.SoundFormat,System.Int32,SoundMaker.Sounds.WaveTypes.WaveTypeBase)
+  name.vb: GenerateWave(SoundFormat, Integer, WaveTypeBase)
+  fullName: SoundMaker.Sounds.Score.ISoundComponent.GenerateWave(SoundMaker.Sounds.SoundFormat, int, SoundMaker.Sounds.WaveTypes.WaveTypeBase)
+  fullName.vb: SoundMaker.Sounds.Score.ISoundComponent.GenerateWave(SoundMaker.Sounds.SoundFormat, Integer, SoundMaker.Sounds.WaveTypes.WaveTypeBase)
+  nameWithType: ISoundComponent.GenerateWave(SoundFormat, int, WaveTypeBase)
+  nameWithType.vb: ISoundComponent.GenerateWave(SoundFormat, Integer, WaveTypeBase)
+- uid: SoundMaker.Sounds.Score.ISoundComponent.GenerateWave(SoundMaker.Sounds.SoundFormat,System.Int32,System.Int32,SoundMaker.Sounds.WaveTypes.WaveTypeBase)
+  name: GenerateWave(SoundFormat, int, int, WaveTypeBase)
+  href: api/SoundMaker.Sounds.Score.ISoundComponent.html#SoundMaker_Sounds_Score_ISoundComponent_GenerateWave_SoundMaker_Sounds_SoundFormat_System_Int32_System_Int32_SoundMaker_Sounds_WaveTypes_WaveTypeBase_
+  commentId: M:SoundMaker.Sounds.Score.ISoundComponent.GenerateWave(SoundMaker.Sounds.SoundFormat,System.Int32,System.Int32,SoundMaker.Sounds.WaveTypes.WaveTypeBase)
+  name.vb: GenerateWave(SoundFormat, Integer, Integer, WaveTypeBase)
+  fullName: SoundMaker.Sounds.Score.ISoundComponent.GenerateWave(SoundMaker.Sounds.SoundFormat, int, int, SoundMaker.Sounds.WaveTypes.WaveTypeBase)
+  fullName.vb: SoundMaker.Sounds.Score.ISoundComponent.GenerateWave(SoundMaker.Sounds.SoundFormat, Integer, Integer, SoundMaker.Sounds.WaveTypes.WaveTypeBase)
+  nameWithType: ISoundComponent.GenerateWave(SoundFormat, int, int, WaveTypeBase)
+  nameWithType.vb: ISoundComponent.GenerateWave(SoundFormat, Integer, Integer, WaveTypeBase)
+- uid: SoundMaker.Sounds.Score.ISoundComponent.GenerateWave*
+  name: GenerateWave
+  href: api/SoundMaker.Sounds.Score.ISoundComponent.html#SoundMaker_Sounds_Score_ISoundComponent_GenerateWave_
+  commentId: Overload:SoundMaker.Sounds.Score.ISoundComponent.GenerateWave
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.Score.ISoundComponent.GenerateWave
+  nameWithType: ISoundComponent.GenerateWave
+- uid: SoundMaker.Sounds.Score.ISoundComponent.GetWaveArrayLength(SoundMaker.Sounds.SoundFormat,System.Int32)
+  name: GetWaveArrayLength(SoundFormat, int)
+  href: api/SoundMaker.Sounds.Score.ISoundComponent.html#SoundMaker_Sounds_Score_ISoundComponent_GetWaveArrayLength_SoundMaker_Sounds_SoundFormat_System_Int32_
+  commentId: M:SoundMaker.Sounds.Score.ISoundComponent.GetWaveArrayLength(SoundMaker.Sounds.SoundFormat,System.Int32)
+  name.vb: GetWaveArrayLength(SoundFormat, Integer)
+  fullName: SoundMaker.Sounds.Score.ISoundComponent.GetWaveArrayLength(SoundMaker.Sounds.SoundFormat, int)
+  fullName.vb: SoundMaker.Sounds.Score.ISoundComponent.GetWaveArrayLength(SoundMaker.Sounds.SoundFormat, Integer)
+  nameWithType: ISoundComponent.GetWaveArrayLength(SoundFormat, int)
+  nameWithType.vb: ISoundComponent.GetWaveArrayLength(SoundFormat, Integer)
+- uid: SoundMaker.Sounds.Score.ISoundComponent.GetWaveArrayLength*
+  name: GetWaveArrayLength
+  href: api/SoundMaker.Sounds.Score.ISoundComponent.html#SoundMaker_Sounds_Score_ISoundComponent_GetWaveArrayLength_
+  commentId: Overload:SoundMaker.Sounds.Score.ISoundComponent.GetWaveArrayLength
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.Score.ISoundComponent.GetWaveArrayLength
+  nameWithType: ISoundComponent.GetWaveArrayLength
+- uid: SoundMaker.Sounds.Score.LengthType
+  name: LengthType
+  href: api/SoundMaker.Sounds.Score.LengthType.html
+  commentId: T:SoundMaker.Sounds.Score.LengthType
+  fullName: SoundMaker.Sounds.Score.LengthType
+  nameWithType: LengthType
+- uid: SoundMaker.Sounds.Score.LengthType.Eighth
+  name: Eighth
+  href: api/SoundMaker.Sounds.Score.LengthType.html#SoundMaker_Sounds_Score_LengthType_Eighth
+  commentId: F:SoundMaker.Sounds.Score.LengthType.Eighth
+  fullName: SoundMaker.Sounds.Score.LengthType.Eighth
+  nameWithType: LengthType.Eighth
+- uid: SoundMaker.Sounds.Score.LengthType.Half
+  name: Half
+  href: api/SoundMaker.Sounds.Score.LengthType.html#SoundMaker_Sounds_Score_LengthType_Half
+  commentId: F:SoundMaker.Sounds.Score.LengthType.Half
+  fullName: SoundMaker.Sounds.Score.LengthType.Half
+  nameWithType: LengthType.Half
+- uid: SoundMaker.Sounds.Score.LengthType.Quarter
+  name: Quarter
+  href: api/SoundMaker.Sounds.Score.LengthType.html#SoundMaker_Sounds_Score_LengthType_Quarter
+  commentId: F:SoundMaker.Sounds.Score.LengthType.Quarter
+  fullName: SoundMaker.Sounds.Score.LengthType.Quarter
+  nameWithType: LengthType.Quarter
+- uid: SoundMaker.Sounds.Score.LengthType.Sixteenth
+  name: Sixteenth
+  href: api/SoundMaker.Sounds.Score.LengthType.html#SoundMaker_Sounds_Score_LengthType_Sixteenth
+  commentId: F:SoundMaker.Sounds.Score.LengthType.Sixteenth
+  fullName: SoundMaker.Sounds.Score.LengthType.Sixteenth
+  nameWithType: LengthType.Sixteenth
+- uid: SoundMaker.Sounds.Score.LengthType.SixtyFourth
+  name: SixtyFourth
+  href: api/SoundMaker.Sounds.Score.LengthType.html#SoundMaker_Sounds_Score_LengthType_SixtyFourth
+  commentId: F:SoundMaker.Sounds.Score.LengthType.SixtyFourth
+  fullName: SoundMaker.Sounds.Score.LengthType.SixtyFourth
+  nameWithType: LengthType.SixtyFourth
+- uid: SoundMaker.Sounds.Score.LengthType.ThirtySecond
+  name: ThirtySecond
+  href: api/SoundMaker.Sounds.Score.LengthType.html#SoundMaker_Sounds_Score_LengthType_ThirtySecond
+  commentId: F:SoundMaker.Sounds.Score.LengthType.ThirtySecond
+  fullName: SoundMaker.Sounds.Score.LengthType.ThirtySecond
+  nameWithType: LengthType.ThirtySecond
+- uid: SoundMaker.Sounds.Score.LengthType.Whole
+  name: Whole
+  href: api/SoundMaker.Sounds.Score.LengthType.html#SoundMaker_Sounds_Score_LengthType_Whole
+  commentId: F:SoundMaker.Sounds.Score.LengthType.Whole
+  fullName: SoundMaker.Sounds.Score.LengthType.Whole
+  nameWithType: LengthType.Whole
+- uid: SoundMaker.Sounds.Score.Note
+  name: Note
+  href: api/SoundMaker.Sounds.Score.Note.html
+  commentId: T:SoundMaker.Sounds.Score.Note
+  fullName: SoundMaker.Sounds.Score.Note
+  nameWithType: Note
+- uid: SoundMaker.Sounds.Score.Note.#ctor(SoundMaker.Sounds.Score.LengthType,System.Boolean)
+  name: Note(LengthType, bool)
+  href: api/SoundMaker.Sounds.Score.Note.html#SoundMaker_Sounds_Score_Note__ctor_SoundMaker_Sounds_Score_LengthType_System_Boolean_
+  commentId: M:SoundMaker.Sounds.Score.Note.#ctor(SoundMaker.Sounds.Score.LengthType,System.Boolean)
+  name.vb: New(LengthType, Boolean)
+  fullName: SoundMaker.Sounds.Score.Note.Note(SoundMaker.Sounds.Score.LengthType, bool)
+  fullName.vb: SoundMaker.Sounds.Score.Note.New(SoundMaker.Sounds.Score.LengthType, Boolean)
+  nameWithType: Note.Note(LengthType, bool)
+  nameWithType.vb: Note.New(LengthType, Boolean)
+- uid: SoundMaker.Sounds.Score.Note.#ctor(SoundMaker.Sounds.Score.Scale,System.Int32,SoundMaker.Sounds.Score.LengthType,System.Boolean)
+  name: Note(Scale, int, LengthType, bool)
+  href: api/SoundMaker.Sounds.Score.Note.html#SoundMaker_Sounds_Score_Note__ctor_SoundMaker_Sounds_Score_Scale_System_Int32_SoundMaker_Sounds_Score_LengthType_System_Boolean_
+  commentId: M:SoundMaker.Sounds.Score.Note.#ctor(SoundMaker.Sounds.Score.Scale,System.Int32,SoundMaker.Sounds.Score.LengthType,System.Boolean)
+  name.vb: New(Scale, Integer, LengthType, Boolean)
+  fullName: SoundMaker.Sounds.Score.Note.Note(SoundMaker.Sounds.Score.Scale, int, SoundMaker.Sounds.Score.LengthType, bool)
+  fullName.vb: SoundMaker.Sounds.Score.Note.New(SoundMaker.Sounds.Score.Scale, Integer, SoundMaker.Sounds.Score.LengthType, Boolean)
+  nameWithType: Note.Note(Scale, int, LengthType, bool)
+  nameWithType.vb: Note.New(Scale, Integer, LengthType, Boolean)
+- uid: SoundMaker.Sounds.Score.Note.#ctor*
+  name: Note
+  href: api/SoundMaker.Sounds.Score.Note.html#SoundMaker_Sounds_Score_Note__ctor_
+  commentId: Overload:SoundMaker.Sounds.Score.Note.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: SoundMaker.Sounds.Score.Note.Note
+  fullName.vb: SoundMaker.Sounds.Score.Note.New
+  nameWithType: Note.Note
+  nameWithType.vb: Note.New
+- uid: SoundMaker.Sounds.Score.Note.GenerateWave(SoundMaker.Sounds.SoundFormat,System.Int32,SoundMaker.Sounds.WaveTypes.WaveTypeBase)
+  name: GenerateWave(SoundFormat, int, WaveTypeBase)
+  href: api/SoundMaker.Sounds.Score.Note.html#SoundMaker_Sounds_Score_Note_GenerateWave_SoundMaker_Sounds_SoundFormat_System_Int32_SoundMaker_Sounds_WaveTypes_WaveTypeBase_
+  commentId: M:SoundMaker.Sounds.Score.Note.GenerateWave(SoundMaker.Sounds.SoundFormat,System.Int32,SoundMaker.Sounds.WaveTypes.WaveTypeBase)
+  name.vb: GenerateWave(SoundFormat, Integer, WaveTypeBase)
+  fullName: SoundMaker.Sounds.Score.Note.GenerateWave(SoundMaker.Sounds.SoundFormat, int, SoundMaker.Sounds.WaveTypes.WaveTypeBase)
+  fullName.vb: SoundMaker.Sounds.Score.Note.GenerateWave(SoundMaker.Sounds.SoundFormat, Integer, SoundMaker.Sounds.WaveTypes.WaveTypeBase)
+  nameWithType: Note.GenerateWave(SoundFormat, int, WaveTypeBase)
+  nameWithType.vb: Note.GenerateWave(SoundFormat, Integer, WaveTypeBase)
+- uid: SoundMaker.Sounds.Score.Note.GenerateWave(SoundMaker.Sounds.SoundFormat,System.Int32,System.Int32,SoundMaker.Sounds.WaveTypes.WaveTypeBase)
+  name: GenerateWave(SoundFormat, int, int, WaveTypeBase)
+  href: api/SoundMaker.Sounds.Score.Note.html#SoundMaker_Sounds_Score_Note_GenerateWave_SoundMaker_Sounds_SoundFormat_System_Int32_System_Int32_SoundMaker_Sounds_WaveTypes_WaveTypeBase_
+  commentId: M:SoundMaker.Sounds.Score.Note.GenerateWave(SoundMaker.Sounds.SoundFormat,System.Int32,System.Int32,SoundMaker.Sounds.WaveTypes.WaveTypeBase)
+  name.vb: GenerateWave(SoundFormat, Integer, Integer, WaveTypeBase)
+  fullName: SoundMaker.Sounds.Score.Note.GenerateWave(SoundMaker.Sounds.SoundFormat, int, int, SoundMaker.Sounds.WaveTypes.WaveTypeBase)
+  fullName.vb: SoundMaker.Sounds.Score.Note.GenerateWave(SoundMaker.Sounds.SoundFormat, Integer, Integer, SoundMaker.Sounds.WaveTypes.WaveTypeBase)
+  nameWithType: Note.GenerateWave(SoundFormat, int, int, WaveTypeBase)
+  nameWithType.vb: Note.GenerateWave(SoundFormat, Integer, Integer, WaveTypeBase)
+- uid: SoundMaker.Sounds.Score.Note.GenerateWave*
+  name: GenerateWave
+  href: api/SoundMaker.Sounds.Score.Note.html#SoundMaker_Sounds_Score_Note_GenerateWave_
+  commentId: Overload:SoundMaker.Sounds.Score.Note.GenerateWave
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.Score.Note.GenerateWave
+  nameWithType: Note.GenerateWave
+- uid: SoundMaker.Sounds.Score.Note.Hertz
+  name: Hertz
+  href: api/SoundMaker.Sounds.Score.Note.html#SoundMaker_Sounds_Score_Note_Hertz
+  commentId: P:SoundMaker.Sounds.Score.Note.Hertz
+  fullName: SoundMaker.Sounds.Score.Note.Hertz
+  nameWithType: Note.Hertz
+- uid: SoundMaker.Sounds.Score.Note.Hertz*
+  name: Hertz
+  href: api/SoundMaker.Sounds.Score.Note.html#SoundMaker_Sounds_Score_Note_Hertz_
+  commentId: Overload:SoundMaker.Sounds.Score.Note.Hertz
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.Score.Note.Hertz
+  nameWithType: Note.Hertz
+- uid: SoundMaker.Sounds.Score.Note.Scale
+  name: Scale
+  href: api/SoundMaker.Sounds.Score.Note.html#SoundMaker_Sounds_Score_Note_Scale
+  commentId: P:SoundMaker.Sounds.Score.Note.Scale
+  fullName: SoundMaker.Sounds.Score.Note.Scale
+  nameWithType: Note.Scale
+- uid: SoundMaker.Sounds.Score.Note.Scale*
+  name: Scale
+  href: api/SoundMaker.Sounds.Score.Note.html#SoundMaker_Sounds_Score_Note_Scale_
+  commentId: Overload:SoundMaker.Sounds.Score.Note.Scale
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.Score.Note.Scale
+  nameWithType: Note.Scale
+- uid: SoundMaker.Sounds.Score.Note.ScaleNumber
+  name: ScaleNumber
+  href: api/SoundMaker.Sounds.Score.Note.html#SoundMaker_Sounds_Score_Note_ScaleNumber
+  commentId: P:SoundMaker.Sounds.Score.Note.ScaleNumber
+  fullName: SoundMaker.Sounds.Score.Note.ScaleNumber
+  nameWithType: Note.ScaleNumber
+- uid: SoundMaker.Sounds.Score.Note.ScaleNumber*
+  name: ScaleNumber
+  href: api/SoundMaker.Sounds.Score.Note.html#SoundMaker_Sounds_Score_Note_ScaleNumber_
+  commentId: Overload:SoundMaker.Sounds.Score.Note.ScaleNumber
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.Score.Note.ScaleNumber
+  nameWithType: Note.ScaleNumber
+- uid: SoundMaker.Sounds.Score.Note.Volume
+  name: Volume
+  href: api/SoundMaker.Sounds.Score.Note.html#SoundMaker_Sounds_Score_Note_Volume
+  commentId: P:SoundMaker.Sounds.Score.Note.Volume
+  fullName: SoundMaker.Sounds.Score.Note.Volume
+  nameWithType: Note.Volume
+- uid: SoundMaker.Sounds.Score.Note.Volume*
+  name: Volume
+  href: api/SoundMaker.Sounds.Score.Note.html#SoundMaker_Sounds_Score_Note_Volume_
+  commentId: Overload:SoundMaker.Sounds.Score.Note.Volume
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.Score.Note.Volume
+  nameWithType: Note.Volume
+- uid: SoundMaker.Sounds.Score.Rest
+  name: Rest
+  href: api/SoundMaker.Sounds.Score.Rest.html
+  commentId: T:SoundMaker.Sounds.Score.Rest
+  fullName: SoundMaker.Sounds.Score.Rest
+  nameWithType: Rest
+- uid: SoundMaker.Sounds.Score.Rest.#ctor(SoundMaker.Sounds.Score.LengthType,System.Boolean)
+  name: Rest(LengthType, bool)
+  href: api/SoundMaker.Sounds.Score.Rest.html#SoundMaker_Sounds_Score_Rest__ctor_SoundMaker_Sounds_Score_LengthType_System_Boolean_
+  commentId: M:SoundMaker.Sounds.Score.Rest.#ctor(SoundMaker.Sounds.Score.LengthType,System.Boolean)
+  name.vb: New(LengthType, Boolean)
+  fullName: SoundMaker.Sounds.Score.Rest.Rest(SoundMaker.Sounds.Score.LengthType, bool)
+  fullName.vb: SoundMaker.Sounds.Score.Rest.New(SoundMaker.Sounds.Score.LengthType, Boolean)
+  nameWithType: Rest.Rest(LengthType, bool)
+  nameWithType.vb: Rest.New(LengthType, Boolean)
+- uid: SoundMaker.Sounds.Score.Rest.#ctor*
+  name: Rest
+  href: api/SoundMaker.Sounds.Score.Rest.html#SoundMaker_Sounds_Score_Rest__ctor_
+  commentId: Overload:SoundMaker.Sounds.Score.Rest.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: SoundMaker.Sounds.Score.Rest.Rest
+  fullName.vb: SoundMaker.Sounds.Score.Rest.New
+  nameWithType: Rest.Rest
+  nameWithType.vb: Rest.New
+- uid: SoundMaker.Sounds.Score.Rest.GenerateWave(SoundMaker.Sounds.SoundFormat,System.Int32,SoundMaker.Sounds.WaveTypes.WaveTypeBase)
+  name: GenerateWave(SoundFormat, int, WaveTypeBase)
+  href: api/SoundMaker.Sounds.Score.Rest.html#SoundMaker_Sounds_Score_Rest_GenerateWave_SoundMaker_Sounds_SoundFormat_System_Int32_SoundMaker_Sounds_WaveTypes_WaveTypeBase_
+  commentId: M:SoundMaker.Sounds.Score.Rest.GenerateWave(SoundMaker.Sounds.SoundFormat,System.Int32,SoundMaker.Sounds.WaveTypes.WaveTypeBase)
+  name.vb: GenerateWave(SoundFormat, Integer, WaveTypeBase)
+  fullName: SoundMaker.Sounds.Score.Rest.GenerateWave(SoundMaker.Sounds.SoundFormat, int, SoundMaker.Sounds.WaveTypes.WaveTypeBase)
+  fullName.vb: SoundMaker.Sounds.Score.Rest.GenerateWave(SoundMaker.Sounds.SoundFormat, Integer, SoundMaker.Sounds.WaveTypes.WaveTypeBase)
+  nameWithType: Rest.GenerateWave(SoundFormat, int, WaveTypeBase)
+  nameWithType.vb: Rest.GenerateWave(SoundFormat, Integer, WaveTypeBase)
+- uid: SoundMaker.Sounds.Score.Rest.GenerateWave(SoundMaker.Sounds.SoundFormat,System.Int32,System.Int32,SoundMaker.Sounds.WaveTypes.WaveTypeBase)
+  name: GenerateWave(SoundFormat, int, int, WaveTypeBase)
+  href: api/SoundMaker.Sounds.Score.Rest.html#SoundMaker_Sounds_Score_Rest_GenerateWave_SoundMaker_Sounds_SoundFormat_System_Int32_System_Int32_SoundMaker_Sounds_WaveTypes_WaveTypeBase_
+  commentId: M:SoundMaker.Sounds.Score.Rest.GenerateWave(SoundMaker.Sounds.SoundFormat,System.Int32,System.Int32,SoundMaker.Sounds.WaveTypes.WaveTypeBase)
+  name.vb: GenerateWave(SoundFormat, Integer, Integer, WaveTypeBase)
+  fullName: SoundMaker.Sounds.Score.Rest.GenerateWave(SoundMaker.Sounds.SoundFormat, int, int, SoundMaker.Sounds.WaveTypes.WaveTypeBase)
+  fullName.vb: SoundMaker.Sounds.Score.Rest.GenerateWave(SoundMaker.Sounds.SoundFormat, Integer, Integer, SoundMaker.Sounds.WaveTypes.WaveTypeBase)
+  nameWithType: Rest.GenerateWave(SoundFormat, int, int, WaveTypeBase)
+  nameWithType.vb: Rest.GenerateWave(SoundFormat, Integer, Integer, WaveTypeBase)
+- uid: SoundMaker.Sounds.Score.Rest.GenerateWave*
+  name: GenerateWave
+  href: api/SoundMaker.Sounds.Score.Rest.html#SoundMaker_Sounds_Score_Rest_GenerateWave_
+  commentId: Overload:SoundMaker.Sounds.Score.Rest.GenerateWave
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.Score.Rest.GenerateWave
+  nameWithType: Rest.GenerateWave
+- uid: SoundMaker.Sounds.Score.Scale
+  name: Scale
+  href: api/SoundMaker.Sounds.Score.Scale.html
+  commentId: T:SoundMaker.Sounds.Score.Scale
+  fullName: SoundMaker.Sounds.Score.Scale
+  nameWithType: Scale
+- uid: SoundMaker.Sounds.Score.Scale.A
+  name: A
+  href: api/SoundMaker.Sounds.Score.Scale.html#SoundMaker_Sounds_Score_Scale_A
+  commentId: F:SoundMaker.Sounds.Score.Scale.A
+  fullName: SoundMaker.Sounds.Score.Scale.A
+  nameWithType: Scale.A
+- uid: SoundMaker.Sounds.Score.Scale.ASharp
+  name: ASharp
+  href: api/SoundMaker.Sounds.Score.Scale.html#SoundMaker_Sounds_Score_Scale_ASharp
+  commentId: F:SoundMaker.Sounds.Score.Scale.ASharp
+  fullName: SoundMaker.Sounds.Score.Scale.ASharp
+  nameWithType: Scale.ASharp
+- uid: SoundMaker.Sounds.Score.Scale.B
+  name: B
+  href: api/SoundMaker.Sounds.Score.Scale.html#SoundMaker_Sounds_Score_Scale_B
+  commentId: F:SoundMaker.Sounds.Score.Scale.B
+  fullName: SoundMaker.Sounds.Score.Scale.B
+  nameWithType: Scale.B
+- uid: SoundMaker.Sounds.Score.Scale.C
+  name: C
+  href: api/SoundMaker.Sounds.Score.Scale.html#SoundMaker_Sounds_Score_Scale_C
+  commentId: F:SoundMaker.Sounds.Score.Scale.C
+  fullName: SoundMaker.Sounds.Score.Scale.C
+  nameWithType: Scale.C
+- uid: SoundMaker.Sounds.Score.Scale.CSharp
+  name: CSharp
+  href: api/SoundMaker.Sounds.Score.Scale.html#SoundMaker_Sounds_Score_Scale_CSharp
+  commentId: F:SoundMaker.Sounds.Score.Scale.CSharp
+  fullName: SoundMaker.Sounds.Score.Scale.CSharp
+  nameWithType: Scale.CSharp
+- uid: SoundMaker.Sounds.Score.Scale.D
+  name: D
+  href: api/SoundMaker.Sounds.Score.Scale.html#SoundMaker_Sounds_Score_Scale_D
+  commentId: F:SoundMaker.Sounds.Score.Scale.D
+  fullName: SoundMaker.Sounds.Score.Scale.D
+  nameWithType: Scale.D
+- uid: SoundMaker.Sounds.Score.Scale.DSharp
+  name: DSharp
+  href: api/SoundMaker.Sounds.Score.Scale.html#SoundMaker_Sounds_Score_Scale_DSharp
+  commentId: F:SoundMaker.Sounds.Score.Scale.DSharp
+  fullName: SoundMaker.Sounds.Score.Scale.DSharp
+  nameWithType: Scale.DSharp
+- uid: SoundMaker.Sounds.Score.Scale.E
+  name: E
+  href: api/SoundMaker.Sounds.Score.Scale.html#SoundMaker_Sounds_Score_Scale_E
+  commentId: F:SoundMaker.Sounds.Score.Scale.E
+  fullName: SoundMaker.Sounds.Score.Scale.E
+  nameWithType: Scale.E
+- uid: SoundMaker.Sounds.Score.Scale.F
+  name: F
+  href: api/SoundMaker.Sounds.Score.Scale.html#SoundMaker_Sounds_Score_Scale_F
+  commentId: F:SoundMaker.Sounds.Score.Scale.F
+  fullName: SoundMaker.Sounds.Score.Scale.F
+  nameWithType: Scale.F
+- uid: SoundMaker.Sounds.Score.Scale.FSharp
+  name: FSharp
+  href: api/SoundMaker.Sounds.Score.Scale.html#SoundMaker_Sounds_Score_Scale_FSharp
+  commentId: F:SoundMaker.Sounds.Score.Scale.FSharp
+  fullName: SoundMaker.Sounds.Score.Scale.FSharp
+  nameWithType: Scale.FSharp
+- uid: SoundMaker.Sounds.Score.Scale.G
+  name: G
+  href: api/SoundMaker.Sounds.Score.Scale.html#SoundMaker_Sounds_Score_Scale_G
+  commentId: F:SoundMaker.Sounds.Score.Scale.G
+  fullName: SoundMaker.Sounds.Score.Scale.G
+  nameWithType: Scale.G
+- uid: SoundMaker.Sounds.Score.Scale.GSharp
+  name: GSharp
+  href: api/SoundMaker.Sounds.Score.Scale.html#SoundMaker_Sounds_Score_Scale_GSharp
+  commentId: F:SoundMaker.Sounds.Score.Scale.GSharp
+  fullName: SoundMaker.Sounds.Score.Scale.GSharp
+  nameWithType: Scale.GSharp
+- uid: SoundMaker.Sounds.Score.Tie
+  name: Tie
+  href: api/SoundMaker.Sounds.Score.Tie.html
+  commentId: T:SoundMaker.Sounds.Score.Tie
+  fullName: SoundMaker.Sounds.Score.Tie
+  nameWithType: Tie
+- uid: SoundMaker.Sounds.Score.Tie.#ctor(SoundMaker.Sounds.Score.Note,SoundMaker.Sounds.Score.LengthType,System.Boolean)
+  name: Tie(Note, LengthType, bool)
+  href: api/SoundMaker.Sounds.Score.Tie.html#SoundMaker_Sounds_Score_Tie__ctor_SoundMaker_Sounds_Score_Note_SoundMaker_Sounds_Score_LengthType_System_Boolean_
+  commentId: M:SoundMaker.Sounds.Score.Tie.#ctor(SoundMaker.Sounds.Score.Note,SoundMaker.Sounds.Score.LengthType,System.Boolean)
+  name.vb: New(Note, LengthType, Boolean)
+  fullName: SoundMaker.Sounds.Score.Tie.Tie(SoundMaker.Sounds.Score.Note, SoundMaker.Sounds.Score.LengthType, bool)
+  fullName.vb: SoundMaker.Sounds.Score.Tie.New(SoundMaker.Sounds.Score.Note, SoundMaker.Sounds.Score.LengthType, Boolean)
+  nameWithType: Tie.Tie(Note, LengthType, bool)
+  nameWithType.vb: Tie.New(Note, LengthType, Boolean)
+- uid: SoundMaker.Sounds.Score.Tie.#ctor(SoundMaker.Sounds.Score.Note,System.Collections.Generic.IReadOnlyCollection{SoundMaker.Sounds.Score.Note})
+  name: Tie(Note, IReadOnlyCollection<Note>)
+  href: api/SoundMaker.Sounds.Score.Tie.html#SoundMaker_Sounds_Score_Tie__ctor_SoundMaker_Sounds_Score_Note_System_Collections_Generic_IReadOnlyCollection_SoundMaker_Sounds_Score_Note__
+  commentId: M:SoundMaker.Sounds.Score.Tie.#ctor(SoundMaker.Sounds.Score.Note,System.Collections.Generic.IReadOnlyCollection{SoundMaker.Sounds.Score.Note})
+  name.vb: New(Note, IReadOnlyCollection(Of Note))
+  fullName: SoundMaker.Sounds.Score.Tie.Tie(SoundMaker.Sounds.Score.Note, System.Collections.Generic.IReadOnlyCollection<SoundMaker.Sounds.Score.Note>)
+  fullName.vb: SoundMaker.Sounds.Score.Tie.New(SoundMaker.Sounds.Score.Note, System.Collections.Generic.IReadOnlyCollection(Of SoundMaker.Sounds.Score.Note))
+  nameWithType: Tie.Tie(Note, IReadOnlyCollection<Note>)
+  nameWithType.vb: Tie.New(Note, IReadOnlyCollection(Of Note))
+- uid: SoundMaker.Sounds.Score.Tie.#ctor*
+  name: Tie
+  href: api/SoundMaker.Sounds.Score.Tie.html#SoundMaker_Sounds_Score_Tie__ctor_
+  commentId: Overload:SoundMaker.Sounds.Score.Tie.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: SoundMaker.Sounds.Score.Tie.Tie
+  fullName.vb: SoundMaker.Sounds.Score.Tie.New
+  nameWithType: Tie.Tie
+  nameWithType.vb: Tie.New
+- uid: SoundMaker.Sounds.Score.Tie.AdditionalNotes
+  name: AdditionalNotes
+  href: api/SoundMaker.Sounds.Score.Tie.html#SoundMaker_Sounds_Score_Tie_AdditionalNotes
+  commentId: P:SoundMaker.Sounds.Score.Tie.AdditionalNotes
+  fullName: SoundMaker.Sounds.Score.Tie.AdditionalNotes
+  nameWithType: Tie.AdditionalNotes
+- uid: SoundMaker.Sounds.Score.Tie.AdditionalNotes*
+  name: AdditionalNotes
+  href: api/SoundMaker.Sounds.Score.Tie.html#SoundMaker_Sounds_Score_Tie_AdditionalNotes_
+  commentId: Overload:SoundMaker.Sounds.Score.Tie.AdditionalNotes
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.Score.Tie.AdditionalNotes
+  nameWithType: Tie.AdditionalNotes
+- uid: SoundMaker.Sounds.Score.Tie.BaseNote
+  name: BaseNote
+  href: api/SoundMaker.Sounds.Score.Tie.html#SoundMaker_Sounds_Score_Tie_BaseNote
+  commentId: P:SoundMaker.Sounds.Score.Tie.BaseNote
+  fullName: SoundMaker.Sounds.Score.Tie.BaseNote
+  nameWithType: Tie.BaseNote
+- uid: SoundMaker.Sounds.Score.Tie.BaseNote*
+  name: BaseNote
+  href: api/SoundMaker.Sounds.Score.Tie.html#SoundMaker_Sounds_Score_Tie_BaseNote_
+  commentId: Overload:SoundMaker.Sounds.Score.Tie.BaseNote
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.Score.Tie.BaseNote
+  nameWithType: Tie.BaseNote
+- uid: SoundMaker.Sounds.Score.Tie.Count
+  name: Count
+  href: api/SoundMaker.Sounds.Score.Tie.html#SoundMaker_Sounds_Score_Tie_Count
+  commentId: P:SoundMaker.Sounds.Score.Tie.Count
+  fullName: SoundMaker.Sounds.Score.Tie.Count
+  nameWithType: Tie.Count
+- uid: SoundMaker.Sounds.Score.Tie.Count*
+  name: Count
+  href: api/SoundMaker.Sounds.Score.Tie.html#SoundMaker_Sounds_Score_Tie_Count_
+  commentId: Overload:SoundMaker.Sounds.Score.Tie.Count
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.Score.Tie.Count
+  nameWithType: Tie.Count
+- uid: SoundMaker.Sounds.Score.Tie.GenerateWave(SoundMaker.Sounds.SoundFormat,System.Int32,SoundMaker.Sounds.WaveTypes.WaveTypeBase)
+  name: GenerateWave(SoundFormat, int, WaveTypeBase)
+  href: api/SoundMaker.Sounds.Score.Tie.html#SoundMaker_Sounds_Score_Tie_GenerateWave_SoundMaker_Sounds_SoundFormat_System_Int32_SoundMaker_Sounds_WaveTypes_WaveTypeBase_
+  commentId: M:SoundMaker.Sounds.Score.Tie.GenerateWave(SoundMaker.Sounds.SoundFormat,System.Int32,SoundMaker.Sounds.WaveTypes.WaveTypeBase)
+  name.vb: GenerateWave(SoundFormat, Integer, WaveTypeBase)
+  fullName: SoundMaker.Sounds.Score.Tie.GenerateWave(SoundMaker.Sounds.SoundFormat, int, SoundMaker.Sounds.WaveTypes.WaveTypeBase)
+  fullName.vb: SoundMaker.Sounds.Score.Tie.GenerateWave(SoundMaker.Sounds.SoundFormat, Integer, SoundMaker.Sounds.WaveTypes.WaveTypeBase)
+  nameWithType: Tie.GenerateWave(SoundFormat, int, WaveTypeBase)
+  nameWithType.vb: Tie.GenerateWave(SoundFormat, Integer, WaveTypeBase)
+- uid: SoundMaker.Sounds.Score.Tie.GenerateWave(SoundMaker.Sounds.SoundFormat,System.Int32,System.Int32,SoundMaker.Sounds.WaveTypes.WaveTypeBase)
+  name: GenerateWave(SoundFormat, int, int, WaveTypeBase)
+  href: api/SoundMaker.Sounds.Score.Tie.html#SoundMaker_Sounds_Score_Tie_GenerateWave_SoundMaker_Sounds_SoundFormat_System_Int32_System_Int32_SoundMaker_Sounds_WaveTypes_WaveTypeBase_
+  commentId: M:SoundMaker.Sounds.Score.Tie.GenerateWave(SoundMaker.Sounds.SoundFormat,System.Int32,System.Int32,SoundMaker.Sounds.WaveTypes.WaveTypeBase)
+  name.vb: GenerateWave(SoundFormat, Integer, Integer, WaveTypeBase)
+  fullName: SoundMaker.Sounds.Score.Tie.GenerateWave(SoundMaker.Sounds.SoundFormat, int, int, SoundMaker.Sounds.WaveTypes.WaveTypeBase)
+  fullName.vb: SoundMaker.Sounds.Score.Tie.GenerateWave(SoundMaker.Sounds.SoundFormat, Integer, Integer, SoundMaker.Sounds.WaveTypes.WaveTypeBase)
+  nameWithType: Tie.GenerateWave(SoundFormat, int, int, WaveTypeBase)
+  nameWithType.vb: Tie.GenerateWave(SoundFormat, Integer, Integer, WaveTypeBase)
+- uid: SoundMaker.Sounds.Score.Tie.GenerateWave*
+  name: GenerateWave
+  href: api/SoundMaker.Sounds.Score.Tie.html#SoundMaker_Sounds_Score_Tie_GenerateWave_
+  commentId: Overload:SoundMaker.Sounds.Score.Tie.GenerateWave
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.Score.Tie.GenerateWave
+  nameWithType: Tie.GenerateWave
+- uid: SoundMaker.Sounds.Score.Tie.GetWaveArrayLength(SoundMaker.Sounds.SoundFormat,System.Int32)
+  name: GetWaveArrayLength(SoundFormat, int)
+  href: api/SoundMaker.Sounds.Score.Tie.html#SoundMaker_Sounds_Score_Tie_GetWaveArrayLength_SoundMaker_Sounds_SoundFormat_System_Int32_
+  commentId: M:SoundMaker.Sounds.Score.Tie.GetWaveArrayLength(SoundMaker.Sounds.SoundFormat,System.Int32)
+  name.vb: GetWaveArrayLength(SoundFormat, Integer)
+  fullName: SoundMaker.Sounds.Score.Tie.GetWaveArrayLength(SoundMaker.Sounds.SoundFormat, int)
+  fullName.vb: SoundMaker.Sounds.Score.Tie.GetWaveArrayLength(SoundMaker.Sounds.SoundFormat, Integer)
+  nameWithType: Tie.GetWaveArrayLength(SoundFormat, int)
+  nameWithType.vb: Tie.GetWaveArrayLength(SoundFormat, Integer)
+- uid: SoundMaker.Sounds.Score.Tie.GetWaveArrayLength*
+  name: GetWaveArrayLength
+  href: api/SoundMaker.Sounds.Score.Tie.html#SoundMaker_Sounds_Score_Tie_GetWaveArrayLength_
+  commentId: Overload:SoundMaker.Sounds.Score.Tie.GetWaveArrayLength
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.Score.Tie.GetWaveArrayLength
+  nameWithType: Tie.GetWaveArrayLength
+- uid: SoundMaker.Sounds.Score.Tuplet
+  name: Tuplet
+  href: api/SoundMaker.Sounds.Score.Tuplet.html
+  commentId: T:SoundMaker.Sounds.Score.Tuplet
+  fullName: SoundMaker.Sounds.Score.Tuplet
+  nameWithType: Tuplet
+- uid: SoundMaker.Sounds.Score.Tuplet.#ctor(System.Collections.Generic.IReadOnlyList{SoundMaker.Sounds.Score.ISoundComponent},SoundMaker.Sounds.Score.LengthType,System.Boolean)
+  name: Tuplet(IReadOnlyList<ISoundComponent>, LengthType, bool)
+  href: api/SoundMaker.Sounds.Score.Tuplet.html#SoundMaker_Sounds_Score_Tuplet__ctor_System_Collections_Generic_IReadOnlyList_SoundMaker_Sounds_Score_ISoundComponent__SoundMaker_Sounds_Score_LengthType_System_Boolean_
+  commentId: M:SoundMaker.Sounds.Score.Tuplet.#ctor(System.Collections.Generic.IReadOnlyList{SoundMaker.Sounds.Score.ISoundComponent},SoundMaker.Sounds.Score.LengthType,System.Boolean)
+  name.vb: New(IReadOnlyList(Of ISoundComponent), LengthType, Boolean)
+  fullName: SoundMaker.Sounds.Score.Tuplet.Tuplet(System.Collections.Generic.IReadOnlyList<SoundMaker.Sounds.Score.ISoundComponent>, SoundMaker.Sounds.Score.LengthType, bool)
+  fullName.vb: SoundMaker.Sounds.Score.Tuplet.New(System.Collections.Generic.IReadOnlyList(Of SoundMaker.Sounds.Score.ISoundComponent), SoundMaker.Sounds.Score.LengthType, Boolean)
+  nameWithType: Tuplet.Tuplet(IReadOnlyList<ISoundComponent>, LengthType, bool)
+  nameWithType.vb: Tuplet.New(IReadOnlyList(Of ISoundComponent), LengthType, Boolean)
+- uid: SoundMaker.Sounds.Score.Tuplet.#ctor*
+  name: Tuplet
+  href: api/SoundMaker.Sounds.Score.Tuplet.html#SoundMaker_Sounds_Score_Tuplet__ctor_
+  commentId: Overload:SoundMaker.Sounds.Score.Tuplet.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: SoundMaker.Sounds.Score.Tuplet.Tuplet
+  fullName.vb: SoundMaker.Sounds.Score.Tuplet.New
+  nameWithType: Tuplet.Tuplet
+  nameWithType.vb: Tuplet.New
+- uid: SoundMaker.Sounds.Score.Tuplet.Count
+  name: Count
+  href: api/SoundMaker.Sounds.Score.Tuplet.html#SoundMaker_Sounds_Score_Tuplet_Count
+  commentId: P:SoundMaker.Sounds.Score.Tuplet.Count
+  fullName: SoundMaker.Sounds.Score.Tuplet.Count
+  nameWithType: Tuplet.Count
+- uid: SoundMaker.Sounds.Score.Tuplet.Count*
+  name: Count
+  href: api/SoundMaker.Sounds.Score.Tuplet.html#SoundMaker_Sounds_Score_Tuplet_Count_
+  commentId: Overload:SoundMaker.Sounds.Score.Tuplet.Count
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.Score.Tuplet.Count
+  nameWithType: Tuplet.Count
+- uid: SoundMaker.Sounds.Score.Tuplet.GenerateWave(SoundMaker.Sounds.SoundFormat,System.Int32,SoundMaker.Sounds.WaveTypes.WaveTypeBase)
+  name: GenerateWave(SoundFormat, int, WaveTypeBase)
+  href: api/SoundMaker.Sounds.Score.Tuplet.html#SoundMaker_Sounds_Score_Tuplet_GenerateWave_SoundMaker_Sounds_SoundFormat_System_Int32_SoundMaker_Sounds_WaveTypes_WaveTypeBase_
+  commentId: M:SoundMaker.Sounds.Score.Tuplet.GenerateWave(SoundMaker.Sounds.SoundFormat,System.Int32,SoundMaker.Sounds.WaveTypes.WaveTypeBase)
+  name.vb: GenerateWave(SoundFormat, Integer, WaveTypeBase)
+  fullName: SoundMaker.Sounds.Score.Tuplet.GenerateWave(SoundMaker.Sounds.SoundFormat, int, SoundMaker.Sounds.WaveTypes.WaveTypeBase)
+  fullName.vb: SoundMaker.Sounds.Score.Tuplet.GenerateWave(SoundMaker.Sounds.SoundFormat, Integer, SoundMaker.Sounds.WaveTypes.WaveTypeBase)
+  nameWithType: Tuplet.GenerateWave(SoundFormat, int, WaveTypeBase)
+  nameWithType.vb: Tuplet.GenerateWave(SoundFormat, Integer, WaveTypeBase)
+- uid: SoundMaker.Sounds.Score.Tuplet.GenerateWave(SoundMaker.Sounds.SoundFormat,System.Int32,System.Int32,SoundMaker.Sounds.WaveTypes.WaveTypeBase)
+  name: GenerateWave(SoundFormat, int, int, WaveTypeBase)
+  href: api/SoundMaker.Sounds.Score.Tuplet.html#SoundMaker_Sounds_Score_Tuplet_GenerateWave_SoundMaker_Sounds_SoundFormat_System_Int32_System_Int32_SoundMaker_Sounds_WaveTypes_WaveTypeBase_
+  commentId: M:SoundMaker.Sounds.Score.Tuplet.GenerateWave(SoundMaker.Sounds.SoundFormat,System.Int32,System.Int32,SoundMaker.Sounds.WaveTypes.WaveTypeBase)
+  name.vb: GenerateWave(SoundFormat, Integer, Integer, WaveTypeBase)
+  fullName: SoundMaker.Sounds.Score.Tuplet.GenerateWave(SoundMaker.Sounds.SoundFormat, int, int, SoundMaker.Sounds.WaveTypes.WaveTypeBase)
+  fullName.vb: SoundMaker.Sounds.Score.Tuplet.GenerateWave(SoundMaker.Sounds.SoundFormat, Integer, Integer, SoundMaker.Sounds.WaveTypes.WaveTypeBase)
+  nameWithType: Tuplet.GenerateWave(SoundFormat, int, int, WaveTypeBase)
+  nameWithType.vb: Tuplet.GenerateWave(SoundFormat, Integer, Integer, WaveTypeBase)
+- uid: SoundMaker.Sounds.Score.Tuplet.GenerateWave*
+  name: GenerateWave
+  href: api/SoundMaker.Sounds.Score.Tuplet.html#SoundMaker_Sounds_Score_Tuplet_GenerateWave_
+  commentId: Overload:SoundMaker.Sounds.Score.Tuplet.GenerateWave
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.Score.Tuplet.GenerateWave
+  nameWithType: Tuplet.GenerateWave
+- uid: SoundMaker.Sounds.Score.Tuplet.GetWaveArrayLength(SoundMaker.Sounds.SoundFormat,System.Int32)
+  name: GetWaveArrayLength(SoundFormat, int)
+  href: api/SoundMaker.Sounds.Score.Tuplet.html#SoundMaker_Sounds_Score_Tuplet_GetWaveArrayLength_SoundMaker_Sounds_SoundFormat_System_Int32_
+  commentId: M:SoundMaker.Sounds.Score.Tuplet.GetWaveArrayLength(SoundMaker.Sounds.SoundFormat,System.Int32)
+  name.vb: GetWaveArrayLength(SoundFormat, Integer)
+  fullName: SoundMaker.Sounds.Score.Tuplet.GetWaveArrayLength(SoundMaker.Sounds.SoundFormat, int)
+  fullName.vb: SoundMaker.Sounds.Score.Tuplet.GetWaveArrayLength(SoundMaker.Sounds.SoundFormat, Integer)
+  nameWithType: Tuplet.GetWaveArrayLength(SoundFormat, int)
+  nameWithType.vb: Tuplet.GetWaveArrayLength(SoundFormat, Integer)
+- uid: SoundMaker.Sounds.Score.Tuplet.GetWaveArrayLength*
+  name: GetWaveArrayLength
+  href: api/SoundMaker.Sounds.Score.Tuplet.html#SoundMaker_Sounds_Score_Tuplet_GetWaveArrayLength_
+  commentId: Overload:SoundMaker.Sounds.Score.Tuplet.GetWaveArrayLength
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.Score.Tuplet.GetWaveArrayLength
+  nameWithType: Tuplet.GetWaveArrayLength
+- uid: SoundMaker.Sounds.Score.Tuplet.IsDotted
+  name: IsDotted
+  href: api/SoundMaker.Sounds.Score.Tuplet.html#SoundMaker_Sounds_Score_Tuplet_IsDotted
+  commentId: P:SoundMaker.Sounds.Score.Tuplet.IsDotted
+  fullName: SoundMaker.Sounds.Score.Tuplet.IsDotted
+  nameWithType: Tuplet.IsDotted
+- uid: SoundMaker.Sounds.Score.Tuplet.IsDotted*
+  name: IsDotted
+  href: api/SoundMaker.Sounds.Score.Tuplet.html#SoundMaker_Sounds_Score_Tuplet_IsDotted_
+  commentId: Overload:SoundMaker.Sounds.Score.Tuplet.IsDotted
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.Score.Tuplet.IsDotted
+  nameWithType: Tuplet.IsDotted
+- uid: SoundMaker.Sounds.Score.Tuplet.Item(System.Int32)
+  name: this[int]
+  href: api/SoundMaker.Sounds.Score.Tuplet.html#SoundMaker_Sounds_Score_Tuplet_Item_System_Int32_
+  commentId: P:SoundMaker.Sounds.Score.Tuplet.Item(System.Int32)
+  name.vb: this[](Integer)
+  fullName: SoundMaker.Sounds.Score.Tuplet.this[int]
+  fullName.vb: SoundMaker.Sounds.Score.Tuplet.this[](Integer)
+  nameWithType: Tuplet.this[int]
+  nameWithType.vb: Tuplet.this[](Integer)
+- uid: SoundMaker.Sounds.Score.Tuplet.Item*
+  name: this
+  href: api/SoundMaker.Sounds.Score.Tuplet.html#SoundMaker_Sounds_Score_Tuplet_Item_
+  commentId: Overload:SoundMaker.Sounds.Score.Tuplet.Item
+  isSpec: "True"
+  name.vb: this[]
+  fullName: SoundMaker.Sounds.Score.Tuplet.this
+  fullName.vb: SoundMaker.Sounds.Score.Tuplet.this[]
+  nameWithType: Tuplet.this
+  nameWithType.vb: Tuplet.this[]
+- uid: SoundMaker.Sounds.Score.Tuplet.Length
+  name: Length
+  href: api/SoundMaker.Sounds.Score.Tuplet.html#SoundMaker_Sounds_Score_Tuplet_Length
+  commentId: P:SoundMaker.Sounds.Score.Tuplet.Length
+  fullName: SoundMaker.Sounds.Score.Tuplet.Length
+  nameWithType: Tuplet.Length
+- uid: SoundMaker.Sounds.Score.Tuplet.Length*
+  name: Length
+  href: api/SoundMaker.Sounds.Score.Tuplet.html#SoundMaker_Sounds_Score_Tuplet_Length_
+  commentId: Overload:SoundMaker.Sounds.Score.Tuplet.Length
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.Score.Tuplet.Length
+  nameWithType: Tuplet.Length
+- uid: SoundMaker.Sounds.SoundChannels
+  name: SoundMaker.Sounds.SoundChannels
+  href: api/SoundMaker.Sounds.SoundChannels.html
+  commentId: N:SoundMaker.Sounds.SoundChannels
+  fullName: SoundMaker.Sounds.SoundChannels
+  nameWithType: SoundMaker.Sounds.SoundChannels
+- uid: SoundMaker.Sounds.SoundChannels.ISoundChannel
+  name: ISoundChannel
+  href: api/SoundMaker.Sounds.SoundChannels.ISoundChannel.html
+  commentId: T:SoundMaker.Sounds.SoundChannels.ISoundChannel
+  fullName: SoundMaker.Sounds.SoundChannels.ISoundChannel
+  nameWithType: ISoundChannel
+- uid: SoundMaker.Sounds.SoundChannels.ISoundChannel.Add(SoundMaker.Sounds.Score.ISoundComponent)
+  name: Add(ISoundComponent)
+  href: api/SoundMaker.Sounds.SoundChannels.ISoundChannel.html#SoundMaker_Sounds_SoundChannels_ISoundChannel_Add_SoundMaker_Sounds_Score_ISoundComponent_
+  commentId: M:SoundMaker.Sounds.SoundChannels.ISoundChannel.Add(SoundMaker.Sounds.Score.ISoundComponent)
+  fullName: SoundMaker.Sounds.SoundChannels.ISoundChannel.Add(SoundMaker.Sounds.Score.ISoundComponent)
+  nameWithType: ISoundChannel.Add(ISoundComponent)
+- uid: SoundMaker.Sounds.SoundChannels.ISoundChannel.Add*
+  name: Add
+  href: api/SoundMaker.Sounds.SoundChannels.ISoundChannel.html#SoundMaker_Sounds_SoundChannels_ISoundChannel_Add_
+  commentId: Overload:SoundMaker.Sounds.SoundChannels.ISoundChannel.Add
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.SoundChannels.ISoundChannel.Add
+  nameWithType: ISoundChannel.Add
+- uid: SoundMaker.Sounds.SoundChannels.ISoundChannel.Capacity
+  name: Capacity
+  href: api/SoundMaker.Sounds.SoundChannels.ISoundChannel.html#SoundMaker_Sounds_SoundChannels_ISoundChannel_Capacity
+  commentId: P:SoundMaker.Sounds.SoundChannels.ISoundChannel.Capacity
+  fullName: SoundMaker.Sounds.SoundChannels.ISoundChannel.Capacity
+  nameWithType: ISoundChannel.Capacity
+- uid: SoundMaker.Sounds.SoundChannels.ISoundChannel.Capacity*
+  name: Capacity
+  href: api/SoundMaker.Sounds.SoundChannels.ISoundChannel.html#SoundMaker_Sounds_SoundChannels_ISoundChannel_Capacity_
+  commentId: Overload:SoundMaker.Sounds.SoundChannels.ISoundChannel.Capacity
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.SoundChannels.ISoundChannel.Capacity
+  nameWithType: ISoundChannel.Capacity
+- uid: SoundMaker.Sounds.SoundChannels.ISoundChannel.Clear
+  name: Clear()
+  href: api/SoundMaker.Sounds.SoundChannels.ISoundChannel.html#SoundMaker_Sounds_SoundChannels_ISoundChannel_Clear
+  commentId: M:SoundMaker.Sounds.SoundChannels.ISoundChannel.Clear
+  fullName: SoundMaker.Sounds.SoundChannels.ISoundChannel.Clear()
+  nameWithType: ISoundChannel.Clear()
+- uid: SoundMaker.Sounds.SoundChannels.ISoundChannel.Clear*
+  name: Clear
+  href: api/SoundMaker.Sounds.SoundChannels.ISoundChannel.html#SoundMaker_Sounds_SoundChannels_ISoundChannel_Clear_
+  commentId: Overload:SoundMaker.Sounds.SoundChannels.ISoundChannel.Clear
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.SoundChannels.ISoundChannel.Clear
+  nameWithType: ISoundChannel.Clear
+- uid: SoundMaker.Sounds.SoundChannels.ISoundChannel.ComponentCount
+  name: ComponentCount
+  href: api/SoundMaker.Sounds.SoundChannels.ISoundChannel.html#SoundMaker_Sounds_SoundChannels_ISoundChannel_ComponentCount
+  commentId: P:SoundMaker.Sounds.SoundChannels.ISoundChannel.ComponentCount
+  fullName: SoundMaker.Sounds.SoundChannels.ISoundChannel.ComponentCount
+  nameWithType: ISoundChannel.ComponentCount
+- uid: SoundMaker.Sounds.SoundChannels.ISoundChannel.ComponentCount*
+  name: ComponentCount
+  href: api/SoundMaker.Sounds.SoundChannels.ISoundChannel.html#SoundMaker_Sounds_SoundChannels_ISoundChannel_ComponentCount_
+  commentId: Overload:SoundMaker.Sounds.SoundChannels.ISoundChannel.ComponentCount
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.SoundChannels.ISoundChannel.ComponentCount
+  nameWithType: ISoundChannel.ComponentCount
+- uid: SoundMaker.Sounds.SoundChannels.ISoundChannel.Format
+  name: Format
+  href: api/SoundMaker.Sounds.SoundChannels.ISoundChannel.html#SoundMaker_Sounds_SoundChannels_ISoundChannel_Format
+  commentId: P:SoundMaker.Sounds.SoundChannels.ISoundChannel.Format
+  fullName: SoundMaker.Sounds.SoundChannels.ISoundChannel.Format
+  nameWithType: ISoundChannel.Format
+- uid: SoundMaker.Sounds.SoundChannels.ISoundChannel.Format*
+  name: Format
+  href: api/SoundMaker.Sounds.SoundChannels.ISoundChannel.html#SoundMaker_Sounds_SoundChannels_ISoundChannel_Format_
+  commentId: Overload:SoundMaker.Sounds.SoundChannels.ISoundChannel.Format
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.SoundChannels.ISoundChannel.Format
+  nameWithType: ISoundChannel.Format
+- uid: SoundMaker.Sounds.SoundChannels.ISoundChannel.GenerateWave
+  name: GenerateWave()
+  href: api/SoundMaker.Sounds.SoundChannels.ISoundChannel.html#SoundMaker_Sounds_SoundChannels_ISoundChannel_GenerateWave
+  commentId: M:SoundMaker.Sounds.SoundChannels.ISoundChannel.GenerateWave
+  fullName: SoundMaker.Sounds.SoundChannels.ISoundChannel.GenerateWave()
+  nameWithType: ISoundChannel.GenerateWave()
+- uid: SoundMaker.Sounds.SoundChannels.ISoundChannel.GenerateWave*
+  name: GenerateWave
+  href: api/SoundMaker.Sounds.SoundChannels.ISoundChannel.html#SoundMaker_Sounds_SoundChannels_ISoundChannel_GenerateWave_
+  commentId: Overload:SoundMaker.Sounds.SoundChannels.ISoundChannel.GenerateWave
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.SoundChannels.ISoundChannel.GenerateWave
+  nameWithType: ISoundChannel.GenerateWave
+- uid: SoundMaker.Sounds.SoundChannels.ISoundChannel.Item(System.Int32)
+  name: this[int]
+  href: api/SoundMaker.Sounds.SoundChannels.ISoundChannel.html#SoundMaker_Sounds_SoundChannels_ISoundChannel_Item_System_Int32_
+  commentId: P:SoundMaker.Sounds.SoundChannels.ISoundChannel.Item(System.Int32)
+  name.vb: this[](Integer)
+  fullName: SoundMaker.Sounds.SoundChannels.ISoundChannel.this[int]
+  fullName.vb: SoundMaker.Sounds.SoundChannels.ISoundChannel.this[](Integer)
+  nameWithType: ISoundChannel.this[int]
+  nameWithType.vb: ISoundChannel.this[](Integer)
+- uid: SoundMaker.Sounds.SoundChannels.ISoundChannel.Item*
+  name: this
+  href: api/SoundMaker.Sounds.SoundChannels.ISoundChannel.html#SoundMaker_Sounds_SoundChannels_ISoundChannel_Item_
+  commentId: Overload:SoundMaker.Sounds.SoundChannels.ISoundChannel.Item
+  isSpec: "True"
+  name.vb: this[]
+  fullName: SoundMaker.Sounds.SoundChannels.ISoundChannel.this
+  fullName.vb: SoundMaker.Sounds.SoundChannels.ISoundChannel.this[]
+  nameWithType: ISoundChannel.this
+  nameWithType.vb: ISoundChannel.this[]
+- uid: SoundMaker.Sounds.SoundChannels.ISoundChannel.PanType
+  name: PanType
+  href: api/SoundMaker.Sounds.SoundChannels.ISoundChannel.html#SoundMaker_Sounds_SoundChannels_ISoundChannel_PanType
+  commentId: P:SoundMaker.Sounds.SoundChannels.ISoundChannel.PanType
+  fullName: SoundMaker.Sounds.SoundChannels.ISoundChannel.PanType
+  nameWithType: ISoundChannel.PanType
+- uid: SoundMaker.Sounds.SoundChannels.ISoundChannel.PanType*
+  name: PanType
+  href: api/SoundMaker.Sounds.SoundChannels.ISoundChannel.html#SoundMaker_Sounds_SoundChannels_ISoundChannel_PanType_
+  commentId: Overload:SoundMaker.Sounds.SoundChannels.ISoundChannel.PanType
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.SoundChannels.ISoundChannel.PanType
+  nameWithType: ISoundChannel.PanType
+- uid: SoundMaker.Sounds.SoundChannels.ISoundChannel.RemoveAt(System.Int32)
+  name: RemoveAt(int)
+  href: api/SoundMaker.Sounds.SoundChannels.ISoundChannel.html#SoundMaker_Sounds_SoundChannels_ISoundChannel_RemoveAt_System_Int32_
+  commentId: M:SoundMaker.Sounds.SoundChannels.ISoundChannel.RemoveAt(System.Int32)
+  name.vb: RemoveAt(Integer)
+  fullName: SoundMaker.Sounds.SoundChannels.ISoundChannel.RemoveAt(int)
+  fullName.vb: SoundMaker.Sounds.SoundChannels.ISoundChannel.RemoveAt(Integer)
+  nameWithType: ISoundChannel.RemoveAt(int)
+  nameWithType.vb: ISoundChannel.RemoveAt(Integer)
+- uid: SoundMaker.Sounds.SoundChannels.ISoundChannel.RemoveAt*
+  name: RemoveAt
+  href: api/SoundMaker.Sounds.SoundChannels.ISoundChannel.html#SoundMaker_Sounds_SoundChannels_ISoundChannel_RemoveAt_
+  commentId: Overload:SoundMaker.Sounds.SoundChannels.ISoundChannel.RemoveAt
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.SoundChannels.ISoundChannel.RemoveAt
+  nameWithType: ISoundChannel.RemoveAt
+- uid: SoundMaker.Sounds.SoundChannels.ISoundChannel.Tempo
+  name: Tempo
+  href: api/SoundMaker.Sounds.SoundChannels.ISoundChannel.html#SoundMaker_Sounds_SoundChannels_ISoundChannel_Tempo
+  commentId: P:SoundMaker.Sounds.SoundChannels.ISoundChannel.Tempo
+  fullName: SoundMaker.Sounds.SoundChannels.ISoundChannel.Tempo
+  nameWithType: ISoundChannel.Tempo
+- uid: SoundMaker.Sounds.SoundChannels.ISoundChannel.Tempo*
+  name: Tempo
+  href: api/SoundMaker.Sounds.SoundChannels.ISoundChannel.html#SoundMaker_Sounds_SoundChannels_ISoundChannel_Tempo_
+  commentId: Overload:SoundMaker.Sounds.SoundChannels.ISoundChannel.Tempo
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.SoundChannels.ISoundChannel.Tempo
+  nameWithType: ISoundChannel.Tempo
+- uid: SoundMaker.Sounds.SoundChannels.ISoundChannel.WaveArrayLength
+  name: WaveArrayLength
+  href: api/SoundMaker.Sounds.SoundChannels.ISoundChannel.html#SoundMaker_Sounds_SoundChannels_ISoundChannel_WaveArrayLength
+  commentId: P:SoundMaker.Sounds.SoundChannels.ISoundChannel.WaveArrayLength
+  fullName: SoundMaker.Sounds.SoundChannels.ISoundChannel.WaveArrayLength
+  nameWithType: ISoundChannel.WaveArrayLength
+- uid: SoundMaker.Sounds.SoundChannels.ISoundChannel.WaveArrayLength*
+  name: WaveArrayLength
+  href: api/SoundMaker.Sounds.SoundChannels.ISoundChannel.html#SoundMaker_Sounds_SoundChannels_ISoundChannel_WaveArrayLength_
+  commentId: Overload:SoundMaker.Sounds.SoundChannels.ISoundChannel.WaveArrayLength
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.SoundChannels.ISoundChannel.WaveArrayLength
+  nameWithType: ISoundChannel.WaveArrayLength
+- uid: SoundMaker.Sounds.SoundChannels.LowBitNoiseSoundChannel
+  name: LowBitNoiseSoundChannel
+  href: api/SoundMaker.Sounds.SoundChannels.LowBitNoiseSoundChannel.html
+  commentId: T:SoundMaker.Sounds.SoundChannels.LowBitNoiseSoundChannel
+  fullName: SoundMaker.Sounds.SoundChannels.LowBitNoiseSoundChannel
+  nameWithType: LowBitNoiseSoundChannel
+- uid: SoundMaker.Sounds.SoundChannels.LowBitNoiseSoundChannel.#ctor(System.Int32,SoundMaker.Sounds.SoundFormat,SoundMaker.Sounds.SoundChannels.PanType)
+  name: LowBitNoiseSoundChannel(int, SoundFormat, PanType)
+  href: api/SoundMaker.Sounds.SoundChannels.LowBitNoiseSoundChannel.html#SoundMaker_Sounds_SoundChannels_LowBitNoiseSoundChannel__ctor_System_Int32_SoundMaker_Sounds_SoundFormat_SoundMaker_Sounds_SoundChannels_PanType_
+  commentId: M:SoundMaker.Sounds.SoundChannels.LowBitNoiseSoundChannel.#ctor(System.Int32,SoundMaker.Sounds.SoundFormat,SoundMaker.Sounds.SoundChannels.PanType)
+  name.vb: New(Integer, SoundFormat, PanType)
+  fullName: SoundMaker.Sounds.SoundChannels.LowBitNoiseSoundChannel.LowBitNoiseSoundChannel(int, SoundMaker.Sounds.SoundFormat, SoundMaker.Sounds.SoundChannels.PanType)
+  fullName.vb: SoundMaker.Sounds.SoundChannels.LowBitNoiseSoundChannel.New(Integer, SoundMaker.Sounds.SoundFormat, SoundMaker.Sounds.SoundChannels.PanType)
+  nameWithType: LowBitNoiseSoundChannel.LowBitNoiseSoundChannel(int, SoundFormat, PanType)
+  nameWithType.vb: LowBitNoiseSoundChannel.New(Integer, SoundFormat, PanType)
+- uid: SoundMaker.Sounds.SoundChannels.LowBitNoiseSoundChannel.#ctor(System.Int32,SoundMaker.Sounds.SoundFormat,SoundMaker.Sounds.SoundChannels.PanType,System.Int32)
+  name: LowBitNoiseSoundChannel(int, SoundFormat, PanType, int)
+  href: api/SoundMaker.Sounds.SoundChannels.LowBitNoiseSoundChannel.html#SoundMaker_Sounds_SoundChannels_LowBitNoiseSoundChannel__ctor_System_Int32_SoundMaker_Sounds_SoundFormat_SoundMaker_Sounds_SoundChannels_PanType_System_Int32_
+  commentId: M:SoundMaker.Sounds.SoundChannels.LowBitNoiseSoundChannel.#ctor(System.Int32,SoundMaker.Sounds.SoundFormat,SoundMaker.Sounds.SoundChannels.PanType,System.Int32)
+  name.vb: New(Integer, SoundFormat, PanType, Integer)
+  fullName: SoundMaker.Sounds.SoundChannels.LowBitNoiseSoundChannel.LowBitNoiseSoundChannel(int, SoundMaker.Sounds.SoundFormat, SoundMaker.Sounds.SoundChannels.PanType, int)
+  fullName.vb: SoundMaker.Sounds.SoundChannels.LowBitNoiseSoundChannel.New(Integer, SoundMaker.Sounds.SoundFormat, SoundMaker.Sounds.SoundChannels.PanType, Integer)
+  nameWithType: LowBitNoiseSoundChannel.LowBitNoiseSoundChannel(int, SoundFormat, PanType, int)
+  nameWithType.vb: LowBitNoiseSoundChannel.New(Integer, SoundFormat, PanType, Integer)
+- uid: SoundMaker.Sounds.SoundChannels.LowBitNoiseSoundChannel.#ctor*
+  name: LowBitNoiseSoundChannel
+  href: api/SoundMaker.Sounds.SoundChannels.LowBitNoiseSoundChannel.html#SoundMaker_Sounds_SoundChannels_LowBitNoiseSoundChannel__ctor_
+  commentId: Overload:SoundMaker.Sounds.SoundChannels.LowBitNoiseSoundChannel.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: SoundMaker.Sounds.SoundChannels.LowBitNoiseSoundChannel.LowBitNoiseSoundChannel
+  fullName.vb: SoundMaker.Sounds.SoundChannels.LowBitNoiseSoundChannel.New
+  nameWithType: LowBitNoiseSoundChannel.LowBitNoiseSoundChannel
+  nameWithType.vb: LowBitNoiseSoundChannel.New
+- uid: SoundMaker.Sounds.SoundChannels.LowBitNoiseSoundChannel.GenerateWave
+  name: GenerateWave()
+  href: api/SoundMaker.Sounds.SoundChannels.LowBitNoiseSoundChannel.html#SoundMaker_Sounds_SoundChannels_LowBitNoiseSoundChannel_GenerateWave
+  commentId: M:SoundMaker.Sounds.SoundChannels.LowBitNoiseSoundChannel.GenerateWave
+  fullName: SoundMaker.Sounds.SoundChannels.LowBitNoiseSoundChannel.GenerateWave()
+  nameWithType: LowBitNoiseSoundChannel.GenerateWave()
+- uid: SoundMaker.Sounds.SoundChannels.LowBitNoiseSoundChannel.GenerateWave*
+  name: GenerateWave
+  href: api/SoundMaker.Sounds.SoundChannels.LowBitNoiseSoundChannel.html#SoundMaker_Sounds_SoundChannels_LowBitNoiseSoundChannel_GenerateWave_
+  commentId: Overload:SoundMaker.Sounds.SoundChannels.LowBitNoiseSoundChannel.GenerateWave
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.SoundChannels.LowBitNoiseSoundChannel.GenerateWave
+  nameWithType: LowBitNoiseSoundChannel.GenerateWave
+- uid: SoundMaker.Sounds.SoundChannels.PanType
+  name: PanType
+  href: api/SoundMaker.Sounds.SoundChannels.PanType.html
+  commentId: T:SoundMaker.Sounds.SoundChannels.PanType
+  fullName: SoundMaker.Sounds.SoundChannels.PanType
+  nameWithType: PanType
+- uid: SoundMaker.Sounds.SoundChannels.PanType.Both
+  name: Both
+  href: api/SoundMaker.Sounds.SoundChannels.PanType.html#SoundMaker_Sounds_SoundChannels_PanType_Both
+  commentId: F:SoundMaker.Sounds.SoundChannels.PanType.Both
+  fullName: SoundMaker.Sounds.SoundChannels.PanType.Both
+  nameWithType: PanType.Both
+- uid: SoundMaker.Sounds.SoundChannels.PanType.Left
+  name: Left
+  href: api/SoundMaker.Sounds.SoundChannels.PanType.html#SoundMaker_Sounds_SoundChannels_PanType_Left
+  commentId: F:SoundMaker.Sounds.SoundChannels.PanType.Left
+  fullName: SoundMaker.Sounds.SoundChannels.PanType.Left
+  nameWithType: PanType.Left
+- uid: SoundMaker.Sounds.SoundChannels.PanType.Right
+  name: Right
+  href: api/SoundMaker.Sounds.SoundChannels.PanType.html#SoundMaker_Sounds_SoundChannels_PanType_Right
+  commentId: F:SoundMaker.Sounds.SoundChannels.PanType.Right
+  fullName: SoundMaker.Sounds.SoundChannels.PanType.Right
+  nameWithType: PanType.Right
+- uid: SoundMaker.Sounds.SoundChannels.PseudoTriangleSoundChannel
+  name: PseudoTriangleSoundChannel
+  href: api/SoundMaker.Sounds.SoundChannels.PseudoTriangleSoundChannel.html
+  commentId: T:SoundMaker.Sounds.SoundChannels.PseudoTriangleSoundChannel
+  fullName: SoundMaker.Sounds.SoundChannels.PseudoTriangleSoundChannel
+  nameWithType: PseudoTriangleSoundChannel
+- uid: SoundMaker.Sounds.SoundChannels.PseudoTriangleSoundChannel.#ctor(System.Int32,SoundMaker.Sounds.SoundFormat,SoundMaker.Sounds.SoundChannels.PanType)
+  name: PseudoTriangleSoundChannel(int, SoundFormat, PanType)
+  href: api/SoundMaker.Sounds.SoundChannels.PseudoTriangleSoundChannel.html#SoundMaker_Sounds_SoundChannels_PseudoTriangleSoundChannel__ctor_System_Int32_SoundMaker_Sounds_SoundFormat_SoundMaker_Sounds_SoundChannels_PanType_
+  commentId: M:SoundMaker.Sounds.SoundChannels.PseudoTriangleSoundChannel.#ctor(System.Int32,SoundMaker.Sounds.SoundFormat,SoundMaker.Sounds.SoundChannels.PanType)
+  name.vb: New(Integer, SoundFormat, PanType)
+  fullName: SoundMaker.Sounds.SoundChannels.PseudoTriangleSoundChannel.PseudoTriangleSoundChannel(int, SoundMaker.Sounds.SoundFormat, SoundMaker.Sounds.SoundChannels.PanType)
+  fullName.vb: SoundMaker.Sounds.SoundChannels.PseudoTriangleSoundChannel.New(Integer, SoundMaker.Sounds.SoundFormat, SoundMaker.Sounds.SoundChannels.PanType)
+  nameWithType: PseudoTriangleSoundChannel.PseudoTriangleSoundChannel(int, SoundFormat, PanType)
+  nameWithType.vb: PseudoTriangleSoundChannel.New(Integer, SoundFormat, PanType)
+- uid: SoundMaker.Sounds.SoundChannels.PseudoTriangleSoundChannel.#ctor(System.Int32,SoundMaker.Sounds.SoundFormat,SoundMaker.Sounds.SoundChannels.PanType,System.Int32)
+  name: PseudoTriangleSoundChannel(int, SoundFormat, PanType, int)
+  href: api/SoundMaker.Sounds.SoundChannels.PseudoTriangleSoundChannel.html#SoundMaker_Sounds_SoundChannels_PseudoTriangleSoundChannel__ctor_System_Int32_SoundMaker_Sounds_SoundFormat_SoundMaker_Sounds_SoundChannels_PanType_System_Int32_
+  commentId: M:SoundMaker.Sounds.SoundChannels.PseudoTriangleSoundChannel.#ctor(System.Int32,SoundMaker.Sounds.SoundFormat,SoundMaker.Sounds.SoundChannels.PanType,System.Int32)
+  name.vb: New(Integer, SoundFormat, PanType, Integer)
+  fullName: SoundMaker.Sounds.SoundChannels.PseudoTriangleSoundChannel.PseudoTriangleSoundChannel(int, SoundMaker.Sounds.SoundFormat, SoundMaker.Sounds.SoundChannels.PanType, int)
+  fullName.vb: SoundMaker.Sounds.SoundChannels.PseudoTriangleSoundChannel.New(Integer, SoundMaker.Sounds.SoundFormat, SoundMaker.Sounds.SoundChannels.PanType, Integer)
+  nameWithType: PseudoTriangleSoundChannel.PseudoTriangleSoundChannel(int, SoundFormat, PanType, int)
+  nameWithType.vb: PseudoTriangleSoundChannel.New(Integer, SoundFormat, PanType, Integer)
+- uid: SoundMaker.Sounds.SoundChannels.PseudoTriangleSoundChannel.#ctor*
+  name: PseudoTriangleSoundChannel
+  href: api/SoundMaker.Sounds.SoundChannels.PseudoTriangleSoundChannel.html#SoundMaker_Sounds_SoundChannels_PseudoTriangleSoundChannel__ctor_
+  commentId: Overload:SoundMaker.Sounds.SoundChannels.PseudoTriangleSoundChannel.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: SoundMaker.Sounds.SoundChannels.PseudoTriangleSoundChannel.PseudoTriangleSoundChannel
+  fullName.vb: SoundMaker.Sounds.SoundChannels.PseudoTriangleSoundChannel.New
+  nameWithType: PseudoTriangleSoundChannel.PseudoTriangleSoundChannel
+  nameWithType.vb: PseudoTriangleSoundChannel.New
+- uid: SoundMaker.Sounds.SoundChannels.PseudoTriangleSoundChannel.GenerateWave
+  name: GenerateWave()
+  href: api/SoundMaker.Sounds.SoundChannels.PseudoTriangleSoundChannel.html#SoundMaker_Sounds_SoundChannels_PseudoTriangleSoundChannel_GenerateWave
+  commentId: M:SoundMaker.Sounds.SoundChannels.PseudoTriangleSoundChannel.GenerateWave
+  fullName: SoundMaker.Sounds.SoundChannels.PseudoTriangleSoundChannel.GenerateWave()
+  nameWithType: PseudoTriangleSoundChannel.GenerateWave()
+- uid: SoundMaker.Sounds.SoundChannels.PseudoTriangleSoundChannel.GenerateWave*
+  name: GenerateWave
+  href: api/SoundMaker.Sounds.SoundChannels.PseudoTriangleSoundChannel.html#SoundMaker_Sounds_SoundChannels_PseudoTriangleSoundChannel_GenerateWave_
+  commentId: Overload:SoundMaker.Sounds.SoundChannels.PseudoTriangleSoundChannel.GenerateWave
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.SoundChannels.PseudoTriangleSoundChannel.GenerateWave
+  nameWithType: PseudoTriangleSoundChannel.GenerateWave
+- uid: SoundMaker.Sounds.SoundChannels.SoundChannelBase
+  name: SoundChannelBase
+  href: api/SoundMaker.Sounds.SoundChannels.SoundChannelBase.html
+  commentId: T:SoundMaker.Sounds.SoundChannels.SoundChannelBase
+  fullName: SoundMaker.Sounds.SoundChannels.SoundChannelBase
+  nameWithType: SoundChannelBase
+- uid: SoundMaker.Sounds.SoundChannels.SoundChannelBase.#ctor(System.Int32,SoundMaker.Sounds.SoundFormat,SoundMaker.Sounds.SoundChannels.PanType)
+  name: SoundChannelBase(int, SoundFormat, PanType)
+  href: api/SoundMaker.Sounds.SoundChannels.SoundChannelBase.html#SoundMaker_Sounds_SoundChannels_SoundChannelBase__ctor_System_Int32_SoundMaker_Sounds_SoundFormat_SoundMaker_Sounds_SoundChannels_PanType_
+  commentId: M:SoundMaker.Sounds.SoundChannels.SoundChannelBase.#ctor(System.Int32,SoundMaker.Sounds.SoundFormat,SoundMaker.Sounds.SoundChannels.PanType)
+  name.vb: New(Integer, SoundFormat, PanType)
+  fullName: SoundMaker.Sounds.SoundChannels.SoundChannelBase.SoundChannelBase(int, SoundMaker.Sounds.SoundFormat, SoundMaker.Sounds.SoundChannels.PanType)
+  fullName.vb: SoundMaker.Sounds.SoundChannels.SoundChannelBase.New(Integer, SoundMaker.Sounds.SoundFormat, SoundMaker.Sounds.SoundChannels.PanType)
+  nameWithType: SoundChannelBase.SoundChannelBase(int, SoundFormat, PanType)
+  nameWithType.vb: SoundChannelBase.New(Integer, SoundFormat, PanType)
+- uid: SoundMaker.Sounds.SoundChannels.SoundChannelBase.#ctor(System.Int32,SoundMaker.Sounds.SoundFormat,SoundMaker.Sounds.SoundChannels.PanType,System.Int32)
+  name: SoundChannelBase(int, SoundFormat, PanType, int)
+  href: api/SoundMaker.Sounds.SoundChannels.SoundChannelBase.html#SoundMaker_Sounds_SoundChannels_SoundChannelBase__ctor_System_Int32_SoundMaker_Sounds_SoundFormat_SoundMaker_Sounds_SoundChannels_PanType_System_Int32_
+  commentId: M:SoundMaker.Sounds.SoundChannels.SoundChannelBase.#ctor(System.Int32,SoundMaker.Sounds.SoundFormat,SoundMaker.Sounds.SoundChannels.PanType,System.Int32)
+  name.vb: New(Integer, SoundFormat, PanType, Integer)
+  fullName: SoundMaker.Sounds.SoundChannels.SoundChannelBase.SoundChannelBase(int, SoundMaker.Sounds.SoundFormat, SoundMaker.Sounds.SoundChannels.PanType, int)
+  fullName.vb: SoundMaker.Sounds.SoundChannels.SoundChannelBase.New(Integer, SoundMaker.Sounds.SoundFormat, SoundMaker.Sounds.SoundChannels.PanType, Integer)
+  nameWithType: SoundChannelBase.SoundChannelBase(int, SoundFormat, PanType, int)
+  nameWithType.vb: SoundChannelBase.New(Integer, SoundFormat, PanType, Integer)
+- uid: SoundMaker.Sounds.SoundChannels.SoundChannelBase.#ctor*
+  name: SoundChannelBase
+  href: api/SoundMaker.Sounds.SoundChannels.SoundChannelBase.html#SoundMaker_Sounds_SoundChannels_SoundChannelBase__ctor_
+  commentId: Overload:SoundMaker.Sounds.SoundChannels.SoundChannelBase.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: SoundMaker.Sounds.SoundChannels.SoundChannelBase.SoundChannelBase
+  fullName.vb: SoundMaker.Sounds.SoundChannels.SoundChannelBase.New
+  nameWithType: SoundChannelBase.SoundChannelBase
+  nameWithType.vb: SoundChannelBase.New
+- uid: SoundMaker.Sounds.SoundChannels.SoundChannelBase.Add(SoundMaker.Sounds.Score.ISoundComponent)
+  name: Add(ISoundComponent)
+  href: api/SoundMaker.Sounds.SoundChannels.SoundChannelBase.html#SoundMaker_Sounds_SoundChannels_SoundChannelBase_Add_SoundMaker_Sounds_Score_ISoundComponent_
+  commentId: M:SoundMaker.Sounds.SoundChannels.SoundChannelBase.Add(SoundMaker.Sounds.Score.ISoundComponent)
+  fullName: SoundMaker.Sounds.SoundChannels.SoundChannelBase.Add(SoundMaker.Sounds.Score.ISoundComponent)
+  nameWithType: SoundChannelBase.Add(ISoundComponent)
+- uid: SoundMaker.Sounds.SoundChannels.SoundChannelBase.Add*
+  name: Add
+  href: api/SoundMaker.Sounds.SoundChannels.SoundChannelBase.html#SoundMaker_Sounds_SoundChannels_SoundChannelBase_Add_
+  commentId: Overload:SoundMaker.Sounds.SoundChannels.SoundChannelBase.Add
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.SoundChannels.SoundChannelBase.Add
+  nameWithType: SoundChannelBase.Add
+- uid: SoundMaker.Sounds.SoundChannels.SoundChannelBase.Capacity
+  name: Capacity
+  href: api/SoundMaker.Sounds.SoundChannels.SoundChannelBase.html#SoundMaker_Sounds_SoundChannels_SoundChannelBase_Capacity
+  commentId: P:SoundMaker.Sounds.SoundChannels.SoundChannelBase.Capacity
+  fullName: SoundMaker.Sounds.SoundChannels.SoundChannelBase.Capacity
+  nameWithType: SoundChannelBase.Capacity
+- uid: SoundMaker.Sounds.SoundChannels.SoundChannelBase.Capacity*
+  name: Capacity
+  href: api/SoundMaker.Sounds.SoundChannels.SoundChannelBase.html#SoundMaker_Sounds_SoundChannels_SoundChannelBase_Capacity_
+  commentId: Overload:SoundMaker.Sounds.SoundChannels.SoundChannelBase.Capacity
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.SoundChannels.SoundChannelBase.Capacity
+  nameWithType: SoundChannelBase.Capacity
+- uid: SoundMaker.Sounds.SoundChannels.SoundChannelBase.Clear
+  name: Clear()
+  href: api/SoundMaker.Sounds.SoundChannels.SoundChannelBase.html#SoundMaker_Sounds_SoundChannels_SoundChannelBase_Clear
+  commentId: M:SoundMaker.Sounds.SoundChannels.SoundChannelBase.Clear
+  fullName: SoundMaker.Sounds.SoundChannels.SoundChannelBase.Clear()
+  nameWithType: SoundChannelBase.Clear()
+- uid: SoundMaker.Sounds.SoundChannels.SoundChannelBase.Clear*
+  name: Clear
+  href: api/SoundMaker.Sounds.SoundChannels.SoundChannelBase.html#SoundMaker_Sounds_SoundChannels_SoundChannelBase_Clear_
+  commentId: Overload:SoundMaker.Sounds.SoundChannels.SoundChannelBase.Clear
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.SoundChannels.SoundChannelBase.Clear
+  nameWithType: SoundChannelBase.Clear
+- uid: SoundMaker.Sounds.SoundChannels.SoundChannelBase.ComponentCount
+  name: ComponentCount
+  href: api/SoundMaker.Sounds.SoundChannels.SoundChannelBase.html#SoundMaker_Sounds_SoundChannels_SoundChannelBase_ComponentCount
+  commentId: P:SoundMaker.Sounds.SoundChannels.SoundChannelBase.ComponentCount
+  fullName: SoundMaker.Sounds.SoundChannels.SoundChannelBase.ComponentCount
+  nameWithType: SoundChannelBase.ComponentCount
+- uid: SoundMaker.Sounds.SoundChannels.SoundChannelBase.ComponentCount*
+  name: ComponentCount
+  href: api/SoundMaker.Sounds.SoundChannels.SoundChannelBase.html#SoundMaker_Sounds_SoundChannels_SoundChannelBase_ComponentCount_
+  commentId: Overload:SoundMaker.Sounds.SoundChannels.SoundChannelBase.ComponentCount
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.SoundChannels.SoundChannelBase.ComponentCount
+  nameWithType: SoundChannelBase.ComponentCount
+- uid: SoundMaker.Sounds.SoundChannels.SoundChannelBase.FadeInOut(System.Int16[])
+  name: FadeInOut(short[])
+  href: api/SoundMaker.Sounds.SoundChannels.SoundChannelBase.html#SoundMaker_Sounds_SoundChannels_SoundChannelBase_FadeInOut_System_Int16___
+  commentId: M:SoundMaker.Sounds.SoundChannels.SoundChannelBase.FadeInOut(System.Int16[])
+  name.vb: FadeInOut(Short())
+  fullName: SoundMaker.Sounds.SoundChannels.SoundChannelBase.FadeInOut(short[])
+  fullName.vb: SoundMaker.Sounds.SoundChannels.SoundChannelBase.FadeInOut(Short())
+  nameWithType: SoundChannelBase.FadeInOut(short[])
+  nameWithType.vb: SoundChannelBase.FadeInOut(Short())
+- uid: SoundMaker.Sounds.SoundChannels.SoundChannelBase.FadeInOut*
+  name: FadeInOut
+  href: api/SoundMaker.Sounds.SoundChannels.SoundChannelBase.html#SoundMaker_Sounds_SoundChannels_SoundChannelBase_FadeInOut_
+  commentId: Overload:SoundMaker.Sounds.SoundChannels.SoundChannelBase.FadeInOut
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.SoundChannels.SoundChannelBase.FadeInOut
+  nameWithType: SoundChannelBase.FadeInOut
+- uid: SoundMaker.Sounds.SoundChannels.SoundChannelBase.Format
+  name: Format
+  href: api/SoundMaker.Sounds.SoundChannels.SoundChannelBase.html#SoundMaker_Sounds_SoundChannels_SoundChannelBase_Format
+  commentId: P:SoundMaker.Sounds.SoundChannels.SoundChannelBase.Format
+  fullName: SoundMaker.Sounds.SoundChannels.SoundChannelBase.Format
+  nameWithType: SoundChannelBase.Format
+- uid: SoundMaker.Sounds.SoundChannels.SoundChannelBase.Format*
+  name: Format
+  href: api/SoundMaker.Sounds.SoundChannels.SoundChannelBase.html#SoundMaker_Sounds_SoundChannels_SoundChannelBase_Format_
+  commentId: Overload:SoundMaker.Sounds.SoundChannels.SoundChannelBase.Format
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.SoundChannels.SoundChannelBase.Format
+  nameWithType: SoundChannelBase.Format
+- uid: SoundMaker.Sounds.SoundChannels.SoundChannelBase.GenerateWave
+  name: GenerateWave()
+  href: api/SoundMaker.Sounds.SoundChannels.SoundChannelBase.html#SoundMaker_Sounds_SoundChannels_SoundChannelBase_GenerateWave
+  commentId: M:SoundMaker.Sounds.SoundChannels.SoundChannelBase.GenerateWave
+  fullName: SoundMaker.Sounds.SoundChannels.SoundChannelBase.GenerateWave()
+  nameWithType: SoundChannelBase.GenerateWave()
+- uid: SoundMaker.Sounds.SoundChannels.SoundChannelBase.GenerateWave*
+  name: GenerateWave
+  href: api/SoundMaker.Sounds.SoundChannels.SoundChannelBase.html#SoundMaker_Sounds_SoundChannels_SoundChannelBase_GenerateWave_
+  commentId: Overload:SoundMaker.Sounds.SoundChannels.SoundChannelBase.GenerateWave
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.SoundChannels.SoundChannelBase.GenerateWave
+  nameWithType: SoundChannelBase.GenerateWave
+- uid: SoundMaker.Sounds.SoundChannels.SoundChannelBase.GetEnumerator
+  name: GetEnumerator()
+  href: api/SoundMaker.Sounds.SoundChannels.SoundChannelBase.html#SoundMaker_Sounds_SoundChannels_SoundChannelBase_GetEnumerator
+  commentId: M:SoundMaker.Sounds.SoundChannels.SoundChannelBase.GetEnumerator
+  fullName: SoundMaker.Sounds.SoundChannels.SoundChannelBase.GetEnumerator()
+  nameWithType: SoundChannelBase.GetEnumerator()
+- uid: SoundMaker.Sounds.SoundChannels.SoundChannelBase.GetEnumerator*
+  name: GetEnumerator
+  href: api/SoundMaker.Sounds.SoundChannels.SoundChannelBase.html#SoundMaker_Sounds_SoundChannels_SoundChannelBase_GetEnumerator_
+  commentId: Overload:SoundMaker.Sounds.SoundChannels.SoundChannelBase.GetEnumerator
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.SoundChannels.SoundChannelBase.GetEnumerator
+  nameWithType: SoundChannelBase.GetEnumerator
+- uid: SoundMaker.Sounds.SoundChannels.SoundChannelBase.Import(System.Collections.Generic.IEnumerable{SoundMaker.Sounds.Score.ISoundComponent})
+  name: Import(IEnumerable<ISoundComponent>)
+  href: api/SoundMaker.Sounds.SoundChannels.SoundChannelBase.html#SoundMaker_Sounds_SoundChannels_SoundChannelBase_Import_System_Collections_Generic_IEnumerable_SoundMaker_Sounds_Score_ISoundComponent__
+  commentId: M:SoundMaker.Sounds.SoundChannels.SoundChannelBase.Import(System.Collections.Generic.IEnumerable{SoundMaker.Sounds.Score.ISoundComponent})
+  name.vb: Import(IEnumerable(Of ISoundComponent))
+  fullName: SoundMaker.Sounds.SoundChannels.SoundChannelBase.Import(System.Collections.Generic.IEnumerable<SoundMaker.Sounds.Score.ISoundComponent>)
+  fullName.vb: SoundMaker.Sounds.SoundChannels.SoundChannelBase.Import(System.Collections.Generic.IEnumerable(Of SoundMaker.Sounds.Score.ISoundComponent))
+  nameWithType: SoundChannelBase.Import(IEnumerable<ISoundComponent>)
+  nameWithType.vb: SoundChannelBase.Import(IEnumerable(Of ISoundComponent))
+- uid: SoundMaker.Sounds.SoundChannels.SoundChannelBase.Import*
+  name: Import
+  href: api/SoundMaker.Sounds.SoundChannels.SoundChannelBase.html#SoundMaker_Sounds_SoundChannels_SoundChannelBase_Import_
+  commentId: Overload:SoundMaker.Sounds.SoundChannels.SoundChannelBase.Import
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.SoundChannels.SoundChannelBase.Import
+  nameWithType: SoundChannelBase.Import
+- uid: SoundMaker.Sounds.SoundChannels.SoundChannelBase.Item(System.Int32)
+  name: this[int]
+  href: api/SoundMaker.Sounds.SoundChannels.SoundChannelBase.html#SoundMaker_Sounds_SoundChannels_SoundChannelBase_Item_System_Int32_
+  commentId: P:SoundMaker.Sounds.SoundChannels.SoundChannelBase.Item(System.Int32)
+  name.vb: this[](Integer)
+  fullName: SoundMaker.Sounds.SoundChannels.SoundChannelBase.this[int]
+  fullName.vb: SoundMaker.Sounds.SoundChannels.SoundChannelBase.this[](Integer)
+  nameWithType: SoundChannelBase.this[int]
+  nameWithType.vb: SoundChannelBase.this[](Integer)
+- uid: SoundMaker.Sounds.SoundChannels.SoundChannelBase.Item*
+  name: this
+  href: api/SoundMaker.Sounds.SoundChannels.SoundChannelBase.html#SoundMaker_Sounds_SoundChannels_SoundChannelBase_Item_
+  commentId: Overload:SoundMaker.Sounds.SoundChannels.SoundChannelBase.Item
+  isSpec: "True"
+  name.vb: this[]
+  fullName: SoundMaker.Sounds.SoundChannels.SoundChannelBase.this
+  fullName.vb: SoundMaker.Sounds.SoundChannels.SoundChannelBase.this[]
+  nameWithType: SoundChannelBase.this
+  nameWithType.vb: SoundChannelBase.this[]
+- uid: SoundMaker.Sounds.SoundChannels.SoundChannelBase.PanType
+  name: PanType
+  href: api/SoundMaker.Sounds.SoundChannels.SoundChannelBase.html#SoundMaker_Sounds_SoundChannels_SoundChannelBase_PanType
+  commentId: P:SoundMaker.Sounds.SoundChannels.SoundChannelBase.PanType
+  fullName: SoundMaker.Sounds.SoundChannels.SoundChannelBase.PanType
+  nameWithType: SoundChannelBase.PanType
+- uid: SoundMaker.Sounds.SoundChannels.SoundChannelBase.PanType*
+  name: PanType
+  href: api/SoundMaker.Sounds.SoundChannels.SoundChannelBase.html#SoundMaker_Sounds_SoundChannels_SoundChannelBase_PanType_
+  commentId: Overload:SoundMaker.Sounds.SoundChannels.SoundChannelBase.PanType
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.SoundChannels.SoundChannelBase.PanType
+  nameWithType: SoundChannelBase.PanType
+- uid: SoundMaker.Sounds.SoundChannels.SoundChannelBase.RemoveAt(System.Int32)
+  name: RemoveAt(int)
+  href: api/SoundMaker.Sounds.SoundChannels.SoundChannelBase.html#SoundMaker_Sounds_SoundChannels_SoundChannelBase_RemoveAt_System_Int32_
+  commentId: M:SoundMaker.Sounds.SoundChannels.SoundChannelBase.RemoveAt(System.Int32)
+  name.vb: RemoveAt(Integer)
+  fullName: SoundMaker.Sounds.SoundChannels.SoundChannelBase.RemoveAt(int)
+  fullName.vb: SoundMaker.Sounds.SoundChannels.SoundChannelBase.RemoveAt(Integer)
+  nameWithType: SoundChannelBase.RemoveAt(int)
+  nameWithType.vb: SoundChannelBase.RemoveAt(Integer)
+- uid: SoundMaker.Sounds.SoundChannels.SoundChannelBase.RemoveAt*
+  name: RemoveAt
+  href: api/SoundMaker.Sounds.SoundChannels.SoundChannelBase.html#SoundMaker_Sounds_SoundChannels_SoundChannelBase_RemoveAt_
+  commentId: Overload:SoundMaker.Sounds.SoundChannels.SoundChannelBase.RemoveAt
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.SoundChannels.SoundChannelBase.RemoveAt
+  nameWithType: SoundChannelBase.RemoveAt
+- uid: SoundMaker.Sounds.SoundChannels.SoundChannelBase.SoundComponents
+  name: SoundComponents
+  href: api/SoundMaker.Sounds.SoundChannels.SoundChannelBase.html#SoundMaker_Sounds_SoundChannels_SoundChannelBase_SoundComponents
+  commentId: P:SoundMaker.Sounds.SoundChannels.SoundChannelBase.SoundComponents
+  fullName: SoundMaker.Sounds.SoundChannels.SoundChannelBase.SoundComponents
+  nameWithType: SoundChannelBase.SoundComponents
+- uid: SoundMaker.Sounds.SoundChannels.SoundChannelBase.SoundComponents*
+  name: SoundComponents
+  href: api/SoundMaker.Sounds.SoundChannels.SoundChannelBase.html#SoundMaker_Sounds_SoundChannels_SoundChannelBase_SoundComponents_
+  commentId: Overload:SoundMaker.Sounds.SoundChannels.SoundChannelBase.SoundComponents
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.SoundChannels.SoundChannelBase.SoundComponents
+  nameWithType: SoundChannelBase.SoundComponents
+- uid: SoundMaker.Sounds.SoundChannels.SoundChannelBase.Tempo
+  name: Tempo
+  href: api/SoundMaker.Sounds.SoundChannels.SoundChannelBase.html#SoundMaker_Sounds_SoundChannels_SoundChannelBase_Tempo
+  commentId: P:SoundMaker.Sounds.SoundChannels.SoundChannelBase.Tempo
+  fullName: SoundMaker.Sounds.SoundChannels.SoundChannelBase.Tempo
+  nameWithType: SoundChannelBase.Tempo
+- uid: SoundMaker.Sounds.SoundChannels.SoundChannelBase.Tempo*
+  name: Tempo
+  href: api/SoundMaker.Sounds.SoundChannels.SoundChannelBase.html#SoundMaker_Sounds_SoundChannels_SoundChannelBase_Tempo_
+  commentId: Overload:SoundMaker.Sounds.SoundChannels.SoundChannelBase.Tempo
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.SoundChannels.SoundChannelBase.Tempo
+  nameWithType: SoundChannelBase.Tempo
+- uid: SoundMaker.Sounds.SoundChannels.SoundChannelBase.WaveArrayLength
+  name: WaveArrayLength
+  href: api/SoundMaker.Sounds.SoundChannels.SoundChannelBase.html#SoundMaker_Sounds_SoundChannels_SoundChannelBase_WaveArrayLength
+  commentId: P:SoundMaker.Sounds.SoundChannels.SoundChannelBase.WaveArrayLength
+  fullName: SoundMaker.Sounds.SoundChannels.SoundChannelBase.WaveArrayLength
+  nameWithType: SoundChannelBase.WaveArrayLength
+- uid: SoundMaker.Sounds.SoundChannels.SoundChannelBase.WaveArrayLength*
+  name: WaveArrayLength
+  href: api/SoundMaker.Sounds.SoundChannels.SoundChannelBase.html#SoundMaker_Sounds_SoundChannels_SoundChannelBase_WaveArrayLength_
+  commentId: Overload:SoundMaker.Sounds.SoundChannels.SoundChannelBase.WaveArrayLength
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.SoundChannels.SoundChannelBase.WaveArrayLength
+  nameWithType: SoundChannelBase.WaveArrayLength
+- uid: SoundMaker.Sounds.SoundChannels.SquareSoundChannel
+  name: SquareSoundChannel
+  href: api/SoundMaker.Sounds.SoundChannels.SquareSoundChannel.html
+  commentId: T:SoundMaker.Sounds.SoundChannels.SquareSoundChannel
+  fullName: SoundMaker.Sounds.SoundChannels.SquareSoundChannel
+  nameWithType: SquareSoundChannel
+- uid: SoundMaker.Sounds.SoundChannels.SquareSoundChannel.#ctor(System.Int32,SoundMaker.Sounds.SoundFormat,SoundMaker.Sounds.SoundChannels.SquareWaveRatio,SoundMaker.Sounds.SoundChannels.PanType)
+  name: SquareSoundChannel(int, SoundFormat, SquareWaveRatio, PanType)
+  href: api/SoundMaker.Sounds.SoundChannels.SquareSoundChannel.html#SoundMaker_Sounds_SoundChannels_SquareSoundChannel__ctor_System_Int32_SoundMaker_Sounds_SoundFormat_SoundMaker_Sounds_SoundChannels_SquareWaveRatio_SoundMaker_Sounds_SoundChannels_PanType_
+  commentId: M:SoundMaker.Sounds.SoundChannels.SquareSoundChannel.#ctor(System.Int32,SoundMaker.Sounds.SoundFormat,SoundMaker.Sounds.SoundChannels.SquareWaveRatio,SoundMaker.Sounds.SoundChannels.PanType)
+  name.vb: New(Integer, SoundFormat, SquareWaveRatio, PanType)
+  fullName: SoundMaker.Sounds.SoundChannels.SquareSoundChannel.SquareSoundChannel(int, SoundMaker.Sounds.SoundFormat, SoundMaker.Sounds.SoundChannels.SquareWaveRatio, SoundMaker.Sounds.SoundChannels.PanType)
+  fullName.vb: SoundMaker.Sounds.SoundChannels.SquareSoundChannel.New(Integer, SoundMaker.Sounds.SoundFormat, SoundMaker.Sounds.SoundChannels.SquareWaveRatio, SoundMaker.Sounds.SoundChannels.PanType)
+  nameWithType: SquareSoundChannel.SquareSoundChannel(int, SoundFormat, SquareWaveRatio, PanType)
+  nameWithType.vb: SquareSoundChannel.New(Integer, SoundFormat, SquareWaveRatio, PanType)
+- uid: SoundMaker.Sounds.SoundChannels.SquareSoundChannel.#ctor(System.Int32,SoundMaker.Sounds.SoundFormat,SoundMaker.Sounds.SoundChannels.SquareWaveRatio,SoundMaker.Sounds.SoundChannels.PanType,System.Int32)
+  name: SquareSoundChannel(int, SoundFormat, SquareWaveRatio, PanType, int)
+  href: api/SoundMaker.Sounds.SoundChannels.SquareSoundChannel.html#SoundMaker_Sounds_SoundChannels_SquareSoundChannel__ctor_System_Int32_SoundMaker_Sounds_SoundFormat_SoundMaker_Sounds_SoundChannels_SquareWaveRatio_SoundMaker_Sounds_SoundChannels_PanType_System_Int32_
+  commentId: M:SoundMaker.Sounds.SoundChannels.SquareSoundChannel.#ctor(System.Int32,SoundMaker.Sounds.SoundFormat,SoundMaker.Sounds.SoundChannels.SquareWaveRatio,SoundMaker.Sounds.SoundChannels.PanType,System.Int32)
+  name.vb: New(Integer, SoundFormat, SquareWaveRatio, PanType, Integer)
+  fullName: SoundMaker.Sounds.SoundChannels.SquareSoundChannel.SquareSoundChannel(int, SoundMaker.Sounds.SoundFormat, SoundMaker.Sounds.SoundChannels.SquareWaveRatio, SoundMaker.Sounds.SoundChannels.PanType, int)
+  fullName.vb: SoundMaker.Sounds.SoundChannels.SquareSoundChannel.New(Integer, SoundMaker.Sounds.SoundFormat, SoundMaker.Sounds.SoundChannels.SquareWaveRatio, SoundMaker.Sounds.SoundChannels.PanType, Integer)
+  nameWithType: SquareSoundChannel.SquareSoundChannel(int, SoundFormat, SquareWaveRatio, PanType, int)
+  nameWithType.vb: SquareSoundChannel.New(Integer, SoundFormat, SquareWaveRatio, PanType, Integer)
+- uid: SoundMaker.Sounds.SoundChannels.SquareSoundChannel.#ctor*
+  name: SquareSoundChannel
+  href: api/SoundMaker.Sounds.SoundChannels.SquareSoundChannel.html#SoundMaker_Sounds_SoundChannels_SquareSoundChannel__ctor_
+  commentId: Overload:SoundMaker.Sounds.SoundChannels.SquareSoundChannel.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: SoundMaker.Sounds.SoundChannels.SquareSoundChannel.SquareSoundChannel
+  fullName.vb: SoundMaker.Sounds.SoundChannels.SquareSoundChannel.New
+  nameWithType: SquareSoundChannel.SquareSoundChannel
+  nameWithType.vb: SquareSoundChannel.New
+- uid: SoundMaker.Sounds.SoundChannels.SquareSoundChannel.GenerateWave
+  name: GenerateWave()
+  href: api/SoundMaker.Sounds.SoundChannels.SquareSoundChannel.html#SoundMaker_Sounds_SoundChannels_SquareSoundChannel_GenerateWave
+  commentId: M:SoundMaker.Sounds.SoundChannels.SquareSoundChannel.GenerateWave
+  fullName: SoundMaker.Sounds.SoundChannels.SquareSoundChannel.GenerateWave()
+  nameWithType: SquareSoundChannel.GenerateWave()
+- uid: SoundMaker.Sounds.SoundChannels.SquareSoundChannel.GenerateWave*
+  name: GenerateWave
+  href: api/SoundMaker.Sounds.SoundChannels.SquareSoundChannel.html#SoundMaker_Sounds_SoundChannels_SquareSoundChannel_GenerateWave_
+  commentId: Overload:SoundMaker.Sounds.SoundChannels.SquareSoundChannel.GenerateWave
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.SoundChannels.SquareSoundChannel.GenerateWave
+  nameWithType: SquareSoundChannel.GenerateWave
+- uid: SoundMaker.Sounds.SoundChannels.SquareWaveRatio
+  name: SquareWaveRatio
+  href: api/SoundMaker.Sounds.SoundChannels.SquareWaveRatio.html
+  commentId: T:SoundMaker.Sounds.SoundChannels.SquareWaveRatio
+  fullName: SoundMaker.Sounds.SoundChannels.SquareWaveRatio
+  nameWithType: SquareWaveRatio
+- uid: SoundMaker.Sounds.SoundChannels.SquareWaveRatio.Point125
+  name: Point125
+  href: api/SoundMaker.Sounds.SoundChannels.SquareWaveRatio.html#SoundMaker_Sounds_SoundChannels_SquareWaveRatio_Point125
+  commentId: F:SoundMaker.Sounds.SoundChannels.SquareWaveRatio.Point125
+  fullName: SoundMaker.Sounds.SoundChannels.SquareWaveRatio.Point125
+  nameWithType: SquareWaveRatio.Point125
+- uid: SoundMaker.Sounds.SoundChannels.SquareWaveRatio.Point25
+  name: Point25
+  href: api/SoundMaker.Sounds.SoundChannels.SquareWaveRatio.html#SoundMaker_Sounds_SoundChannels_SquareWaveRatio_Point25
+  commentId: F:SoundMaker.Sounds.SoundChannels.SquareWaveRatio.Point25
+  fullName: SoundMaker.Sounds.SoundChannels.SquareWaveRatio.Point25
+  nameWithType: SquareWaveRatio.Point25
+- uid: SoundMaker.Sounds.SoundChannels.SquareWaveRatio.Point5
+  name: Point5
+  href: api/SoundMaker.Sounds.SoundChannels.SquareWaveRatio.html#SoundMaker_Sounds_SoundChannels_SquareWaveRatio_Point5
+  commentId: F:SoundMaker.Sounds.SoundChannels.SquareWaveRatio.Point5
+  fullName: SoundMaker.Sounds.SoundChannels.SquareWaveRatio.Point5
+  nameWithType: SquareWaveRatio.Point5
+- uid: SoundMaker.Sounds.SoundChannels.TriangleSoundChannel
+  name: TriangleSoundChannel
+  href: api/SoundMaker.Sounds.SoundChannels.TriangleSoundChannel.html
+  commentId: T:SoundMaker.Sounds.SoundChannels.TriangleSoundChannel
+  fullName: SoundMaker.Sounds.SoundChannels.TriangleSoundChannel
+  nameWithType: TriangleSoundChannel
+- uid: SoundMaker.Sounds.SoundChannels.TriangleSoundChannel.#ctor(System.Int32,SoundMaker.Sounds.SoundFormat,SoundMaker.Sounds.SoundChannels.PanType)
+  name: TriangleSoundChannel(int, SoundFormat, PanType)
+  href: api/SoundMaker.Sounds.SoundChannels.TriangleSoundChannel.html#SoundMaker_Sounds_SoundChannels_TriangleSoundChannel__ctor_System_Int32_SoundMaker_Sounds_SoundFormat_SoundMaker_Sounds_SoundChannels_PanType_
+  commentId: M:SoundMaker.Sounds.SoundChannels.TriangleSoundChannel.#ctor(System.Int32,SoundMaker.Sounds.SoundFormat,SoundMaker.Sounds.SoundChannels.PanType)
+  name.vb: New(Integer, SoundFormat, PanType)
+  fullName: SoundMaker.Sounds.SoundChannels.TriangleSoundChannel.TriangleSoundChannel(int, SoundMaker.Sounds.SoundFormat, SoundMaker.Sounds.SoundChannels.PanType)
+  fullName.vb: SoundMaker.Sounds.SoundChannels.TriangleSoundChannel.New(Integer, SoundMaker.Sounds.SoundFormat, SoundMaker.Sounds.SoundChannels.PanType)
+  nameWithType: TriangleSoundChannel.TriangleSoundChannel(int, SoundFormat, PanType)
+  nameWithType.vb: TriangleSoundChannel.New(Integer, SoundFormat, PanType)
+- uid: SoundMaker.Sounds.SoundChannels.TriangleSoundChannel.#ctor(System.Int32,SoundMaker.Sounds.SoundFormat,SoundMaker.Sounds.SoundChannels.PanType,System.Int32)
+  name: TriangleSoundChannel(int, SoundFormat, PanType, int)
+  href: api/SoundMaker.Sounds.SoundChannels.TriangleSoundChannel.html#SoundMaker_Sounds_SoundChannels_TriangleSoundChannel__ctor_System_Int32_SoundMaker_Sounds_SoundFormat_SoundMaker_Sounds_SoundChannels_PanType_System_Int32_
+  commentId: M:SoundMaker.Sounds.SoundChannels.TriangleSoundChannel.#ctor(System.Int32,SoundMaker.Sounds.SoundFormat,SoundMaker.Sounds.SoundChannels.PanType,System.Int32)
+  name.vb: New(Integer, SoundFormat, PanType, Integer)
+  fullName: SoundMaker.Sounds.SoundChannels.TriangleSoundChannel.TriangleSoundChannel(int, SoundMaker.Sounds.SoundFormat, SoundMaker.Sounds.SoundChannels.PanType, int)
+  fullName.vb: SoundMaker.Sounds.SoundChannels.TriangleSoundChannel.New(Integer, SoundMaker.Sounds.SoundFormat, SoundMaker.Sounds.SoundChannels.PanType, Integer)
+  nameWithType: TriangleSoundChannel.TriangleSoundChannel(int, SoundFormat, PanType, int)
+  nameWithType.vb: TriangleSoundChannel.New(Integer, SoundFormat, PanType, Integer)
+- uid: SoundMaker.Sounds.SoundChannels.TriangleSoundChannel.#ctor*
+  name: TriangleSoundChannel
+  href: api/SoundMaker.Sounds.SoundChannels.TriangleSoundChannel.html#SoundMaker_Sounds_SoundChannels_TriangleSoundChannel__ctor_
+  commentId: Overload:SoundMaker.Sounds.SoundChannels.TriangleSoundChannel.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: SoundMaker.Sounds.SoundChannels.TriangleSoundChannel.TriangleSoundChannel
+  fullName.vb: SoundMaker.Sounds.SoundChannels.TriangleSoundChannel.New
+  nameWithType: TriangleSoundChannel.TriangleSoundChannel
+  nameWithType.vb: TriangleSoundChannel.New
+- uid: SoundMaker.Sounds.SoundChannels.TriangleSoundChannel.GenerateWave
+  name: GenerateWave()
+  href: api/SoundMaker.Sounds.SoundChannels.TriangleSoundChannel.html#SoundMaker_Sounds_SoundChannels_TriangleSoundChannel_GenerateWave
+  commentId: M:SoundMaker.Sounds.SoundChannels.TriangleSoundChannel.GenerateWave
+  fullName: SoundMaker.Sounds.SoundChannels.TriangleSoundChannel.GenerateWave()
+  nameWithType: TriangleSoundChannel.GenerateWave()
+- uid: SoundMaker.Sounds.SoundChannels.TriangleSoundChannel.GenerateWave*
+  name: GenerateWave
+  href: api/SoundMaker.Sounds.SoundChannels.TriangleSoundChannel.html#SoundMaker_Sounds_SoundChannels_TriangleSoundChannel_GenerateWave_
+  commentId: Overload:SoundMaker.Sounds.SoundChannels.TriangleSoundChannel.GenerateWave
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.SoundChannels.TriangleSoundChannel.GenerateWave
+  nameWithType: TriangleSoundChannel.GenerateWave
+- uid: SoundMaker.Sounds.SoundDirectionType
+  name: SoundDirectionType
+  href: api/SoundMaker.Sounds.SoundDirectionType.html
+  commentId: T:SoundMaker.Sounds.SoundDirectionType
+  fullName: SoundMaker.Sounds.SoundDirectionType
+  nameWithType: SoundDirectionType
+- uid: SoundMaker.Sounds.SoundDirectionType.Both
+  name: Both
+  href: api/SoundMaker.Sounds.SoundDirectionType.html#SoundMaker_Sounds_SoundDirectionType_Both
+  commentId: F:SoundMaker.Sounds.SoundDirectionType.Both
+  fullName: SoundMaker.Sounds.SoundDirectionType.Both
+  nameWithType: SoundDirectionType.Both
+- uid: SoundMaker.Sounds.SoundDirectionType.Left
+  name: Left
+  href: api/SoundMaker.Sounds.SoundDirectionType.html#SoundMaker_Sounds_SoundDirectionType_Left
+  commentId: F:SoundMaker.Sounds.SoundDirectionType.Left
+  fullName: SoundMaker.Sounds.SoundDirectionType.Left
+  nameWithType: SoundDirectionType.Left
+- uid: SoundMaker.Sounds.SoundDirectionType.Right
+  name: Right
+  href: api/SoundMaker.Sounds.SoundDirectionType.html#SoundMaker_Sounds_SoundDirectionType_Right
+  commentId: F:SoundMaker.Sounds.SoundDirectionType.Right
+  fullName: SoundMaker.Sounds.SoundDirectionType.Right
+  nameWithType: SoundDirectionType.Right
+- uid: SoundMaker.Sounds.SoundFormat
+  name: SoundFormat
+  href: api/SoundMaker.Sounds.SoundFormat.html
+  commentId: T:SoundMaker.Sounds.SoundFormat
+  fullName: SoundMaker.Sounds.SoundFormat
+  nameWithType: SoundFormat
+- uid: SoundMaker.Sounds.SoundFormat.#ctor(SoundMaker.Sounds.SamplingFrequencyType,SoundMaker.Sounds.BitRateType,SoundMaker.Sounds.ChannelType)
+  name: SoundFormat(SamplingFrequencyType, BitRateType, ChannelType)
+  href: api/SoundMaker.Sounds.SoundFormat.html#SoundMaker_Sounds_SoundFormat__ctor_SoundMaker_Sounds_SamplingFrequencyType_SoundMaker_Sounds_BitRateType_SoundMaker_Sounds_ChannelType_
+  commentId: M:SoundMaker.Sounds.SoundFormat.#ctor(SoundMaker.Sounds.SamplingFrequencyType,SoundMaker.Sounds.BitRateType,SoundMaker.Sounds.ChannelType)
+  name.vb: New(SamplingFrequencyType, BitRateType, ChannelType)
+  fullName: SoundMaker.Sounds.SoundFormat.SoundFormat(SoundMaker.Sounds.SamplingFrequencyType, SoundMaker.Sounds.BitRateType, SoundMaker.Sounds.ChannelType)
+  fullName.vb: SoundMaker.Sounds.SoundFormat.New(SoundMaker.Sounds.SamplingFrequencyType, SoundMaker.Sounds.BitRateType, SoundMaker.Sounds.ChannelType)
+  nameWithType: SoundFormat.SoundFormat(SamplingFrequencyType, BitRateType, ChannelType)
+  nameWithType.vb: SoundFormat.New(SamplingFrequencyType, BitRateType, ChannelType)
+- uid: SoundMaker.Sounds.SoundFormat.#ctor*
+  name: SoundFormat
+  href: api/SoundMaker.Sounds.SoundFormat.html#SoundMaker_Sounds_SoundFormat__ctor_
+  commentId: Overload:SoundMaker.Sounds.SoundFormat.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: SoundMaker.Sounds.SoundFormat.SoundFormat
+  fullName.vb: SoundMaker.Sounds.SoundFormat.New
+  nameWithType: SoundFormat.SoundFormat
+  nameWithType.vb: SoundFormat.New
+- uid: SoundMaker.Sounds.SoundFormat.BitRate
+  name: BitRate
+  href: api/SoundMaker.Sounds.SoundFormat.html#SoundMaker_Sounds_SoundFormat_BitRate
+  commentId: P:SoundMaker.Sounds.SoundFormat.BitRate
+  fullName: SoundMaker.Sounds.SoundFormat.BitRate
+  nameWithType: SoundFormat.BitRate
+- uid: SoundMaker.Sounds.SoundFormat.BitRate*
+  name: BitRate
+  href: api/SoundMaker.Sounds.SoundFormat.html#SoundMaker_Sounds_SoundFormat_BitRate_
+  commentId: Overload:SoundMaker.Sounds.SoundFormat.BitRate
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.SoundFormat.BitRate
+  nameWithType: SoundFormat.BitRate
+- uid: SoundMaker.Sounds.SoundFormat.Channel
+  name: Channel
+  href: api/SoundMaker.Sounds.SoundFormat.html#SoundMaker_Sounds_SoundFormat_Channel
+  commentId: P:SoundMaker.Sounds.SoundFormat.Channel
+  fullName: SoundMaker.Sounds.SoundFormat.Channel
+  nameWithType: SoundFormat.Channel
+- uid: SoundMaker.Sounds.SoundFormat.Channel*
+  name: Channel
+  href: api/SoundMaker.Sounds.SoundFormat.html#SoundMaker_Sounds_SoundFormat_Channel_
+  commentId: Overload:SoundMaker.Sounds.SoundFormat.Channel
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.SoundFormat.Channel
+  nameWithType: SoundFormat.Channel
+- uid: SoundMaker.Sounds.SoundFormat.SamplingFrequency
+  name: SamplingFrequency
+  href: api/SoundMaker.Sounds.SoundFormat.html#SoundMaker_Sounds_SoundFormat_SamplingFrequency
+  commentId: P:SoundMaker.Sounds.SoundFormat.SamplingFrequency
+  fullName: SoundMaker.Sounds.SoundFormat.SamplingFrequency
+  nameWithType: SoundFormat.SamplingFrequency
+- uid: SoundMaker.Sounds.SoundFormat.SamplingFrequency*
+  name: SamplingFrequency
+  href: api/SoundMaker.Sounds.SoundFormat.html#SoundMaker_Sounds_SoundFormat_SamplingFrequency_
+  commentId: Overload:SoundMaker.Sounds.SoundFormat.SamplingFrequency
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.SoundFormat.SamplingFrequency
+  nameWithType: SoundFormat.SamplingFrequency
+- uid: SoundMaker.Sounds.StereoMixer
+  name: StereoMixer
+  href: api/SoundMaker.Sounds.StereoMixer.html
+  commentId: T:SoundMaker.Sounds.StereoMixer
+  fullName: SoundMaker.Sounds.StereoMixer
+  nameWithType: StereoMixer
+- uid: SoundMaker.Sounds.StereoMixer.#ctor(System.Collections.Generic.IReadOnlyList{SoundMaker.Sounds.SoundChannels.ISoundChannel})
+  name: StereoMixer(IReadOnlyList<ISoundChannel>)
+  href: api/SoundMaker.Sounds.StereoMixer.html#SoundMaker_Sounds_StereoMixer__ctor_System_Collections_Generic_IReadOnlyList_SoundMaker_Sounds_SoundChannels_ISoundChannel__
+  commentId: M:SoundMaker.Sounds.StereoMixer.#ctor(System.Collections.Generic.IReadOnlyList{SoundMaker.Sounds.SoundChannels.ISoundChannel})
+  name.vb: New(IReadOnlyList(Of ISoundChannel))
+  fullName: SoundMaker.Sounds.StereoMixer.StereoMixer(System.Collections.Generic.IReadOnlyList<SoundMaker.Sounds.SoundChannels.ISoundChannel>)
+  fullName.vb: SoundMaker.Sounds.StereoMixer.New(System.Collections.Generic.IReadOnlyList(Of SoundMaker.Sounds.SoundChannels.ISoundChannel))
+  nameWithType: StereoMixer.StereoMixer(IReadOnlyList<ISoundChannel>)
+  nameWithType.vb: StereoMixer.New(IReadOnlyList(Of ISoundChannel))
+- uid: SoundMaker.Sounds.StereoMixer.#ctor*
+  name: StereoMixer
+  href: api/SoundMaker.Sounds.StereoMixer.html#SoundMaker_Sounds_StereoMixer__ctor_
+  commentId: Overload:SoundMaker.Sounds.StereoMixer.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: SoundMaker.Sounds.StereoMixer.StereoMixer
+  fullName.vb: SoundMaker.Sounds.StereoMixer.New
+  nameWithType: StereoMixer.StereoMixer
+  nameWithType.vb: StereoMixer.New
+- uid: SoundMaker.Sounds.StereoMixer.Mix
+  name: Mix()
+  href: api/SoundMaker.Sounds.StereoMixer.html#SoundMaker_Sounds_StereoMixer_Mix
+  commentId: M:SoundMaker.Sounds.StereoMixer.Mix
+  fullName: SoundMaker.Sounds.StereoMixer.Mix()
+  nameWithType: StereoMixer.Mix()
+- uid: SoundMaker.Sounds.StereoMixer.Mix*
+  name: Mix
+  href: api/SoundMaker.Sounds.StereoMixer.html#SoundMaker_Sounds_StereoMixer_Mix_
+  commentId: Overload:SoundMaker.Sounds.StereoMixer.Mix
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.StereoMixer.Mix
+  nameWithType: StereoMixer.Mix
+- uid: SoundMaker.Sounds.StereoWave
+  name: StereoWave
+  href: api/SoundMaker.Sounds.StereoWave.html
+  commentId: T:SoundMaker.Sounds.StereoWave
+  fullName: SoundMaker.Sounds.StereoWave
+  nameWithType: StereoWave
+- uid: SoundMaker.Sounds.StereoWave.#ctor(System.Collections.Generic.IReadOnlyCollection{System.Int16},System.Collections.Generic.IReadOnlyCollection{System.Int16})
+  name: StereoWave(IReadOnlyCollection<short>, IReadOnlyCollection<short>)
+  href: api/SoundMaker.Sounds.StereoWave.html#SoundMaker_Sounds_StereoWave__ctor_System_Collections_Generic_IReadOnlyCollection_System_Int16__System_Collections_Generic_IReadOnlyCollection_System_Int16__
+  commentId: M:SoundMaker.Sounds.StereoWave.#ctor(System.Collections.Generic.IReadOnlyCollection{System.Int16},System.Collections.Generic.IReadOnlyCollection{System.Int16})
+  name.vb: New(IReadOnlyCollection(Of Short), IReadOnlyCollection(Of Short))
+  fullName: SoundMaker.Sounds.StereoWave.StereoWave(System.Collections.Generic.IReadOnlyCollection<short>, System.Collections.Generic.IReadOnlyCollection<short>)
+  fullName.vb: SoundMaker.Sounds.StereoWave.New(System.Collections.Generic.IReadOnlyCollection(Of Short), System.Collections.Generic.IReadOnlyCollection(Of Short))
+  nameWithType: StereoWave.StereoWave(IReadOnlyCollection<short>, IReadOnlyCollection<short>)
+  nameWithType.vb: StereoWave.New(IReadOnlyCollection(Of Short), IReadOnlyCollection(Of Short))
+- uid: SoundMaker.Sounds.StereoWave.#ctor*
+  name: StereoWave
+  href: api/SoundMaker.Sounds.StereoWave.html#SoundMaker_Sounds_StereoWave__ctor_
+  commentId: Overload:SoundMaker.Sounds.StereoWave.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: SoundMaker.Sounds.StereoWave.StereoWave
+  fullName.vb: SoundMaker.Sounds.StereoWave.New
+  nameWithType: StereoWave.StereoWave
+  nameWithType.vb: StereoWave.New
+- uid: SoundMaker.Sounds.StereoWave.Append(SoundMaker.Sounds.StereoWave)
+  name: Append(StereoWave)
+  href: api/SoundMaker.Sounds.StereoWave.html#SoundMaker_Sounds_StereoWave_Append_SoundMaker_Sounds_StereoWave_
+  commentId: M:SoundMaker.Sounds.StereoWave.Append(SoundMaker.Sounds.StereoWave)
+  fullName: SoundMaker.Sounds.StereoWave.Append(SoundMaker.Sounds.StereoWave)
+  nameWithType: StereoWave.Append(StereoWave)
+- uid: SoundMaker.Sounds.StereoWave.Append*
+  name: Append
+  href: api/SoundMaker.Sounds.StereoWave.html#SoundMaker_Sounds_StereoWave_Append_
+  commentId: Overload:SoundMaker.Sounds.StereoWave.Append
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.StereoWave.Append
+  nameWithType: StereoWave.Append
+- uid: SoundMaker.Sounds.StereoWave.ChangeVolume(System.Int32,SoundMaker.Sounds.SoundDirectionType)
+  name: ChangeVolume(int, SoundDirectionType)
+  href: api/SoundMaker.Sounds.StereoWave.html#SoundMaker_Sounds_StereoWave_ChangeVolume_System_Int32_SoundMaker_Sounds_SoundDirectionType_
+  commentId: M:SoundMaker.Sounds.StereoWave.ChangeVolume(System.Int32,SoundMaker.Sounds.SoundDirectionType)
+  name.vb: ChangeVolume(Integer, SoundDirectionType)
+  fullName: SoundMaker.Sounds.StereoWave.ChangeVolume(int, SoundMaker.Sounds.SoundDirectionType)
+  fullName.vb: SoundMaker.Sounds.StereoWave.ChangeVolume(Integer, SoundMaker.Sounds.SoundDirectionType)
+  nameWithType: StereoWave.ChangeVolume(int, SoundDirectionType)
+  nameWithType.vb: StereoWave.ChangeVolume(Integer, SoundDirectionType)
+- uid: SoundMaker.Sounds.StereoWave.ChangeVolume*
+  name: ChangeVolume
+  href: api/SoundMaker.Sounds.StereoWave.html#SoundMaker_Sounds_StereoWave_ChangeVolume_
+  commentId: Overload:SoundMaker.Sounds.StereoWave.ChangeVolume
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.StereoWave.ChangeVolume
+  nameWithType: StereoWave.ChangeVolume
+- uid: SoundMaker.Sounds.StereoWave.GetBytes(SoundMaker.Sounds.BitRateType)
+  name: GetBytes(BitRateType)
+  href: api/SoundMaker.Sounds.StereoWave.html#SoundMaker_Sounds_StereoWave_GetBytes_SoundMaker_Sounds_BitRateType_
+  commentId: M:SoundMaker.Sounds.StereoWave.GetBytes(SoundMaker.Sounds.BitRateType)
+  fullName: SoundMaker.Sounds.StereoWave.GetBytes(SoundMaker.Sounds.BitRateType)
+  nameWithType: StereoWave.GetBytes(BitRateType)
+- uid: SoundMaker.Sounds.StereoWave.GetBytes*
+  name: GetBytes
+  href: api/SoundMaker.Sounds.StereoWave.html#SoundMaker_Sounds_StereoWave_GetBytes_
+  commentId: Overload:SoundMaker.Sounds.StereoWave.GetBytes
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.StereoWave.GetBytes
+  nameWithType: StereoWave.GetBytes
+- uid: SoundMaker.Sounds.StereoWave.GetLeftWave
+  name: GetLeftWave()
+  href: api/SoundMaker.Sounds.StereoWave.html#SoundMaker_Sounds_StereoWave_GetLeftWave
+  commentId: M:SoundMaker.Sounds.StereoWave.GetLeftWave
+  fullName: SoundMaker.Sounds.StereoWave.GetLeftWave()
+  nameWithType: StereoWave.GetLeftWave()
+- uid: SoundMaker.Sounds.StereoWave.GetLeftWave*
+  name: GetLeftWave
+  href: api/SoundMaker.Sounds.StereoWave.html#SoundMaker_Sounds_StereoWave_GetLeftWave_
+  commentId: Overload:SoundMaker.Sounds.StereoWave.GetLeftWave
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.StereoWave.GetLeftWave
+  nameWithType: StereoWave.GetLeftWave
+- uid: SoundMaker.Sounds.StereoWave.GetLengthOfBytes(SoundMaker.Sounds.BitRateType)
+  name: GetLengthOfBytes(BitRateType)
+  href: api/SoundMaker.Sounds.StereoWave.html#SoundMaker_Sounds_StereoWave_GetLengthOfBytes_SoundMaker_Sounds_BitRateType_
+  commentId: M:SoundMaker.Sounds.StereoWave.GetLengthOfBytes(SoundMaker.Sounds.BitRateType)
+  fullName: SoundMaker.Sounds.StereoWave.GetLengthOfBytes(SoundMaker.Sounds.BitRateType)
+  nameWithType: StereoWave.GetLengthOfBytes(BitRateType)
+- uid: SoundMaker.Sounds.StereoWave.GetLengthOfBytes*
+  name: GetLengthOfBytes
+  href: api/SoundMaker.Sounds.StereoWave.html#SoundMaker_Sounds_StereoWave_GetLengthOfBytes_
+  commentId: Overload:SoundMaker.Sounds.StereoWave.GetLengthOfBytes
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.StereoWave.GetLengthOfBytes
+  nameWithType: StereoWave.GetLengthOfBytes
+- uid: SoundMaker.Sounds.StereoWave.GetRightWave
+  name: GetRightWave()
+  href: api/SoundMaker.Sounds.StereoWave.html#SoundMaker_Sounds_StereoWave_GetRightWave
+  commentId: M:SoundMaker.Sounds.StereoWave.GetRightWave
+  fullName: SoundMaker.Sounds.StereoWave.GetRightWave()
+  nameWithType: StereoWave.GetRightWave()
+- uid: SoundMaker.Sounds.StereoWave.GetRightWave*
+  name: GetRightWave
+  href: api/SoundMaker.Sounds.StereoWave.html#SoundMaker_Sounds_StereoWave_GetRightWave_
+  commentId: Overload:SoundMaker.Sounds.StereoWave.GetRightWave
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.StereoWave.GetRightWave
+  nameWithType: StereoWave.GetRightWave
+- uid: SoundMaker.Sounds.StereoWave.LeftVolume
+  name: LeftVolume
+  href: api/SoundMaker.Sounds.StereoWave.html#SoundMaker_Sounds_StereoWave_LeftVolume
+  commentId: P:SoundMaker.Sounds.StereoWave.LeftVolume
+  fullName: SoundMaker.Sounds.StereoWave.LeftVolume
+  nameWithType: StereoWave.LeftVolume
+- uid: SoundMaker.Sounds.StereoWave.LeftVolume*
+  name: LeftVolume
+  href: api/SoundMaker.Sounds.StereoWave.html#SoundMaker_Sounds_StereoWave_LeftVolume_
+  commentId: Overload:SoundMaker.Sounds.StereoWave.LeftVolume
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.StereoWave.LeftVolume
+  nameWithType: StereoWave.LeftVolume
+- uid: SoundMaker.Sounds.StereoWave.RightVolume
+  name: RightVolume
+  href: api/SoundMaker.Sounds.StereoWave.html#SoundMaker_Sounds_StereoWave_RightVolume
+  commentId: P:SoundMaker.Sounds.StereoWave.RightVolume
+  fullName: SoundMaker.Sounds.StereoWave.RightVolume
+  nameWithType: StereoWave.RightVolume
+- uid: SoundMaker.Sounds.StereoWave.RightVolume*
+  name: RightVolume
+  href: api/SoundMaker.Sounds.StereoWave.html#SoundMaker_Sounds_StereoWave_RightVolume_
+  commentId: Overload:SoundMaker.Sounds.StereoWave.RightVolume
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.StereoWave.RightVolume
+  nameWithType: StereoWave.RightVolume
+- uid: SoundMaker.Sounds.WaveTypes
+  name: SoundMaker.Sounds.WaveTypes
+  href: api/SoundMaker.Sounds.WaveTypes.html
+  commentId: N:SoundMaker.Sounds.WaveTypes
+  fullName: SoundMaker.Sounds.WaveTypes
+  nameWithType: SoundMaker.Sounds.WaveTypes
+- uid: SoundMaker.Sounds.WaveTypes.LowBitNoiseWave
+  name: LowBitNoiseWave
+  href: api/SoundMaker.Sounds.WaveTypes.LowBitNoiseWave.html
+  commentId: T:SoundMaker.Sounds.WaveTypes.LowBitNoiseWave
+  fullName: SoundMaker.Sounds.WaveTypes.LowBitNoiseWave
+  nameWithType: LowBitNoiseWave
+- uid: SoundMaker.Sounds.WaveTypes.LowBitNoiseWave.GenerateWave(SoundMaker.Sounds.SoundFormat,System.Int32,System.Int32,System.Double)
+  name: GenerateWave(SoundFormat, int, int, double)
+  href: api/SoundMaker.Sounds.WaveTypes.LowBitNoiseWave.html#SoundMaker_Sounds_WaveTypes_LowBitNoiseWave_GenerateWave_SoundMaker_Sounds_SoundFormat_System_Int32_System_Int32_System_Double_
+  commentId: M:SoundMaker.Sounds.WaveTypes.LowBitNoiseWave.GenerateWave(SoundMaker.Sounds.SoundFormat,System.Int32,System.Int32,System.Double)
+  name.vb: GenerateWave(SoundFormat, Integer, Integer, Double)
+  fullName: SoundMaker.Sounds.WaveTypes.LowBitNoiseWave.GenerateWave(SoundMaker.Sounds.SoundFormat, int, int, double)
+  fullName.vb: SoundMaker.Sounds.WaveTypes.LowBitNoiseWave.GenerateWave(SoundMaker.Sounds.SoundFormat, Integer, Integer, Double)
+  nameWithType: LowBitNoiseWave.GenerateWave(SoundFormat, int, int, double)
+  nameWithType.vb: LowBitNoiseWave.GenerateWave(SoundFormat, Integer, Integer, Double)
+- uid: SoundMaker.Sounds.WaveTypes.LowBitNoiseWave.GenerateWave*
+  name: GenerateWave
+  href: api/SoundMaker.Sounds.WaveTypes.LowBitNoiseWave.html#SoundMaker_Sounds_WaveTypes_LowBitNoiseWave_GenerateWave_
+  commentId: Overload:SoundMaker.Sounds.WaveTypes.LowBitNoiseWave.GenerateWave
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.WaveTypes.LowBitNoiseWave.GenerateWave
+  nameWithType: LowBitNoiseWave.GenerateWave
+- uid: SoundMaker.Sounds.WaveTypes.PseudoTriangleWave
+  name: PseudoTriangleWave
+  href: api/SoundMaker.Sounds.WaveTypes.PseudoTriangleWave.html
+  commentId: T:SoundMaker.Sounds.WaveTypes.PseudoTriangleWave
+  fullName: SoundMaker.Sounds.WaveTypes.PseudoTriangleWave
+  nameWithType: PseudoTriangleWave
+- uid: SoundMaker.Sounds.WaveTypes.PseudoTriangleWave.GenerateWave(SoundMaker.Sounds.SoundFormat,System.Int32,System.Int32,System.Double)
+  name: GenerateWave(SoundFormat, int, int, double)
+  href: api/SoundMaker.Sounds.WaveTypes.PseudoTriangleWave.html#SoundMaker_Sounds_WaveTypes_PseudoTriangleWave_GenerateWave_SoundMaker_Sounds_SoundFormat_System_Int32_System_Int32_System_Double_
+  commentId: M:SoundMaker.Sounds.WaveTypes.PseudoTriangleWave.GenerateWave(SoundMaker.Sounds.SoundFormat,System.Int32,System.Int32,System.Double)
+  name.vb: GenerateWave(SoundFormat, Integer, Integer, Double)
+  fullName: SoundMaker.Sounds.WaveTypes.PseudoTriangleWave.GenerateWave(SoundMaker.Sounds.SoundFormat, int, int, double)
+  fullName.vb: SoundMaker.Sounds.WaveTypes.PseudoTriangleWave.GenerateWave(SoundMaker.Sounds.SoundFormat, Integer, Integer, Double)
+  nameWithType: PseudoTriangleWave.GenerateWave(SoundFormat, int, int, double)
+  nameWithType.vb: PseudoTriangleWave.GenerateWave(SoundFormat, Integer, Integer, Double)
+- uid: SoundMaker.Sounds.WaveTypes.PseudoTriangleWave.GenerateWave*
+  name: GenerateWave
+  href: api/SoundMaker.Sounds.WaveTypes.PseudoTriangleWave.html#SoundMaker_Sounds_WaveTypes_PseudoTriangleWave_GenerateWave_
+  commentId: Overload:SoundMaker.Sounds.WaveTypes.PseudoTriangleWave.GenerateWave
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.WaveTypes.PseudoTriangleWave.GenerateWave
+  nameWithType: PseudoTriangleWave.GenerateWave
+- uid: SoundMaker.Sounds.WaveTypes.SquareWave
+  name: SquareWave
+  href: api/SoundMaker.Sounds.WaveTypes.SquareWave.html
+  commentId: T:SoundMaker.Sounds.WaveTypes.SquareWave
+  fullName: SoundMaker.Sounds.WaveTypes.SquareWave
+  nameWithType: SquareWave
+- uid: SoundMaker.Sounds.WaveTypes.SquareWave.#ctor(SoundMaker.Sounds.SoundChannels.SquareWaveRatio)
+  name: SquareWave(SquareWaveRatio)
+  href: api/SoundMaker.Sounds.WaveTypes.SquareWave.html#SoundMaker_Sounds_WaveTypes_SquareWave__ctor_SoundMaker_Sounds_SoundChannels_SquareWaveRatio_
+  commentId: M:SoundMaker.Sounds.WaveTypes.SquareWave.#ctor(SoundMaker.Sounds.SoundChannels.SquareWaveRatio)
+  name.vb: New(SquareWaveRatio)
+  fullName: SoundMaker.Sounds.WaveTypes.SquareWave.SquareWave(SoundMaker.Sounds.SoundChannels.SquareWaveRatio)
+  fullName.vb: SoundMaker.Sounds.WaveTypes.SquareWave.New(SoundMaker.Sounds.SoundChannels.SquareWaveRatio)
+  nameWithType: SquareWave.SquareWave(SquareWaveRatio)
+  nameWithType.vb: SquareWave.New(SquareWaveRatio)
+- uid: SoundMaker.Sounds.WaveTypes.SquareWave.#ctor*
+  name: SquareWave
+  href: api/SoundMaker.Sounds.WaveTypes.SquareWave.html#SoundMaker_Sounds_WaveTypes_SquareWave__ctor_
+  commentId: Overload:SoundMaker.Sounds.WaveTypes.SquareWave.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: SoundMaker.Sounds.WaveTypes.SquareWave.SquareWave
+  fullName.vb: SoundMaker.Sounds.WaveTypes.SquareWave.New
+  nameWithType: SquareWave.SquareWave
+  nameWithType.vb: SquareWave.New
+- uid: SoundMaker.Sounds.WaveTypes.SquareWave.GenerateWave(SoundMaker.Sounds.SoundFormat,System.Int32,System.Int32,System.Double)
+  name: GenerateWave(SoundFormat, int, int, double)
+  href: api/SoundMaker.Sounds.WaveTypes.SquareWave.html#SoundMaker_Sounds_WaveTypes_SquareWave_GenerateWave_SoundMaker_Sounds_SoundFormat_System_Int32_System_Int32_System_Double_
+  commentId: M:SoundMaker.Sounds.WaveTypes.SquareWave.GenerateWave(SoundMaker.Sounds.SoundFormat,System.Int32,System.Int32,System.Double)
+  name.vb: GenerateWave(SoundFormat, Integer, Integer, Double)
+  fullName: SoundMaker.Sounds.WaveTypes.SquareWave.GenerateWave(SoundMaker.Sounds.SoundFormat, int, int, double)
+  fullName.vb: SoundMaker.Sounds.WaveTypes.SquareWave.GenerateWave(SoundMaker.Sounds.SoundFormat, Integer, Integer, Double)
+  nameWithType: SquareWave.GenerateWave(SoundFormat, int, int, double)
+  nameWithType.vb: SquareWave.GenerateWave(SoundFormat, Integer, Integer, Double)
+- uid: SoundMaker.Sounds.WaveTypes.SquareWave.GenerateWave*
+  name: GenerateWave
+  href: api/SoundMaker.Sounds.WaveTypes.SquareWave.html#SoundMaker_Sounds_WaveTypes_SquareWave_GenerateWave_
+  commentId: Overload:SoundMaker.Sounds.WaveTypes.SquareWave.GenerateWave
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.WaveTypes.SquareWave.GenerateWave
+  nameWithType: SquareWave.GenerateWave
+- uid: SoundMaker.Sounds.WaveTypes.TriangleWave
+  name: TriangleWave
+  href: api/SoundMaker.Sounds.WaveTypes.TriangleWave.html
+  commentId: T:SoundMaker.Sounds.WaveTypes.TriangleWave
+  fullName: SoundMaker.Sounds.WaveTypes.TriangleWave
+  nameWithType: TriangleWave
+- uid: SoundMaker.Sounds.WaveTypes.TriangleWave.GenerateWave(SoundMaker.Sounds.SoundFormat,System.Int32,System.Int32,System.Double)
+  name: GenerateWave(SoundFormat, int, int, double)
+  href: api/SoundMaker.Sounds.WaveTypes.TriangleWave.html#SoundMaker_Sounds_WaveTypes_TriangleWave_GenerateWave_SoundMaker_Sounds_SoundFormat_System_Int32_System_Int32_System_Double_
+  commentId: M:SoundMaker.Sounds.WaveTypes.TriangleWave.GenerateWave(SoundMaker.Sounds.SoundFormat,System.Int32,System.Int32,System.Double)
+  name.vb: GenerateWave(SoundFormat, Integer, Integer, Double)
+  fullName: SoundMaker.Sounds.WaveTypes.TriangleWave.GenerateWave(SoundMaker.Sounds.SoundFormat, int, int, double)
+  fullName.vb: SoundMaker.Sounds.WaveTypes.TriangleWave.GenerateWave(SoundMaker.Sounds.SoundFormat, Integer, Integer, Double)
+  nameWithType: TriangleWave.GenerateWave(SoundFormat, int, int, double)
+  nameWithType.vb: TriangleWave.GenerateWave(SoundFormat, Integer, Integer, Double)
+- uid: SoundMaker.Sounds.WaveTypes.TriangleWave.GenerateWave*
+  name: GenerateWave
+  href: api/SoundMaker.Sounds.WaveTypes.TriangleWave.html#SoundMaker_Sounds_WaveTypes_TriangleWave_GenerateWave_
+  commentId: Overload:SoundMaker.Sounds.WaveTypes.TriangleWave.GenerateWave
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.WaveTypes.TriangleWave.GenerateWave
+  nameWithType: TriangleWave.GenerateWave
+- uid: SoundMaker.Sounds.WaveTypes.WaveTypeBase
+  name: WaveTypeBase
+  href: api/SoundMaker.Sounds.WaveTypes.WaveTypeBase.html
+  commentId: T:SoundMaker.Sounds.WaveTypes.WaveTypeBase
+  fullName: SoundMaker.Sounds.WaveTypes.WaveTypeBase
+  nameWithType: WaveTypeBase
+- uid: SoundMaker.Sounds.WaveTypes.WaveTypeBase.CheckGenerateWaveArgs(System.Int32,System.Int32,System.Double)
+  name: CheckGenerateWaveArgs(int, int, double)
+  href: api/SoundMaker.Sounds.WaveTypes.WaveTypeBase.html#SoundMaker_Sounds_WaveTypes_WaveTypeBase_CheckGenerateWaveArgs_System_Int32_System_Int32_System_Double_
+  commentId: M:SoundMaker.Sounds.WaveTypes.WaveTypeBase.CheckGenerateWaveArgs(System.Int32,System.Int32,System.Double)
+  name.vb: CheckGenerateWaveArgs(Integer, Integer, Double)
+  fullName: SoundMaker.Sounds.WaveTypes.WaveTypeBase.CheckGenerateWaveArgs(int, int, double)
+  fullName.vb: SoundMaker.Sounds.WaveTypes.WaveTypeBase.CheckGenerateWaveArgs(Integer, Integer, Double)
+  nameWithType: WaveTypeBase.CheckGenerateWaveArgs(int, int, double)
+  nameWithType.vb: WaveTypeBase.CheckGenerateWaveArgs(Integer, Integer, Double)
+- uid: SoundMaker.Sounds.WaveTypes.WaveTypeBase.CheckGenerateWaveArgs*
+  name: CheckGenerateWaveArgs
+  href: api/SoundMaker.Sounds.WaveTypes.WaveTypeBase.html#SoundMaker_Sounds_WaveTypes_WaveTypeBase_CheckGenerateWaveArgs_
+  commentId: Overload:SoundMaker.Sounds.WaveTypes.WaveTypeBase.CheckGenerateWaveArgs
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.WaveTypes.WaveTypeBase.CheckGenerateWaveArgs
+  nameWithType: WaveTypeBase.CheckGenerateWaveArgs
+- uid: SoundMaker.Sounds.WaveTypes.WaveTypeBase.GenerateWave(SoundMaker.Sounds.SoundFormat,System.Int32,System.Int32,System.Double)
+  name: GenerateWave(SoundFormat, int, int, double)
+  href: api/SoundMaker.Sounds.WaveTypes.WaveTypeBase.html#SoundMaker_Sounds_WaveTypes_WaveTypeBase_GenerateWave_SoundMaker_Sounds_SoundFormat_System_Int32_System_Int32_System_Double_
+  commentId: M:SoundMaker.Sounds.WaveTypes.WaveTypeBase.GenerateWave(SoundMaker.Sounds.SoundFormat,System.Int32,System.Int32,System.Double)
+  name.vb: GenerateWave(SoundFormat, Integer, Integer, Double)
+  fullName: SoundMaker.Sounds.WaveTypes.WaveTypeBase.GenerateWave(SoundMaker.Sounds.SoundFormat, int, int, double)
+  fullName.vb: SoundMaker.Sounds.WaveTypes.WaveTypeBase.GenerateWave(SoundMaker.Sounds.SoundFormat, Integer, Integer, Double)
+  nameWithType: WaveTypeBase.GenerateWave(SoundFormat, int, int, double)
+  nameWithType.vb: WaveTypeBase.GenerateWave(SoundFormat, Integer, Integer, Double)
+- uid: SoundMaker.Sounds.WaveTypes.WaveTypeBase.GenerateWave*
+  name: GenerateWave
+  href: api/SoundMaker.Sounds.WaveTypes.WaveTypeBase.html#SoundMaker_Sounds_WaveTypes_WaveTypeBase_GenerateWave_
+  commentId: Overload:SoundMaker.Sounds.WaveTypes.WaveTypeBase.GenerateWave
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.WaveTypes.WaveTypeBase.GenerateWave
+  nameWithType: WaveTypeBase.GenerateWave
+- uid: SoundMaker.WaveFile
+  name: SoundMaker.WaveFile
+  href: api/SoundMaker.WaveFile.html
+  commentId: N:SoundMaker.WaveFile
+  fullName: SoundMaker.WaveFile
+  nameWithType: SoundMaker.WaveFile
+- uid: SoundMaker.WaveFile.BitRateType
+  name: BitRateType
+  href: api/SoundMaker.WaveFile.BitRateType.html
+  commentId: T:SoundMaker.WaveFile.BitRateType
+  fullName: SoundMaker.WaveFile.BitRateType
+  nameWithType: BitRateType
+- uid: SoundMaker.WaveFile.BitRateType.EightBit
+  name: EightBit
+  href: api/SoundMaker.WaveFile.BitRateType.html#SoundMaker_WaveFile_BitRateType_EightBit
+  commentId: F:SoundMaker.WaveFile.BitRateType.EightBit
+  fullName: SoundMaker.WaveFile.BitRateType.EightBit
+  nameWithType: BitRateType.EightBit
+- uid: SoundMaker.WaveFile.BitRateType.SixteenBit
+  name: SixteenBit
+  href: api/SoundMaker.WaveFile.BitRateType.html#SoundMaker_WaveFile_BitRateType_SixteenBit
+  commentId: F:SoundMaker.WaveFile.BitRateType.SixteenBit
+  fullName: SoundMaker.WaveFile.BitRateType.SixteenBit
+  nameWithType: BitRateType.SixteenBit
+- uid: SoundMaker.WaveFile.ChannelType
+  name: ChannelType
+  href: api/SoundMaker.WaveFile.ChannelType.html
+  commentId: T:SoundMaker.WaveFile.ChannelType
+  fullName: SoundMaker.WaveFile.ChannelType
+  nameWithType: ChannelType
+- uid: SoundMaker.WaveFile.ChannelType.Monaural
+  name: Monaural
+  href: api/SoundMaker.WaveFile.ChannelType.html#SoundMaker_WaveFile_ChannelType_Monaural
+  commentId: F:SoundMaker.WaveFile.ChannelType.Monaural
+  fullName: SoundMaker.WaveFile.ChannelType.Monaural
+  nameWithType: ChannelType.Monaural
+- uid: SoundMaker.WaveFile.ChannelType.Stereo
+  name: Stereo
+  href: api/SoundMaker.WaveFile.ChannelType.html#SoundMaker_WaveFile_ChannelType_Stereo
+  commentId: F:SoundMaker.WaveFile.ChannelType.Stereo
+  fullName: SoundMaker.WaveFile.ChannelType.Stereo
+  nameWithType: ChannelType.Stereo
+- uid: SoundMaker.WaveFile.FormatChunk
+  name: FormatChunk
+  href: api/SoundMaker.WaveFile.FormatChunk.html
+  commentId: T:SoundMaker.WaveFile.FormatChunk
+  fullName: SoundMaker.WaveFile.FormatChunk
+  nameWithType: FormatChunk
+- uid: SoundMaker.WaveFile.FormatChunk.#ctor(SoundMaker.WaveFile.SamplingFrequencyType,SoundMaker.WaveFile.BitRateType,SoundMaker.WaveFile.ChannelType)
+  name: FormatChunk(SamplingFrequencyType, BitRateType, ChannelType)
+  href: api/SoundMaker.WaveFile.FormatChunk.html#SoundMaker_WaveFile_FormatChunk__ctor_SoundMaker_WaveFile_SamplingFrequencyType_SoundMaker_WaveFile_BitRateType_SoundMaker_WaveFile_ChannelType_
+  commentId: M:SoundMaker.WaveFile.FormatChunk.#ctor(SoundMaker.WaveFile.SamplingFrequencyType,SoundMaker.WaveFile.BitRateType,SoundMaker.WaveFile.ChannelType)
+  name.vb: New(SamplingFrequencyType, BitRateType, ChannelType)
+  fullName: SoundMaker.WaveFile.FormatChunk.FormatChunk(SoundMaker.WaveFile.SamplingFrequencyType, SoundMaker.WaveFile.BitRateType, SoundMaker.WaveFile.ChannelType)
+  fullName.vb: SoundMaker.WaveFile.FormatChunk.New(SoundMaker.WaveFile.SamplingFrequencyType, SoundMaker.WaveFile.BitRateType, SoundMaker.WaveFile.ChannelType)
+  nameWithType: FormatChunk.FormatChunk(SamplingFrequencyType, BitRateType, ChannelType)
+  nameWithType.vb: FormatChunk.New(SamplingFrequencyType, BitRateType, ChannelType)
+- uid: SoundMaker.WaveFile.FormatChunk.#ctor*
+  name: FormatChunk
+  href: api/SoundMaker.WaveFile.FormatChunk.html#SoundMaker_WaveFile_FormatChunk__ctor_
+  commentId: Overload:SoundMaker.WaveFile.FormatChunk.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: SoundMaker.WaveFile.FormatChunk.FormatChunk
+  fullName.vb: SoundMaker.WaveFile.FormatChunk.New
+  nameWithType: FormatChunk.FormatChunk
+  nameWithType.vb: FormatChunk.New
+- uid: SoundMaker.WaveFile.FormatChunk.BitRate
+  name: BitRate
+  href: api/SoundMaker.WaveFile.FormatChunk.html#SoundMaker_WaveFile_FormatChunk_BitRate
+  commentId: P:SoundMaker.WaveFile.FormatChunk.BitRate
+  fullName: SoundMaker.WaveFile.FormatChunk.BitRate
+  nameWithType: FormatChunk.BitRate
+- uid: SoundMaker.WaveFile.FormatChunk.BitRate*
+  name: BitRate
+  href: api/SoundMaker.WaveFile.FormatChunk.html#SoundMaker_WaveFile_FormatChunk_BitRate_
+  commentId: Overload:SoundMaker.WaveFile.FormatChunk.BitRate
+  isSpec: "True"
+  fullName: SoundMaker.WaveFile.FormatChunk.BitRate
+  nameWithType: FormatChunk.BitRate
+- uid: SoundMaker.WaveFile.FormatChunk.GetBytes
+  name: GetBytes()
+  href: api/SoundMaker.WaveFile.FormatChunk.html#SoundMaker_WaveFile_FormatChunk_GetBytes
+  commentId: M:SoundMaker.WaveFile.FormatChunk.GetBytes
+  fullName: SoundMaker.WaveFile.FormatChunk.GetBytes()
+  nameWithType: FormatChunk.GetBytes()
+- uid: SoundMaker.WaveFile.FormatChunk.GetBytes*
+  name: GetBytes
+  href: api/SoundMaker.WaveFile.FormatChunk.html#SoundMaker_WaveFile_FormatChunk_GetBytes_
+  commentId: Overload:SoundMaker.WaveFile.FormatChunk.GetBytes
+  isSpec: "True"
+  fullName: SoundMaker.WaveFile.FormatChunk.GetBytes
+  nameWithType: FormatChunk.GetBytes
+- uid: SoundMaker.WaveFile.FormatChunk.SamplingFrequency
+  name: SamplingFrequency
+  href: api/SoundMaker.WaveFile.FormatChunk.html#SoundMaker_WaveFile_FormatChunk_SamplingFrequency
+  commentId: P:SoundMaker.WaveFile.FormatChunk.SamplingFrequency
+  fullName: SoundMaker.WaveFile.FormatChunk.SamplingFrequency
+  nameWithType: FormatChunk.SamplingFrequency
+- uid: SoundMaker.WaveFile.FormatChunk.SamplingFrequency*
+  name: SamplingFrequency
+  href: api/SoundMaker.WaveFile.FormatChunk.html#SoundMaker_WaveFile_FormatChunk_SamplingFrequency_
+  commentId: Overload:SoundMaker.WaveFile.FormatChunk.SamplingFrequency
+  isSpec: "True"
+  fullName: SoundMaker.WaveFile.FormatChunk.SamplingFrequency
+  nameWithType: FormatChunk.SamplingFrequency
+- uid: SoundMaker.WaveFile.IChunk
+  name: IChunk
+  href: api/SoundMaker.WaveFile.IChunk.html
+  commentId: T:SoundMaker.WaveFile.IChunk
+  fullName: SoundMaker.WaveFile.IChunk
+  nameWithType: IChunk
+- uid: SoundMaker.WaveFile.IChunk.GetBytes
+  name: GetBytes()
+  href: api/SoundMaker.WaveFile.IChunk.html#SoundMaker_WaveFile_IChunk_GetBytes
+  commentId: M:SoundMaker.WaveFile.IChunk.GetBytes
+  fullName: SoundMaker.WaveFile.IChunk.GetBytes()
+  nameWithType: IChunk.GetBytes()
+- uid: SoundMaker.WaveFile.IChunk.GetBytes*
+  name: GetBytes
+  href: api/SoundMaker.WaveFile.IChunk.html#SoundMaker_WaveFile_IChunk_GetBytes_
+  commentId: Overload:SoundMaker.WaveFile.IChunk.GetBytes
+  isSpec: "True"
+  fullName: SoundMaker.WaveFile.IChunk.GetBytes
+  nameWithType: IChunk.GetBytes
+- uid: SoundMaker.WaveFile.RIFFChunk
+  name: RIFFChunk
+  href: api/SoundMaker.WaveFile.RIFFChunk.html
+  commentId: T:SoundMaker.WaveFile.RIFFChunk
+  fullName: SoundMaker.WaveFile.RIFFChunk
+  nameWithType: RIFFChunk
+- uid: SoundMaker.WaveFile.RIFFChunk.#ctor(System.UInt32)
+  name: RIFFChunk(uint)
+  href: api/SoundMaker.WaveFile.RIFFChunk.html#SoundMaker_WaveFile_RIFFChunk__ctor_System_UInt32_
+  commentId: M:SoundMaker.WaveFile.RIFFChunk.#ctor(System.UInt32)
+  name.vb: New(UInteger)
+  fullName: SoundMaker.WaveFile.RIFFChunk.RIFFChunk(uint)
+  fullName.vb: SoundMaker.WaveFile.RIFFChunk.New(UInteger)
+  nameWithType: RIFFChunk.RIFFChunk(uint)
+  nameWithType.vb: RIFFChunk.New(UInteger)
+- uid: SoundMaker.WaveFile.RIFFChunk.#ctor*
+  name: RIFFChunk
+  href: api/SoundMaker.WaveFile.RIFFChunk.html#SoundMaker_WaveFile_RIFFChunk__ctor_
+  commentId: Overload:SoundMaker.WaveFile.RIFFChunk.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: SoundMaker.WaveFile.RIFFChunk.RIFFChunk
+  fullName.vb: SoundMaker.WaveFile.RIFFChunk.New
+  nameWithType: RIFFChunk.RIFFChunk
+  nameWithType.vb: RIFFChunk.New
+- uid: SoundMaker.WaveFile.RIFFChunk.GetBytes
+  name: GetBytes()
+  href: api/SoundMaker.WaveFile.RIFFChunk.html#SoundMaker_WaveFile_RIFFChunk_GetBytes
+  commentId: M:SoundMaker.WaveFile.RIFFChunk.GetBytes
+  fullName: SoundMaker.WaveFile.RIFFChunk.GetBytes()
+  nameWithType: RIFFChunk.GetBytes()
+- uid: SoundMaker.WaveFile.RIFFChunk.GetBytes*
+  name: GetBytes
+  href: api/SoundMaker.WaveFile.RIFFChunk.html#SoundMaker_WaveFile_RIFFChunk_GetBytes_
+  commentId: Overload:SoundMaker.WaveFile.RIFFChunk.GetBytes
+  isSpec: "True"
+  fullName: SoundMaker.WaveFile.RIFFChunk.GetBytes
+  nameWithType: RIFFChunk.GetBytes
+- uid: SoundMaker.WaveFile.SamplingFrequencyType
+  name: SamplingFrequencyType
+  href: api/SoundMaker.WaveFile.SamplingFrequencyType.html
+  commentId: T:SoundMaker.WaveFile.SamplingFrequencyType
+  fullName: SoundMaker.WaveFile.SamplingFrequencyType
+  nameWithType: SamplingFrequencyType
+- uid: SoundMaker.WaveFile.SamplingFrequencyType.FourtyEightKHz
+  name: FourtyEightKHz
+  href: api/SoundMaker.WaveFile.SamplingFrequencyType.html#SoundMaker_WaveFile_SamplingFrequencyType_FourtyEightKHz
+  commentId: F:SoundMaker.WaveFile.SamplingFrequencyType.FourtyEightKHz
+  fullName: SoundMaker.WaveFile.SamplingFrequencyType.FourtyEightKHz
+  nameWithType: SamplingFrequencyType.FourtyEightKHz
+- uid: SoundMaker.WaveFile.SamplingFrequencyType.FourtyFourKHz
+  name: FourtyFourKHz
+  href: api/SoundMaker.WaveFile.SamplingFrequencyType.html#SoundMaker_WaveFile_SamplingFrequencyType_FourtyFourKHz
+  commentId: F:SoundMaker.WaveFile.SamplingFrequencyType.FourtyFourKHz
+  fullName: SoundMaker.WaveFile.SamplingFrequencyType.FourtyFourKHz
+  nameWithType: SamplingFrequencyType.FourtyFourKHz
+- uid: SoundMaker.WaveFile.SoundWaveChunk
+  name: SoundWaveChunk
+  href: api/SoundMaker.WaveFile.SoundWaveChunk.html
+  commentId: T:SoundMaker.WaveFile.SoundWaveChunk
+  fullName: SoundMaker.WaveFile.SoundWaveChunk
+  nameWithType: SoundWaveChunk
+- uid: SoundMaker.WaveFile.SoundWaveChunk.#ctor(System.Byte[])
+  name: SoundWaveChunk(byte[])
+  href: api/SoundMaker.WaveFile.SoundWaveChunk.html#SoundMaker_WaveFile_SoundWaveChunk__ctor_System_Byte___
+  commentId: M:SoundMaker.WaveFile.SoundWaveChunk.#ctor(System.Byte[])
+  name.vb: New(Byte())
+  fullName: SoundMaker.WaveFile.SoundWaveChunk.SoundWaveChunk(byte[])
+  fullName.vb: SoundMaker.WaveFile.SoundWaveChunk.New(Byte())
+  nameWithType: SoundWaveChunk.SoundWaveChunk(byte[])
+  nameWithType.vb: SoundWaveChunk.New(Byte())
+- uid: SoundMaker.WaveFile.SoundWaveChunk.#ctor*
+  name: SoundWaveChunk
+  href: api/SoundMaker.WaveFile.SoundWaveChunk.html#SoundMaker_WaveFile_SoundWaveChunk__ctor_
+  commentId: Overload:SoundMaker.WaveFile.SoundWaveChunk.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: SoundMaker.WaveFile.SoundWaveChunk.SoundWaveChunk
+  fullName.vb: SoundMaker.WaveFile.SoundWaveChunk.New
+  nameWithType: SoundWaveChunk.SoundWaveChunk
+  nameWithType.vb: SoundWaveChunk.New
+- uid: SoundMaker.WaveFile.SoundWaveChunk.GetBytes
+  name: GetBytes()
+  href: api/SoundMaker.WaveFile.SoundWaveChunk.html#SoundMaker_WaveFile_SoundWaveChunk_GetBytes
+  commentId: M:SoundMaker.WaveFile.SoundWaveChunk.GetBytes
+  fullName: SoundMaker.WaveFile.SoundWaveChunk.GetBytes()
+  nameWithType: SoundWaveChunk.GetBytes()
+- uid: SoundMaker.WaveFile.SoundWaveChunk.GetBytes*
+  name: GetBytes
+  href: api/SoundMaker.WaveFile.SoundWaveChunk.html#SoundMaker_WaveFile_SoundWaveChunk_GetBytes_
+  commentId: Overload:SoundMaker.WaveFile.SoundWaveChunk.GetBytes
+  isSpec: "True"
+  fullName: SoundMaker.WaveFile.SoundWaveChunk.GetBytes
+  nameWithType: SoundWaveChunk.GetBytes
+- uid: SoundMaker.WaveFile.SoundWaveChunk.Size
+  name: Size
+  href: api/SoundMaker.WaveFile.SoundWaveChunk.html#SoundMaker_WaveFile_SoundWaveChunk_Size
+  commentId: P:SoundMaker.WaveFile.SoundWaveChunk.Size
+  fullName: SoundMaker.WaveFile.SoundWaveChunk.Size
+  nameWithType: SoundWaveChunk.Size
+- uid: SoundMaker.WaveFile.SoundWaveChunk.Size*
+  name: Size
+  href: api/SoundMaker.WaveFile.SoundWaveChunk.html#SoundMaker_WaveFile_SoundWaveChunk_Size_
+  commentId: Overload:SoundMaker.WaveFile.SoundWaveChunk.Size
+  isSpec: "True"
+  fullName: SoundMaker.WaveFile.SoundWaveChunk.Size
+  nameWithType: SoundWaveChunk.Size
+- uid: SoundMaker.WaveFile.WaveWriter
+  name: WaveWriter
+  href: api/SoundMaker.WaveFile.WaveWriter.html
+  commentId: T:SoundMaker.WaveFile.WaveWriter
+  fullName: SoundMaker.WaveFile.WaveWriter
+  nameWithType: WaveWriter
+- uid: SoundMaker.WaveFile.WaveWriter.#ctor(SoundMaker.WaveFile.FormatChunk,SoundMaker.WaveFile.SoundWaveChunk)
+  name: WaveWriter(FormatChunk, SoundWaveChunk)
+  href: api/SoundMaker.WaveFile.WaveWriter.html#SoundMaker_WaveFile_WaveWriter__ctor_SoundMaker_WaveFile_FormatChunk_SoundMaker_WaveFile_SoundWaveChunk_
+  commentId: M:SoundMaker.WaveFile.WaveWriter.#ctor(SoundMaker.WaveFile.FormatChunk,SoundMaker.WaveFile.SoundWaveChunk)
+  name.vb: New(FormatChunk, SoundWaveChunk)
+  fullName: SoundMaker.WaveFile.WaveWriter.WaveWriter(SoundMaker.WaveFile.FormatChunk, SoundMaker.WaveFile.SoundWaveChunk)
+  fullName.vb: SoundMaker.WaveFile.WaveWriter.New(SoundMaker.WaveFile.FormatChunk, SoundMaker.WaveFile.SoundWaveChunk)
+  nameWithType: WaveWriter.WaveWriter(FormatChunk, SoundWaveChunk)
+  nameWithType.vb: WaveWriter.New(FormatChunk, SoundWaveChunk)
+- uid: SoundMaker.WaveFile.WaveWriter.#ctor*
+  name: WaveWriter
+  href: api/SoundMaker.WaveFile.WaveWriter.html#SoundMaker_WaveFile_WaveWriter__ctor_
+  commentId: Overload:SoundMaker.WaveFile.WaveWriter.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: SoundMaker.WaveFile.WaveWriter.WaveWriter
+  fullName.vb: SoundMaker.WaveFile.WaveWriter.New
+  nameWithType: WaveWriter.WaveWriter
+  nameWithType.vb: WaveWriter.New
+- uid: SoundMaker.WaveFile.WaveWriter.Write(System.IO.Stream)
+  name: Write(Stream)
+  href: api/SoundMaker.WaveFile.WaveWriter.html#SoundMaker_WaveFile_WaveWriter_Write_System_IO_Stream_
+  commentId: M:SoundMaker.WaveFile.WaveWriter.Write(System.IO.Stream)
+  fullName: SoundMaker.WaveFile.WaveWriter.Write(System.IO.Stream)
+  nameWithType: WaveWriter.Write(Stream)
+- uid: SoundMaker.WaveFile.WaveWriter.Write(System.String)
+  name: Write(string)
+  href: api/SoundMaker.WaveFile.WaveWriter.html#SoundMaker_WaveFile_WaveWriter_Write_System_String_
+  commentId: M:SoundMaker.WaveFile.WaveWriter.Write(System.String)
+  name.vb: Write(String)
+  fullName: SoundMaker.WaveFile.WaveWriter.Write(string)
+  fullName.vb: SoundMaker.WaveFile.WaveWriter.Write(String)
+  nameWithType: WaveWriter.Write(string)
+  nameWithType.vb: WaveWriter.Write(String)
+- uid: SoundMaker.WaveFile.WaveWriter.Write*
+  name: Write
+  href: api/SoundMaker.WaveFile.WaveWriter.html#SoundMaker_WaveFile_WaveWriter_Write_
+  commentId: Overload:SoundMaker.WaveFile.WaveWriter.Write
+  isSpec: "True"
+  fullName: SoundMaker.WaveFile.WaveWriter.Write
+  nameWithType: WaveWriter.Write
