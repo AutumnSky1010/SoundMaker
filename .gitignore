@@ -365,3 +365,7 @@ FodyWeavers.xsd
 
 # VS Code workspace
 SoundMaker.code-workspace
+
+# API Reference
+_site
+api
