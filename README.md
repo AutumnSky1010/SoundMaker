@@ -14,7 +14,7 @@
 [Wiki](https://github.com/AutumnSky1010/SoundMaker/wiki)
 
 ## ⛰️要件
-.NET 6 以降
+.NET 8 以降
 
 ## ⏬インストール方法
 ### NuGet
@@ -126,7 +126,7 @@ You can do The following content with this library.
 [Wiki](https://github.com/AutumnSky1010/SoundMaker/wiki)
 
 ## ⛰️Requirement
-.NET 6 or later
+.NET 8 or later
 
 ## ⏬Installation
 ### NuGet
