@@ -92,4 +92,12 @@ public class Note : BasicSoundComponentBase
         var length = GetWaveArrayLength(format, tempo);
         return GenerateWave(format, tempo, length, waveType);
     }
+
+    public override Note Clone()
+    {
+        return new(Scale, ScaleNumber, Length, IsDotted)
+        {
+            Volume = Volume,
+        };
+    }
 }

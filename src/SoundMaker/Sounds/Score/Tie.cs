@@ -67,4 +67,22 @@ public class Tie : ISoundComponent
         }
         return length;
     }
+
+    /// <summary>
+    /// Creates a clone of the tie. <br/>
+    /// タイのクローンを作成するメソッド。
+    /// </summary>
+    /// <returns>A new instance of the tie with the same properties. <br/>
+    /// 同じプロパティを持つタイの新しいインスタンス
+    /// </returns>
+    public Tie Clone()
+    {
+        var newTie = new Tie(BaseNote.Clone(), AdditionalNotes.Select(note => note.Clone()).ToArray());
+        return newTie;
+    }
+
+    ISoundComponent ISoundComponent.Clone()
+    {
+        return Clone();
+    }
 }

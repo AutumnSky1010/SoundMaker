@@ -97,4 +97,22 @@ public class Tuplet : ISoundComponent
         }
         return count;
     }
+
+    /// <summary>
+    /// Creates a clone of the tuplet. <br/>
+    /// 連符のクローンを作成するメソッド。
+    /// </summary>
+    /// <returns>A new instance of the tuplet with the same properties. <br/>
+    /// 同じプロパティを持つ連符の新しいインスタンス
+    /// </returns>
+    public Tuplet Clone()
+    {
+        var cloned = new Tuplet(TupletComponents.Select(component => component.Clone()).ToArray(), Length, IsDotted);
+        return cloned;
+    }
+
+    ISoundComponent ISoundComponent.Clone()
+    {
+        return Clone();
+    }
 }
