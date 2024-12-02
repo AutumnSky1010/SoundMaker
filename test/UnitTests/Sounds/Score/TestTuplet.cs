@@ -7,6 +7,11 @@ public class TestTuplet
 {
     private class SoundComponent : ISoundComponent
     {
+        public ISoundComponent Clone()
+        {
+            throw new NotImplementedException();
+        }
+
         public short[] GenerateWave(SoundFormat format, int tempo, int length, WaveTypeBase waveType)
         {
             return new short[0];

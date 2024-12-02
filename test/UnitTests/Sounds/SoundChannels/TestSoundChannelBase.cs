@@ -21,6 +21,11 @@ public class TestSoundChannelBase
 
     private class SoundComponent : ISoundComponent
     {
+        public ISoundComponent Clone()
+        {
+            throw new NotImplementedException();
+        }
+
         public short[] GenerateWave(SoundFormat format, int tempo, int length, WaveTypeBase waveType)
         {
             return new short[0];
@@ -92,43 +97,6 @@ public class TestSoundChannelBase
         soundChannel.Clear();
         Assert.Equal(0, soundChannel.ComponentCount);
     }
-
-    /*
-    [Fact(DisplayName = "楽譜のパーサをもとに、サウンドコンポーネントが追加されるかのテスト")]
-    public void ImportScoreTest()
-    {
-        SoundChannelBase soundChannel = GetSoundChannel();
-
-        IScoreParser scoreParser = new ScoreParser();
-        soundChannel.ImportScore(scoreParser);
-        (Scale scale, int scaleNum)[] scales = { (Scale.A, 2), (Scale.A, 3), (Scale.A, 4) };
-
-        bool isValid = true;
-        for (int i = 0; i < scales.Length && i < soundChannel.ComponentCount; i++) 
-        {
-            if (soundChannel[i] is not Note note || 
-                note.Scale != scales[i].scale ||
-                note.ScaleNumber != scales[i].scaleNum)
-            {
-                isValid = false; 
-                break;
-            }
-        }
-        Assert.True(isValid);
-    }
-
-    private class ScoreParser : IScoreParser
-    {
-        public IEnumerable<ISoundComponent> Parse()
-        {
-            return new List<ISoundComponent>()
-            {
-                new Note(Scale.A, 2, LengthType.Whole),
-                new Note(Scale.A, 3, LengthType.Whole),
-                new Note(Scale.A, 4, LengthType.Whole),
-            };
-        }
-    }*/
 
     private SoundChannelBase GetSoundChannel()
     {
