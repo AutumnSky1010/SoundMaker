@@ -2,14 +2,12 @@
 using SoundMaker.Sounds.WaveTypes;
 
 namespace SoundMaker.Sounds;
+
 /// <summary>
 /// Represents a track with a specific wave type. <br/>
 /// 特定の波形タイプを持つトラックを表すクラス。
 /// </summary>
-/// <typeparam name="T">The type of wave. <br/>
-/// 波形のタイプ。
-/// </typeparam>
-public class Track<T> where T : WaveTypeBase
+public class Track
 {
     private List<ISoundComponent> _soundComponents = [];
 
@@ -25,7 +23,7 @@ public class Track<T> where T : WaveTypeBase
     /// <param name="format">The sound format. <br/> サウンドフォーマット。</param>
     /// <param name="tempo">The tempo. <br/> テンポ。</param>
     /// <param name="startMilliSecond">The start time in milliseconds. <br/> 開始時間（ミリ秒）。</param>
-    internal Track(T waveType, SoundFormat format, int tempo, int startMilliSecond)
+    internal Track(WaveTypeBase waveType, SoundFormat format, int tempo, int startMilliSecond)
     {
         WaveType = waveType;
         _format = format;
@@ -49,7 +47,7 @@ public class Track<T> where T : WaveTypeBase
     /// Gets or sets the wave type. <br/>
     /// 波形タイプを取得または設定するプロパティ。
     /// </summary>
-    public T WaveType { get; set; }
+    public WaveTypeBase WaveType { get; set; }
 
     /// <summary>
     /// Generates a wave based on the sound components. <br/>
@@ -83,6 +81,27 @@ public class Track<T> where T : WaveTypeBase
     }
 
     /// <summary>
+    /// Inserts a sound component at the specified index. <br/>
+    /// 指定されたインデックスにサウンドコンポーネントを挿入するメソッド。
+    /// </summary>
+    /// <param name="index">The zero-based index at which the component should be inserted. <br/>
+    /// コンポーネントを挿入するゼロベースのインデックス。</param>
+    /// <param name="component">The sound component to insert. <br/>
+    /// 挿入するサウンドコンポーネント。</param>
+    /// <exception cref="ArgumentOutOfRangeException">Thrown when the index is out of range. <br/>
+    /// インデックスが範囲外の場合にスローされる例外。</exception>
+
+    public void Insert(int index, ISoundComponent component)
+    {
+        if (IsOutOfRange(index))
+        {
+            throw new ArgumentOutOfRangeException(nameof(index));
+        }
+
+        _soundComponents.Insert(index, component);
+    }
+
+    /// <summary>
     /// Removes a sound component at the specified index. <br/>
     /// 指定されたインデックスのサウンドコンポーネントを削除するメソッド。
     /// </summary>
@@ -90,7 +109,7 @@ public class Track<T> where T : WaveTypeBase
     /// <exception cref="ArgumentOutOfRangeException">Thrown when the index is out of range. <br/> インデックスが範囲外の場合にスローされる例外。</exception>
     public void RemoveAt(int index)
     {
-        if (index < 0 || index >= _soundComponents.Count)
+        if (IsOutOfRange(index))
         {
             throw new ArgumentOutOfRangeException(nameof(index));
         }
@@ -143,13 +162,18 @@ public class Track<T> where T : WaveTypeBase
     /// トラックのクローンを作成するメソッド。
     /// </summary>
     /// <returns>A new instance of the track with the same properties. <br/> 同じプロパティを持つトラックの新しいインスタンス。</returns>
-    internal Track<T> Clone()
+    internal Track Clone()
     {
-        var copy = new Track<T>(WaveType, _format, _tempo, StartMilliSecond)
+        var copy = new Track(WaveType.Clone(), _format, _tempo, StartMilliSecond)
         {
             WaveArrayLength = WaveArrayLength,
             _soundComponents = _soundComponents.Select(component => component.Clone()).ToList()
         };
         return copy;
+    }
+
+    private bool IsOutOfRange(int index)
+    {
+        return index < 0 || index >= _soundComponents.Count;
     }
 }

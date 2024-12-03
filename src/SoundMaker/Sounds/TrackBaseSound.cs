@@ -30,7 +30,7 @@ public class TrackBaseSound(SoundFormat format, int tempo)
     /// トラックを管理する辞書<br/>
     /// 開始時間(ミリ秒)とトラック(複数)のペア
     /// </summary>
-    private readonly Dictionary<int, List<Track<WaveTypeBase>>> _tracksTimeMap = [];
+    private readonly Dictionary<int, List<Track>> _tracksTimeMap = [];
 
     /// <summary>
     /// Creates a new track with the specified wave type and start time. <br/>
@@ -39,11 +39,11 @@ public class TrackBaseSound(SoundFormat format, int tempo)
     /// <param name="startMilliSecond">The start time in milliseconds. <br/> 開始時間（ミリ秒）。</param>
     /// <param name="waveType">The type of wave. <br/> 波の種類。</param>
     /// <returns>A new instance of the track. <br/> 新しいトラックのインスタンス。</returns>
-    public Track<T> CreateTrack<T>(int startMilliSecond, T waveType) where T : WaveTypeBase
+    public Track CreateTrack(int startMilliSecond, WaveTypeBase waveType)
     {
-        var track = new Track<WaveTypeBase>(waveType, Format, Tempo, startMilliSecond);
+        var track = new Track(waveType, Format, Tempo, startMilliSecond);
         InsertTrack(startMilliSecond, track);
-        return (Track<T>)(object)track;
+        return track;
     }
 
     /// <summary>
@@ -63,7 +63,7 @@ public class TrackBaseSound(SoundFormat format, int tempo)
     /// </summary>
     /// <param name="track">The track to remove. <br/> 削除するトラック。</param>
     /// <returns>True if the track was removed; otherwise, false. <br/> トラックが削除された場合は true、それ以外の場合は false。</returns>
-    public bool RemoveTrack(Track<WaveTypeBase> track)
+    public bool RemoveTrack(Track track)
     {
         if (_tracksTimeMap.TryGetValue(track.StartMilliSecond, out var tracks))
         {
@@ -89,8 +89,14 @@ public class TrackBaseSound(SoundFormat format, int tempo)
     /// 指定された開始時間のトラックのリストを取得するメソッド。
     /// </summary>
     /// <param name="startMilliSecond">The start time in milliseconds. <br/> 開始時間（ミリ秒）。</param>
-    /// <returns>A list of tracks. <br/> トラックのリスト。</returns>
-    public List<Track<WaveTypeBase>> GetTracks(int startMilliSecond)
+    /// <returns>
+    /// A list of tracks. <br/>
+    /// トラックのリスト。
+    /// If the operation fails, an empty list is returned. <br/>
+    /// 失敗時は空リスト。
+    /// </returns>
+
+    public List<Track> GetTracks(int startMilliSecond)
     {
         if (_tracksTimeMap.TryGetValue(startMilliSecond, out var tracks))
         {
@@ -103,13 +109,25 @@ public class TrackBaseSound(SoundFormat format, int tempo)
     }
 
     /// <summary>
+    /// Retrieves all tracks. <br/>
+    /// すべてのトラックを取得するメソッド。
+    /// </summary>
+    /// <returns>An enumerable collection of tracks. <br/>
+    /// トラックの列挙可能なコレクションを返します。
+    /// </returns>
+    public IEnumerable<Track> GetAllTracks()
+    {
+        return _tracksTimeMap.SelectMany(pair => pair.Value);
+    }
+
+    /// <summary>
     /// Tries to get the list of tracks at the specified start time. <br/>
     /// 指定された開始時間のトラックのリストを取得しようとするメソッド。
     /// </summary>
     /// <param name="startMilliSecond">The start time in milliseconds. <br/> 開始時間（ミリ秒）。</param>
     /// <param name="tracks">The list of tracks. <br/> トラックのリスト。</param>
     /// <returns>True if tracks were found; otherwise, false. <br/> トラックが見つかった場合は true、それ以外の場合は false。</returns>
-    public bool TryGetTracks(int startMilliSecond, out List<Track<WaveTypeBase>> tracks)
+    public bool TryGetTracks(int startMilliSecond, out List<Track> tracks)
     {
         if (_tracksTimeMap.TryGetValue(startMilliSecond, out var foundTracks))
         {
@@ -129,7 +147,7 @@ public class TrackBaseSound(SoundFormat format, int tempo)
     /// </summary>
     /// <param name="startMilliSecond">The start time in milliseconds. <br/> 開始時間（ミリ秒）。</param>
     /// <param name="track">The track to insert. <br/> 挿入するトラック。</param>
-    private void InsertTrack(int startMilliSecond, Track<WaveTypeBase> track)
+    private void InsertTrack(int startMilliSecond, Track track)
     {
         if (_tracksTimeMap.TryGetValue(startMilliSecond, out var tracks))
         {
@@ -148,7 +166,7 @@ public class TrackBaseSound(SoundFormat format, int tempo)
     /// <param name="track">The track to move. <br/> 移動するトラック。</param>
     /// <param name="newStartMilliSecond">The new start time in milliseconds. <br/> 新しい開始時間（ミリ秒）。</param>
     /// <returns>True if the track was moved; otherwise, false. <br/> トラックが移動された場合は true、それ以外の場合は false。</returns>
-    public bool MoveTrack(Track<WaveTypeBase> track, int newStartMilliSecond)
+    public bool MoveTrack(Track track, int newStartMilliSecond)
     {
         if (RemoveTrack(track))
         {
@@ -166,11 +184,11 @@ public class TrackBaseSound(SoundFormat format, int tempo)
     /// <param name="sourceTrack">The track to copy. <br/> コピーするトラック。</param>
     /// <param name="newStartMilliSecond">The new start time in milliseconds. <br/> 新しい開始時間（ミリ秒）。</param>
     /// <returns>A new instance of the copied track. <br/> コピーされたトラックの新しいインスタンス。</returns>
-    public Track<T> CopyTrack<T>(Track<T> sourceTrack, int newStartMilliSecond) where T : WaveTypeBase
+    public Track CopyTrack(Track sourceTrack, int newStartMilliSecond)
     {
         var newTrack = sourceTrack.Clone();
         newTrack.StartMilliSecond = newStartMilliSecond;
-        InsertTrack(newStartMilliSecond, (Track<WaveTypeBase>)(object)newTrack);
+        InsertTrack(newStartMilliSecond, newTrack);
         return newTrack;
     }
 
