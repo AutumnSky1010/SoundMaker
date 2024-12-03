@@ -42,6 +42,11 @@ public class SquareWave : WaveTypeBase
         return result.ToArray();
     }
 
+    internal override WaveTypeBase Clone()
+    {
+        return new SquareWave(SquareWaveRatio);
+    }
+
     private List<short> GenerateUnitWave(SoundFormat format, int volume, double hertz)
     {
         var ratioIndex = (int)SquareWaveRatio;
