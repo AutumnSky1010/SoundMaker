@@ -30,7 +30,7 @@ public class TrackBaseSound(SoundFormat format, int tempo)
     /// トラックを管理する辞書<br/>
     /// 開始時間(ミリ秒)とトラック(複数)のペア
     /// </summary>
-    private readonly Dictionary<int, List<Track>> _tracksTimeMap = [];
+    private Dictionary<int, List<Track>> _tracksTimeMap = [];
 
     /// <summary>
     /// Creates a new track with the specified wave type and start time. <br/>
@@ -303,5 +303,28 @@ public class TrackBaseSound(SoundFormat format, int tempo)
             var scaledSample = sample * scaleFactor;
             return (short)Math.Clamp(scaledSample, MinValue, MaxValue);
         }).ToArray();
+    }
+
+    /// <summary> 
+    /// Imports tracks into the internal map based on their start times. <br/> 
+    /// トラックを開始時間に基づいて内部のマップにインポートするメソッド。 
+    /// </summary> 
+    /// <param name="from">The tracks to import. <br/> インポートするトラック。</param>
+    public void Import(IEnumerable<Track> from)
+    {
+        var map = new Dictionary<int, List<Track>>();
+        foreach (var track in from)
+        {
+            if (map.TryGetValue(track.StartMilliSecond, out var tracks))
+            {
+                tracks.Add(track);
+            }
+            else
+            {
+                map.Add(track.StartMilliSecond, [track]);
+            }
+        }
+
+        _tracksTimeMap = map;
     }
 }
