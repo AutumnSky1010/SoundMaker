@@ -205,51 +205,78 @@ public class TrackBaseSound(SoundFormat format, int tempo)
     /// Generates a monaural wave from the tracks. <br/>
     /// トラックからモノラル波を生成するメソッド。
     /// </summary>
-    /// <param name="samplingFrequency">The sampling frequency. <br/> サンプリング周波数。</param>
     /// <returns>A monaural wave. <br/> モノラル波。</returns>
-    public MonauralWave GenerateMonauralWave(SamplingFrequencyType samplingFrequency)
+    public MonauralWave GenerateMonauralWave()
     {
         if (_tracksTimeMap.Count == 0)
         {
             return new([]);
         }
 
-        int maxStartTime = 0;
-        int maxDuration = 0;
+        var samplingFrequency = Format.SamplingFrequency;
 
-        foreach (var pair in _tracksTimeMap)
+        // 最大の終了時インデクスを取得する
+        var maxEndIndex = _tracksTimeMap
+            .SelectMany(pair => pair.Value)
+            .Sum(track => track.EndIndex);
+
+        var wave = new double[maxEndIndex + 1];
+
+        foreach (var (_, tracks) in _tracksTimeMap)
         {
-            maxStartTime = pair.Key > maxStartTime ? pair.Key : maxStartTime;
-            foreach (var track in pair.Value)
-            {
-                int duration = track.WaveArrayLength;
-                if (duration > maxDuration)
-                {
-                    maxDuration = duration;
-                }
-            }
-        }
-
-        var totalDuration = maxStartTime + maxDuration;
-
-        var result = new int[totalDuration * (int)samplingFrequency / 1000];
-
-        foreach (var (startMilliSecond, tracks) in _tracksTimeMap)
-        {
-            int startSample = startMilliSecond * (int)samplingFrequency / 1000;
-
             foreach (var track in tracks)
             {
                 var trackWave = track.GenerateWave();
-                for (int i = 0; i < trackWave.Length && (startSample + i) < result.Length; i++)
+                for (int i = track.StartIndex; i <= track.EndIndex; i++)
                 {
-                    result[startSample + i] += trackWave[i];
+                    wave[i] += trackWave[i];
                 }
             }
         }
 
-        var normalized = NormalizeAndClamp(result);
-        return new(normalized);
+        var normalizedRight = NormalizeAndClamp(wave);
+        return new(normalizedRight);
+    }
+
+    /// <summary>
+    /// Generates a stereo wave from the tracks. <br/>
+    /// トラックからステレオ波を生成するメソッド。
+    /// </summary>
+    /// <returns>A stereo wave. <br/> ステレオ波。</returns>
+    public StereoWave GenerateStereoWave()
+    {
+        if (_tracksTimeMap.Count == 0)
+        {
+            return new([], []);
+        }
+
+        var samplingFrequency = Format.SamplingFrequency;
+
+        // 最大の終了時インデクスを取得する
+        var maxEndIndex = _tracksTimeMap
+            .SelectMany(pair => pair.Value)
+            .Sum(track => track.EndIndex);
+
+        var right = new double[maxEndIndex + 1];
+        var left = new double[maxEndIndex + 1];
+
+        foreach (var (_, tracks) in _tracksTimeMap)
+        {
+            foreach (var track in tracks)
+            {
+                var trackWave = track.GenerateWave();
+                var pan = (track.Pan + 1) / 2.0f;
+                for (int i = track.StartIndex; i <= track.EndIndex; i++)
+                {
+                    right[i] += trackWave[i] * pan;
+                    left[i] += trackWave[i] * (1 - pan);
+                }
+            }
+        }
+
+        var normalizedRight = NormalizeAndClamp(right);
+        var normalizedLeft = NormalizeAndClamp(left);
+        return new(normalizedRight, normalizedLeft);
     }
 
     /// <summary>
@@ -258,22 +285,22 @@ public class TrackBaseSound(SoundFormat format, int tempo)
     /// </summary>
     /// <param name="wave">The wave data. <br/> 波形データ。</param>
     /// <returns>The normalized and clamped wave data. <br/> 正規化およびクランプされた波形データ。</returns>
-    private short[] NormalizeAndClamp(int[] wave)
+    private static short[] NormalizeAndClamp(double[] wave)
     {
         const int MaxValue = short.MaxValue;
         const int MinValue = short.MinValue;
 
-        int maxAmplitude = wave.Max(Math.Abs);
-        float scaleFactor = 1.0f;
+        var maxAmplitude = wave.Max(Math.Abs);
+        var scaleFactor = 1.0;
 
         if (maxAmplitude > MaxValue)
         {
-            scaleFactor = (float)MaxValue / maxAmplitude;
+            scaleFactor = MaxValue / maxAmplitude;
         }
 
         return wave.Select(sample =>
         {
-            int scaledSample = (int)(sample * scaleFactor);
+            var scaledSample = sample * scaleFactor;
             return (short)Math.Clamp(scaledSample, MinValue, MaxValue);
         }).ToArray();
     }

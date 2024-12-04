@@ -31,17 +31,62 @@ public class Track
         StartMilliSecond = startMilliSecond;
     }
 
+    private double _pan = 0;
+    /// <summary>
+    /// 左右の音量バランスを取得または設定するプロパティ。<br/>
+    /// -1.0が左、1.0が右側。<br/>
+    /// Gets or sets the left-right audio balance. <br/>
+    /// Takes values from -1.0 (left) to 1.0 (right). 
+    /// </summary>
+    public double Pan
+    {
+        get => _pan;
+        set
+        {
+            value = value > 1.0 ? 1.0 : value;
+            value = value < -1.0 ? -1.0 : value;
+
+            _pan = value;
+        }
+    }
+
+    internal int EndIndex { get; private set; }
+    internal int StartIndex { get; private set; }
+    private int _startMilliSecond;
     /// <summary>
     /// Gets or sets the start time in milliseconds. <br/>
     /// 開始時間（ミリ秒）を取得または設定するプロパティ。
     /// </summary>
-    internal int StartMilliSecond { get; set; }
+    internal int StartMilliSecond
+    {
+        get => _startMilliSecond;
+        set
+        {
+            _startMilliSecond = value;
 
+            // 開始ミリ秒が変わると開始時、終了時のインデクスも変わるので、再計算する
+            var samplingFrequencyMS = (int)_format.SamplingFrequency / 1000.0;
+            StartIndex = (int)(StartMilliSecond * samplingFrequencyMS);
+            EndIndex = StartIndex + WaveArrayLength - 1;
+        }
+    }
+
+    private int _waveArrayLength;
     /// <summary>
     /// Gets the length of the wave array. <br/>
     /// 波形配列の長さを取得するプロパティ。
     /// </summary>
-    public int WaveArrayLength { get; private set; }
+    public int WaveArrayLength
+    {
+        get => _waveArrayLength;
+        set
+        {
+            _waveArrayLength = value;
+
+            // 配列の長さが変わると終了時インデクスが変わるので、再計算する
+            EndIndex = StartIndex + WaveArrayLength - 1;
+        }
+    }
 
     /// <summary>
     /// Gets or sets the wave type. <br/>
