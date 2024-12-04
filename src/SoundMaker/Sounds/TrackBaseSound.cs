@@ -213,8 +213,6 @@ public class TrackBaseSound(SoundFormat format, int tempo)
             return new([]);
         }
 
-        var samplingFrequency = Format.SamplingFrequency;
-
         // 最大の終了時インデクスを取得する
         var maxEndIndex = _tracksTimeMap
             .SelectMany(pair => pair.Value)
@@ -249,8 +247,6 @@ public class TrackBaseSound(SoundFormat format, int tempo)
         {
             return new([], []);
         }
-
-        var samplingFrequency = Format.SamplingFrequency;
 
         // 最大の終了時インデクスを取得する
         var maxEndIndex = _tracksTimeMap
