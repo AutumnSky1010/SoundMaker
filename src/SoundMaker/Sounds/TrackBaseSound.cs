@@ -218,7 +218,7 @@ public class TrackBaseSound(SoundFormat format, int tempo)
         // 最大の終了時インデクスを取得する
         var maxEndIndex = _tracksTimeMap
             .SelectMany(pair => pair.Value)
-            .Sum(track => track.EndIndex);
+            .Max(track => track.EndIndex);
 
         var wave = new double[maxEndIndex + 1];
 
@@ -229,7 +229,7 @@ public class TrackBaseSound(SoundFormat format, int tempo)
                 var trackWave = track.GenerateWave();
                 for (int i = track.StartIndex; i <= track.EndIndex; i++)
                 {
-                    wave[i] += trackWave[i];
+                    wave[i] += trackWave[i - track.StartIndex];
                 }
             }
         }
@@ -255,7 +255,7 @@ public class TrackBaseSound(SoundFormat format, int tempo)
         // 最大の終了時インデクスを取得する
         var maxEndIndex = _tracksTimeMap
             .SelectMany(pair => pair.Value)
-            .Sum(track => track.EndIndex);
+            .Max(track => track.EndIndex);
 
         var right = new double[maxEndIndex + 1];
         var left = new double[maxEndIndex + 1];
@@ -268,8 +268,8 @@ public class TrackBaseSound(SoundFormat format, int tempo)
                 var pan = (track.Pan + 1) / 2.0f;
                 for (int i = track.StartIndex; i <= track.EndIndex; i++)
                 {
-                    right[i] += trackWave[i] * pan;
-                    left[i] += trackWave[i] * (1 - pan);
+                    right[i] += trackWave[i - track.StartIndex] * pan;
+                    left[i] += trackWave[i - track.StartIndex] * (1 - pan);
                 }
             }
         }
