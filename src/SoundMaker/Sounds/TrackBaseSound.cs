@@ -274,8 +274,8 @@ public class TrackBaseSound(SoundFormat format, int tempo)
                 var pan = (track.Pan + 1) / 2.0f;
                 for (int i = track.StartIndex; i <= track.EndIndex; i++)
                 {
-                    right[i] += trackWave[i - track.StartIndex] * pan;
-                    left[i] += trackWave[i - track.StartIndex] * (1 - pan);
+                    left[i] += trackWave[i - track.StartIndex] * pan;
+                    right[i] += trackWave[i - track.StartIndex] * (1 - pan);
                 }
             }
         }
