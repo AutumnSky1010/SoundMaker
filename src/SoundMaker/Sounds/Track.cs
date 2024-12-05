@@ -96,6 +96,12 @@ public class Track
     }
 
     /// <summary>
+    /// Count of sound components. <br/>
+    /// サウンドコンポーネントの数
+    /// </summary>
+    public int Count => _soundComponents.Count;
+
+    /// <summary>
     /// Gets or sets the wave type. <br/>
     /// 波形タイプを取得または設定するプロパティ。
     /// </summary>
