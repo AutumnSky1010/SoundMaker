@@ -1,6 +1,6 @@
 ﻿using SoundMaker;
 
-namespace SoundMakerTests.IntegrationTests;
+namespace SoundMakerTests.UnitTests;
 public class TestFormatBuilder
 {
     [Fact()]

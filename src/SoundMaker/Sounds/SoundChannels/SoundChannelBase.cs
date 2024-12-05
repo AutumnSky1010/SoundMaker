@@ -47,7 +47,7 @@ public abstract class SoundChannelBase : ISoundChannel
         Format = format;
         if (tempo <= 0)
         {
-            throw new ArgumentOutOfRangeException("'tempo' must be non-negative and greater than 0.");
+            throw new ArgumentOutOfRangeException(nameof(tempo), "'tempo' must be non-negative and greater than 0.");
         }
         Tempo = tempo;
     }
@@ -55,7 +55,7 @@ public abstract class SoundChannelBase : ISoundChannel
     /// <summary>
     /// サウンドコンポーネントのリスト
     /// </summary>
-    protected List<ISoundComponent> SoundComponents { get; private set; } = new List<ISoundComponent>();
+    protected List<ISoundComponent> SoundComponents { get; private set; } = [];
 
     public SoundFormat Format { get; }
 
@@ -100,7 +100,7 @@ public abstract class SoundChannelBase : ISoundChannel
     {
         if (SoundComponents.Count <= index || index < 0)
         {
-            throw new ArgumentOutOfRangeException("index is less than 0 or index is equal to or greater than ComponentCount.");
+            throw new ArgumentOutOfRangeException(nameof(index), "index is less than 0 or index is equal to or greater than ComponentCount.");
         }
         var component = SoundComponents[index];
         WaveArrayLength -= component.GetWaveArrayLength(Format, Tempo);

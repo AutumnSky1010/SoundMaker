@@ -29,4 +29,9 @@ public class LowBitNoiseWave : WaveTypeBase
         }
         return result.ToArray();
     }
+
+    internal override WaveTypeBase Clone()
+    {
+        return new LowBitNoiseWave();
+    }
 }

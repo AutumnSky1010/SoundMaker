@@ -4,15 +4,14 @@ namespace SoundMaker.Sounds.Score;
 /// <summary>
 /// the rest. 休符を表すクラス
 /// </summary>
-public class Rest : BasicSoundComponentBase
+/// <param name="length">length (ex. "quarter" note) 長さ（音楽的な、「四分」音符、「全」休符のような長さを表す。）</param>
+/// <param name="isDotted">is note/rest dotted. 付点かを表す論理型</param>
+public class Rest(LengthType length, bool isDotted = false) : BasicSoundComponentBase(length, isDotted)
 {
-    /// <summary>
-    /// constructor コンストラクタ
-    /// </summary>
-    /// <param name="length">length (ex. "quarter" note) 長さ（音楽的な、「四分」音符、「全」休符のような長さを表す。）</param>
-    /// <param name="isDotted">is note/rest dotted. 付点かを表す論理型</param>
-    public Rest(LengthType length, bool isDotted = false)
-        : base(length, isDotted) { }
+    public override Rest Clone()
+    {
+        return new(Length, IsDotted);
+    }
 
     public override short[] GenerateWave(SoundFormat format, int tempo, int length, WaveTypeBase waveType)
     {

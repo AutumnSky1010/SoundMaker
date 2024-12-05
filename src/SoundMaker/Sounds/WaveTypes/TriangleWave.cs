@@ -20,6 +20,11 @@ public class TriangleWave : WaveTypeBase
         return result.ToArray();
     }
 
+    internal override WaveTypeBase Clone()
+    {
+        return new TriangleWave();
+    }
+
     private List<short> GenerateUnitWave(SoundFormat format, int volume, double hertz)
     {
         var repeatNumber = (int)((int)format.SamplingFrequency / hertz);

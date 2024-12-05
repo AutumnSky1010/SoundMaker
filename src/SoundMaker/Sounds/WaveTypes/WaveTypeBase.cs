@@ -17,6 +17,8 @@ public abstract class WaveTypeBase
     /// <exception cref="ArgumentOutOfRangeException">Volume must be below than 100 and more than 0.</exception>
     public abstract short[] GenerateWave(SoundFormat format, int length, int volume, double hertz);
 
+    internal abstract WaveTypeBase Clone();
+
     protected void CheckGenerateWaveArgs(int length, int volume, double hertz)
     {
         if (length < 0)

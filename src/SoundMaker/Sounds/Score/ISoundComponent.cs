@@ -37,4 +37,14 @@ public interface ISoundComponent
     /// <returns>data of wave. 波形データ :  short[]</returns>
     /// <exception cref="ArgumentOutOfRangeException">Tempo must be non-negative and greater than 0.</exception>
     short[] GenerateWave(SoundFormat format, int tempo, WaveTypeBase waveType);
+
+    /// <summary>
+    /// Creates a clone of the sound component. <br/>
+    /// サウンドコンポーネントのクローンを作成するメソッド。
+    /// </summary>
+    /// <returns>
+    /// A new instance of the sound component with the same properties. <br/>
+    /// 同じプロパティを持つサウンドコンポーネントの新しいインスタンス
+    /// </returns>
+    ISoundComponent Clone();
 }
