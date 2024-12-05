@@ -7,6 +7,8 @@ namespace SoundMakerTests.UnitTests.Sounds;
 
 file class SoundComponentDouble : ISoundComponent
 {
+    public static readonly int DefinedGenerateWaveLength = 1;
+
     public ISoundComponent Clone()
     {
         return new SoundComponentDouble();
@@ -24,12 +26,14 @@ file class SoundComponentDouble : ISoundComponent
 
     public int GetWaveArrayLength(SoundFormat format, int tempo)
     {
-        return 1;
+        return DefinedGenerateWaveLength;
     }
 }
 
 public class TrackTest
 {
+    private static readonly int _samplingFrequency = 48000;
+
     [Fact(DisplayName = "サウンドコンポーネントをインポートできるか")]
     public void Import()
     {
@@ -42,6 +46,8 @@ public class TrackTest
 
         Assert.Equal(additionalComponent0, track.SoundComponents[0]);
         Assert.Equal(additionalComponent1, track.SoundComponents[1]);
+
+        AssertEndIndex(track);
     }
 
     [Fact(DisplayName = "生成した波形の長さがWaveArrayLengthと同じ長さか")]
@@ -64,6 +70,7 @@ public class TrackTest
         track.Add(additionalComponent);
 
         Assert.Equal(additionalComponent, track.SoundComponents[0]);
+        AssertEndIndex(track);
     }
 
     [Fact(DisplayName = "コンポーネントを挿入できるか。例外が正しく投げられるか")]
@@ -82,6 +89,7 @@ public class TrackTest
 
         Assert.Throws<ArgumentOutOfRangeException>(() => track.Insert(-1, dummyComponent));
         Assert.Throws<ArgumentOutOfRangeException>(() => track.Insert(4, dummyComponent));
+        AssertEndIndex(track);
     }
 
     [Fact(DisplayName = "コンポーネントをインデクスで削除できるか。例外が正しく投げられるか")]
@@ -100,6 +108,7 @@ public class TrackTest
         track.Add(dummyComponent);
         Assert.Throws<ArgumentOutOfRangeException>(() => track.RemoveAt(-1));
         Assert.Throws<ArgumentOutOfRangeException>(() => track.RemoveAt(1));
+        AssertEndIndex(track);
     }
 
     [Fact(DisplayName = "サウンドコンポーネントを削除できるか")]
@@ -111,6 +120,7 @@ public class TrackTest
         track.Remove(dummyComponent);
 
         Assert.Empty(track.SoundComponents);
+        AssertEndIndex(track);
     }
 
     [Fact(DisplayName = "サウンドコンポーネントをクリアできるか")]
@@ -124,17 +134,45 @@ public class TrackTest
         track.Clear();
 
         Assert.Empty(track.SoundComponents);
+        AssertEndIndex(track);
     }
 
+    [Fact(DisplayName = "開始位置を変更した際にインデクス関連のプロパティが正しく変更されるか")]
+    public void ChangeStartMilliSecond()
+    {
+        var track = CreateTrack();
+        var oldStartIndex = track.StartIndex;
+        var oldEndIndex = track.EndIndex;
+        var diffIndex = _samplingFrequency;
+        // 1000ミリ秒減らす
+        track.StartMilliSecond -= 1000;
 
+        var expectedEndIndex = oldEndIndex - diffIndex;
+        Assert.Equal(expectedEndIndex, track.EndIndex);
+    }
 
     private Track CreateTrack()
     {
         var format = FormatBuilder.Create()
-            .WithFrequency(48000)
+            .WithFrequency(_samplingFrequency)
             .WithBitDepth(16)
             .WithChannelCount(2)
             .ToSoundFormat();
-        return new Track(new TriangleWave(), format, 100, 0);
+        return new Track(new TriangleWave(), format, 100, 1000);
+    }
+
+    private void AssertEndIndex(Track track)
+    {
+        int expectedEndIndex;
+        if (track.Count == 0)
+        {
+            expectedEndIndex = track.StartIndex;
+        }
+        else
+        {
+            expectedEndIndex = track.StartIndex + track.Count * SoundComponentDouble.DefinedGenerateWaveLength - 1;
+        }
+
+        Assert.Equal(expectedEndIndex, track.EndIndex);
     }
 }
