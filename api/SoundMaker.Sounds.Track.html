@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class Track | SoundMaker API Reference </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class Track | SoundMaker API Reference ">
+      
+      <meta name="description" content="Represents a track with a specific wave type.  特定の波形タイプを持つトラックを表すクラス。">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/AutumnSky1010/SoundMaker/new/master/apiSpec/new?filename=SoundMaker_Sounds_Track.md&amp;value=---%0Auid%3A%20SoundMaker.Sounds.Track%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="SoundMaker API Reference">
+            SoundMaker API Reference
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="SoundMaker.Sounds.Track">
+
+
+
+  <h1 id="SoundMaker_Sounds_Track" data-uid="SoundMaker.Sounds.Track" class="text-break">
+Class Track  <a class="header-action link-secondary" title="View source" href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/Track.cs/#L10"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="SoundMaker.html">SoundMaker</a>.<a class="xref" href="SoundMaker.Sounds.html">Sounds</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>SoundMaker.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Represents a track with a specific wave type. <br>
+特定の波形タイプを持つトラックを表すクラス。</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class Track</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">Track</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="SoundMaker_Sounds_Track_Count_" data-uid="SoundMaker.Sounds.Track.Count*"></a>
+
+  <h3 id="SoundMaker_Sounds_Track_Count" data-uid="SoundMaker.Sounds.Track.Count">
+  Count
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/Track.cs/#L122"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Count of sound components. <br>
+サウンドコンポーネントの数</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Count { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SoundMaker_Sounds_Track_Pan_" data-uid="SoundMaker.Sounds.Track.Pan*"></a>
+
+  <h3 id="SoundMaker_Sounds_Track_Pan" data-uid="SoundMaker.Sounds.Track.Pan">
+  Pan
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/Track.cs/#L48"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>左右の音量バランスを取得または設定するプロパティ。<br>
+-1.0が左、1.0が右側。<br>
+Gets or sets the left-right audio balance. <br>
+Takes values from -1.0 (left) to 1.0 (right).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double Pan { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SoundMaker_Sounds_Track_SoundComponents_" data-uid="SoundMaker.Sounds.Track.SoundComponents*"></a>
+
+  <h3 id="SoundMaker_Sounds_Track_SoundComponents" data-uid="SoundMaker.Sounds.Track.SoundComponents">
+  SoundComponents
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/Track.cs/#L39"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sound components<br>
+サウンドコンポーネント</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;ISoundComponent&gt; SoundComponents { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="SoundMaker.Sounds.Score.ISoundComponent.html">ISoundComponent</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SoundMaker_Sounds_Track_WaveArrayLength_" data-uid="SoundMaker.Sounds.Track.WaveArrayLength*"></a>
+
+  <h3 id="SoundMaker_Sounds_Track_WaveArrayLength" data-uid="SoundMaker.Sounds.Track.WaveArrayLength">
+  WaveArrayLength
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/Track.cs/#L99"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the length of the wave array. <br>
+波形配列の長さを取得するプロパティ。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int WaveArrayLength { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SoundMaker_Sounds_Track_WaveType_" data-uid="SoundMaker.Sounds.Track.WaveType*"></a>
+
+  <h3 id="SoundMaker_Sounds_Track_WaveType" data-uid="SoundMaker.Sounds.Track.WaveType">
+  WaveType
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/Track.cs/#L128"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets the wave type. <br>
+波形タイプを取得または設定するプロパティ。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public WaveTypeBase WaveType { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SoundMaker.Sounds.WaveTypes.WaveTypeBase.html">WaveTypeBase</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="SoundMaker_Sounds_Track_Add_" data-uid="SoundMaker.Sounds.Track.Add*"></a>
+
+  <h3 id="SoundMaker_Sounds_Track_Add_SoundMaker_Sounds_Score_ISoundComponent_" data-uid="SoundMaker.Sounds.Track.Add(SoundMaker.Sounds.Score.ISoundComponent)">
+  Add(ISoundComponent)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/Track.cs/#L156"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Adds a sound component to the track. <br>
+トラックにサウンドコンポーネントを追加するメソッド。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Add(ISoundComponent component)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>component</code> <a class="xref" href="SoundMaker.Sounds.Score.ISoundComponent.html">ISoundComponent</a></dt>
+    <dd><p>The sound component to add. <br> 追加するサウンドコンポーネント。</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SoundMaker_Sounds_Track_Clear_" data-uid="SoundMaker.Sounds.Track.Clear*"></a>
+
+  <h3 id="SoundMaker_Sounds_Track_Clear" data-uid="SoundMaker.Sounds.Track.Clear">
+  Clear()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/Track.cs/#L224"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Clears all sound components from the track. <br>
+トラックからすべてのサウンドコンポーネントをクリアするメソッド。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Clear()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SoundMaker_Sounds_Track_GenerateWave_" data-uid="SoundMaker.Sounds.Track.GenerateWave*"></a>
+
+  <h3 id="SoundMaker_Sounds_Track_GenerateWave" data-uid="SoundMaker.Sounds.Track.GenerateWave">
+  GenerateWave()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/Track.cs/#L138"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Generates a wave based on the sound components. <br>
+サウンドコンポーネントに基づいて波形を生成するメソッド。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public short[] GenerateWave()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int16">short</a>[]</dt>
+    <dd><p>An array of shorts representing the generated wave. <br>
+生成された波形を表すショート型の配列。</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SoundMaker_Sounds_Track_Import_" data-uid="SoundMaker.Sounds.Track.Import*"></a>
+
+  <h3 id="SoundMaker_Sounds_Track_Import_System_Collections_Generic_IEnumerable_SoundMaker_Sounds_Score_ISoundComponent__" data-uid="SoundMaker.Sounds.Track.Import(System.Collections.Generic.IEnumerable{SoundMaker.Sounds.Score.ISoundComponent})">
+  Import(IEnumerable&lt;ISoundComponent&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/Track.cs/#L235"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Imports a collection of sound components into the track. <br>
+トラックにサウンドコンポーネントのコレクションをインポートするメソッド。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Import(IEnumerable&lt;ISoundComponent&gt; components)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>components</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="SoundMaker.Sounds.Score.ISoundComponent.html">ISoundComponent</a>&gt;</dt>
+    <dd><p>The collection of sound components to import. <br> インポートするサウンドコンポーネントのコレクション。</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SoundMaker_Sounds_Track_Insert_" data-uid="SoundMaker.Sounds.Track.Insert*"></a>
+
+  <h3 id="SoundMaker_Sounds_Track_Insert_System_Int32_SoundMaker_Sounds_Score_ISoundComponent_" data-uid="SoundMaker.Sounds.Track.Insert(System.Int32,SoundMaker.Sounds.Score.ISoundComponent)">
+  Insert(int, ISoundComponent)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/Track.cs/#L173"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Inserts a sound component at the specified index. <br>
+指定されたインデックスにサウンドコンポーネントを挿入するメソッド。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Insert(int index, ISoundComponent component)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>index</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The zero-based index at which the component should be inserted. <br>
+コンポーネントを挿入するゼロベースのインデックス。</p>
+</dd>
+    <dt><code>component</code> <a class="xref" href="SoundMaker.Sounds.Score.ISoundComponent.html">ISoundComponent</a></dt>
+    <dd><p>The sound component to insert. <br>
+挿入するサウンドコンポーネント。</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p>Thrown when the index is out of range. <br>
+インデックスが範囲外の場合にスローされる例外。</p>
+</dd>
+  </dl>
+
+
+
+  <a id="SoundMaker_Sounds_Track_Remove_" data-uid="SoundMaker.Sounds.Track.Remove*"></a>
+
+  <h3 id="SoundMaker_Sounds_Track_Remove_SoundMaker_Sounds_Score_ISoundComponent_" data-uid="SoundMaker.Sounds.Track.Remove(SoundMaker.Sounds.Score.ISoundComponent)">
+  Remove(ISoundComponent)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/Track.cs/#L208"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Removes a specified sound component. <br>
+指定されたサウンドコンポーネントを削除するメソッド。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Remove(ISoundComponent component)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>component</code> <a class="xref" href="SoundMaker.Sounds.Score.ISoundComponent.html">ISoundComponent</a></dt>
+    <dd><p>The sound component to remove. <br> 削除するサウンドコンポーネント。</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True if the component was removed; otherwise, false. <br> コンポーネントが削除された場合は true、それ以外の場合は false。</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SoundMaker_Sounds_Track_RemoveAt_" data-uid="SoundMaker.Sounds.Track.RemoveAt*"></a>
+
+  <h3 id="SoundMaker_Sounds_Track_RemoveAt_System_Int32_" data-uid="SoundMaker.Sounds.Track.RemoveAt(System.Int32)">
+  RemoveAt(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/Track.cs/#L190"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Removes a sound component at the specified index. <br>
+指定されたインデックスのサウンドコンポーネントを削除するメソッド。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RemoveAt(int index)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>index</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The index of the sound component to remove. <br> 削除するサウンドコンポーネントのインデックス。</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p>Thrown when the index is out of range. <br> インデックスが範囲外の場合にスローされる例外。</p>
+</dd>
+  </dl>
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/Track.cs/#L10" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

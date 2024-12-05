@@ -641,6 +641,19 @@ references:
   fullName.vb: SoundMaker.Sounds.Score.BasicSoundComponentBase.New
   nameWithType: BasicSoundComponentBase.BasicSoundComponentBase
   nameWithType.vb: BasicSoundComponentBase.New
+- uid: SoundMaker.Sounds.Score.BasicSoundComponentBase.Clone
+  name: Clone()
+  href: api/SoundMaker.Sounds.Score.BasicSoundComponentBase.html#SoundMaker_Sounds_Score_BasicSoundComponentBase_Clone
+  commentId: M:SoundMaker.Sounds.Score.BasicSoundComponentBase.Clone
+  fullName: SoundMaker.Sounds.Score.BasicSoundComponentBase.Clone()
+  nameWithType: BasicSoundComponentBase.Clone()
+- uid: SoundMaker.Sounds.Score.BasicSoundComponentBase.Clone*
+  name: Clone
+  href: api/SoundMaker.Sounds.Score.BasicSoundComponentBase.html#SoundMaker_Sounds_Score_BasicSoundComponentBase_Clone_
+  commentId: Overload:SoundMaker.Sounds.Score.BasicSoundComponentBase.Clone
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.Score.BasicSoundComponentBase.Clone
+  nameWithType: BasicSoundComponentBase.Clone
 - uid: SoundMaker.Sounds.Score.BasicSoundComponentBase.GenerateWave(SoundMaker.Sounds.SoundFormat,System.Int32,SoundMaker.Sounds.WaveTypes.WaveTypeBase)
   name: GenerateWave(SoundFormat, int, WaveTypeBase)
   href: api/SoundMaker.Sounds.Score.BasicSoundComponentBase.html#SoundMaker_Sounds_Score_BasicSoundComponentBase_GenerateWave_SoundMaker_Sounds_SoundFormat_System_Int32_SoundMaker_Sounds_WaveTypes_WaveTypeBase_
@@ -714,6 +727,19 @@ references:
   commentId: T:SoundMaker.Sounds.Score.ISoundComponent
   fullName: SoundMaker.Sounds.Score.ISoundComponent
   nameWithType: ISoundComponent
+- uid: SoundMaker.Sounds.Score.ISoundComponent.Clone
+  name: Clone()
+  href: api/SoundMaker.Sounds.Score.ISoundComponent.html#SoundMaker_Sounds_Score_ISoundComponent_Clone
+  commentId: M:SoundMaker.Sounds.Score.ISoundComponent.Clone
+  fullName: SoundMaker.Sounds.Score.ISoundComponent.Clone()
+  nameWithType: ISoundComponent.Clone()
+- uid: SoundMaker.Sounds.Score.ISoundComponent.Clone*
+  name: Clone
+  href: api/SoundMaker.Sounds.Score.ISoundComponent.html#SoundMaker_Sounds_Score_ISoundComponent_Clone_
+  commentId: Overload:SoundMaker.Sounds.Score.ISoundComponent.Clone
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.Score.ISoundComponent.Clone
+  nameWithType: ISoundComponent.Clone
 - uid: SoundMaker.Sounds.Score.ISoundComponent.GenerateWave(SoundMaker.Sounds.SoundFormat,System.Int32,SoundMaker.Sounds.WaveTypes.WaveTypeBase)
   name: GenerateWave(SoundFormat, int, WaveTypeBase)
   href: api/SoundMaker.Sounds.Score.ISoundComponent.html#SoundMaker_Sounds_Score_ISoundComponent_GenerateWave_SoundMaker_Sounds_SoundFormat_System_Int32_SoundMaker_Sounds_WaveTypes_WaveTypeBase_
@@ -837,6 +863,19 @@ references:
   fullName.vb: SoundMaker.Sounds.Score.Note.New
   nameWithType: Note.Note
   nameWithType.vb: Note.New
+- uid: SoundMaker.Sounds.Score.Note.Clone
+  name: Clone()
+  href: api/SoundMaker.Sounds.Score.Note.html#SoundMaker_Sounds_Score_Note_Clone
+  commentId: M:SoundMaker.Sounds.Score.Note.Clone
+  fullName: SoundMaker.Sounds.Score.Note.Clone()
+  nameWithType: Note.Clone()
+- uid: SoundMaker.Sounds.Score.Note.Clone*
+  name: Clone
+  href: api/SoundMaker.Sounds.Score.Note.html#SoundMaker_Sounds_Score_Note_Clone_
+  commentId: Overload:SoundMaker.Sounds.Score.Note.Clone
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.Score.Note.Clone
+  nameWithType: Note.Clone
 - uid: SoundMaker.Sounds.Score.Note.GenerateWave(SoundMaker.Sounds.SoundFormat,System.Int32,SoundMaker.Sounds.WaveTypes.WaveTypeBase)
   name: GenerateWave(SoundFormat, int, WaveTypeBase)
   href: api/SoundMaker.Sounds.Score.Note.html#SoundMaker_Sounds_Score_Note_GenerateWave_SoundMaker_Sounds_SoundFormat_System_Int32_SoundMaker_Sounds_WaveTypes_WaveTypeBase_
@@ -939,6 +978,19 @@ references:
   fullName.vb: SoundMaker.Sounds.Score.Rest.New
   nameWithType: Rest.Rest
   nameWithType.vb: Rest.New
+- uid: SoundMaker.Sounds.Score.Rest.Clone
+  name: Clone()
+  href: api/SoundMaker.Sounds.Score.Rest.html#SoundMaker_Sounds_Score_Rest_Clone
+  commentId: M:SoundMaker.Sounds.Score.Rest.Clone
+  fullName: SoundMaker.Sounds.Score.Rest.Clone()
+  nameWithType: Rest.Clone()
+- uid: SoundMaker.Sounds.Score.Rest.Clone*
+  name: Clone
+  href: api/SoundMaker.Sounds.Score.Rest.html#SoundMaker_Sounds_Score_Rest_Clone_
+  commentId: Overload:SoundMaker.Sounds.Score.Rest.Clone
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.Score.Rest.Clone
+  nameWithType: Rest.Clone
 - uid: SoundMaker.Sounds.Score.Rest.GenerateWave(SoundMaker.Sounds.SoundFormat,System.Int32,SoundMaker.Sounds.WaveTypes.WaveTypeBase)
   name: GenerateWave(SoundFormat, int, WaveTypeBase)
   href: api/SoundMaker.Sounds.Score.Rest.html#SoundMaker_Sounds_Score_Rest_GenerateWave_SoundMaker_Sounds_SoundFormat_System_Int32_SoundMaker_Sounds_WaveTypes_WaveTypeBase_
@@ -1102,6 +1154,19 @@ references:
   isSpec: "True"
   fullName: SoundMaker.Sounds.Score.Tie.BaseNote
   nameWithType: Tie.BaseNote
+- uid: SoundMaker.Sounds.Score.Tie.Clone
+  name: Clone()
+  href: api/SoundMaker.Sounds.Score.Tie.html#SoundMaker_Sounds_Score_Tie_Clone
+  commentId: M:SoundMaker.Sounds.Score.Tie.Clone
+  fullName: SoundMaker.Sounds.Score.Tie.Clone()
+  nameWithType: Tie.Clone()
+- uid: SoundMaker.Sounds.Score.Tie.Clone*
+  name: Clone
+  href: api/SoundMaker.Sounds.Score.Tie.html#SoundMaker_Sounds_Score_Tie_Clone_
+  commentId: Overload:SoundMaker.Sounds.Score.Tie.Clone
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.Score.Tie.Clone
+  nameWithType: Tie.Clone
 - uid: SoundMaker.Sounds.Score.Tie.Count
   name: Count
   href: api/SoundMaker.Sounds.Score.Tie.html#SoundMaker_Sounds_Score_Tie_Count
@@ -1181,6 +1246,19 @@ references:
   fullName.vb: SoundMaker.Sounds.Score.Tuplet.New
   nameWithType: Tuplet.Tuplet
   nameWithType.vb: Tuplet.New
+- uid: SoundMaker.Sounds.Score.Tuplet.Clone
+  name: Clone()
+  href: api/SoundMaker.Sounds.Score.Tuplet.html#SoundMaker_Sounds_Score_Tuplet_Clone
+  commentId: M:SoundMaker.Sounds.Score.Tuplet.Clone
+  fullName: SoundMaker.Sounds.Score.Tuplet.Clone()
+  nameWithType: Tuplet.Clone()
+- uid: SoundMaker.Sounds.Score.Tuplet.Clone*
+  name: Clone
+  href: api/SoundMaker.Sounds.Score.Tuplet.html#SoundMaker_Sounds_Score_Tuplet_Clone_
+  commentId: Overload:SoundMaker.Sounds.Score.Tuplet.Clone
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.Score.Tuplet.Clone
+  nameWithType: Tuplet.Clone
 - uid: SoundMaker.Sounds.Score.Tuplet.Count
   name: Count
   href: api/SoundMaker.Sounds.Score.Tuplet.html#SoundMaker_Sounds_Score_Tuplet_Count
@@ -2182,6 +2260,405 @@ references:
   isSpec: "True"
   fullName: SoundMaker.Sounds.StereoWave.RightVolume
   nameWithType: StereoWave.RightVolume
+- uid: SoundMaker.Sounds.Track
+  name: Track
+  href: api/SoundMaker.Sounds.Track.html
+  commentId: T:SoundMaker.Sounds.Track
+  fullName: SoundMaker.Sounds.Track
+  nameWithType: Track
+- uid: SoundMaker.Sounds.Track.Add(SoundMaker.Sounds.Score.ISoundComponent)
+  name: Add(ISoundComponent)
+  href: api/SoundMaker.Sounds.Track.html#SoundMaker_Sounds_Track_Add_SoundMaker_Sounds_Score_ISoundComponent_
+  commentId: M:SoundMaker.Sounds.Track.Add(SoundMaker.Sounds.Score.ISoundComponent)
+  fullName: SoundMaker.Sounds.Track.Add(SoundMaker.Sounds.Score.ISoundComponent)
+  nameWithType: Track.Add(ISoundComponent)
+- uid: SoundMaker.Sounds.Track.Add*
+  name: Add
+  href: api/SoundMaker.Sounds.Track.html#SoundMaker_Sounds_Track_Add_
+  commentId: Overload:SoundMaker.Sounds.Track.Add
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.Track.Add
+  nameWithType: Track.Add
+- uid: SoundMaker.Sounds.Track.Clear
+  name: Clear()
+  href: api/SoundMaker.Sounds.Track.html#SoundMaker_Sounds_Track_Clear
+  commentId: M:SoundMaker.Sounds.Track.Clear
+  fullName: SoundMaker.Sounds.Track.Clear()
+  nameWithType: Track.Clear()
+- uid: SoundMaker.Sounds.Track.Clear*
+  name: Clear
+  href: api/SoundMaker.Sounds.Track.html#SoundMaker_Sounds_Track_Clear_
+  commentId: Overload:SoundMaker.Sounds.Track.Clear
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.Track.Clear
+  nameWithType: Track.Clear
+- uid: SoundMaker.Sounds.Track.Count
+  name: Count
+  href: api/SoundMaker.Sounds.Track.html#SoundMaker_Sounds_Track_Count
+  commentId: P:SoundMaker.Sounds.Track.Count
+  fullName: SoundMaker.Sounds.Track.Count
+  nameWithType: Track.Count
+- uid: SoundMaker.Sounds.Track.Count*
+  name: Count
+  href: api/SoundMaker.Sounds.Track.html#SoundMaker_Sounds_Track_Count_
+  commentId: Overload:SoundMaker.Sounds.Track.Count
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.Track.Count
+  nameWithType: Track.Count
+- uid: SoundMaker.Sounds.Track.GenerateWave
+  name: GenerateWave()
+  href: api/SoundMaker.Sounds.Track.html#SoundMaker_Sounds_Track_GenerateWave
+  commentId: M:SoundMaker.Sounds.Track.GenerateWave
+  fullName: SoundMaker.Sounds.Track.GenerateWave()
+  nameWithType: Track.GenerateWave()
+- uid: SoundMaker.Sounds.Track.GenerateWave*
+  name: GenerateWave
+  href: api/SoundMaker.Sounds.Track.html#SoundMaker_Sounds_Track_GenerateWave_
+  commentId: Overload:SoundMaker.Sounds.Track.GenerateWave
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.Track.GenerateWave
+  nameWithType: Track.GenerateWave
+- uid: SoundMaker.Sounds.Track.Import(System.Collections.Generic.IEnumerable{SoundMaker.Sounds.Score.ISoundComponent})
+  name: Import(IEnumerable<ISoundComponent>)
+  href: api/SoundMaker.Sounds.Track.html#SoundMaker_Sounds_Track_Import_System_Collections_Generic_IEnumerable_SoundMaker_Sounds_Score_ISoundComponent__
+  commentId: M:SoundMaker.Sounds.Track.Import(System.Collections.Generic.IEnumerable{SoundMaker.Sounds.Score.ISoundComponent})
+  name.vb: Import(IEnumerable(Of ISoundComponent))
+  fullName: SoundMaker.Sounds.Track.Import(System.Collections.Generic.IEnumerable<SoundMaker.Sounds.Score.ISoundComponent>)
+  fullName.vb: SoundMaker.Sounds.Track.Import(System.Collections.Generic.IEnumerable(Of SoundMaker.Sounds.Score.ISoundComponent))
+  nameWithType: Track.Import(IEnumerable<ISoundComponent>)
+  nameWithType.vb: Track.Import(IEnumerable(Of ISoundComponent))
+- uid: SoundMaker.Sounds.Track.Import*
+  name: Import
+  href: api/SoundMaker.Sounds.Track.html#SoundMaker_Sounds_Track_Import_
+  commentId: Overload:SoundMaker.Sounds.Track.Import
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.Track.Import
+  nameWithType: Track.Import
+- uid: SoundMaker.Sounds.Track.Insert(System.Int32,SoundMaker.Sounds.Score.ISoundComponent)
+  name: Insert(int, ISoundComponent)
+  href: api/SoundMaker.Sounds.Track.html#SoundMaker_Sounds_Track_Insert_System_Int32_SoundMaker_Sounds_Score_ISoundComponent_
+  commentId: M:SoundMaker.Sounds.Track.Insert(System.Int32,SoundMaker.Sounds.Score.ISoundComponent)
+  name.vb: Insert(Integer, ISoundComponent)
+  fullName: SoundMaker.Sounds.Track.Insert(int, SoundMaker.Sounds.Score.ISoundComponent)
+  fullName.vb: SoundMaker.Sounds.Track.Insert(Integer, SoundMaker.Sounds.Score.ISoundComponent)
+  nameWithType: Track.Insert(int, ISoundComponent)
+  nameWithType.vb: Track.Insert(Integer, ISoundComponent)
+- uid: SoundMaker.Sounds.Track.Insert*
+  name: Insert
+  href: api/SoundMaker.Sounds.Track.html#SoundMaker_Sounds_Track_Insert_
+  commentId: Overload:SoundMaker.Sounds.Track.Insert
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.Track.Insert
+  nameWithType: Track.Insert
+- uid: SoundMaker.Sounds.Track.Pan
+  name: Pan
+  href: api/SoundMaker.Sounds.Track.html#SoundMaker_Sounds_Track_Pan
+  commentId: P:SoundMaker.Sounds.Track.Pan
+  fullName: SoundMaker.Sounds.Track.Pan
+  nameWithType: Track.Pan
+- uid: SoundMaker.Sounds.Track.Pan*
+  name: Pan
+  href: api/SoundMaker.Sounds.Track.html#SoundMaker_Sounds_Track_Pan_
+  commentId: Overload:SoundMaker.Sounds.Track.Pan
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.Track.Pan
+  nameWithType: Track.Pan
+- uid: SoundMaker.Sounds.Track.Remove(SoundMaker.Sounds.Score.ISoundComponent)
+  name: Remove(ISoundComponent)
+  href: api/SoundMaker.Sounds.Track.html#SoundMaker_Sounds_Track_Remove_SoundMaker_Sounds_Score_ISoundComponent_
+  commentId: M:SoundMaker.Sounds.Track.Remove(SoundMaker.Sounds.Score.ISoundComponent)
+  fullName: SoundMaker.Sounds.Track.Remove(SoundMaker.Sounds.Score.ISoundComponent)
+  nameWithType: Track.Remove(ISoundComponent)
+- uid: SoundMaker.Sounds.Track.Remove*
+  name: Remove
+  href: api/SoundMaker.Sounds.Track.html#SoundMaker_Sounds_Track_Remove_
+  commentId: Overload:SoundMaker.Sounds.Track.Remove
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.Track.Remove
+  nameWithType: Track.Remove
+- uid: SoundMaker.Sounds.Track.RemoveAt(System.Int32)
+  name: RemoveAt(int)
+  href: api/SoundMaker.Sounds.Track.html#SoundMaker_Sounds_Track_RemoveAt_System_Int32_
+  commentId: M:SoundMaker.Sounds.Track.RemoveAt(System.Int32)
+  name.vb: RemoveAt(Integer)
+  fullName: SoundMaker.Sounds.Track.RemoveAt(int)
+  fullName.vb: SoundMaker.Sounds.Track.RemoveAt(Integer)
+  nameWithType: Track.RemoveAt(int)
+  nameWithType.vb: Track.RemoveAt(Integer)
+- uid: SoundMaker.Sounds.Track.RemoveAt*
+  name: RemoveAt
+  href: api/SoundMaker.Sounds.Track.html#SoundMaker_Sounds_Track_RemoveAt_
+  commentId: Overload:SoundMaker.Sounds.Track.RemoveAt
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.Track.RemoveAt
+  nameWithType: Track.RemoveAt
+- uid: SoundMaker.Sounds.Track.SoundComponents
+  name: SoundComponents
+  href: api/SoundMaker.Sounds.Track.html#SoundMaker_Sounds_Track_SoundComponents
+  commentId: P:SoundMaker.Sounds.Track.SoundComponents
+  fullName: SoundMaker.Sounds.Track.SoundComponents
+  nameWithType: Track.SoundComponents
+- uid: SoundMaker.Sounds.Track.SoundComponents*
+  name: SoundComponents
+  href: api/SoundMaker.Sounds.Track.html#SoundMaker_Sounds_Track_SoundComponents_
+  commentId: Overload:SoundMaker.Sounds.Track.SoundComponents
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.Track.SoundComponents
+  nameWithType: Track.SoundComponents
+- uid: SoundMaker.Sounds.Track.WaveArrayLength
+  name: WaveArrayLength
+  href: api/SoundMaker.Sounds.Track.html#SoundMaker_Sounds_Track_WaveArrayLength
+  commentId: P:SoundMaker.Sounds.Track.WaveArrayLength
+  fullName: SoundMaker.Sounds.Track.WaveArrayLength
+  nameWithType: Track.WaveArrayLength
+- uid: SoundMaker.Sounds.Track.WaveArrayLength*
+  name: WaveArrayLength
+  href: api/SoundMaker.Sounds.Track.html#SoundMaker_Sounds_Track_WaveArrayLength_
+  commentId: Overload:SoundMaker.Sounds.Track.WaveArrayLength
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.Track.WaveArrayLength
+  nameWithType: Track.WaveArrayLength
+- uid: SoundMaker.Sounds.Track.WaveType
+  name: WaveType
+  href: api/SoundMaker.Sounds.Track.html#SoundMaker_Sounds_Track_WaveType
+  commentId: P:SoundMaker.Sounds.Track.WaveType
+  fullName: SoundMaker.Sounds.Track.WaveType
+  nameWithType: Track.WaveType
+- uid: SoundMaker.Sounds.Track.WaveType*
+  name: WaveType
+  href: api/SoundMaker.Sounds.Track.html#SoundMaker_Sounds_Track_WaveType_
+  commentId: Overload:SoundMaker.Sounds.Track.WaveType
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.Track.WaveType
+  nameWithType: Track.WaveType
+- uid: SoundMaker.Sounds.TrackBaseSound
+  name: TrackBaseSound
+  href: api/SoundMaker.Sounds.TrackBaseSound.html
+  commentId: T:SoundMaker.Sounds.TrackBaseSound
+  fullName: SoundMaker.Sounds.TrackBaseSound
+  nameWithType: TrackBaseSound
+- uid: SoundMaker.Sounds.TrackBaseSound.#ctor(SoundMaker.Sounds.SoundFormat,System.Int32)
+  name: TrackBaseSound(SoundFormat, int)
+  href: api/SoundMaker.Sounds.TrackBaseSound.html#SoundMaker_Sounds_TrackBaseSound__ctor_SoundMaker_Sounds_SoundFormat_System_Int32_
+  commentId: M:SoundMaker.Sounds.TrackBaseSound.#ctor(SoundMaker.Sounds.SoundFormat,System.Int32)
+  name.vb: New(SoundFormat, Integer)
+  fullName: SoundMaker.Sounds.TrackBaseSound.TrackBaseSound(SoundMaker.Sounds.SoundFormat, int)
+  fullName.vb: SoundMaker.Sounds.TrackBaseSound.New(SoundMaker.Sounds.SoundFormat, Integer)
+  nameWithType: TrackBaseSound.TrackBaseSound(SoundFormat, int)
+  nameWithType.vb: TrackBaseSound.New(SoundFormat, Integer)
+- uid: SoundMaker.Sounds.TrackBaseSound.#ctor*
+  name: TrackBaseSound
+  href: api/SoundMaker.Sounds.TrackBaseSound.html#SoundMaker_Sounds_TrackBaseSound__ctor_
+  commentId: Overload:SoundMaker.Sounds.TrackBaseSound.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: SoundMaker.Sounds.TrackBaseSound.TrackBaseSound
+  fullName.vb: SoundMaker.Sounds.TrackBaseSound.New
+  nameWithType: TrackBaseSound.TrackBaseSound
+  nameWithType.vb: TrackBaseSound.New
+- uid: SoundMaker.Sounds.TrackBaseSound.Clear
+  name: Clear()
+  href: api/SoundMaker.Sounds.TrackBaseSound.html#SoundMaker_Sounds_TrackBaseSound_Clear
+  commentId: M:SoundMaker.Sounds.TrackBaseSound.Clear
+  fullName: SoundMaker.Sounds.TrackBaseSound.Clear()
+  nameWithType: TrackBaseSound.Clear()
+- uid: SoundMaker.Sounds.TrackBaseSound.Clear*
+  name: Clear
+  href: api/SoundMaker.Sounds.TrackBaseSound.html#SoundMaker_Sounds_TrackBaseSound_Clear_
+  commentId: Overload:SoundMaker.Sounds.TrackBaseSound.Clear
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.TrackBaseSound.Clear
+  nameWithType: TrackBaseSound.Clear
+- uid: SoundMaker.Sounds.TrackBaseSound.CopyTrack(SoundMaker.Sounds.Track,System.Int32)
+  name: CopyTrack(Track, int)
+  href: api/SoundMaker.Sounds.TrackBaseSound.html#SoundMaker_Sounds_TrackBaseSound_CopyTrack_SoundMaker_Sounds_Track_System_Int32_
+  commentId: M:SoundMaker.Sounds.TrackBaseSound.CopyTrack(SoundMaker.Sounds.Track,System.Int32)
+  name.vb: CopyTrack(Track, Integer)
+  fullName: SoundMaker.Sounds.TrackBaseSound.CopyTrack(SoundMaker.Sounds.Track, int)
+  fullName.vb: SoundMaker.Sounds.TrackBaseSound.CopyTrack(SoundMaker.Sounds.Track, Integer)
+  nameWithType: TrackBaseSound.CopyTrack(Track, int)
+  nameWithType.vb: TrackBaseSound.CopyTrack(Track, Integer)
+- uid: SoundMaker.Sounds.TrackBaseSound.CopyTrack*
+  name: CopyTrack
+  href: api/SoundMaker.Sounds.TrackBaseSound.html#SoundMaker_Sounds_TrackBaseSound_CopyTrack_
+  commentId: Overload:SoundMaker.Sounds.TrackBaseSound.CopyTrack
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.TrackBaseSound.CopyTrack
+  nameWithType: TrackBaseSound.CopyTrack
+- uid: SoundMaker.Sounds.TrackBaseSound.CreateTrack(System.Int32,SoundMaker.Sounds.WaveTypes.WaveTypeBase)
+  name: CreateTrack(int, WaveTypeBase)
+  href: api/SoundMaker.Sounds.TrackBaseSound.html#SoundMaker_Sounds_TrackBaseSound_CreateTrack_System_Int32_SoundMaker_Sounds_WaveTypes_WaveTypeBase_
+  commentId: M:SoundMaker.Sounds.TrackBaseSound.CreateTrack(System.Int32,SoundMaker.Sounds.WaveTypes.WaveTypeBase)
+  name.vb: CreateTrack(Integer, WaveTypeBase)
+  fullName: SoundMaker.Sounds.TrackBaseSound.CreateTrack(int, SoundMaker.Sounds.WaveTypes.WaveTypeBase)
+  fullName.vb: SoundMaker.Sounds.TrackBaseSound.CreateTrack(Integer, SoundMaker.Sounds.WaveTypes.WaveTypeBase)
+  nameWithType: TrackBaseSound.CreateTrack(int, WaveTypeBase)
+  nameWithType.vb: TrackBaseSound.CreateTrack(Integer, WaveTypeBase)
+- uid: SoundMaker.Sounds.TrackBaseSound.CreateTrack*
+  name: CreateTrack
+  href: api/SoundMaker.Sounds.TrackBaseSound.html#SoundMaker_Sounds_TrackBaseSound_CreateTrack_
+  commentId: Overload:SoundMaker.Sounds.TrackBaseSound.CreateTrack
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.TrackBaseSound.CreateTrack
+  nameWithType: TrackBaseSound.CreateTrack
+- uid: SoundMaker.Sounds.TrackBaseSound.Format
+  name: Format
+  href: api/SoundMaker.Sounds.TrackBaseSound.html#SoundMaker_Sounds_TrackBaseSound_Format
+  commentId: P:SoundMaker.Sounds.TrackBaseSound.Format
+  fullName: SoundMaker.Sounds.TrackBaseSound.Format
+  nameWithType: TrackBaseSound.Format
+- uid: SoundMaker.Sounds.TrackBaseSound.Format*
+  name: Format
+  href: api/SoundMaker.Sounds.TrackBaseSound.html#SoundMaker_Sounds_TrackBaseSound_Format_
+  commentId: Overload:SoundMaker.Sounds.TrackBaseSound.Format
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.TrackBaseSound.Format
+  nameWithType: TrackBaseSound.Format
+- uid: SoundMaker.Sounds.TrackBaseSound.GenerateMonauralWave
+  name: GenerateMonauralWave()
+  href: api/SoundMaker.Sounds.TrackBaseSound.html#SoundMaker_Sounds_TrackBaseSound_GenerateMonauralWave
+  commentId: M:SoundMaker.Sounds.TrackBaseSound.GenerateMonauralWave
+  fullName: SoundMaker.Sounds.TrackBaseSound.GenerateMonauralWave()
+  nameWithType: TrackBaseSound.GenerateMonauralWave()
+- uid: SoundMaker.Sounds.TrackBaseSound.GenerateMonauralWave*
+  name: GenerateMonauralWave
+  href: api/SoundMaker.Sounds.TrackBaseSound.html#SoundMaker_Sounds_TrackBaseSound_GenerateMonauralWave_
+  commentId: Overload:SoundMaker.Sounds.TrackBaseSound.GenerateMonauralWave
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.TrackBaseSound.GenerateMonauralWave
+  nameWithType: TrackBaseSound.GenerateMonauralWave
+- uid: SoundMaker.Sounds.TrackBaseSound.GenerateStereoWave
+  name: GenerateStereoWave()
+  href: api/SoundMaker.Sounds.TrackBaseSound.html#SoundMaker_Sounds_TrackBaseSound_GenerateStereoWave
+  commentId: M:SoundMaker.Sounds.TrackBaseSound.GenerateStereoWave
+  fullName: SoundMaker.Sounds.TrackBaseSound.GenerateStereoWave()
+  nameWithType: TrackBaseSound.GenerateStereoWave()
+- uid: SoundMaker.Sounds.TrackBaseSound.GenerateStereoWave*
+  name: GenerateStereoWave
+  href: api/SoundMaker.Sounds.TrackBaseSound.html#SoundMaker_Sounds_TrackBaseSound_GenerateStereoWave_
+  commentId: Overload:SoundMaker.Sounds.TrackBaseSound.GenerateStereoWave
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.TrackBaseSound.GenerateStereoWave
+  nameWithType: TrackBaseSound.GenerateStereoWave
+- uid: SoundMaker.Sounds.TrackBaseSound.GetAllTracks
+  name: GetAllTracks()
+  href: api/SoundMaker.Sounds.TrackBaseSound.html#SoundMaker_Sounds_TrackBaseSound_GetAllTracks
+  commentId: M:SoundMaker.Sounds.TrackBaseSound.GetAllTracks
+  fullName: SoundMaker.Sounds.TrackBaseSound.GetAllTracks()
+  nameWithType: TrackBaseSound.GetAllTracks()
+- uid: SoundMaker.Sounds.TrackBaseSound.GetAllTracks*
+  name: GetAllTracks
+  href: api/SoundMaker.Sounds.TrackBaseSound.html#SoundMaker_Sounds_TrackBaseSound_GetAllTracks_
+  commentId: Overload:SoundMaker.Sounds.TrackBaseSound.GetAllTracks
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.TrackBaseSound.GetAllTracks
+  nameWithType: TrackBaseSound.GetAllTracks
+- uid: SoundMaker.Sounds.TrackBaseSound.GetTracks(System.Int32)
+  name: GetTracks(int)
+  href: api/SoundMaker.Sounds.TrackBaseSound.html#SoundMaker_Sounds_TrackBaseSound_GetTracks_System_Int32_
+  commentId: M:SoundMaker.Sounds.TrackBaseSound.GetTracks(System.Int32)
+  name.vb: GetTracks(Integer)
+  fullName: SoundMaker.Sounds.TrackBaseSound.GetTracks(int)
+  fullName.vb: SoundMaker.Sounds.TrackBaseSound.GetTracks(Integer)
+  nameWithType: TrackBaseSound.GetTracks(int)
+  nameWithType.vb: TrackBaseSound.GetTracks(Integer)
+- uid: SoundMaker.Sounds.TrackBaseSound.GetTracks*
+  name: GetTracks
+  href: api/SoundMaker.Sounds.TrackBaseSound.html#SoundMaker_Sounds_TrackBaseSound_GetTracks_
+  commentId: Overload:SoundMaker.Sounds.TrackBaseSound.GetTracks
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.TrackBaseSound.GetTracks
+  nameWithType: TrackBaseSound.GetTracks
+- uid: SoundMaker.Sounds.TrackBaseSound.Import(System.Collections.Generic.IEnumerable{SoundMaker.Sounds.Track})
+  name: Import(IEnumerable<Track>)
+  href: api/SoundMaker.Sounds.TrackBaseSound.html#SoundMaker_Sounds_TrackBaseSound_Import_System_Collections_Generic_IEnumerable_SoundMaker_Sounds_Track__
+  commentId: M:SoundMaker.Sounds.TrackBaseSound.Import(System.Collections.Generic.IEnumerable{SoundMaker.Sounds.Track})
+  name.vb: Import(IEnumerable(Of Track))
+  fullName: SoundMaker.Sounds.TrackBaseSound.Import(System.Collections.Generic.IEnumerable<SoundMaker.Sounds.Track>)
+  fullName.vb: SoundMaker.Sounds.TrackBaseSound.Import(System.Collections.Generic.IEnumerable(Of SoundMaker.Sounds.Track))
+  nameWithType: TrackBaseSound.Import(IEnumerable<Track>)
+  nameWithType.vb: TrackBaseSound.Import(IEnumerable(Of Track))
+- uid: SoundMaker.Sounds.TrackBaseSound.Import*
+  name: Import
+  href: api/SoundMaker.Sounds.TrackBaseSound.html#SoundMaker_Sounds_TrackBaseSound_Import_
+  commentId: Overload:SoundMaker.Sounds.TrackBaseSound.Import
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.TrackBaseSound.Import
+  nameWithType: TrackBaseSound.Import
+- uid: SoundMaker.Sounds.TrackBaseSound.MoveTrack(SoundMaker.Sounds.Track,System.Int32)
+  name: MoveTrack(Track, int)
+  href: api/SoundMaker.Sounds.TrackBaseSound.html#SoundMaker_Sounds_TrackBaseSound_MoveTrack_SoundMaker_Sounds_Track_System_Int32_
+  commentId: M:SoundMaker.Sounds.TrackBaseSound.MoveTrack(SoundMaker.Sounds.Track,System.Int32)
+  name.vb: MoveTrack(Track, Integer)
+  fullName: SoundMaker.Sounds.TrackBaseSound.MoveTrack(SoundMaker.Sounds.Track, int)
+  fullName.vb: SoundMaker.Sounds.TrackBaseSound.MoveTrack(SoundMaker.Sounds.Track, Integer)
+  nameWithType: TrackBaseSound.MoveTrack(Track, int)
+  nameWithType.vb: TrackBaseSound.MoveTrack(Track, Integer)
+- uid: SoundMaker.Sounds.TrackBaseSound.MoveTrack*
+  name: MoveTrack
+  href: api/SoundMaker.Sounds.TrackBaseSound.html#SoundMaker_Sounds_TrackBaseSound_MoveTrack_
+  commentId: Overload:SoundMaker.Sounds.TrackBaseSound.MoveTrack
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.TrackBaseSound.MoveTrack
+  nameWithType: TrackBaseSound.MoveTrack
+- uid: SoundMaker.Sounds.TrackBaseSound.RemoveTrack(SoundMaker.Sounds.Track)
+  name: RemoveTrack(Track)
+  href: api/SoundMaker.Sounds.TrackBaseSound.html#SoundMaker_Sounds_TrackBaseSound_RemoveTrack_SoundMaker_Sounds_Track_
+  commentId: M:SoundMaker.Sounds.TrackBaseSound.RemoveTrack(SoundMaker.Sounds.Track)
+  fullName: SoundMaker.Sounds.TrackBaseSound.RemoveTrack(SoundMaker.Sounds.Track)
+  nameWithType: TrackBaseSound.RemoveTrack(Track)
+- uid: SoundMaker.Sounds.TrackBaseSound.RemoveTrack*
+  name: RemoveTrack
+  href: api/SoundMaker.Sounds.TrackBaseSound.html#SoundMaker_Sounds_TrackBaseSound_RemoveTrack_
+  commentId: Overload:SoundMaker.Sounds.TrackBaseSound.RemoveTrack
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.TrackBaseSound.RemoveTrack
+  nameWithType: TrackBaseSound.RemoveTrack
+- uid: SoundMaker.Sounds.TrackBaseSound.RemoveTracksAt(System.Int32)
+  name: RemoveTracksAt(int)
+  href: api/SoundMaker.Sounds.TrackBaseSound.html#SoundMaker_Sounds_TrackBaseSound_RemoveTracksAt_System_Int32_
+  commentId: M:SoundMaker.Sounds.TrackBaseSound.RemoveTracksAt(System.Int32)
+  name.vb: RemoveTracksAt(Integer)
+  fullName: SoundMaker.Sounds.TrackBaseSound.RemoveTracksAt(int)
+  fullName.vb: SoundMaker.Sounds.TrackBaseSound.RemoveTracksAt(Integer)
+  nameWithType: TrackBaseSound.RemoveTracksAt(int)
+  nameWithType.vb: TrackBaseSound.RemoveTracksAt(Integer)
+- uid: SoundMaker.Sounds.TrackBaseSound.RemoveTracksAt*
+  name: RemoveTracksAt
+  href: api/SoundMaker.Sounds.TrackBaseSound.html#SoundMaker_Sounds_TrackBaseSound_RemoveTracksAt_
+  commentId: Overload:SoundMaker.Sounds.TrackBaseSound.RemoveTracksAt
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.TrackBaseSound.RemoveTracksAt
+  nameWithType: TrackBaseSound.RemoveTracksAt
+- uid: SoundMaker.Sounds.TrackBaseSound.Tempo
+  name: Tempo
+  href: api/SoundMaker.Sounds.TrackBaseSound.html#SoundMaker_Sounds_TrackBaseSound_Tempo
+  commentId: P:SoundMaker.Sounds.TrackBaseSound.Tempo
+  fullName: SoundMaker.Sounds.TrackBaseSound.Tempo
+  nameWithType: TrackBaseSound.Tempo
+- uid: SoundMaker.Sounds.TrackBaseSound.Tempo*
+  name: Tempo
+  href: api/SoundMaker.Sounds.TrackBaseSound.html#SoundMaker_Sounds_TrackBaseSound_Tempo_
+  commentId: Overload:SoundMaker.Sounds.TrackBaseSound.Tempo
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.TrackBaseSound.Tempo
+  nameWithType: TrackBaseSound.Tempo
+- uid: SoundMaker.Sounds.TrackBaseSound.TryGetTracks(System.Int32,System.Collections.Generic.List{SoundMaker.Sounds.Track}@)
+  name: TryGetTracks(int, out List<Track>)
+  href: api/SoundMaker.Sounds.TrackBaseSound.html#SoundMaker_Sounds_TrackBaseSound_TryGetTracks_System_Int32_System_Collections_Generic_List_SoundMaker_Sounds_Track___
+  commentId: M:SoundMaker.Sounds.TrackBaseSound.TryGetTracks(System.Int32,System.Collections.Generic.List{SoundMaker.Sounds.Track}@)
+  name.vb: TryGetTracks(Integer, List(Of Track))
+  fullName: SoundMaker.Sounds.TrackBaseSound.TryGetTracks(int, out System.Collections.Generic.List<SoundMaker.Sounds.Track>)
+  fullName.vb: SoundMaker.Sounds.TrackBaseSound.TryGetTracks(Integer, System.Collections.Generic.List(Of SoundMaker.Sounds.Track))
+  nameWithType: TrackBaseSound.TryGetTracks(int, out List<Track>)
+  nameWithType.vb: TrackBaseSound.TryGetTracks(Integer, List(Of Track))
+- uid: SoundMaker.Sounds.TrackBaseSound.TryGetTracks*
+  name: TryGetTracks
+  href: api/SoundMaker.Sounds.TrackBaseSound.html#SoundMaker_Sounds_TrackBaseSound_TryGetTracks_
+  commentId: Overload:SoundMaker.Sounds.TrackBaseSound.TryGetTracks
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.TrackBaseSound.TryGetTracks
+  nameWithType: TrackBaseSound.TryGetTracks
 - uid: SoundMaker.Sounds.WaveTypes
   name: SoundMaker.Sounds.WaveTypes
   href: api/SoundMaker.Sounds.WaveTypes.html

@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class TrackBaseSound | SoundMaker API Reference </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class TrackBaseSound | SoundMaker API Reference ">
+      
+      <meta name="description" content="Initializes a new instance of the TrackBaseSound class with the specified format and tempo.  指定されたフォーマットとテンポでTrackBaseSoundクラスの新しいインスタンスを初期化するメソッド。">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/AutumnSky1010/SoundMaker/new/master/apiSpec/new?filename=SoundMaker_Sounds_TrackBaseSound.md&amp;value=---%0Auid%3A%20SoundMaker.Sounds.TrackBaseSound%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="SoundMaker API Reference">
+            SoundMaker API Reference
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="SoundMaker.Sounds.TrackBaseSound">
+
+
+
+  <h1 id="SoundMaker_Sounds_TrackBaseSound" data-uid="SoundMaker.Sounds.TrackBaseSound" class="text-break">
+Class TrackBaseSound  <a class="header-action link-secondary" title="View source" href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/TrackBaseSound.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="SoundMaker.html">SoundMaker</a>.<a class="xref" href="SoundMaker.Sounds.html">Sounds</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>SoundMaker.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Initializes a new instance of the TrackBaseSound class with the specified format and tempo. <br>
+指定されたフォーマットとテンポでTrackBaseSoundクラスの新しいインスタンスを初期化するメソッド。</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class TrackBaseSound</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">TrackBaseSound</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="SoundMaker_Sounds_TrackBaseSound__ctor_" data-uid="SoundMaker.Sounds.TrackBaseSound.#ctor*"></a>
+
+  <h3 id="SoundMaker_Sounds_TrackBaseSound__ctor_SoundMaker_Sounds_SoundFormat_System_Int32_" data-uid="SoundMaker.Sounds.TrackBaseSound.#ctor(SoundMaker.Sounds.SoundFormat,System.Int32)">
+  TrackBaseSound(SoundFormat, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/TrackBaseSound.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Initializes a new instance of the TrackBaseSound class with the specified format and tempo. <br>
+指定されたフォーマットとテンポでTrackBaseSoundクラスの新しいインスタンスを初期化するメソッド。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TrackBaseSound(SoundFormat format, int tempo)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>format</code> <a class="xref" href="SoundMaker.Sounds.SoundFormat.html">SoundFormat</a></dt>
+    <dd><p>The sound format to be used. <br>
+使用するサウンドフォーマット。</p>
+</dd>
+    <dt><code>tempo</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The tempo of the track. <br>
+トラックのテンポ。</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="SoundMaker_Sounds_TrackBaseSound_Format_" data-uid="SoundMaker.Sounds.TrackBaseSound.Format*"></a>
+
+  <h3 id="SoundMaker_Sounds_TrackBaseSound_Format" data-uid="SoundMaker.Sounds.TrackBaseSound.Format">
+  Format
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/TrackBaseSound.cs/#L27"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the sound format. <br>
+サウンドフォーマットを取得するプロパティ。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SoundFormat Format { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SoundMaker.Sounds.SoundFormat.html">SoundFormat</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SoundMaker_Sounds_TrackBaseSound_Tempo_" data-uid="SoundMaker.Sounds.TrackBaseSound.Tempo*"></a>
+
+  <h3 id="SoundMaker_Sounds_TrackBaseSound_Tempo" data-uid="SoundMaker.Sounds.TrackBaseSound.Tempo">
+  Tempo
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/TrackBaseSound.cs/#L21"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the tempo value. <br>
+テンポの値を取得するプロパティ。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Tempo { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="SoundMaker_Sounds_TrackBaseSound_Clear_" data-uid="SoundMaker.Sounds.TrackBaseSound.Clear*"></a>
+
+  <h3 id="SoundMaker_Sounds_TrackBaseSound_Clear" data-uid="SoundMaker.Sounds.TrackBaseSound.Clear">
+  Clear()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/TrackBaseSound.cs/#L199"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Clears all tracks. <br>
+すべてのトラックをクリアするメソッド。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Clear()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SoundMaker_Sounds_TrackBaseSound_CopyTrack_" data-uid="SoundMaker.Sounds.TrackBaseSound.CopyTrack*"></a>
+
+  <h3 id="SoundMaker_Sounds_TrackBaseSound_CopyTrack_SoundMaker_Sounds_Track_System_Int32_" data-uid="SoundMaker.Sounds.TrackBaseSound.CopyTrack(SoundMaker.Sounds.Track,System.Int32)">
+  CopyTrack(Track, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/TrackBaseSound.cs/#L187"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Creates a copy of the specified track at a new start time. <br>
+指定されたトラックのコピーを新しい開始時間に作成するメソッド。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Track CopyTrack(Track sourceTrack, int newStartMilliSecond)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>sourceTrack</code> <a class="xref" href="SoundMaker.Sounds.Track.html">Track</a></dt>
+    <dd><p>The track to copy. <br> コピーするトラック。</p>
+</dd>
+    <dt><code>newStartMilliSecond</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The new start time in milliseconds. <br> 新しい開始時間（ミリ秒）。</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SoundMaker.Sounds.Track.html">Track</a></dt>
+    <dd><p>A new instance of the copied track. <br> コピーされたトラックの新しいインスタンス。</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SoundMaker_Sounds_TrackBaseSound_CreateTrack_" data-uid="SoundMaker.Sounds.TrackBaseSound.CreateTrack*"></a>
+
+  <h3 id="SoundMaker_Sounds_TrackBaseSound_CreateTrack_System_Int32_SoundMaker_Sounds_WaveTypes_WaveTypeBase_" data-uid="SoundMaker.Sounds.TrackBaseSound.CreateTrack(System.Int32,SoundMaker.Sounds.WaveTypes.WaveTypeBase)">
+  CreateTrack(int, WaveTypeBase)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/TrackBaseSound.cs/#L42"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Creates a new track with the specified wave type and start time. <br>
+指定された波の種類と開始時間で新しいトラックを作成するメソッド。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Track CreateTrack(int startMilliSecond, WaveTypeBase waveType)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>startMilliSecond</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The start time in milliseconds. <br> 開始時間（ミリ秒）。</p>
+</dd>
+    <dt><code>waveType</code> <a class="xref" href="SoundMaker.Sounds.WaveTypes.WaveTypeBase.html">WaveTypeBase</a></dt>
+    <dd><p>The type of wave. <br> 波の種類。</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SoundMaker.Sounds.Track.html">Track</a></dt>
+    <dd><p>A new instance of the track. <br> 新しいトラックのインスタンス。</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SoundMaker_Sounds_TrackBaseSound_GenerateMonauralWave_" data-uid="SoundMaker.Sounds.TrackBaseSound.GenerateMonauralWave*"></a>
+
+  <h3 id="SoundMaker_Sounds_TrackBaseSound_GenerateMonauralWave" data-uid="SoundMaker.Sounds.TrackBaseSound.GenerateMonauralWave">
+  GenerateMonauralWave()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/TrackBaseSound.cs/#L209"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Generates a monaural wave from the tracks. <br>
+トラックからモノラル波を生成するメソッド。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MonauralWave GenerateMonauralWave()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SoundMaker.Sounds.MonauralWave.html">MonauralWave</a></dt>
+    <dd><p>A monaural wave. <br> モノラル波。</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SoundMaker_Sounds_TrackBaseSound_GenerateStereoWave_" data-uid="SoundMaker.Sounds.TrackBaseSound.GenerateStereoWave*"></a>
+
+  <h3 id="SoundMaker_Sounds_TrackBaseSound_GenerateStereoWave" data-uid="SoundMaker.Sounds.TrackBaseSound.GenerateStereoWave">
+  GenerateStereoWave()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/TrackBaseSound.cs/#L249"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Generates a stereo wave from the tracks. <br>
+トラックからステレオ波を生成するメソッド。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public StereoWave GenerateStereoWave()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SoundMaker.Sounds.StereoWave.html">StereoWave</a></dt>
+    <dd><p>A stereo wave. <br> ステレオ波。</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SoundMaker_Sounds_TrackBaseSound_GetAllTracks_" data-uid="SoundMaker.Sounds.TrackBaseSound.GetAllTracks*"></a>
+
+  <h3 id="SoundMaker_Sounds_TrackBaseSound_GetAllTracks" data-uid="SoundMaker.Sounds.TrackBaseSound.GetAllTracks">
+  GetAllTracks()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/TrackBaseSound.cs/#L118"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Retrieves all tracks. <br>
+すべてのトラックを取得するメソッド。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;Track&gt; GetAllTracks()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="SoundMaker.Sounds.Track.html">Track</a>&gt;</dt>
+    <dd><p>An enumerable collection of tracks. <br>
+トラックの列挙可能なコレクションを返します。</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SoundMaker_Sounds_TrackBaseSound_GetTracks_" data-uid="SoundMaker.Sounds.TrackBaseSound.GetTracks*"></a>
+
+  <h3 id="SoundMaker_Sounds_TrackBaseSound_GetTracks_System_Int32_" data-uid="SoundMaker.Sounds.TrackBaseSound.GetTracks(System.Int32)">
+  GetTracks(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/TrackBaseSound.cs/#L99"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the list of tracks at the specified start time. <br>
+指定された開始時間のトラックのリストを取得するメソッド。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;Track&gt; GetTracks(int startMilliSecond)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>startMilliSecond</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The start time in milliseconds. <br> 開始時間（ミリ秒）。</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="SoundMaker.Sounds.Track.html">Track</a>&gt;</dt>
+    <dd><p>A list of tracks. <br>
+トラックのリスト。
+If the operation fails, an empty list is returned. <br>
+失敗時は空リスト。</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SoundMaker_Sounds_TrackBaseSound_Import_" data-uid="SoundMaker.Sounds.TrackBaseSound.Import*"></a>
+
+  <h3 id="SoundMaker_Sounds_TrackBaseSound_Import_System_Collections_Generic_IEnumerable_SoundMaker_Sounds_Track__" data-uid="SoundMaker.Sounds.TrackBaseSound.Import(System.Collections.Generic.IEnumerable{SoundMaker.Sounds.Track})">
+  Import(IEnumerable&lt;Track&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/TrackBaseSound.cs/#L319"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Imports tracks into the internal map based on their start times. <br>
+トラックを開始時間に基づいて内部のマップにインポートするメソッド。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Import(IEnumerable&lt;Track&gt; from)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>from</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="SoundMaker.Sounds.Track.html">Track</a>&gt;</dt>
+    <dd><p>The tracks to import. <br> インポートするトラック。</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SoundMaker_Sounds_TrackBaseSound_MoveTrack_" data-uid="SoundMaker.Sounds.TrackBaseSound.MoveTrack*"></a>
+
+  <h3 id="SoundMaker_Sounds_TrackBaseSound_MoveTrack_SoundMaker_Sounds_Track_System_Int32_" data-uid="SoundMaker.Sounds.TrackBaseSound.MoveTrack(SoundMaker.Sounds.Track,System.Int32)">
+  MoveTrack(Track, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/TrackBaseSound.cs/#L169"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Moves a track to a new start time. <br>
+トラックを新しい開始時間に移動するメソッド。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool MoveTrack(Track track, int newStartMilliSecond)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>track</code> <a class="xref" href="SoundMaker.Sounds.Track.html">Track</a></dt>
+    <dd><p>The track to move. <br> 移動するトラック。</p>
+</dd>
+    <dt><code>newStartMilliSecond</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The new start time in milliseconds. <br> 新しい開始時間（ミリ秒）。</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True if the track was moved; otherwise, false. <br> トラックが移動された場合は true、それ以外の場合は false。</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SoundMaker_Sounds_TrackBaseSound_RemoveTrack_" data-uid="SoundMaker.Sounds.TrackBaseSound.RemoveTrack*"></a>
+
+  <h3 id="SoundMaker_Sounds_TrackBaseSound_RemoveTrack_SoundMaker_Sounds_Track_" data-uid="SoundMaker.Sounds.TrackBaseSound.RemoveTrack(SoundMaker.Sounds.Track)">
+  RemoveTrack(Track)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/TrackBaseSound.cs/#L66"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Removes the specified track. <br>
+指定されたトラックを削除するメソッド。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool RemoveTrack(Track track)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>track</code> <a class="xref" href="SoundMaker.Sounds.Track.html">Track</a></dt>
+    <dd><p>The track to remove. <br> 削除するトラック。</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True if the track was removed; otherwise, false. <br> トラックが削除された場合は true、それ以外の場合は false。</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SoundMaker_Sounds_TrackBaseSound_RemoveTracksAt_" data-uid="SoundMaker.Sounds.TrackBaseSound.RemoveTracksAt*"></a>
+
+  <h3 id="SoundMaker_Sounds_TrackBaseSound_RemoveTracksAt_System_Int32_" data-uid="SoundMaker.Sounds.TrackBaseSound.RemoveTracksAt(System.Int32)">
+  RemoveTracksAt(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/TrackBaseSound.cs/#L55"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Removes all tracks at the specified start time. <br>
+指定された開始時間のすべてのトラックを削除するメソッド。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool RemoveTracksAt(int startMilliSecond)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>startMilliSecond</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The start time in milliseconds. <br> 開始時間（ミリ秒）。</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True if tracks were removed; otherwise, false. <br> トラックが削除された場合は true、それ以外の場合は false。</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SoundMaker_Sounds_TrackBaseSound_TryGetTracks_" data-uid="SoundMaker.Sounds.TrackBaseSound.TryGetTracks*"></a>
+
+  <h3 id="SoundMaker_Sounds_TrackBaseSound_TryGetTracks_System_Int32_System_Collections_Generic_List_SoundMaker_Sounds_Track___" data-uid="SoundMaker.Sounds.TrackBaseSound.TryGetTracks(System.Int32,System.Collections.Generic.List{SoundMaker.Sounds.Track}@)">
+  TryGetTracks(int, out List&lt;Track&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/TrackBaseSound.cs/#L130"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Tries to get the list of tracks at the specified start time. <br>
+指定された開始時間のトラックのリストを取得しようとするメソッド。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryGetTracks(int startMilliSecond, out List&lt;Track&gt; tracks)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>startMilliSecond</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The start time in milliseconds. <br> 開始時間（ミリ秒）。</p>
+</dd>
+    <dt><code>tracks</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="SoundMaker.Sounds.Track.html">Track</a>&gt;</dt>
+    <dd><p>The list of tracks. <br> トラックのリスト。</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True if tracks were found; otherwise, false. <br> トラックが見つかった場合は true、それ以外の場合は false。</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/TrackBaseSound.cs/#L15" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
