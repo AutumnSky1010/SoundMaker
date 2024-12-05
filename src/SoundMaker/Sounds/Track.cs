@@ -31,6 +31,13 @@ public class Track
         StartMilliSecond = startMilliSecond;
     }
 
+
+    /// <summary>
+    /// Sound components<br/>
+    /// サウンドコンポーネント
+    /// </summary>
+    public IReadOnlyList<ISoundComponent> SoundComponents => _soundComponents;
+
     private double _pan = 0;
     /// <summary>
     /// 左右の音量バランスを取得または設定するプロパティ。<br/>
@@ -110,6 +117,7 @@ public class Track
             var wave = soundComponent.GenerateWave(_format, _tempo, WaveType);
             result.AddRange(wave);
         }
+
         return [.. result];
     }
 
@@ -158,6 +166,7 @@ public class Track
         {
             throw new ArgumentOutOfRangeException(nameof(index));
         }
+
         var targetComponent = _soundComponents[index];
         _soundComponents.Remove(targetComponent);
         WaveArrayLength -= targetComponent.GetWaveArrayLength(_format, _tempo);
