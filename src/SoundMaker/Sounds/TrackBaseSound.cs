@@ -224,6 +224,11 @@ public class TrackBaseSound(SoundFormat format, int tempo)
         {
             foreach (var track in tracks)
             {
+                if (track.Count == 0)
+                {
+                    continue;
+                }
+
                 var trackWave = track.GenerateWave();
                 for (int i = track.StartIndex; i <= track.EndIndex; i++)
                 {
@@ -260,6 +265,11 @@ public class TrackBaseSound(SoundFormat format, int tempo)
         {
             foreach (var track in tracks)
             {
+                if (track.Count == 0)
+                {
+                    continue;
+                }
+
                 var trackWave = track.GenerateWave();
                 var pan = (track.Pan + 1) / 2.0f;
                 for (int i = track.StartIndex; i <= track.EndIndex; i++)

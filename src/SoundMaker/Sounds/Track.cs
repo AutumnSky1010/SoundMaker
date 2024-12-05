@@ -69,12 +69,25 @@ public class Track
         get => _startMilliSecond;
         set
         {
+            // 負の数は許可しない
+            if (value < 0)
+            {
+                value = 0;
+            }
+
             _startMilliSecond = value;
 
             // 開始ミリ秒が変わると開始時、終了時のインデクスも変わるので、再計算する
             var samplingFrequencyMS = (int)_format.SamplingFrequency / 1000.0;
             StartIndex = (int)(StartMilliSecond * samplingFrequencyMS);
-            EndIndex = StartIndex + WaveArrayLength - 1;
+            if (WaveArrayLength == 0)
+            {
+                EndIndex = StartIndex;
+            }
+            else
+            {
+                EndIndex = StartIndex + WaveArrayLength - 1;
+            }
         }
     }
 
@@ -91,7 +104,14 @@ public class Track
             _waveArrayLength = value;
 
             // 配列の長さが変わると終了時インデクスが変わるので、再計算する
-            EndIndex = StartIndex + WaveArrayLength - 1;
+            if (WaveArrayLength == 0)
+            {
+                EndIndex = StartIndex;
+            }
+            else
+            {
+                EndIndex = StartIndex + WaveArrayLength - 1;
+            }
         }
     }
 
