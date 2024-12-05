@@ -158,6 +158,7 @@ public class Track
         }
 
         _soundComponents.Insert(index, component);
+        WaveArrayLength += component.GetWaveArrayLength(_format, _tempo);
     }
 
     /// <summary>
