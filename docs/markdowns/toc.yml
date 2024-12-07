@@ -1,4 +1,25 @@
-- name: Introduction
+- name: イントロダクション
   href: introduction.md
-- name: Getting Started
-  href: getting-started.md
+- name: 基本的な使い方
+  items:
+  - name: 最初のコード
+    href: start/getting-started.md
+  - name: 利用できるフォーマット
+    href: start/format.md
+  - name: 周波数を指定し、音声波形を生成する
+    href: start/gen/frequency.md
+  - name: 音楽知識から波形を生成する
+    items:
+      - name: チャンネルベースAPI
+        href: start/gen/channel-base-api.md
+      - name: トラックベースAPI
+        href: start/gen/track-base-api.md
+  - name: WAV出力
+    href: start/wav.md
+- name: Ver 3.0.0への移行
+  href: migrate-to-ver-3.md
+- name: SMSCフォーマット
+  items:
+    - name: SMSCフォーマットとは？
+      href: smsc/what-is-the-smsc.md
+    - name: SMSCシリアライズ・デシリアライズ

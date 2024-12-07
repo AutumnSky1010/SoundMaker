@@ -36,9 +36,12 @@
       "modern"
     ],
     "globalMetadata": {
-      "_appName": "SoundMaker API Reference",
-      "_appTitle": "SoundMaker API Reference",
+      "_appName": "SoundMaker Documentation",
+      "_appTitle": "SoundMaker Documentation",
+      "_appFooter": "SoundMaker © 2022-2024",
       "_enableSearch": true,
+      "_appLogoPath": "images/favicon.png",
+      "_appFaviconPath": "images/favicon.png",
       "pdf": false
     }
   }
