@@ -55,8 +55,8 @@ public class PseudoTriangleWave : WaveTypeBase
     /// <exception cref="ArgumentOutOfRangeException">Volume must be below 100 and above 0.</exception>
     public short[] GenerateUnitWave(SoundFormat format, int volume, double hertz)
     {
-        GenerateUnitWaveInternal(format, volume, hertz);
-        return GenerateUnitWave(format, volume, hertz);
+        CheckGenerateUnitWaveArgs(volume, hertz);
+        return GenerateUnitWaveInternal(format, volume, hertz);
     }
 
     private static short[] GenerateUnitWaveInternal(SoundFormat format, int volume, double hertz)
