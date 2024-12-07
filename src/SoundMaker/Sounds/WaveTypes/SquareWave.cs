@@ -30,7 +30,7 @@ public class SquareWave : WaveTypeBase
     public override short[] GenerateWave(SoundFormat format, int length, int volume, double hertz)
     {
         var result = new List<short>(length);
-        var unitWave = GenerateUnitWave(format, volume, hertz);
+        var unitWave = GenerateUnitWaveInternal(format, volume, hertz, SquareWaveRatio);
         for (var i = 0; i < length / unitWave.Length; i++)
         {
             result.AddRange(unitWave);
@@ -47,12 +47,23 @@ public class SquareWave : WaveTypeBase
         return new SquareWave(SquareWaveRatio);
     }
 
-    private short[] GenerateUnitWave(SoundFormat format, int volume, double hertz)
+    /// <summary>
+    /// Generates one cycle of a sound waveform at the specified frequency.<br/>
+    /// 指定した周波数の音声波形1周期分を生成する。
+    /// </summary>
+    /// <param name="format">Format of the sound. <br/>音のフォーマット</param>
+    /// <param name="volume">Volume <br/>音量（0 ~ 100）</param>
+    /// <param name="hertz">Hertz of the sound. <br/>音の周波数</param>
+    /// <returns>The array of wave data.</returns>
+    /// <exception cref="ArgumentOutOfRangeException">Hertz must be non-negative and greater than 0.</exception>
+    /// <exception cref="ArgumentOutOfRangeException">Volume must be below 100 and above 0.</exception>
+    public short[] GenerateUnitWave(SoundFormat format, int volume, double hertz)
     {
-        return GenerateUnitWave(format, volume, hertz, SquareWaveRatio);
+        CheckGenerateUnitWaveArgs(volume, hertz);
+        return GenerateUnitWaveInternal(format, volume, hertz, SquareWaveRatio);
     }
 
-    public static short[] GenerateUnitWave(SoundFormat format, int volume, double hertz, SquareWaveRatio squareWaveRatio)
+    private static short[] GenerateUnitWaveInternal(SoundFormat format, int volume, double hertz, SquareWaveRatio squareWaveRatio)
     {
         var ratioIndex = (int)squareWaveRatio;
         var allRepeatTimes = (int)((int)format.SamplingFrequency / hertz);
