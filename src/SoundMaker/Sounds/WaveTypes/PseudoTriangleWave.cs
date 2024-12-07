@@ -27,11 +27,11 @@ public class PseudoTriangleWave : WaveTypeBase
 
         var result = new List<short>(length);
         var unitWave = GenerateUnitWave(format, volume, hertz);
-        for (var i = 0; i < length / unitWave.Count; i++)
+        for (var i = 0; i < length / unitWave.Length; i++)
         {
             result.AddRange(unitWave);
         }
-        for (var i = 0; i < length % unitWave.Count; i++)
+        for (var i = 0; i < length % unitWave.Length; i++)
         {
             result.Add(0);
         }
@@ -43,7 +43,7 @@ public class PseudoTriangleWave : WaveTypeBase
         return new PseudoTriangleWave();
     }
 
-    private List<short> GenerateUnitWave(SoundFormat format, int volume, double hertz)
+    public static short[] GenerateUnitWave(SoundFormat format, int volume, double hertz)
     {
         var repeatNumber = (int)((int)format.SamplingFrequency / hertz);
 
@@ -77,6 +77,6 @@ public class PseudoTriangleWave : WaveTypeBase
             }
         }
 
-        return result.ToList();
+        return result;
     }
 }

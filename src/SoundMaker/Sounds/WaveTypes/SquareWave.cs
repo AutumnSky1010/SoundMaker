@@ -20,22 +20,22 @@ public class SquareWave : WaveTypeBase
     /// <summary>
     /// デューティ比を基に繰り返し回数を求める為の値
     /// </summary>
-    private List<(double, double)> Ratio { get; } = new List<(double, double)>
-    {
+    private static List<(double, double)> Ratio { get; } =
+    [
         (0.875, 0.125),
         (0.75, 0.25),
         (0.5, 0.5),
-    };
+    ];
 
     public override short[] GenerateWave(SoundFormat format, int length, int volume, double hertz)
     {
         var result = new List<short>(length);
         var unitWave = GenerateUnitWave(format, volume, hertz);
-        for (var i = 0; i < length / unitWave.Count; i++)
+        for (var i = 0; i < length / unitWave.Length; i++)
         {
             result.AddRange(unitWave);
         }
-        for (var i = 0; i < length % unitWave.Count; i++)
+        for (var i = 0; i < length % unitWave.Length; i++)
         {
             result.Add(0);
         }
@@ -47,9 +47,14 @@ public class SquareWave : WaveTypeBase
         return new SquareWave(SquareWaveRatio);
     }
 
-    private List<short> GenerateUnitWave(SoundFormat format, int volume, double hertz)
+    private short[] GenerateUnitWave(SoundFormat format, int volume, double hertz)
     {
-        var ratioIndex = (int)SquareWaveRatio;
+        return GenerateUnitWave(format, volume, hertz, SquareWaveRatio);
+    }
+
+    public static short[] GenerateUnitWave(SoundFormat format, int volume, double hertz, SquareWaveRatio squareWaveRatio)
+    {
+        var ratioIndex = (int)squareWaveRatio;
         var allRepeatTimes = (int)((int)format.SamplingFrequency / hertz);
         var firstRepeatTimes = (int)(allRepeatTimes * Ratio[ratioIndex].Item1);
         // なぜか配列よりリストの方が早い
@@ -68,6 +73,6 @@ public class SquareWave : WaveTypeBase
         {
             result.Add(bottom);
         }
-        return result;
+        return result.ToArray();
     }
 }

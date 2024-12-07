@@ -9,11 +9,11 @@ public class TriangleWave : WaveTypeBase
         CheckGenerateWaveArgs(length, volume, hertz);
         var result = new List<short>(length);
         var unitWave = GenerateUnitWave(format, volume, hertz);
-        for (var i = 0; i < length / unitWave.Count; i++)
+        for (var i = 0; i < length / unitWave.Length; i++)
         {
             result.AddRange(unitWave);
         }
-        for (var i = 0; i < length % unitWave.Count; i++)
+        for (var i = 0; i < length % unitWave.Length; i++)
         {
             result.Add(0);
         }
@@ -25,7 +25,7 @@ public class TriangleWave : WaveTypeBase
         return new TriangleWave();
     }
 
-    private List<short> GenerateUnitWave(SoundFormat format, int volume, double hertz)
+    private static short[] GenerateUnitWave(SoundFormat format, int volume, double hertz)
     {
         var repeatNumber = (int)((int)format.SamplingFrequency / hertz);
 
@@ -58,6 +58,6 @@ public class TriangleWave : WaveTypeBase
             result[halfCount + quarterCount + midOffsetFromHalfCount] = short.MinValue;
         }
 
-        return result.ToList();
+        return result;
     }
 }
