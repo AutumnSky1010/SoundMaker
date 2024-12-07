@@ -1,4 +1,4 @@
-- name: Docs
+- name: ドキュメント
   href: markdowns/
-- name: API
+- name: APIリファレンス
   href: api/

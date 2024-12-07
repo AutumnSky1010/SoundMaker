@@ -54,8 +54,8 @@ public class TriangleWave : WaveTypeBase
 
         if (halfCount % 2 != 0)
         {
-            result[quarterCount] = short.MaxValue;
-            result[halfCount + quarterCount + midOffsetFromHalfCount] = short.MinValue;
+            result[quarterCount] = (short)(short.MaxValue * volumeMagnification);
+            result[halfCount + quarterCount + midOffsetFromHalfCount] = (short)(short.MinValue * volumeMagnification);
         }
 
         return result.ToList();
