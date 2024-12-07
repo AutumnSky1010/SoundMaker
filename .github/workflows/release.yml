@@ -1,0 +1,67 @@
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'version'
+        required: true
+
+jobs:
+  publish-to-nuget:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 8.0.x
+
+    - name: Build the SoundMaker project
+      run: dotnet build src/SoundMaker/SoundMaker.csproj --no-restore --warnaserror --configuration Release
+
+    - name: Publish to NuGet
+      run: dotnet nuget push "./src/SoundMaker/bin/Release/SoundMaker.*.nupkg" --api-key ${{ secrets.NUGET_KEY }} -s https://api.nuget.org/v3/index.json
+
+  create-release:
+    needs: publish-to-nuget
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create a tag
+        id: tag_version
+        uses: mathieudutour/github-tag-action@v6.2
+        with:
+          custom_tag: SoundMaker-Ver.${{ inputs.version }}
+          tag_prefix:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Create a GitHub release
+        uses: ncipollo/release-action@v1.14.0
+        with:
+          tag: ${{ steps.tag_version.outputs.new_tag }}
+          name: ${{ steps.tag_version.outputs.new_tag }}
+  
+  deploy-docs:
+    needs: publish-to-nuget
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 8.0.x
+
+    - name: Install DocFX
+      run: dotnet tool install -g docfx
+
+    - name: Build Documentation
+      run: docfx docs/docfx.json
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: docs/_site
