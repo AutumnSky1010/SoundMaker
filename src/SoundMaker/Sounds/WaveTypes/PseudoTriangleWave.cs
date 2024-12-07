@@ -26,12 +26,12 @@ public class PseudoTriangleWave : WaveTypeBase
         }
 
         var result = new List<short>(length);
-        var unitWave = GenerateUnitWave(format, volume, hertz);
-        for (var i = 0; i < length / unitWave.Count; i++)
+        var unitWave = GenerateUnitWaveInternal(format, volume, hertz);
+        for (var i = 0; i < length / unitWave.Length; i++)
         {
             result.AddRange(unitWave);
         }
-        for (var i = 0; i < length % unitWave.Count; i++)
+        for (var i = 0; i < length % unitWave.Length; i++)
         {
             result.Add(0);
         }
@@ -43,7 +43,23 @@ public class PseudoTriangleWave : WaveTypeBase
         return new PseudoTriangleWave();
     }
 
-    private List<short> GenerateUnitWave(SoundFormat format, int volume, double hertz)
+    /// <summary>
+    /// Generates one cycle of a sound waveform at the specified frequency.<br/>
+    /// 指定した周波数の音声波形1周期分を生成する。
+    /// </summary>
+    /// <param name="format">Format of the sound. <br/>音のフォーマット</param>
+    /// <param name="volume">Volume <br/>音量（0 ~ 100）</param>
+    /// <param name="hertz">Hertz of the sound. <br/>音の周波数</param>
+    /// <returns>The array of wave data.</returns>
+    /// <exception cref="ArgumentOutOfRangeException">Hertz must be non-negative and greater than 0.</exception>
+    /// <exception cref="ArgumentOutOfRangeException">Volume must be below 100 and above 0.</exception>
+    public short[] GenerateUnitWave(SoundFormat format, int volume, double hertz)
+    {
+        CheckGenerateUnitWaveArgs(volume, hertz);
+        return GenerateUnitWaveInternal(format, volume, hertz);
+    }
+
+    private static short[] GenerateUnitWaveInternal(SoundFormat format, int volume, double hertz)
     {
         var repeatNumber = (int)((int)format.SamplingFrequency / hertz);
 
@@ -77,6 +93,6 @@ public class PseudoTriangleWave : WaveTypeBase
             }
         }
 
-        return result.ToList();
+        return result;
     }
 }

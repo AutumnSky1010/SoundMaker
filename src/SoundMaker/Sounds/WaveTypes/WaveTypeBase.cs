@@ -25,6 +25,12 @@ public abstract class WaveTypeBase
         {
             throw new ArgumentOutOfRangeException(nameof(length), "'length' must be non-negative.");
         }
+
+        CheckGenerateUnitWaveArgs(volume, hertz);
+    }
+
+    protected static void CheckGenerateUnitWaveArgs(int volume, double hertz)
+    {
         if (volume is > 100 or < 0)
         {
             throw new ArgumentOutOfRangeException(nameof(volume), "'volume must be below than 100 and more than 0.");
