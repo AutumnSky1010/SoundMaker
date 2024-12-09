@@ -241,7 +241,7 @@ public class Track
     /// <returns>A new instance of the track with the same properties. <br/> 同じプロパティを持つトラックの新しいインスタンス。</returns>
     internal Track Clone()
     {
-        var copy = new Track(WaveType.Clone(), _format, _tempo, StartMilliSecond)
+        var copy = new Track(WaveType.Clone(), _format, _tempo, StartIndex)
         {
             WaveArrayLength = WaveArrayLength,
             _soundComponents = _soundComponents.Select(component => component.Clone()).ToList()
