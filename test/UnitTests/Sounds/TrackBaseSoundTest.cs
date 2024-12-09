@@ -26,7 +26,7 @@ public class TrackBaseSoundTest
         Assert.True(track2.Equals(actual[1]));
     }
 
-    [Fact(DisplayName = "指定したミリ秒から開始するトラックをすべて削除できるか")]
+    [Fact(DisplayName = "指定したインデクスから開始するトラックをすべて削除できるか")]
     public void RemoveTracksAt()
     {
         var format = FormatBuilder.Create()
@@ -34,7 +34,7 @@ public class TrackBaseSoundTest
             .WithBitDepth(8)
             .WithChannelCount(1)
             .ToSoundFormat();
-        // 0ミリ秒開始のトラックを削除する対象とする
+        // 0インデクス開始のトラックを削除する対象とする
         var targetStartMS = 0;
         var sound = new TrackBaseSound(format, 100);
         var wave = new SquareWave(SquareWaveRatio.Point25);
@@ -73,7 +73,7 @@ public class TrackBaseSoundTest
         Assert.False(maybeFail);
     }
 
-    [Fact(DisplayName = "指定したミリ秒から開始するトラックをすべて取得できるか")]
+    [Fact(DisplayName = "指定したインデクスから開始するトラックをすべて取得できるか")]
     public void GetTracks()
     {
         var format = FormatBuilder.Create()
@@ -85,7 +85,7 @@ public class TrackBaseSoundTest
         var wave = new SquareWave(SquareWaveRatio.Point25);
         var track1 = sound.CreateTrack(0, wave);
 
-        var tracks = sound.GetTracks(track1.StartMilliSecond);
+        var tracks = sound.GetTracks(track1.StartIndex);
         Assert.Contains(track1, tracks);
     }
 
@@ -116,7 +116,7 @@ public class TrackBaseSoundTest
         var wave = new SquareWave(SquareWaveRatio.Point25);
         var track1 = sound.CreateTrack(0, wave);
 
-        Assert.True(sound.TryGetTracks(track1.StartMilliSecond, out var tracks));
+        Assert.True(sound.TryGetTracks(track1.StartIndex, out var tracks));
         Assert.Contains(track1, tracks);
 
         Assert.False(sound.TryGetTracks(1000, out _));
@@ -135,8 +135,8 @@ public class TrackBaseSoundTest
         var track1 = sound.CreateTrack(0, wave);
         var track2 = sound.CreateTrack(1000, wave);
 
-        Assert.Equal(track1, sound.GetTracks(track1.StartMilliSecond)[0]);
-        Assert.Equal(track2, sound.GetTracks(track2.StartMilliSecond)[0]);
+        Assert.Equal(track1, sound.GetTracks(track1.StartIndex)[0]);
+        Assert.Equal(track2, sound.GetTracks(track2.StartIndex)[0]);
     }
 
     [Fact(DisplayName = "トラックの移動を行えるか")]

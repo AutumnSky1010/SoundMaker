@@ -7,7 +7,7 @@ namespace SoundMakerTests.UnitTests.Sounds;
 
 file class SoundComponentDouble : ISoundComponent
 {
-    public static readonly int DefinedGenerateWaveLength = 1;
+    public static readonly int DefinedGenerateWaveLength = 2;
 
     public ISoundComponent Clone()
     {
@@ -21,7 +21,7 @@ file class SoundComponentDouble : ISoundComponent
 
     public short[] GenerateWave(SoundFormat format, int tempo, WaveTypeBase waveType)
     {
-        return [0];
+        return [0, 1];
     }
 
     public int GetWaveArrayLength(SoundFormat format, int tempo)
@@ -138,14 +138,14 @@ public class TrackTest
     }
 
     [Fact(DisplayName = "開始位置を変更した際にインデクス関連のプロパティが正しく変更されるか")]
-    public void ChangeStartMilliSecond()
+    public void ChangeStartIndex()
     {
         var track = CreateTrack();
         var oldStartIndex = track.StartIndex;
         var oldEndIndex = track.EndIndex;
-        var diffIndex = _samplingFrequency;
-        // 1000ミリ秒減らす
-        track.StartMilliSecond -= 1000;
+        var diffIndex = 1;
+        // 1減らす
+        track.StartIndex -= diffIndex;
 
         var expectedEndIndex = oldEndIndex - diffIndex;
         Assert.Equal(expectedEndIndex, track.EndIndex);
@@ -158,7 +158,7 @@ public class TrackTest
             .WithBitDepth(16)
             .WithChannelCount(2)
             .ToSoundFormat();
-        return new Track(new TriangleWave(), format, 100, 1000);
+        return new Track(new TriangleWave(), format, 100, 1);
     }
 
     private void AssertEndIndex(Track track)
