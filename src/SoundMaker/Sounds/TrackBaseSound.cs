@@ -216,6 +216,7 @@ public class TrackBaseSound(SoundFormat format, int tempo)
         // 最大の終了時インデクスを取得する
         var maxEndIndex = _tracksTimeMap
             .SelectMany(pair => pair.Value)
+            .Where(track => track.Count != 0)
             .Max(track => track.EndIndex);
 
         var wave = new double[maxEndIndex + 1];
@@ -256,6 +257,7 @@ public class TrackBaseSound(SoundFormat format, int tempo)
         // 最大の終了時インデクスを取得する
         var maxEndIndex = _tracksTimeMap
             .SelectMany(pair => pair.Value)
+            .Where(track => track.Count != 0)
             .Max(track => track.EndIndex);
 
         var right = new double[maxEndIndex + 1];
