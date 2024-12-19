@@ -22,13 +22,13 @@ public class Track
     /// <param name="waveType">The wave type. <br/> 波形タイプ。</param>
     /// <param name="format">The sound format. <br/> サウンドフォーマット。</param>
     /// <param name="tempo">The tempo. <br/> テンポ。</param>
-    /// <param name="startMilliSecond">The start time in milliseconds. <br/> 開始時間（ミリ秒）。</param>
-    internal Track(WaveTypeBase waveType, SoundFormat format, int tempo, int startMilliSecond)
+    /// <param name="startIndex">The start time in index. <br/> 開始時間（インデクス）。</param>
+    internal Track(WaveTypeBase waveType, SoundFormat format, int tempo, int startIndex)
     {
         WaveType = waveType;
         _format = format;
         _tempo = tempo;
-        StartMilliSecond = startMilliSecond;
+        StartIndex = startIndex;
     }
 
 
@@ -58,15 +58,14 @@ public class Track
     }
 
     internal int EndIndex { get; private set; }
-    internal int StartIndex { get; private set; }
-    private int _startMilliSecond;
+    private int _startIndex;
     /// <summary>
-    /// Gets or sets the start time in milliseconds. <br/>
-    /// 開始時間（ミリ秒）を取得または設定するプロパティ。
+    /// Gets or sets the start time in index. <br/>
+    /// 開始時間（インデクス）を取得または設定するプロパティ。
     /// </summary>
-    internal int StartMilliSecond
+    internal int StartIndex
     {
-        get => _startMilliSecond;
+        get => _startIndex;
         set
         {
             // 負の数は許可しない
@@ -75,11 +74,8 @@ public class Track
                 value = 0;
             }
 
-            _startMilliSecond = value;
-
-            // 開始ミリ秒が変わると開始時、終了時のインデクスも変わるので、再計算する
-            var samplingFrequencyMS = (int)_format.SamplingFrequency / 1000.0;
-            StartIndex = (int)(StartMilliSecond * samplingFrequencyMS);
+            // 開始インデクスが変わると終了時のインデクスも変わる
+            _startIndex = value;
             if (WaveArrayLength == 0)
             {
                 EndIndex = StartIndex;
@@ -103,7 +99,7 @@ public class Track
         {
             _waveArrayLength = value;
 
-            // 配列の長さが変わると終了時インデクスが変わるので、再計算する
+            // 配列の長さが変わると終了時インデクスが変わる
             if (WaveArrayLength == 0)
             {
                 EndIndex = StartIndex;
@@ -245,7 +241,7 @@ public class Track
     /// <returns>A new instance of the track with the same properties. <br/> 同じプロパティを持つトラックの新しいインスタンス。</returns>
     internal Track Clone()
     {
-        var copy = new Track(WaveType.Clone(), _format, _tempo, StartMilliSecond)
+        var copy = new Track(WaveType.Clone(), _format, _tempo, StartIndex)
         {
             WaveArrayLength = WaveArrayLength,
             _soundComponents = _soundComponents.Select(component => component.Clone()).ToList()
