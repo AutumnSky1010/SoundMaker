@@ -2,7 +2,7 @@
 /// <summary>
 /// 音の配列の長さを計算するクラス
 /// </summary>
-internal static class SoundWaveLengthCalclator
+internal static class SoundWaveLengthCalculator
 {
     /// <summary>
     /// メソッド。
@@ -13,7 +13,7 @@ internal static class SoundWaveLengthCalclator
     /// <param name="isDotted">付点の場合はTrueに設定する</param>
     /// <returns>音の配列の長さ : int</returns>
     /// <exception cref="ArgumentOutOfRangeException">Tempo must be non-negative and greater than 0.</exception>
-    public static int Calclate(SoundFormat format, int tempo, LengthType length, bool isDotted)
+    public static int Calculate(SoundFormat format, int tempo, LengthType length, bool isDotted)
     {
         if (tempo <= 0)
         {
