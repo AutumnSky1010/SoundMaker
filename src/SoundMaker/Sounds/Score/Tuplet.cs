@@ -51,7 +51,7 @@ public class Tuplet : ISoundComponent
 
     public int GetWaveArrayLength(SoundFormat format, int tempo)
     {
-        return SoundWaveLengthCalclator.Calclate(format, tempo, Length, IsDotted);
+        return SoundWaveLengthCalculator.Calculate(format, tempo, Length, IsDotted);
     }
 
     public short[] GenerateWave(SoundFormat format, int tempo, int length, WaveTypeBase waveType)

@@ -219,7 +219,8 @@ public class TrackBaseSound(SoundFormat format, int tempo)
             .Where(track => track.Count != 0)
             .Max(track => track.EndIndex);
 
-        var wave = new double[maxEndIndex + 1];
+        var wave = new long[maxEndIndex + 1];
+        long maxAmplitude = 0;
 
         foreach (var (_, tracks) in _tracksTimeMap)
         {
@@ -234,12 +235,14 @@ public class TrackBaseSound(SoundFormat format, int tempo)
                 for (int i = track.StartIndex; i <= track.EndIndex; i++)
                 {
                     wave[i] += trackWave[i - track.StartIndex];
+                    var amplitude = Math.Abs(wave[i]);
+                    maxAmplitude = maxAmplitude < amplitude ? amplitude : maxAmplitude;
                 }
             }
         }
 
-        var normalizedRight = NormalizeAndClamp(wave);
-        return new(normalizedRight);
+        var normalized = NormalizeAndClamp(wave, maxAmplitude);
+        return new(normalized);
     }
 
     /// <summary>
@@ -260,9 +263,11 @@ public class TrackBaseSound(SoundFormat format, int tempo)
             .Where(track => track.Count != 0)
             .Max(track => track.EndIndex);
 
-        var right = new double[maxEndIndex + 1];
-        var left = new double[maxEndIndex + 1];
+        var right = new long[maxEndIndex + 1];
+        var left = new long[maxEndIndex + 1];
 
+        long maxAmplitudeRight = 0;
+        long maxAmplitudeLeft = 0;
         foreach (var (_, tracks) in _tracksTimeMap)
         {
             foreach (var track in tracks)
@@ -276,14 +281,19 @@ public class TrackBaseSound(SoundFormat format, int tempo)
                 var pan = (track.Pan + 1) / 2.0f;
                 for (int i = track.StartIndex; i <= track.EndIndex; i++)
                 {
-                    left[i] += trackWave[i - track.StartIndex] * pan;
-                    right[i] += trackWave[i - track.StartIndex] * (1 - pan);
+                    left[i] += (long)(trackWave[i - track.StartIndex] * pan);
+                    right[i] += (long)(trackWave[i - track.StartIndex] * (1 - pan));
+
+                    var amplitudeLeft = Math.Abs(left[i]);
+                    var amplitudeRight = Math.Abs(right[i]);
+                    maxAmplitudeRight = maxAmplitudeRight < amplitudeRight ? amplitudeRight : maxAmplitudeRight;
+                    maxAmplitudeLeft = maxAmplitudeLeft < amplitudeLeft ? amplitudeLeft : maxAmplitudeLeft;
                 }
             }
         }
 
-        var normalizedRight = NormalizeAndClamp(right);
-        var normalizedLeft = NormalizeAndClamp(left);
+        var normalizedRight = NormalizeAndClamp(right, maxAmplitudeRight);
+        var normalizedLeft = NormalizeAndClamp(left, maxAmplitudeLeft);
         return new(normalizedRight, normalizedLeft);
     }
 
@@ -293,25 +303,24 @@ public class TrackBaseSound(SoundFormat format, int tempo)
     /// </summary>
     /// <param name="wave">The wave data. <br/> 波形データ。</param>
     /// <returns>The normalized and clamped wave data. <br/> 正規化およびクランプされた波形データ。</returns>
-    private static short[] NormalizeAndClamp(double[] wave)
+    private static short[] NormalizeAndClamp(long[] wave, long maxAmplitude)
     {
         const int MaxValue = short.MaxValue;
         const int MinValue = short.MinValue;
 
-        var maxAmplitude = wave.Max(Math.Abs);
-        var scaleFactor = 1.0;
+        var scaleFactor = maxAmplitude > MaxValue ? (double)MaxValue / maxAmplitude : 1.0;
 
-        if (maxAmplitude > MaxValue)
+        var normalizedWave = new short[wave.Length];
+
+        for (int i = 0; i < wave.Length; i++)
         {
-            scaleFactor = MaxValue / maxAmplitude;
+            var scaledSample = wave[i] * scaleFactor;
+            normalizedWave[i] = (short)Math.Clamp(scaledSample, MinValue, MaxValue);
         }
 
-        return wave.Select(sample =>
-        {
-            var scaledSample = sample * scaleFactor;
-            return (short)Math.Clamp(scaledSample, MinValue, MaxValue);
-        }).ToArray();
+        return normalizedWave;
     }
+
 
     /// <summary> 
     /// Imports tracks into the internal map based on their start times. <br/> 

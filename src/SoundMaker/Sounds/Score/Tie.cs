@@ -63,7 +63,7 @@ public class Tie : ISoundComponent
         var length = BaseNote.GetWaveArrayLength(format, tempo);
         foreach (var note in AdditionalNotes)
         {
-            length += SoundWaveLengthCalclator.Calclate(format, tempo, note.Length, note.IsDotted);
+            length += SoundWaveLengthCalculator.Calculate(format, tempo, note.Length, note.IsDotted);
         }
         return length;
     }
