@@ -219,7 +219,8 @@ public class TrackBaseSound(SoundFormat format, int tempo)
             .Where(track => track.Count != 0)
             .Max(track => track.EndIndex);
 
-        var wave = new double[maxEndIndex + 1];
+        var wave = new long[maxEndIndex + 1];
+        long maxAmplitude = 0;
 
         foreach (var (_, tracks) in _tracksTimeMap)
         {
@@ -234,12 +235,14 @@ public class TrackBaseSound(SoundFormat format, int tempo)
                 for (int i = track.StartIndex; i <= track.EndIndex; i++)
                 {
                     wave[i] += trackWave[i - track.StartIndex];
+                    var amplitude = Math.Abs(wave[i]);
+                    maxAmplitude = maxAmplitude < amplitude ? amplitude : maxAmplitude;
                 }
             }
         }
 
-        var normalizedRight = NormalizeAndClamp(wave);
-        return new(normalizedRight);
+        var normalized = NormalizeAndClamp(wave, maxAmplitude);
+        return new(normalized);
     }
 
     /// <summary>
@@ -284,13 +287,11 @@ public class TrackBaseSound(SoundFormat format, int tempo)
                     var amplitudeLeft = Math.Abs(left[i]);
                     var amplitudeRight = Math.Abs(right[i]);
                     maxAmplitudeRight = maxAmplitudeRight < amplitudeRight ? amplitudeRight : maxAmplitudeRight;
-                    maxAmplitudeRight = maxAmplitudeLeft < amplitudeLeft ? amplitudeLeft : maxAmplitudeLeft;
+                    maxAmplitudeLeft = maxAmplitudeLeft < amplitudeLeft ? amplitudeLeft : maxAmplitudeLeft;
                 }
             }
         }
 
-        var normalizedRight = NormalizeAndClamp(right);
-        var normalizedLeft = NormalizeAndClamp(left);
         var normalizedRight = NormalizeAndClamp(right, maxAmplitudeRight);
         var normalizedLeft = NormalizeAndClamp(left, maxAmplitudeLeft);
         return new(normalizedRight, normalizedLeft);
