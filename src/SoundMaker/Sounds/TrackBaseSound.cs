@@ -219,8 +219,8 @@ public class TrackBaseSound(SoundFormat format, int tempo)
             .Where(track => track.Count != 0)
             .Max(track => track.EndIndex);
 
-        var wave = new long[maxEndIndex + 1];
-        long maxAmplitude = 0;
+        var wave = new short[maxEndIndex + 1];
+        var concurrentTracksCount = GetMaxConcurrentTracks();
 
         foreach (var (_, tracks) in _tracksTimeMap)
         {
@@ -234,15 +234,54 @@ public class TrackBaseSound(SoundFormat format, int tempo)
                 var trackWave = track.GenerateWave();
                 for (int i = track.StartIndex; i <= track.EndIndex; i++)
                 {
-                    wave[i] += trackWave[i - track.StartIndex];
-                    var amplitude = Math.Abs(wave[i]);
-                    maxAmplitude = maxAmplitude < amplitude ? amplitude : maxAmplitude;
+                    wave[i] += (short)(trackWave[i - track.StartIndex] / concurrentTracksCount);
                 }
             }
         }
 
-        var normalized = NormalizeAndClamp(wave, maxAmplitude);
-        return new(normalized);
+        return new(wave);
+    }
+
+    public IEnumerable<MonauralWave> GenerateBufferedMonauralWave(int startIndex, int bufferSize)
+    {
+        if (_tracksTimeMap.Count == 0)
+        {
+            yield break;
+        }
+        // 最大の終了時インデクスを取得する
+        var maxEndIndex = _tracksTimeMap
+            .SelectMany(pair => pair.Value)
+            .Where(track => track.Count != 0)
+            .Max(track => track.EndIndex);
+
+        var concurrentTracksCount = GetMaxConcurrentTracks();
+        for (int seekIndex = startIndex; seekIndex <= maxEndIndex; seekIndex += bufferSize)
+        {
+            var wave = new short[bufferSize];
+            foreach (var (_, tracks) in _tracksTimeMap)
+            {
+                foreach (var track in tracks)
+                {
+                    if (track.Count == 0)
+                    {
+                        continue;
+                    }
+
+                    var trackWave = track.GeneratePartialWave(seekIndex, seekIndex + bufferSize - 1);
+                    if (trackWave.Length == 0)
+                    {
+                        continue;
+                    }
+
+                    for (int i = 0; i < trackWave.Length; i++)
+                    {
+                        wave[i] += (short)(trackWave[i] / concurrentTracksCount);
+                    }
+                }
+            }
+
+            yield return new(wave);
+        }
     }
 
     /// <summary>
@@ -263,11 +302,10 @@ public class TrackBaseSound(SoundFormat format, int tempo)
             .Where(track => track.Count != 0)
             .Max(track => track.EndIndex);
 
-        var right = new long[maxEndIndex + 1];
-        var left = new long[maxEndIndex + 1];
+        var right = new short[maxEndIndex + 1];
+        var left = new short[maxEndIndex + 1];
+        var concurrentTracksCount = GetMaxConcurrentTracks();
 
-        long maxAmplitudeRight = 0;
-        long maxAmplitudeLeft = 0;
         foreach (var (_, tracks) in _tracksTimeMap)
         {
             foreach (var track in tracks)
@@ -281,21 +319,60 @@ public class TrackBaseSound(SoundFormat format, int tempo)
                 var pan = (track.Pan + 1) / 2.0f;
                 for (int i = track.StartIndex; i <= track.EndIndex; i++)
                 {
-                    left[i] += (long)(trackWave[i - track.StartIndex] * pan);
-                    right[i] += (long)(trackWave[i - track.StartIndex] * (1 - pan));
-
-                    var amplitudeLeft = Math.Abs(left[i]);
-                    var amplitudeRight = Math.Abs(right[i]);
-                    maxAmplitudeRight = maxAmplitudeRight < amplitudeRight ? amplitudeRight : maxAmplitudeRight;
-                    maxAmplitudeLeft = maxAmplitudeLeft < amplitudeLeft ? amplitudeLeft : maxAmplitudeLeft;
+                    left[i] += (short)(trackWave[i - track.StartIndex] * pan / concurrentTracksCount);
+                    right[i] += (short)(trackWave[i - track.StartIndex] * (1 - pan) / concurrentTracksCount);
                 }
             }
         }
-
-        var normalizedRight = NormalizeAndClamp(right, maxAmplitudeRight);
-        var normalizedLeft = NormalizeAndClamp(left, maxAmplitudeLeft);
-        return new(normalizedRight, normalizedLeft);
+        return new(right, left);
     }
+
+    /// <summary>
+    /// Calculates the maximum number of overlapping tracks at any time.<br/>
+    /// 任意の時点で同時に再生されているトラック数の最大値を計算するメソッド。
+    /// </summary>
+    /// <returns>The maximum number of overlapping tracks.<br/> 同時に再生されているトラック数の最大値。</returns>
+    private int GetMaxConcurrentTracks()
+    {
+        if (_tracksTimeMap.Count == 0)
+        {
+            return 0;
+        }
+
+        // イベントの開始と終了を記録するリスト
+        var events = new List<(int time, int type)>();
+
+        foreach (var (_, tracks) in _tracksTimeMap)
+        {
+            foreach (var track in tracks)
+            {
+                if (track.Count == 0)
+                {
+                    continue;
+                }
+
+                // 開始時に +1、終了後に -1 のイベントを追加
+                events.Add((track.StartIndex, 1));
+                events.Add((track.EndIndex + 1, -1)); // 終了インデックスの次の時点で減少
+            }
+        }
+
+        // 時間順、同時刻なら終了イベントを先に処理
+        events.Sort((a, b) => a.time == b.time ? a.type.CompareTo(b.type) : a.time.CompareTo(b.time));
+
+        // 最大同時トラック数を計算
+        int maxConcurrentTracks = 0;
+        int currentTracks = 0;
+
+        foreach (var (time, type) in events)
+        {
+            currentTracks += type;
+            maxConcurrentTracks = Math.Max(maxConcurrentTracks, currentTracks);
+        }
+
+        return maxConcurrentTracks;
+    }
+
 
     /// <summary>
     /// Normalizes and clamps the wave data. <br/>
