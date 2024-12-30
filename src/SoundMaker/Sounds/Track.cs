@@ -11,6 +11,8 @@ public class Track
 {
     private List<ISoundComponent> _soundComponents = [];
 
+    private Dictionary<ISoundComponent, int> _waveArrayLengthPair = [];
+
     private readonly SoundFormat _format;
 
     private readonly int _tempo;
@@ -143,6 +145,91 @@ public class Track
         return [.. result];
     }
 
+    /// <summary>
+    /// Generates the waveform data for the specified range. <br/>
+    /// 指定した範囲の波形データを生成するメソッド。
+    /// </summary>
+    /// <param name="startIndex">The starting index of the range. <br/> 範囲の開始インデックス。</param>
+    /// <param name="endIndex">The ending index of the range. <br/> 範囲の終了インデックス。</param>
+    /// <returns>The waveform data for the specified range. <br/> 指定範囲の波形データ。</returns>
+
+    public short[] GeneratePartialWave(int startIndex, int endIndex)
+    {
+        // 入力検証
+        if (startIndex < 0 || startIndex > endIndex)
+        {
+            return [];
+        }
+
+        // 生成する波形の長さを計算する
+        var expectedLength = endIndex - startIndex + 1;
+
+        // 現在探索中のコンポーネント開始インデクス
+        int currentComponentIndex = StartIndex;
+
+        // 生成した波形データを格納するリスト
+        var result = new List<short>();
+
+        // 余分に生成した波形の長さ(データの先頭側)
+        var unnecessaryLengthFirst = 0;
+        foreach (var soundComponent in _soundComponents)
+        {
+            // コンポーネントごとの波形長を取得
+            int waveArrayLength = _waveArrayLengthPair.TryGetValue(soundComponent, out var value)
+                ? value
+                : soundComponent.GetWaveArrayLength(_format, _tempo);
+
+            int nextComponentIndex = currentComponentIndex + waveArrayLength;
+
+            // コンポーネントが必要な範囲に含まれない場合の処理
+            if (startIndex >= nextComponentIndex)
+            {
+                // `startIndex` が現在のコンポーネントの終了位置より後の場合、次のコンポーネントへ進む
+                currentComponentIndex = nextComponentIndex;
+                continue;
+            }
+
+            if (endIndex < currentComponentIndex)
+            {
+                // `endIndex`が現在のコンポーネントの開始位置より前の場合、ブレークする
+                break;
+            }
+
+            // 以下、コンポーネントが必要な範囲に含まれる場合の処理
+            var wave = soundComponent.GenerateWave(_format, _tempo, WaveType);
+            if (result.Count == 0)
+            {
+                unnecessaryLengthFirst = Math.Max(startIndex - currentComponentIndex, 0);
+
+                // 開始インデクスより先に波形がある場合は０で埋めて、波形の開始位置をあわせる
+                if (currentComponentIndex > startIndex)
+                {
+                    result.AddRange(Enumerable.Repeat<short>(0, currentComponentIndex - startIndex));
+                }
+            }
+            // 生成した波形を追加
+            result.AddRange(wave);
+
+            // 次のコンポーネントへ進む
+            currentComponentIndex = nextComponentIndex;
+
+            // 必要な範囲の波形をすべて取得したら終了
+            if (result.Count - unnecessaryLengthFirst >= expectedLength)
+            {
+                break;
+            }
+        }
+
+        // 最初の不要な長さをスキップする
+        var skipped = result.Skip(unnecessaryLengthFirst).ToArray();
+        if (skipped.Length <= expectedLength)
+        {
+            return skipped;
+        }
+
+        // 波形後ろ側の余分な長さをスキップする
+        return skipped.Take(expectedLength).ToArray();
+    }
 
     /// <summary>
     /// Adds a sound component to the track. <br/>
@@ -151,8 +238,10 @@ public class Track
     /// <param name="component">The sound component to add. <br/> 追加するサウンドコンポーネント。</param>
     public void Add(ISoundComponent component)
     {
-        WaveArrayLength += component.GetWaveArrayLength(_format, _tempo);
+        var componentLength = component.GetWaveArrayLength(_format, _tempo);
+        WaveArrayLength += componentLength;
         _soundComponents.Add(component);
+        _waveArrayLengthPair.TryAdd(component, componentLength);
     }
 
     /// <summary>
@@ -174,7 +263,9 @@ public class Track
         }
 
         _soundComponents.Insert(index, component);
-        WaveArrayLength += component.GetWaveArrayLength(_format, _tempo);
+        var componentLength = component.GetWaveArrayLength(_format, _tempo);
+        WaveArrayLength += componentLength;
+        _waveArrayLengthPair.TryAdd(component, componentLength);
     }
 
     /// <summary>
@@ -192,7 +283,15 @@ public class Track
 
         var targetComponent = _soundComponents[index];
         _soundComponents.Remove(targetComponent);
-        WaveArrayLength -= targetComponent.GetWaveArrayLength(_format, _tempo);
+        if (_waveArrayLengthPair.TryGetValue(targetComponent, out var componentLength))
+        {
+            _waveArrayLengthPair.Remove(targetComponent);
+            WaveArrayLength -= componentLength;
+        }
+        else
+        {
+            WaveArrayLength -= targetComponent.GetWaveArrayLength(_format, _tempo);
+        }
     }
 
     /// <summary>
@@ -206,7 +305,15 @@ public class Track
         var ok = _soundComponents.Remove(component);
         if (ok)
         {
-            WaveArrayLength -= component.GetWaveArrayLength(_format, _tempo);
+            if (_waveArrayLengthPair.TryGetValue(component, out var componentLength))
+            {
+                _waveArrayLengthPair.Remove(component);
+                WaveArrayLength -= componentLength;
+            }
+            else
+            {
+                WaveArrayLength -= component.GetWaveArrayLength(_format, _tempo);
+            }
             return true;
         }
 
@@ -221,6 +328,7 @@ public class Track
     {
         WaveArrayLength = 0;
         _soundComponents.Clear();
+        _waveArrayLengthPair.Clear();
     }
 
     /// <summary>
@@ -231,7 +339,14 @@ public class Track
     public void Import(IEnumerable<ISoundComponent> components)
     {
         _soundComponents = new List<ISoundComponent>(components);
-        WaveArrayLength = components.Sum(component => component.GetWaveArrayLength(_format, _tempo));
+        var sum = 0;
+        foreach (var component in components)
+        {
+            var componentLength = component.GetWaveArrayLength(_format, _tempo);
+            _waveArrayLengthPair.TryAdd(component, componentLength);
+            sum += componentLength;
+        }
+        WaveArrayLength = sum;
     }
 
     /// <summary>
@@ -241,11 +356,8 @@ public class Track
     /// <returns>A new instance of the track with the same properties. <br/> 同じプロパティを持つトラックの新しいインスタンス。</returns>
     internal Track Clone()
     {
-        var copy = new Track(WaveType.Clone(), _format, _tempo, StartIndex)
-        {
-            WaveArrayLength = WaveArrayLength,
-            _soundComponents = _soundComponents.Select(component => component.Clone()).ToList()
-        };
+        var copy = new Track(WaveType.Clone(), _format, _tempo, StartIndex);
+        copy.Import(_soundComponents.Select(component => component.Clone()));
         return copy;
     }
 
