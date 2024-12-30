@@ -242,6 +242,16 @@ public class TrackBaseSound(SoundFormat format, int tempo)
         return new(wave);
     }
 
+    /// <summary>
+    /// Generates buffered monaural waves from the tracks, starting at the specified index and using the specified buffer size. <br/>
+    /// 指定した開始インデックスから指定したバッファサイズを使用して、トラックからバッファリングされたモノラル波を生成するメソッド。
+    /// </summary>
+    /// <param name="startIndex">The starting index for the buffer. <br/> バッファの開始インデックス。</param>
+    /// <param name="bufferSize">The size of the buffer. <br/> バッファのサイズ。</param>
+    /// <returns>
+    /// An enumerable collection of buffered monaural waves. <br/>
+    /// バッファリングされたモノラル波の列挙可能なコレクション。
+    /// </returns>
     public IEnumerable<MonauralWave> GenerateBufferedMonauralWave(int startIndex, int bufferSize)
     {
         if (_tracksTimeMap.Count == 0)
@@ -328,6 +338,62 @@ public class TrackBaseSound(SoundFormat format, int tempo)
     }
 
     /// <summary>
+    /// Generates buffered stereo waves from the tracks, starting at the specified index and using the specified buffer size. <br/>
+    /// 指定した開始インデックスから指定したバッファサイズを使用して、トラックからバッファリングされたステレオ波を生成するメソッド。
+    /// </summary>
+    /// <param name="startIndex">The starting index for the buffer. <br/> バッファの開始インデックス。</param>
+    /// <param name="bufferSize">The size of the buffer. <br/> バッファのサイズ。</param>
+    /// <returns>
+    /// An enumerable collection of buffered stereo waves. <br/>
+    /// バッファリングされたステレオ波の列挙可能なコレクション。
+    /// </returns>
+    public IEnumerable<StereoWave> GenerateBufferedStereoWave(int startIndex, int bufferSize)
+    {
+        if (_tracksTimeMap.Count == 0)
+        {
+            yield break;
+        }
+
+        // 最大の終了時インデクスを取得する
+        var maxEndIndex = _tracksTimeMap
+            .SelectMany(pair => pair.Value)
+            .Where(track => track.Count != 0)
+            .Max(track => track.EndIndex);
+        var concurrentTracksCount = GetMaxConcurrentTracks();
+
+        for (int seekIndex = startIndex; seekIndex <= maxEndIndex; seekIndex += bufferSize)
+        {
+            var right = new short[maxEndIndex + 1];
+            var left = new short[maxEndIndex + 1];
+            foreach (var (_, tracks) in _tracksTimeMap)
+            {
+                foreach (var track in tracks)
+                {
+                    if (track.Count == 0)
+                    {
+                        continue;
+                    }
+
+                    var trackWave = track.GeneratePartialWave(seekIndex, seekIndex + bufferSize - 1);
+                    if (trackWave.Length == 0)
+                    {
+                        continue;
+                    }
+
+                    var pan = (track.Pan + 1) / 2.0f;
+                    for (int i = 0; i < trackWave.Length; i++)
+                    {
+                        left[i] += (short)(trackWave[i - track.StartIndex] * pan / concurrentTracksCount);
+                        right[i] += (short)(trackWave[i - track.StartIndex] * (1 - pan) / concurrentTracksCount);
+                    }
+                }
+            }
+
+            yield return new(right, left);
+        }
+    }
+
+    /// <summary>
     /// Calculates the maximum number of overlapping tracks at any time.<br/>
     /// 任意の時点で同時に再生されているトラック数の最大値を計算するメソッド。
     /// </summary>
@@ -371,31 +437,6 @@ public class TrackBaseSound(SoundFormat format, int tempo)
         }
 
         return maxConcurrentTracks;
-    }
-
-
-    /// <summary>
-    /// Normalizes and clamps the wave data. <br/>
-    /// 波形データを正規化してクランプするメソッド。
-    /// </summary>
-    /// <param name="wave">The wave data. <br/> 波形データ。</param>
-    /// <returns>The normalized and clamped wave data. <br/> 正規化およびクランプされた波形データ。</returns>
-    private static short[] NormalizeAndClamp(long[] wave, long maxAmplitude)
-    {
-        const int MaxValue = short.MaxValue;
-        const int MinValue = short.MinValue;
-
-        var scaleFactor = maxAmplitude > MaxValue ? (double)MaxValue / maxAmplitude : 1.0;
-
-        var normalizedWave = new short[wave.Length];
-
-        for (int i = 0; i < wave.Length; i++)
-        {
-            var scaledSample = wave[i] * scaleFactor;
-            normalizedWave[i] = (short)Math.Clamp(scaledSample, MinValue, MaxValue);
-        }
-
-        return normalizedWave;
     }
 
 

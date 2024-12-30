@@ -159,12 +159,16 @@ public class Track
             return [];
         }
 
+        // 生成する波形の長さを計算する
         var expectedLength = endIndex - startIndex + 1;
 
-        /** 探索用インデクス */
+        // 現在探索中のコンポーネント開始インデクス
         int currentComponentIndex = StartIndex;
+
+        // 生成した波形データを格納するリスト
         var result = new List<short>();
 
+        // 余分に生成した波形の長さ(データの先頭側)
         var unnecessaryLengthFirst = 0;
         foreach (var soundComponent in _soundComponents)
         {
@@ -189,19 +193,22 @@ public class Track
                 break;
             }
 
+            // 以下、コンポーネントが必要な範囲に含まれる場合の処理
             var wave = soundComponent.GenerateWave(_format, _tempo, WaveType);
             if (result.Count == 0)
             {
                 unnecessaryLengthFirst = Math.Max(startIndex - currentComponentIndex, 0);
 
-                // currentComponentIndexがstartIndexより大きい場合は、開始位置を調製するために0-paddingする必要がある
+                // 開始インデクスより先に波形がある場合は０で埋めて、波形の開始位置をあわせる
                 if (currentComponentIndex > startIndex)
                 {
                     result.AddRange(Enumerable.Repeat<short>(0, currentComponentIndex - startIndex));
                 }
             }
+            // 生成した波形を追加
             result.AddRange(wave);
 
+            // 次のコンポーネントへ進む
             currentComponentIndex = nextComponentIndex;
 
             // 必要な範囲の波形をすべて取得したら終了
@@ -211,12 +218,14 @@ public class Track
             }
         }
 
+        // 最初の不要な長さをスキップする
         var skipped = result.Skip(unnecessaryLengthFirst).ToArray();
         if (skipped.Length <= expectedLength)
         {
             return skipped;
         }
 
+        // 波形後ろ側の余分な長さをスキップする
         return skipped.Take(expectedLength).ToArray();
     }
 
