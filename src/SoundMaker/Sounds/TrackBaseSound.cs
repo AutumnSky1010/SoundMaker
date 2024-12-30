@@ -329,8 +329,8 @@ public class TrackBaseSound(SoundFormat format, int tempo)
                 var pan = (track.Pan + 1) / 2.0f;
                 for (int i = track.StartIndex; i <= track.EndIndex; i++)
                 {
-                    left[i] += (short)(trackWave[i - track.StartIndex] * pan / concurrentTracksCount);
-                    right[i] += (short)(trackWave[i - track.StartIndex] * (1 - pan) / concurrentTracksCount);
+                    left[i] += (short)((trackWave[i - track.StartIndex] / concurrentTracksCount) * pan);
+                    right[i] += (short)((trackWave[i - track.StartIndex] / concurrentTracksCount) * (1 - pan));
                 }
             }
         }
@@ -363,8 +363,8 @@ public class TrackBaseSound(SoundFormat format, int tempo)
 
         for (int seekIndex = startIndex; seekIndex <= maxEndIndex; seekIndex += bufferSize)
         {
-            var right = new short[maxEndIndex + 1];
-            var left = new short[maxEndIndex + 1];
+            var right = new short[bufferSize];
+            var left = new short[bufferSize];
             foreach (var (_, tracks) in _tracksTimeMap)
             {
                 foreach (var track in tracks)
@@ -383,8 +383,8 @@ public class TrackBaseSound(SoundFormat format, int tempo)
                     var pan = (track.Pan + 1) / 2.0f;
                     for (int i = 0; i < trackWave.Length; i++)
                     {
-                        left[i] += (short)(trackWave[i - track.StartIndex] * pan / concurrentTracksCount);
-                        right[i] += (short)(trackWave[i - track.StartIndex] * (1 - pan) / concurrentTracksCount);
+                        left[i] += (short)((trackWave[i] / concurrentTracksCount) * pan);
+                        right[i] += (short)((trackWave[i] / concurrentTracksCount) * (1 - pan));
                     }
                 }
             }
