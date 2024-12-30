@@ -146,11 +146,13 @@ public class Track
     }
 
     /// <summary>
-    /// 指定した範囲の波形を生成する。
+    /// Generates the waveform data for the specified range. <br/>
+    /// 指定した範囲の波形データを生成するメソッド。
     /// </summary>
-    /// <param name="startIndex">開始インデックス</param>
-    /// <param name="endIndex">終了インデックス</param>
-    /// <returns>指定範囲の波形データ</returns>
+    /// <param name="startIndex">The starting index of the range. <br/> 範囲の開始インデックス。</param>
+    /// <param name="endIndex">The ending index of the range. <br/> 範囲の終了インデックス。</param>
+    /// <returns>The waveform data for the specified range. <br/> 指定範囲の波形データ。</returns>
+
     public short[] GeneratePartialWave(int startIndex, int endIndex)
     {
         // 入力検証
