@@ -1,19 +1,19 @@
 ﻿namespace SoundMaker.Sounds.SoundChannels;
 /// <summary>
-/// direction of hearing. 左右どちらから音が出るかを表す列挙型
+/// Direction of hearing. <br/>左右どちらから音が出るかを表す列挙型
 /// </summary>
 public enum PanType
 {
     /// <summary>
-    /// both. 左右両方
+    /// Both. <br/>左右両方
     /// </summary>
     Both,
     /// <summary>
-    /// right. 右
+    /// Right. <br/>右
     /// </summary>
     Right,
     /// <summary>
-    /// left. 左
+    /// Left. <br/>左
     /// </summary>
     Left
 }
