@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>周波数を指定し、音声波形を生成する | SoundMaker Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="周波数を指定し、音声波形を生成する | SoundMaker Documentation ">
+      
+      
+      <link rel="icon" href="../../../images/favicon.png">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/AutumnSky1010/SoundMaker/blob/master/docs/markdowns/start/gen/frequency.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../images/favicon.png" alt="SoundMaker Documentation">
+            SoundMaker Documentation
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="周波数を指定し音声波形を生成する">周波数を指定し、音声波形を生成する</h1>
+
+<p>周波数を直接指定して音波を生成する方法です。以下のプログラムでは、800Hzの三角波を5秒間生成します。</p>
+<h3 id="概要">概要</h3>
+<p>指定された周波数の音波を生成するためのコードです。指定秒数分の配列の長さは <code>サンプリング周波数 * 秒数</code> で求められます。</p>
+<h3 id="コード例">コード例</h3>
+<pre><code class="lang-cs">private static StereoWave MakeStereoWave(SoundFormat format)
+{
+    var triangleWave = new TriangleWave();
+    int hertz = 800;
+    int length = (int)format.SamplingFrequency * 5;
+    int volume = 50;
+
+    var waveShorts = triangleWave.GenerateWave(format, length, volume, hertz);
+    return new StereoWave(waveShorts, waveShorts);
+}
+</code></pre>
+<h3 id="詳細な説明">詳細な説明</h3>
+<ul>
+<li><strong>三角波の作成</strong>: <code>TriangleWave</code> クラスのインスタンスを作成します。</li>
+<li><strong>周波数の設定</strong>: <code>hertz</code> は生成する音波の周波数を指定します。ここでは800Hzに設定されています。</li>
+<li><strong>配列の長さの計算</strong>: <code>length</code> は <code>サンプリング周波数 * 秒数</code> で計算されます。ここでは5秒間の音波を生成するため、 <code>format.SamplingFrequency * 5</code> となります。</li>
+<li><strong>音量の設定</strong>: <code>volume</code> で音量を指定します。ここでは50に設定されています(0 &lt;= volume &lt;= 100)。</li>
+<li><strong>音波の生成</strong>: <code>triangleWave.GenerateWave</code> メソッドを使って、指定された周波数と音量で音波を生成します。</li>
+<li><strong>ステレオ音波の作成</strong>: 最後に、生成された音波データを使って <code>StereoWave</code> のインスタンスを作成します。</li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/AutumnSky1010/SoundMaker/blob/master/docs/markdowns/start/gen/frequency.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          SoundMaker © 2022-2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

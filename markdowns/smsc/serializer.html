@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>SMSCシリアライズ・デシリアライズ | SoundMaker Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="SMSCシリアライズ・デシリアライズ | SoundMaker Documentation ">
+      
+      
+      <link rel="icon" href="../../images/favicon.png">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/AutumnSky1010/SoundMaker/blob/master/docs/markdowns/smsc/serializer.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/favicon.png" alt="SoundMaker Documentation">
+            SoundMaker Documentation
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="smscシリアライズデシリアライズ">SMSCシリアライズ・デシリアライズ</h1>
+
+<p>SMSCデータをシリアライズおよびデシリアライズする方法を示します。</p>
+<h3 id="シリアライズ">シリアライズ</h3>
+<p>以下のコード例では、サウンドコンポーネントをSMSC形式にシリアライズする方法を示しています。</p>
+<h4 id="コード例">コード例</h4>
+<pre><code class="lang-cs">// using SoundMaker.ScoreData.SMSC;
+// using SoundMaker.Sounds.Score;
+var components = new List&lt;ISoundComponent&gt;()
+{
+    new Note(Scale.E, 5, LengthType.Eighth),
+    new Note(Scale.F, 5, LengthType.Eighth),
+    new Note(Scale.G, 5, LengthType.Eighth),
+};
+var smsc = SMSCFormat.Serialize(components);
+Console.WriteLine(smsc);
+</code></pre>
+<h4 id="詳細な説明">詳細な説明</h4>
+<ol>
+<li><strong>サウンドコンポーネントの作成</strong>: <code>ISoundComponent</code> を実装したクラス（例：<code>Note</code>）のオブジェクトをリストに追加します。
+<ul>
+<li><code>new Note(Scale.E, 5, LengthType.Eighth)</code>: 音階E、5オクターブ、長さは八分音符の音を作成。</li>
+<li>同様に、音階FおよびGの音符も追加します。</li>
+</ul>
+</li>
+<li><strong>シリアライズ</strong>: <code>SMSCFormat.Serialize</code> メソッドを使用して、サウンドコンポーネントのリストをSMSC形式にシリアライズします。</li>
+<li><strong>出力</strong>: シリアライズされたSMSCデータをコンソールに出力します。</li>
+</ol>
+<h3 id="デシリアライズ">デシリアライズ</h3>
+<p>以下のコード例では、SMSC形式のデータをサウンドコンポーネントにデシリアライズする方法を示しています。</p>
+<h4 id="コード例-1">コード例</h4>
+<pre><code class="lang-cs">// using SoundMaker.ScoreData.SMSC;
+// using SoundMaker.Sounds.Score;
+var smsc = &quot;C4, 4&quot;;
+var result = SMSCFormat.Read(smsc);
+if (result.TryGetValue(out IReadOnlyList&lt;ISoundComponent&gt; components))
+{
+}
+else
+{
+}
+</code></pre>
+<h4 id="詳細な説明-1">詳細な説明</h4>
+<ol>
+<li><strong>SMSCデータの読み込み</strong>: シリアライズされたSMSC形式の文字列を用意します。例：<code>&quot;C4, 4&quot;</code>。</li>
+<li><strong>デシリアライズ</strong>: <code>SMSCFormat.Read</code> メソッドを使用して、SMSC形式のデータをサウンドコンポーネントにデシリアライズします。</li>
+<li><strong>結果の確認</strong>:
+<ul>
+<li><code>result.TryGetValue(out IReadOnlyList&lt;ISoundComponent&gt; components)</code>: デシリアライズに成功した場合、サウンドコンポーネントのリストを取得します。</li>
+<li>デシリアライズに失敗した場合の処理も含めます。</li>
+</ul>
+</li>
+</ol>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/AutumnSky1010/SoundMaker/blob/master/docs/markdowns/smsc/serializer.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          SoundMaker © 2022-2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

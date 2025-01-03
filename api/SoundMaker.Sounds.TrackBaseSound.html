@@ -2,12 +2,12 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Class TrackBaseSound | SoundMaker API Reference </title>
+      <title>Class TrackBaseSound | SoundMaker Documentation </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class TrackBaseSound | SoundMaker API Reference ">
+      <meta name="title" content="Class TrackBaseSound | SoundMaker Documentation ">
       
       <meta name="description" content="Initializes a new instance of the TrackBaseSound class with the specified format and tempo.  指定されたフォーマットとテンポでTrackBaseSoundクラスの新しいインスタンスを初期化するメソッド。">
-      <link rel="icon" href="../favicon.ico">
+      <link rel="icon" href="../images/favicon.png">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
       <meta name="docfx:navrel" content="../toc.html">
@@ -44,8 +44,8 @@
       <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
         <div class="container-xxl flex-nowrap">
           <a class="navbar-brand" href="../index.html">
-            <img id="logo" class="svg" src="../logo.svg" alt="SoundMaker API Reference">
-            SoundMaker API Reference
+            <img id="logo" class="svg" src="../images/favicon.png" alt="SoundMaker Documentation">
+            SoundMaker Documentation
           </a>
           <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
             <i class="bi bi-three-dots"></i>
@@ -308,7 +308,7 @@ Class TrackBaseSound  <a class="header-action link-secondary" title="View source
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Track CopyTrack(Track sourceTrack, int newStartMilliSecond)</code></pre>
+    <pre><code class="lang-csharp hljs">public Track CopyTrack(Track sourceTrack, int newStartIndex)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -316,8 +316,8 @@ Class TrackBaseSound  <a class="header-action link-secondary" title="View source
     <dt><code>sourceTrack</code> <a class="xref" href="SoundMaker.Sounds.Track.html">Track</a></dt>
     <dd><p>The track to copy. <br> コピーするトラック。</p>
 </dd>
-    <dt><code>newStartMilliSecond</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd><p>The new start time in milliseconds. <br> 新しい開始時間（ミリ秒）。</p>
+    <dt><code>newStartIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The new start time in index. <br> 新しい開始時間（インデクス）。</p>
 </dd>
   </dl>
 
@@ -351,13 +351,13 @@ Class TrackBaseSound  <a class="header-action link-secondary" title="View source
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Track CreateTrack(int startMilliSecond, WaveTypeBase waveType)</code></pre>
+    <pre><code class="lang-csharp hljs">public Track CreateTrack(int startIndex, WaveTypeBase waveType)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>startMilliSecond</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd><p>The start time in milliseconds. <br> 開始時間（ミリ秒）。</p>
+    <dt><code>startIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The start time in index. <br> 開始時間（インデクス）。</p>
 </dd>
     <dt><code>waveType</code> <a class="xref" href="SoundMaker.Sounds.WaveTypes.WaveTypeBase.html">WaveTypeBase</a></dt>
     <dd><p>The type of wave. <br> 波の種類。</p>
@@ -368,6 +368,94 @@ Class TrackBaseSound  <a class="header-action link-secondary" title="View source
   <dl class="parameters">
     <dt><a class="xref" href="SoundMaker.Sounds.Track.html">Track</a></dt>
     <dd><p>A new instance of the track. <br> 新しいトラックのインスタンス。</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SoundMaker_Sounds_TrackBaseSound_GenerateBufferedMonauralWave_" data-uid="SoundMaker.Sounds.TrackBaseSound.GenerateBufferedMonauralWave*"></a>
+
+  <h3 id="SoundMaker_Sounds_TrackBaseSound_GenerateBufferedMonauralWave_System_Int32_System_Int32_" data-uid="SoundMaker.Sounds.TrackBaseSound.GenerateBufferedMonauralWave(System.Int32,System.Int32)">
+  GenerateBufferedMonauralWave(int, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/TrackBaseSound.cs/#L255"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Generates buffered monaural waves from the tracks, starting at the specified index and using the specified buffer size. <br>
+指定した開始インデックスから指定したバッファサイズを使用して、トラックからバッファリングされたモノラル波を生成するメソッド。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;MonauralWave&gt; GenerateBufferedMonauralWave(int startIndex, int bufferSize)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>startIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The starting index for the buffer. <br> バッファの開始インデックス。</p>
+</dd>
+    <dt><code>bufferSize</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The size of the buffer. <br> バッファのサイズ。</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="SoundMaker.Sounds.MonauralWave.html">MonauralWave</a>&gt;</dt>
+    <dd><p>An enumerable collection of buffered monaural waves. <br>
+バッファリングされたモノラル波の列挙可能なコレクション。</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SoundMaker_Sounds_TrackBaseSound_GenerateBufferedStereoWave_" data-uid="SoundMaker.Sounds.TrackBaseSound.GenerateBufferedStereoWave*"></a>
+
+  <h3 id="SoundMaker_Sounds_TrackBaseSound_GenerateBufferedStereoWave_System_Int32_System_Int32_" data-uid="SoundMaker.Sounds.TrackBaseSound.GenerateBufferedStereoWave(System.Int32,System.Int32)">
+  GenerateBufferedStereoWave(int, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/TrackBaseSound.cs/#L350"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Generates buffered stereo waves from the tracks, starting at the specified index and using the specified buffer size. <br>
+指定した開始インデックスから指定したバッファサイズを使用して、トラックからバッファリングされたステレオ波を生成するメソッド。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;StereoWave&gt; GenerateBufferedStereoWave(int startIndex, int bufferSize)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>startIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The starting index for the buffer. <br> バッファの開始インデックス。</p>
+</dd>
+    <dt><code>bufferSize</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The size of the buffer. <br> バッファのサイズ。</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="SoundMaker.Sounds.StereoWave.html">StereoWave</a>&gt;</dt>
+    <dd><p>An enumerable collection of buffered stereo waves. <br>
+バッファリングされたステレオ波の列挙可能なコレクション。</p>
 </dd>
   </dl>
 
@@ -419,7 +507,7 @@ Class TrackBaseSound  <a class="header-action link-secondary" title="View source
 
   <h3 id="SoundMaker_Sounds_TrackBaseSound_GenerateStereoWave" data-uid="SoundMaker.Sounds.TrackBaseSound.GenerateStereoWave">
   GenerateStereoWave()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/TrackBaseSound.cs/#L249"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/TrackBaseSound.cs/#L302"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Generates a stereo wave from the tracks. <br>
@@ -497,13 +585,13 @@ Class TrackBaseSound  <a class="header-action link-secondary" title="View source
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public List&lt;Track&gt; GetTracks(int startMilliSecond)</code></pre>
+    <pre><code class="lang-csharp hljs">public List&lt;Track&gt; GetTracks(int startIndex)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>startMilliSecond</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd><p>The start time in milliseconds. <br> 開始時間（ミリ秒）。</p>
+    <dt><code>startIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The start time in index. <br> 開始時間（インデクス）。</p>
 </dd>
   </dl>
 
@@ -531,7 +619,7 @@ If the operation fails, an empty list is returned. <br>
 
   <h3 id="SoundMaker_Sounds_TrackBaseSound_Import_System_Collections_Generic_IEnumerable_SoundMaker_Sounds_Track__" data-uid="SoundMaker.Sounds.TrackBaseSound.Import(System.Collections.Generic.IEnumerable{SoundMaker.Sounds.Track})">
   Import(IEnumerable&lt;Track&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/TrackBaseSound.cs/#L319"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/TrackBaseSound.cs/#L448"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Imports tracks into the internal map based on their start times. <br>
@@ -574,7 +662,7 @@ If the operation fails, an empty list is returned. <br>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool MoveTrack(Track track, int newStartMilliSecond)</code></pre>
+    <pre><code class="lang-csharp hljs">public bool MoveTrack(Track track, int newStartIndex)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -582,8 +670,8 @@ If the operation fails, an empty list is returned. <br>
     <dt><code>track</code> <a class="xref" href="SoundMaker.Sounds.Track.html">Track</a></dt>
     <dd><p>The track to move. <br> 移動するトラック。</p>
 </dd>
-    <dt><code>newStartMilliSecond</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd><p>The new start time in milliseconds. <br> 新しい開始時間（ミリ秒）。</p>
+    <dt><code>newStartIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The new start time in index. <br> 新しい開始時間（インデクス）。</p>
 </dd>
   </dl>
 
@@ -657,13 +745,13 @@ If the operation fails, an empty list is returned. <br>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool RemoveTracksAt(int startMilliSecond)</code></pre>
+    <pre><code class="lang-csharp hljs">public bool RemoveTracksAt(int startIndex)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>startMilliSecond</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd><p>The start time in milliseconds. <br> 開始時間（ミリ秒）。</p>
+    <dt><code>startIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The start time in index. <br> 開始時間（インデクス）。</p>
 </dd>
   </dl>
 
@@ -697,13 +785,13 @@ If the operation fails, an empty list is returned. <br>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool TryGetTracks(int startMilliSecond, out List&lt;Track&gt; tracks)</code></pre>
+    <pre><code class="lang-csharp hljs">public bool TryGetTracks(int startIndex, out List&lt;Track&gt; tracks)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>startMilliSecond</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd><p>The start time in milliseconds. <br> 開始時間（ミリ秒）。</p>
+    <dt><code>startIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The start time in index. <br> 開始時間（インデクス）。</p>
 </dd>
     <dt><code>tracks</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="SoundMaker.Sounds.Track.html">Track</a>&gt;</dt>
     <dd><p>The list of tracks. <br> トラックのリスト。</p>
@@ -747,7 +835,7 @@ If the operation fails, an empty list is returned. <br>
     <footer class="border-top text-secondary">
       <div class="container-xxl">
         <div class="flex-fill">
-          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+          SoundMaker © 2022-2024
         </div>
       </div>
     </footer>

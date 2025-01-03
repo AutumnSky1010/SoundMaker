@@ -2,12 +2,12 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Getting Started | SoundMaker API Reference </title>
+      <title>Ver 3.0.0への移行ガイド | SoundMaker Documentation </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Getting Started | SoundMaker API Reference ">
+      <meta name="title" content="Ver 3.0.0への移行ガイド | SoundMaker Documentation ">
       
       
-      <link rel="icon" href="../favicon.ico">
+      <link rel="icon" href="../images/favicon.png">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
       <meta name="docfx:navrel" content="../toc.html">
@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/AutumnSky1010/SoundMaker/blob/master/docs/markdowns/getting-started.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/AutumnSky1010/SoundMaker/blob/master/docs/markdowns/migrate-to-ver-3.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -44,8 +44,8 @@
       <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
         <div class="container-xxl flex-nowrap">
           <a class="navbar-brand" href="../index.html">
-            <img id="logo" class="svg" src="../logo.svg" alt="SoundMaker API Reference">
-            SoundMaker API Reference
+            <img id="logo" class="svg" src="../images/favicon.png" alt="SoundMaker Documentation">
+            SoundMaker Documentation
           </a>
           <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
             <i class="bi bi-three-dots"></i>
@@ -85,13 +85,39 @@
         </div>
 
         <article data-uid="">
-<h1 id="getting-started">Getting Started</h1>
+<h1 id="ver-300への移行ガイド">Ver 3.0.0への移行ガイド</h1>
 
+<p>SoundMaker Ver 3.0.0への移行に関して、以下のガイドラインに従ってください。メジャーバージョンアップにより、破壊的変更が含まれていますのでご注意ください。</p>
+<h2 id="net-7以前を利用している場合はnet-8以降へアップデートする">.NET 7以前を利用している場合は.NET 8以降へアップデートする</h2>
+<p>.NET 6のサポート終了に伴い、SoundMakerも.NET 8へ移行しました。.NET 8へのアップデートは以下の手順で行います：</p>
+<ol>
+<li><strong>.NET SDKのインストール</strong>: 最新の.NET 8 SDKを<a href="https://dotnet.microsoft.com/download/dotnet/8.0">公式サイト</a>からダウンロードしてインストールします。</li>
+<li><strong>プロジェクトファイルの更新</strong>: 各プロジェクトの<code>TargetFramework</code>を<code>.NET 8</code>に更新します。例えば、<code>.csproj</code>ファイルで以下のように変更します：
+<pre><code class="lang-xml">&lt;TargetFramework&gt;net8.0&lt;/TargetFramework&gt;
+</code></pre>
+</li>
+<li><strong>依存関係の更新</strong>: <code>.NET 8</code>に対応するライブラリやパッケージのバージョンを確認し、必要に応じてアップデートします。</li>
+</ol>
+<h2 id="ushort型からshort型を利用するように変更する">ushort[]型からshort[]型を利用するように変更する</h2>
+<p>音声波形は符号付き整数を利用することが一般的なので、Ver 3.0.0では<code>ushort</code>型から<code>short</code>型に変更しました。以下の手順で対応します：
+<strong>コードの修正</strong>: <code>ushort[]</code>型を使用している箇所をすべて<code>short[]</code>型に変更します。例えば、</p>
+<pre><code class="lang-csharp">// 旧コード
+ushort[] sample = [32767];
+
+// 新コード
+short[] sample = [32767];
+</code></pre>
+<h2 id="廃止機能を利用しない">廃止機能を利用しない</h2>
+<p>Ver 3.0.0以前に<code>Obsolete</code>属性がついたメソッドやプロパティは削除されました。これに対応するためには、以下の手順を行います：</p>
+<ol>
+<li><strong>コードのチェック</strong>: <code>Obsolete</code>属性が付与されたメソッドやプロパティを使用している箇所を確認します。これらはコンパイラ警告として表示されることが多いです。</li>
+<li><strong>代替機能の利用</strong>: <code>Obsolete</code>となった機能の代替となるメソッドやプロパティを使用します。削除された機能に関する詳細は、削除を行ったプルリクエストを参照してください：<a href="https://github.com/AutumnSky1010/SoundMaker/pull/29/files">削除を行ったプルリクエスト</a></li>
+</ol>
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/AutumnSky1010/SoundMaker/blob/master/docs/markdowns/getting-started.md/#L1" class="edit-link">Edit this page</a>
+          <a href="https://github.com/AutumnSky1010/SoundMaker/blob/master/docs/markdowns/migrate-to-ver-3.md/#L1" class="edit-link">Edit this page</a>
         </div>
 
         <div class="next-article d-print-none border-top" id="nextArticle"></div>
@@ -108,7 +134,7 @@
     <footer class="border-top text-secondary">
       <div class="container-xxl">
         <div class="flex-fill">
-          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+          SoundMaker © 2022-2024
         </div>
       </div>
     </footer>

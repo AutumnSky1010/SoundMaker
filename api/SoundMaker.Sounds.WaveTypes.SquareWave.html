@@ -2,12 +2,12 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Class SquareWave | SoundMaker API Reference </title>
+      <title>Class SquareWave | SoundMaker Documentation </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class SquareWave | SoundMaker API Reference ">
+      <meta name="title" content="Class SquareWave | SoundMaker Documentation ">
       
-      <meta name="description" content="the square wave. 矩形波">
-      <link rel="icon" href="../favicon.ico">
+      <meta name="description" content="The square wave. 矩形波">
+      <link rel="icon" href="../images/favicon.png">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
       <meta name="docfx:navrel" content="../toc.html">
@@ -44,8 +44,8 @@
       <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
         <div class="container-xxl flex-nowrap">
           <a class="navbar-brand" href="../index.html">
-            <img id="logo" class="svg" src="../logo.svg" alt="SoundMaker API Reference">
-            SoundMaker API Reference
+            <img id="logo" class="svg" src="../images/favicon.png" alt="SoundMaker Documentation">
+            SoundMaker Documentation
           </a>
           <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
             <i class="bi bi-three-dots"></i>
@@ -89,7 +89,7 @@
 
 
   <h1 id="SoundMaker_Sounds_WaveTypes_SquareWave" data-uid="SoundMaker.Sounds.WaveTypes.SquareWave" class="text-break">
-Class SquareWave  <a class="header-action link-secondary" title="View source" href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/WaveTypes/SquareWave.cs/#L7"><i class="bi bi-code-slash"></i></a>
+Class SquareWave  <a class="header-action link-secondary" title="View source" href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/WaveTypes/SquareWave.cs/#L8"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,7 @@ Class SquareWave  <a class="header-action link-secondary" title="View source" hr
   <dl><dt>Assembly</dt><dd>SoundMaker.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>the square wave. 矩形波</p>
+  <div class="markdown summary"><p>The square wave. <br>矩形波</p>
 </div>
   <div class="markdown conceptual"></div>
 
@@ -124,6 +124,9 @@ Class SquareWave  <a class="header-action link-secondary" title="View source" hr
     <dd>
     <div>
       <a class="xref" href="SoundMaker.Sounds.WaveTypes.WaveTypeBase.html#SoundMaker_Sounds_WaveTypes_WaveTypeBase_CheckGenerateWaveArgs_System_Int32_System_Int32_System_Double_">WaveTypeBase.CheckGenerateWaveArgs(int, int, double)</a>
+    </div>
+    <div>
+      <a class="xref" href="SoundMaker.Sounds.WaveTypes.WaveTypeBase.html#SoundMaker_Sounds_WaveTypes_WaveTypeBase_CheckGenerateUnitWaveArgs_System_Int32_System_Double_">WaveTypeBase.CheckGenerateUnitWaveArgs(int, double)</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
@@ -161,10 +164,10 @@ Class SquareWave  <a class="header-action link-secondary" title="View source" hr
 
   <h3 id="SoundMaker_Sounds_WaveTypes_SquareWave__ctor_SoundMaker_Sounds_SoundChannels_SquareWaveRatio_" data-uid="SoundMaker.Sounds.WaveTypes.SquareWave.#ctor(SoundMaker.Sounds.SoundChannels.SquareWaveRatio)">
   SquareWave(SquareWaveRatio)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/WaveTypes/SquareWave.cs/#L13"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/WaveTypes/SquareWave.cs/#L14"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>constructor. コンストラクタ</p>
+  <div class="markdown level1 summary"><p>Constructor. <br>コンストラクタ</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -175,7 +178,7 @@ Class SquareWave  <a class="header-action link-secondary" title="View source" hr
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>squareWaveRatio</code> <a class="xref" href="SoundMaker.Sounds.SoundChannels.SquareWaveRatio.html">SquareWaveRatio</a></dt>
-    <dd><p>duty cycle. デューティ比</p>
+    <dd><p>Duty cycle. <br>デューティ比</p>
 </dd>
   </dl>
 
@@ -194,14 +197,68 @@ Class SquareWave  <a class="header-action link-secondary" title="View source" hr
 </h2>
 
 
+  <a id="SoundMaker_Sounds_WaveTypes_SquareWave_GenerateUnitWave_" data-uid="SoundMaker.Sounds.WaveTypes.SquareWave.GenerateUnitWave*"></a>
+
+  <h3 id="SoundMaker_Sounds_WaveTypes_SquareWave_GenerateUnitWave_SoundMaker_Sounds_SoundFormat_System_Int32_System_Double_" data-uid="SoundMaker.Sounds.WaveTypes.SquareWave.GenerateUnitWave(SoundMaker.Sounds.SoundFormat,System.Int32,System.Double)">
+  GenerateUnitWave(SoundFormat, int, double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/WaveTypes/SquareWave.cs/#L60"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Generates one cycle of a sound waveform at the specified frequency. <br>指定した周波数の音声波形1周期分を生成する。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public short[] GenerateUnitWave(SoundFormat format, int volume, double hertz)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>format</code> <a class="xref" href="SoundMaker.Sounds.SoundFormat.html">SoundFormat</a></dt>
+    <dd><p>Format of the sound. <br>音のフォーマット</p>
+</dd>
+    <dt><code>volume</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Volume. <br>音量（0 ~ 100）</p>
+</dd>
+    <dt><code>hertz</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>Hertz of the sound. <br>音の周波数</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int16">short</a>[]</dt>
+    <dd><p>The array of wave data. <br>波形データの配列 : short[]</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p>Hertz must be non-negative and greater than 0.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p>Volume must be below 100 and above 0.</p>
+</dd>
+  </dl>
+
+
+
   <a id="SoundMaker_Sounds_WaveTypes_SquareWave_GenerateWave_" data-uid="SoundMaker.Sounds.WaveTypes.SquareWave.GenerateWave*"></a>
 
   <h3 id="SoundMaker_Sounds_WaveTypes_SquareWave_GenerateWave_SoundMaker_Sounds_SoundFormat_System_Int32_System_Int32_System_Double_" data-uid="SoundMaker.Sounds.WaveTypes.SquareWave.GenerateWave(SoundMaker.Sounds.SoundFormat,System.Int32,System.Int32,System.Double)">
   GenerateWave(SoundFormat, int, int, double)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/WaveTypes/SquareWave.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/WaveTypes/SquareWave.cs/#L31"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>generate array of wave data. 波形データの配列を生成する。</p>
+  <div class="markdown level1 summary"><p>Generate array of wave data. <br>波形データの配列を生成する。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -258,7 +315,7 @@ Class SquareWave  <a class="header-action link-secondary" title="View source" hr
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/WaveTypes/SquareWave.cs/#L7" class="edit-link">Edit this page</a>
+          <a href="https://github.com/AutumnSky1010/SoundMaker/blob/master/src/SoundMaker/Sounds/WaveTypes/SquareWave.cs/#L8" class="edit-link">Edit this page</a>
         </div>
 
 
@@ -274,7 +331,7 @@ Class SquareWave  <a class="header-action link-secondary" title="View source" hr
     <footer class="border-top text-secondary">
       <div class="container-xxl">
         <div class="flex-fill">
-          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+          SoundMaker © 2022-2024
         </div>
       </div>
     </footer>

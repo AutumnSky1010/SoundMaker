@@ -11,6 +11,16 @@
       }
     },
     {
+      "type": "Conceptual",
+      "source_relative_path": "HowToUseDocFX.md",
+      "output": {
+        ".html": {
+          "relative_path": "HowToUseDocFX.html"
+        }
+      },
+      "version": ""
+    },
+    {
       "type": "ManagedReference",
       "source_relative_path": "api/SoundMaker.FormatBuilder.BitDepthBuilder.yml",
       "output": {
@@ -594,6 +604,26 @@
       "version": ""
     },
     {
+      "type": "Resource",
+      "source_relative_path": "images/SoundMakerCover.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/SoundMakerCover.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/favicon.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/favicon.png"
+        }
+      },
+      "version": ""
+    },
+    {
       "type": "Conceptual",
       "source_relative_path": "index.md",
       "output": {
@@ -605,20 +635,110 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "markdowns/getting-started.md",
+      "source_relative_path": "markdowns/introduction.md",
       "output": {
         ".html": {
-          "relative_path": "markdowns/getting-started.html"
+          "relative_path": "markdowns/introduction.html"
         }
       },
       "version": ""
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "markdowns/introduction.md",
+      "source_relative_path": "markdowns/migrate-to-ver-3.md",
       "output": {
         ".html": {
-          "relative_path": "markdowns/introduction.html"
+          "relative_path": "markdowns/migrate-to-ver-3.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "markdowns/smsc/serializer.md",
+      "output": {
+        ".html": {
+          "relative_path": "markdowns/smsc/serializer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "markdowns/smsc/what-is-the-smsc.md",
+      "output": {
+        ".html": {
+          "relative_path": "markdowns/smsc/what-is-the-smsc.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "markdowns/start/format.md",
+      "output": {
+        ".html": {
+          "relative_path": "markdowns/start/format.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "markdowns/start/gen/channel-base-api.md",
+      "output": {
+        ".html": {
+          "relative_path": "markdowns/start/gen/channel-base-api.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "markdowns/start/gen/frequency.md",
+      "output": {
+        ".html": {
+          "relative_path": "markdowns/start/gen/frequency.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "markdowns/start/gen/track-base-api-partial.md",
+      "output": {
+        ".html": {
+          "relative_path": "markdowns/start/gen/track-base-api-partial.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "markdowns/start/gen/track-base-api.md",
+      "output": {
+        ".html": {
+          "relative_path": "markdowns/start/gen/track-base-api.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "markdowns/start/getting-started.md",
+      "output": {
+        ".html": {
+          "relative_path": "markdowns/start/getting-started.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "markdowns/start/wav.md",
+      "output": {
+        ".html": {
+          "relative_path": "markdowns/start/wav.html"
         }
       },
       "version": ""

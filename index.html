@@ -2,12 +2,12 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>This is the HOMEPAGE. | SoundMaker API Reference </title>
+      <title>SoundMakerとは | SoundMaker Documentation </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="This is the HOMEPAGE. | SoundMaker API Reference ">
+      <meta name="title" content="SoundMakerとは | SoundMaker Documentation ">
       
       
-      <link rel="icon" href="favicon.ico">
+      <link rel="icon" href="images/favicon.png">
       <link rel="stylesheet" href="public/docfx.min.css">
       <link rel="stylesheet" href="public/main.css">
       <meta name="docfx:navrel" content="toc.html">
@@ -44,8 +44,8 @@
       <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
         <div class="container-xxl flex-nowrap">
           <a class="navbar-brand" href="index.html">
-            <img id="logo" class="svg" src="logo.svg" alt="SoundMaker API Reference">
-            SoundMaker API Reference
+            <img id="logo" class="svg" src="images/favicon.png" alt="SoundMaker Documentation">
+            SoundMaker Documentation
           </a>
           <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
             <i class="bi bi-three-dots"></i>
@@ -71,13 +71,55 @@
         </div>
 
         <article data-uid="">
-<h1 id="this-is-the-homepage">This is the <strong>HOMEPAGE</strong>.</h1>
 
-<p>Refer to <a href="http://daringfireball.net/projects/markdown/">Markdown</a> for how to write markdown files.</p>
-<h2 id="quick-start-notes">Quick Start Notes:</h2>
-<ol>
-<li>Add images to the <em>images</em> folder if the file is referencing an image.</li>
-</ol>
+
+<p><img src="images/SoundMakerCover.png" alt="cover"><br>
+<a href="https://github.com/AutumnSky1010/SoundMaker/actions/workflows/build.yml"><img src="https://github.com/AutumnSky1010/SoundMaker/actions/workflows/build.yml/badge.svg" alt="Pipeline"></a></p>
+<h1 id="soundmakerとは">SoundMakerとは</h1>
+<p>SoundMakerは、.NET上で動作する音を生成するライブラリです。</p>
+<h2 id="特徴">特徴</h2>
+<h3 id="音程がc4の四分音符というように音楽の知識で音を生成できます">「音程がC4の四分音符」というように音楽の知識で音を生成できます</h3>
+<pre><code class="lang-cs">// 音符
+new Note(Scale.C, 5, LengthType.Eighth, isDotted: true);
+// 休符
+new Rest(LengthType.Quarter);
+// タイ
+new Tie(new Note(Scale.D, 5, LengthType.Eighth), LengthType.Eighth);
+// 連符
+new Tuplet([new Note(Scale.D, 5, LengthType.Eighth), new Note(Scale.D, 5, LengthType.Eighth)], LengthType.Quarter);
+</code></pre>
+<h3 id="周波数を指定しても音を生成できます">周波数を指定しても音を生成できます</h3>
+<pre><code class="lang-cs">var triangleWave = new TriangleWave();
+int hertz = 800;
+int length = (int)format.SamplingFrequency * 5;
+int volume = 50;
+short[] waveShorts = triangleWave.GenerateWave(format, length, volume, hertz);
+</code></pre>
+<h3 id="リニアpcmのwavを出力することができます">リニアPCMのWAVを出力することができます</h3>
+<pre><code class="lang-cs">var builder = FormatBuilder.Create()
+    .WithFrequency(48000)
+    .WithBitDepth(16)
+    .WithChannelCount(2);
+
+var sound = new SoundWaveChunk(/* 音声波形バイト列 */);
+var waveFileFormat = builder.ToFormatChunk();
+var writer = new WaveWriter(waveFileFormat, sound);
+string filePath = &quot;sample.wav&quot;;
+writer.Write(filePath);
+</code></pre>
+<p>ストリームへ書き込むことも可能です。</p>
+<pre><code class="lang-cs">writer.Write(stream);
+</code></pre>
+<h3 id="楽譜記述フォーマットを提供">楽譜記述フォーマットを提供</h3>
+<p>簡単な楽譜記述フォーマットのシリアライズ・デシリアライズ機能を提供しています。</p>
+<pre><code>// コメントアウト
+// 付点四分音符(音階はC#4)
+C#4, 4.
+// 休符
+rest, 4.
+// タイ と 三連符(4分音符を三等分している)
+tie(C4, 4, 4, 4); tup(4, C4, C4, C4)
+</code></pre>
 
 </article>
 
@@ -99,7 +141,7 @@
     <footer class="border-top text-secondary">
       <div class="container-xxl">
         <div class="flex-fill">
-          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+          SoundMaker © 2022-2024
         </div>
       </div>
     </footer>

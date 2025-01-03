@@ -2305,6 +2305,22 @@ references:
   isSpec: "True"
   fullName: SoundMaker.Sounds.Track.Count
   nameWithType: Track.Count
+- uid: SoundMaker.Sounds.Track.GeneratePartialWave(System.Int32,System.Int32)
+  name: GeneratePartialWave(int, int)
+  href: api/SoundMaker.Sounds.Track.html#SoundMaker_Sounds_Track_GeneratePartialWave_System_Int32_System_Int32_
+  commentId: M:SoundMaker.Sounds.Track.GeneratePartialWave(System.Int32,System.Int32)
+  name.vb: GeneratePartialWave(Integer, Integer)
+  fullName: SoundMaker.Sounds.Track.GeneratePartialWave(int, int)
+  fullName.vb: SoundMaker.Sounds.Track.GeneratePartialWave(Integer, Integer)
+  nameWithType: Track.GeneratePartialWave(int, int)
+  nameWithType.vb: Track.GeneratePartialWave(Integer, Integer)
+- uid: SoundMaker.Sounds.Track.GeneratePartialWave*
+  name: GeneratePartialWave
+  href: api/SoundMaker.Sounds.Track.html#SoundMaker_Sounds_Track_GeneratePartialWave_
+  commentId: Overload:SoundMaker.Sounds.Track.GeneratePartialWave
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.Track.GeneratePartialWave
+  nameWithType: Track.GeneratePartialWave
 - uid: SoundMaker.Sounds.Track.GenerateWave
   name: GenerateWave()
   href: api/SoundMaker.Sounds.Track.html#SoundMaker_Sounds_Track_GenerateWave
@@ -2514,6 +2530,38 @@ references:
   isSpec: "True"
   fullName: SoundMaker.Sounds.TrackBaseSound.Format
   nameWithType: TrackBaseSound.Format
+- uid: SoundMaker.Sounds.TrackBaseSound.GenerateBufferedMonauralWave(System.Int32,System.Int32)
+  name: GenerateBufferedMonauralWave(int, int)
+  href: api/SoundMaker.Sounds.TrackBaseSound.html#SoundMaker_Sounds_TrackBaseSound_GenerateBufferedMonauralWave_System_Int32_System_Int32_
+  commentId: M:SoundMaker.Sounds.TrackBaseSound.GenerateBufferedMonauralWave(System.Int32,System.Int32)
+  name.vb: GenerateBufferedMonauralWave(Integer, Integer)
+  fullName: SoundMaker.Sounds.TrackBaseSound.GenerateBufferedMonauralWave(int, int)
+  fullName.vb: SoundMaker.Sounds.TrackBaseSound.GenerateBufferedMonauralWave(Integer, Integer)
+  nameWithType: TrackBaseSound.GenerateBufferedMonauralWave(int, int)
+  nameWithType.vb: TrackBaseSound.GenerateBufferedMonauralWave(Integer, Integer)
+- uid: SoundMaker.Sounds.TrackBaseSound.GenerateBufferedMonauralWave*
+  name: GenerateBufferedMonauralWave
+  href: api/SoundMaker.Sounds.TrackBaseSound.html#SoundMaker_Sounds_TrackBaseSound_GenerateBufferedMonauralWave_
+  commentId: Overload:SoundMaker.Sounds.TrackBaseSound.GenerateBufferedMonauralWave
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.TrackBaseSound.GenerateBufferedMonauralWave
+  nameWithType: TrackBaseSound.GenerateBufferedMonauralWave
+- uid: SoundMaker.Sounds.TrackBaseSound.GenerateBufferedStereoWave(System.Int32,System.Int32)
+  name: GenerateBufferedStereoWave(int, int)
+  href: api/SoundMaker.Sounds.TrackBaseSound.html#SoundMaker_Sounds_TrackBaseSound_GenerateBufferedStereoWave_System_Int32_System_Int32_
+  commentId: M:SoundMaker.Sounds.TrackBaseSound.GenerateBufferedStereoWave(System.Int32,System.Int32)
+  name.vb: GenerateBufferedStereoWave(Integer, Integer)
+  fullName: SoundMaker.Sounds.TrackBaseSound.GenerateBufferedStereoWave(int, int)
+  fullName.vb: SoundMaker.Sounds.TrackBaseSound.GenerateBufferedStereoWave(Integer, Integer)
+  nameWithType: TrackBaseSound.GenerateBufferedStereoWave(int, int)
+  nameWithType.vb: TrackBaseSound.GenerateBufferedStereoWave(Integer, Integer)
+- uid: SoundMaker.Sounds.TrackBaseSound.GenerateBufferedStereoWave*
+  name: GenerateBufferedStereoWave
+  href: api/SoundMaker.Sounds.TrackBaseSound.html#SoundMaker_Sounds_TrackBaseSound_GenerateBufferedStereoWave_
+  commentId: Overload:SoundMaker.Sounds.TrackBaseSound.GenerateBufferedStereoWave
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.TrackBaseSound.GenerateBufferedStereoWave
+  nameWithType: TrackBaseSound.GenerateBufferedStereoWave
 - uid: SoundMaker.Sounds.TrackBaseSound.GenerateMonauralWave
   name: GenerateMonauralWave()
   href: api/SoundMaker.Sounds.TrackBaseSound.html#SoundMaker_Sounds_TrackBaseSound_GenerateMonauralWave
@@ -2693,6 +2741,22 @@ references:
   commentId: T:SoundMaker.Sounds.WaveTypes.PseudoTriangleWave
   fullName: SoundMaker.Sounds.WaveTypes.PseudoTriangleWave
   nameWithType: PseudoTriangleWave
+- uid: SoundMaker.Sounds.WaveTypes.PseudoTriangleWave.GenerateUnitWave(SoundMaker.Sounds.SoundFormat,System.Int32,System.Double)
+  name: GenerateUnitWave(SoundFormat, int, double)
+  href: api/SoundMaker.Sounds.WaveTypes.PseudoTriangleWave.html#SoundMaker_Sounds_WaveTypes_PseudoTriangleWave_GenerateUnitWave_SoundMaker_Sounds_SoundFormat_System_Int32_System_Double_
+  commentId: M:SoundMaker.Sounds.WaveTypes.PseudoTriangleWave.GenerateUnitWave(SoundMaker.Sounds.SoundFormat,System.Int32,System.Double)
+  name.vb: GenerateUnitWave(SoundFormat, Integer, Double)
+  fullName: SoundMaker.Sounds.WaveTypes.PseudoTriangleWave.GenerateUnitWave(SoundMaker.Sounds.SoundFormat, int, double)
+  fullName.vb: SoundMaker.Sounds.WaveTypes.PseudoTriangleWave.GenerateUnitWave(SoundMaker.Sounds.SoundFormat, Integer, Double)
+  nameWithType: PseudoTriangleWave.GenerateUnitWave(SoundFormat, int, double)
+  nameWithType.vb: PseudoTriangleWave.GenerateUnitWave(SoundFormat, Integer, Double)
+- uid: SoundMaker.Sounds.WaveTypes.PseudoTriangleWave.GenerateUnitWave*
+  name: GenerateUnitWave
+  href: api/SoundMaker.Sounds.WaveTypes.PseudoTriangleWave.html#SoundMaker_Sounds_WaveTypes_PseudoTriangleWave_GenerateUnitWave_
+  commentId: Overload:SoundMaker.Sounds.WaveTypes.PseudoTriangleWave.GenerateUnitWave
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.WaveTypes.PseudoTriangleWave.GenerateUnitWave
+  nameWithType: PseudoTriangleWave.GenerateUnitWave
 - uid: SoundMaker.Sounds.WaveTypes.PseudoTriangleWave.GenerateWave(SoundMaker.Sounds.SoundFormat,System.Int32,System.Int32,System.Double)
   name: GenerateWave(SoundFormat, int, int, double)
   href: api/SoundMaker.Sounds.WaveTypes.PseudoTriangleWave.html#SoundMaker_Sounds_WaveTypes_PseudoTriangleWave_GenerateWave_SoundMaker_Sounds_SoundFormat_System_Int32_System_Int32_System_Double_
@@ -2734,6 +2798,22 @@ references:
   fullName.vb: SoundMaker.Sounds.WaveTypes.SquareWave.New
   nameWithType: SquareWave.SquareWave
   nameWithType.vb: SquareWave.New
+- uid: SoundMaker.Sounds.WaveTypes.SquareWave.GenerateUnitWave(SoundMaker.Sounds.SoundFormat,System.Int32,System.Double)
+  name: GenerateUnitWave(SoundFormat, int, double)
+  href: api/SoundMaker.Sounds.WaveTypes.SquareWave.html#SoundMaker_Sounds_WaveTypes_SquareWave_GenerateUnitWave_SoundMaker_Sounds_SoundFormat_System_Int32_System_Double_
+  commentId: M:SoundMaker.Sounds.WaveTypes.SquareWave.GenerateUnitWave(SoundMaker.Sounds.SoundFormat,System.Int32,System.Double)
+  name.vb: GenerateUnitWave(SoundFormat, Integer, Double)
+  fullName: SoundMaker.Sounds.WaveTypes.SquareWave.GenerateUnitWave(SoundMaker.Sounds.SoundFormat, int, double)
+  fullName.vb: SoundMaker.Sounds.WaveTypes.SquareWave.GenerateUnitWave(SoundMaker.Sounds.SoundFormat, Integer, Double)
+  nameWithType: SquareWave.GenerateUnitWave(SoundFormat, int, double)
+  nameWithType.vb: SquareWave.GenerateUnitWave(SoundFormat, Integer, Double)
+- uid: SoundMaker.Sounds.WaveTypes.SquareWave.GenerateUnitWave*
+  name: GenerateUnitWave
+  href: api/SoundMaker.Sounds.WaveTypes.SquareWave.html#SoundMaker_Sounds_WaveTypes_SquareWave_GenerateUnitWave_
+  commentId: Overload:SoundMaker.Sounds.WaveTypes.SquareWave.GenerateUnitWave
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.WaveTypes.SquareWave.GenerateUnitWave
+  nameWithType: SquareWave.GenerateUnitWave
 - uid: SoundMaker.Sounds.WaveTypes.SquareWave.GenerateWave(SoundMaker.Sounds.SoundFormat,System.Int32,System.Int32,System.Double)
   name: GenerateWave(SoundFormat, int, int, double)
   href: api/SoundMaker.Sounds.WaveTypes.SquareWave.html#SoundMaker_Sounds_WaveTypes_SquareWave_GenerateWave_SoundMaker_Sounds_SoundFormat_System_Int32_System_Int32_System_Double_
@@ -2756,6 +2836,22 @@ references:
   commentId: T:SoundMaker.Sounds.WaveTypes.TriangleWave
   fullName: SoundMaker.Sounds.WaveTypes.TriangleWave
   nameWithType: TriangleWave
+- uid: SoundMaker.Sounds.WaveTypes.TriangleWave.GenerateUnitWave(SoundMaker.Sounds.SoundFormat,System.Int32,System.Double)
+  name: GenerateUnitWave(SoundFormat, int, double)
+  href: api/SoundMaker.Sounds.WaveTypes.TriangleWave.html#SoundMaker_Sounds_WaveTypes_TriangleWave_GenerateUnitWave_SoundMaker_Sounds_SoundFormat_System_Int32_System_Double_
+  commentId: M:SoundMaker.Sounds.WaveTypes.TriangleWave.GenerateUnitWave(SoundMaker.Sounds.SoundFormat,System.Int32,System.Double)
+  name.vb: GenerateUnitWave(SoundFormat, Integer, Double)
+  fullName: SoundMaker.Sounds.WaveTypes.TriangleWave.GenerateUnitWave(SoundMaker.Sounds.SoundFormat, int, double)
+  fullName.vb: SoundMaker.Sounds.WaveTypes.TriangleWave.GenerateUnitWave(SoundMaker.Sounds.SoundFormat, Integer, Double)
+  nameWithType: TriangleWave.GenerateUnitWave(SoundFormat, int, double)
+  nameWithType.vb: TriangleWave.GenerateUnitWave(SoundFormat, Integer, Double)
+- uid: SoundMaker.Sounds.WaveTypes.TriangleWave.GenerateUnitWave*
+  name: GenerateUnitWave
+  href: api/SoundMaker.Sounds.WaveTypes.TriangleWave.html#SoundMaker_Sounds_WaveTypes_TriangleWave_GenerateUnitWave_
+  commentId: Overload:SoundMaker.Sounds.WaveTypes.TriangleWave.GenerateUnitWave
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.WaveTypes.TriangleWave.GenerateUnitWave
+  nameWithType: TriangleWave.GenerateUnitWave
 - uid: SoundMaker.Sounds.WaveTypes.TriangleWave.GenerateWave(SoundMaker.Sounds.SoundFormat,System.Int32,System.Int32,System.Double)
   name: GenerateWave(SoundFormat, int, int, double)
   href: api/SoundMaker.Sounds.WaveTypes.TriangleWave.html#SoundMaker_Sounds_WaveTypes_TriangleWave_GenerateWave_SoundMaker_Sounds_SoundFormat_System_Int32_System_Int32_System_Double_
@@ -2778,6 +2874,22 @@ references:
   commentId: T:SoundMaker.Sounds.WaveTypes.WaveTypeBase
   fullName: SoundMaker.Sounds.WaveTypes.WaveTypeBase
   nameWithType: WaveTypeBase
+- uid: SoundMaker.Sounds.WaveTypes.WaveTypeBase.CheckGenerateUnitWaveArgs(System.Int32,System.Double)
+  name: CheckGenerateUnitWaveArgs(int, double)
+  href: api/SoundMaker.Sounds.WaveTypes.WaveTypeBase.html#SoundMaker_Sounds_WaveTypes_WaveTypeBase_CheckGenerateUnitWaveArgs_System_Int32_System_Double_
+  commentId: M:SoundMaker.Sounds.WaveTypes.WaveTypeBase.CheckGenerateUnitWaveArgs(System.Int32,System.Double)
+  name.vb: CheckGenerateUnitWaveArgs(Integer, Double)
+  fullName: SoundMaker.Sounds.WaveTypes.WaveTypeBase.CheckGenerateUnitWaveArgs(int, double)
+  fullName.vb: SoundMaker.Sounds.WaveTypes.WaveTypeBase.CheckGenerateUnitWaveArgs(Integer, Double)
+  nameWithType: WaveTypeBase.CheckGenerateUnitWaveArgs(int, double)
+  nameWithType.vb: WaveTypeBase.CheckGenerateUnitWaveArgs(Integer, Double)
+- uid: SoundMaker.Sounds.WaveTypes.WaveTypeBase.CheckGenerateUnitWaveArgs*
+  name: CheckGenerateUnitWaveArgs
+  href: api/SoundMaker.Sounds.WaveTypes.WaveTypeBase.html#SoundMaker_Sounds_WaveTypes_WaveTypeBase_CheckGenerateUnitWaveArgs_
+  commentId: Overload:SoundMaker.Sounds.WaveTypes.WaveTypeBase.CheckGenerateUnitWaveArgs
+  isSpec: "True"
+  fullName: SoundMaker.Sounds.WaveTypes.WaveTypeBase.CheckGenerateUnitWaveArgs
+  nameWithType: WaveTypeBase.CheckGenerateUnitWaveArgs
 - uid: SoundMaker.Sounds.WaveTypes.WaveTypeBase.CheckGenerateWaveArgs(System.Int32,System.Int32,System.Double)
   name: CheckGenerateWaveArgs(int, int, double)
   href: api/SoundMaker.Sounds.WaveTypes.WaveTypeBase.html#SoundMaker_Sounds_WaveTypes_WaveTypeBase_CheckGenerateWaveArgs_System_Int32_System_Int32_System_Double_
