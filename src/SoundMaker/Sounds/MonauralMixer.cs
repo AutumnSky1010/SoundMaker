@@ -1,25 +1,19 @@
 ﻿using SoundMaker.Sounds.SoundChannels;
 
 namespace SoundMaker.Sounds;
-/// <summary>
-/// mix waves to monaural wave. モノラル音声をミックスするクラス。
-/// </summary>
-public class MonauralMixer : MixerBase
-{
-    /// <summary>
-    /// constructor. コンストラクタ
-    /// </summary>
-    /// <param name="channels">channels. チャンネルのリスト(読み取り専用)</param>
-    public MonauralMixer(IReadOnlyList<ISoundChannel> channels) : base(channels)
-    {
-    }
 
+/// <summary>
+/// Mix waves to monaural wave. <br/>モノラル音声をミックスするクラス。
+/// </summary>
+/// <param name="channels">Channels. <br/>チャンネルのリスト(読み取り専用)</param>
+public class MonauralMixer(IReadOnlyList<ISoundChannel> channels) : MixerBase(channels)
+{
     private object LockObject { get; } = new object();
 
     /// <summary>
-    /// mix ミックスする。
+    /// Mix. <br/>ミックスする。
     /// </summary>
-    /// <returns>the mixed wave of monaural. モノラルの波形データ : MonauralWave</returns>
+    /// <returns>The mixed wave of monaural. <br/>モノラルの波形データ : MonauralWave</returns>
     public MonauralWave Mix()
     {
         var result = Enumerable.Repeat((short)0, GetMaxWaveLength()).ToArray();

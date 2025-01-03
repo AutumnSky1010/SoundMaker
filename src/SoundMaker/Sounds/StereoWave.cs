@@ -1,14 +1,14 @@
 ﻿namespace SoundMaker.Sounds;
 /// <summary>
-/// stereo wave. ステレオ波形データのクラス
+/// Stereo wave. <br/>ステレオ波形データのクラス
 /// </summary>
 public class StereoWave : IWave
 {
     /// <summary>
-    /// constructor
+    /// Constructor. <br/>コンストラクタ
     /// </summary>
-    /// <param name="rightWave">the wave of right. 右の波形データ</param>
-    /// <param name="leftWave">the wave of left. 左の波形データ</param>
+    /// <param name="rightWave">The wave of right. <br/>右の波形データ</param>
+    /// <param name="leftWave">The wave of left. <br/>左の波形データ</param>
     public StereoWave(IReadOnlyCollection<short> rightWave, IReadOnlyCollection<short> leftWave)
     {
         var rightArgument = rightWave.ToArray();
@@ -38,10 +38,10 @@ public class StereoWave : IWave
     public int LeftVolume { get; private set; } = 100;
 
     /// <summary>
-    /// change the volume this. 音量を変更するメソッド。
+    /// Change the volume. <br/>音量を変更するメソッド。
     /// </summary>
-    /// <param name="volume">volume(0 ~ 100) 音量(0 ~ 100)</param>
-    /// <param name="channelType">Channel to change the sound. 左右・両方の中から音量を変更するものを選ぶ</param>
+    /// <param name="volume">Volume (0 ~ 100). <br/>音量(0 ~ 100)</param>
+    /// <param name="channelType">Channel to change the sound. <br/>左右・両方の中から音量を変更するものを選ぶ</param>
     public void ChangeVolume(int volume, SoundDirectionType channelType)
     {
         volume = volume < 0 ? 0 : volume;
@@ -70,7 +70,7 @@ public class StereoWave : IWave
                     LeftWave[i] = (short)(LeftOriginalVolumeWave[i] * (volume / 100d));
                 }
 
-                // 残りを処理する。
+                // Process the remaining data.
                 var wave = RightWave.Length == maxAndMinLength.Max ? RightWave : LeftWave;
                 var originalWave = RightWave.Length == maxAndMinLength.Max ?
                     RightOriginalVolumeWave : LeftOriginalVolumeWave;
@@ -85,10 +85,10 @@ public class StereoWave : IWave
     }
 
     /// <summary>
-    /// get byte array of the wave. 波形データのバイト列を取得するメソッド。
+    /// Get byte array of the wave. <br/>波形データのバイト列を取得するメソッド。
     /// </summary>
-    /// <param name="bitRate">bitrate of the sound. 量子化ビット数</param>
-    /// <returns>byte array of wave data. 波形データのバイト列 : byte[]</returns>
+    /// <param name="bitRate">Bitrate of the sound. <br/>量子化ビット数</param>
+    /// <returns>Byte array of wave data. <br/>波形データのバイト列 : byte[]</returns>
     public byte[] GetBytes(BitRateType bitRate)
     {
         return bitRate == BitRateType.SixteenBit ? Get16BitBytes().ToArray() : Get8BitBytes().ToArray();
@@ -177,9 +177,9 @@ public class StereoWave : IWave
     }
 
     /// <summary>
-    /// get the wave on the right. 右側のチャンネルの音の波形データを取得するメソッド。
+    /// Get the wave on the right. <br/>右側のチャンネルの音の波形データを取得するメソッド。
     /// </summary>
-    /// <returns>the wave on the right. 右側のチャンネルの音の波形データ :  short[]</returns>
+    /// <returns>The wave on the right. <br/>右側のチャンネルの音の波形データ : short[]</returns>
     public short[] GetRightWave()
     {
         var resultshorts = new short[RightWave.Length];
@@ -188,9 +188,9 @@ public class StereoWave : IWave
     }
 
     /// <summary>
-    /// get the wave on the left. 左側のチャンネルの音の波形データを取得するメソッド。
+    /// Get the wave on the left. <br/>左側のチャンネルの音の波形データを取得するメソッド。
     /// </summary>
-    /// <returns>the wave on the left. 左側のチャンネルの音の波形データ :  short[]</returns>
+    /// <returns>The wave on the left. <br/>左側のチャンネルの音の波形データ : short[]</returns>
     public short[] GetLeftWave()
     {
         var resultshorts = new short[LeftWave.Length];
@@ -199,9 +199,9 @@ public class StereoWave : IWave
     }
 
     /// <summary>
-    /// append wave to this. 別のステレオ波形を末尾に繋げるメソッド。
+    /// Append wave to this. <br/>別のステレオ波形を末尾に繋げるメソッド。
     /// </summary>
-    /// <param name="wave">wave</param>
+    /// <param name="wave">Wave. <br/>波形</param>
     public void Append(StereoWave wave)
     {
         RightWave = RightWave.Concat(wave.GetRightWave()).ToArray();

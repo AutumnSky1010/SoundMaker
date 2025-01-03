@@ -1,13 +1,13 @@
 ﻿namespace SoundMaker.WaveFile;
 
 /// <summary>
-/// interface for riff format chunks チャンクを表すインターフェイス
+/// Interface for riff format chunks. <br/>チャンクを表すインターフェイス
 /// </summary>
 public interface IChunk
 {
     /// <summary>
-    /// get bytes from the chunk. チャンクのバイト列を取得するメソッド。
+    /// Get bytes from the chunk. <br/>チャンクのバイト列を取得するメソッド。
     /// </summary>
-    /// <returns>byte array of the chunk.チャンクのバイト列 : byte[]</returns>
+    /// <returns>Byte array of the chunk.<br/>チャンクのバイト列 : byte[]</returns>
     byte[] GetBytes();
 }

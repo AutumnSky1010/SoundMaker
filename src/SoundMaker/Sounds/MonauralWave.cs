@@ -1,13 +1,14 @@
 ﻿namespace SoundMaker.Sounds;
+
 /// <summary>
-/// monaural wave. モノラル波形データを表すクラス。
+/// Monaural wave. <br/>モノラル波形データを表すクラス。
 /// </summary>
 public class MonauralWave : IWave
 {
     /// <summary>
-    /// constructor. コンストラクタ
+    /// Constructor. <br/>コンストラクタ
     /// </summary>
-    /// <param name="wave">the collection of wave data. 波形データを表す配列</param>
+    /// <param name="wave">The collection of wave data. <br/>波形データを表す配列</param>
     public MonauralWave(IReadOnlyCollection<short> wave)
     {
         var argumentIntegers = wave.ToArray();
@@ -24,9 +25,9 @@ public class MonauralWave : IWave
     public int Volume { get; private set; } = 100;
 
     /// <summary>
-    /// change volume this. 音量を変更するメソッド
+    /// Change volume. <br/>音量を変更するメソッド
     /// </summary>
-    /// <param name="volume">音量(0 ~ 100)</param>
+    /// <param name="volume">Volume (0 ~ 100). <br/>音量(0 ~ 100)</param>
     public void ChangeVolume(int volume)
     {
         volume = volume < 0 ? 0 : volume;
@@ -39,9 +40,9 @@ public class MonauralWave : IWave
     }
 
     /// <summary>
-    /// append deferent MonauralWave. 別の波形データを末尾に繋げるメソッド。
+    /// Append different MonauralWave. <br/>別の波形データを末尾に繋げるメソッド。
     /// </summary>
-    /// <param name="wave">monaural wave.モノラルの波形データ</param>
+    /// <param name="wave">Monaural wave. <br/>モノラルの波形データ</param>
     public void Append(MonauralWave wave)
     {
         Wave = Wave.Concat(wave.GetWave()).ToArray();
@@ -74,9 +75,9 @@ public class MonauralWave : IWave
     }
 
     /// <summary>
-    /// get the wave. 音の波形データを取得するメソッド。
+    /// Get the wave. <br/>音の波形データを取得するメソッド。
     /// </summary>
-    /// <returns>the wave. 波形データ : short[]</returns>
+    /// <returns>The wave. <br/>波形データ : short[]</returns>
     public short[] GetWave()
     {
         var result = new short[Wave.Length];

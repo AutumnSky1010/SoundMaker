@@ -1,6 +1,6 @@
 ﻿namespace SoundMaker.Sounds.Score;
 /// <summary>
-/// type of pitch of sound. 音の高さを表す列挙型
+/// Type of pitch of sound. <br/> 音の高さを表す列挙型
 /// </summary>
 public enum Scale
 {

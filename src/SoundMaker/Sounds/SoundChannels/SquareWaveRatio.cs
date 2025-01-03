@@ -1,6 +1,6 @@
 ﻿namespace SoundMaker.Sounds.SoundChannels;
 /// <summary>
-/// type of duty cycle. デューティ比の列挙型
+/// Type of duty cycle. <br/>デューティ比の列挙型
 /// </summary>
 public enum SquareWaveRatio
 {

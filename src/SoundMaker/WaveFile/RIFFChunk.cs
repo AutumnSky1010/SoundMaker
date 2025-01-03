@@ -1,19 +1,11 @@
 ﻿namespace SoundMaker.WaveFile;
 /// <summary>
-/// chunk of riff. RIFFチャンクを表す構造体
+/// Chunk of riff. <br/>RIFFチャンクを表す構造体
 /// </summary>
-public readonly struct RIFFChunk : IChunk
+/// <param name="Size">The number of 8 byte subtracted from the overall file size. <br/>ファイル全体サイズからRIFFとWAVEのバイト数(8B)を引いた数。</param>
+public readonly struct RIFFChunk(uint Size) : IChunk
 {
-    /// <summary>
-    /// constructor. コンストラクタ
-    /// </summary>
-    /// <param name="Size">the number of 8 byte subtracted from the overall file size. ファイル全体サイズからRIFFとWAVEのバイト数(8B)を引いた数。</param>
-    public RIFFChunk(uint Size)
-    {
-        this.Size = Size;
-    }
-
-    private uint Size { get; }
+    private uint Size { get; } = Size;
     // 0x45564157 は WAVEの意味
     private uint Format { get; } = 0x45564157;
     public byte[] GetBytes()
