@@ -18,7 +18,7 @@
 1. make the sound of chiptune(old game sound)
 2. export sound to a file of wave format.</Description>
     <PackageIcon>SoundMakerIcon.png</PackageIcon>
-    <Copyright>Copyright ©2024 AutumnSky1010</Copyright>
+    <Copyright>Copyright ©2025 AutumnSky1010</Copyright>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageReleaseNotes>https://github.com/AutumnSky1010/SoundMaker/releases/tag/SoundMaker-Ver.3.0.0</PackageReleaseNotes>
     <PackageProjectUrl>https://autumnsky1010.github.io/SoundMaker/</PackageProjectUrl>
