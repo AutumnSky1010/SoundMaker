@@ -31,7 +31,8 @@ public class FormatBuilder
         };
 
         /// <summary>
-        /// sets a bit depth(BitRateType) to format. 量子化ビット数を指定する。
+        /// Sets a bit depth(BitRateType) to format. <br/>
+        /// 量子化ビット数を指定する。
         /// </summary>
         /// <param name="bitDepth">value</param>
         /// <returns>builder</returns>
@@ -63,7 +64,8 @@ public class FormatBuilder
         };
 
         /// <summary>
-        /// sets a sampling frequency to format. サンプリング周波数を指定する。
+        /// Sets a sampling frequency to format. <br/>
+        /// サンプリング周波数を指定する。
         /// </summary>
         /// <param name="frequency">sampling frequency</param>
         /// <returns>builder</returns>
@@ -95,9 +97,10 @@ public class FormatBuilder
         };
 
         /// <summary>
-        /// sets a count fo channels to format.
+        /// Sets a count fo channels to format.<br/>
+        /// チャンネル数を設定する(1: モノラル、2: ステレオ)
         /// </summary>
-        /// <param name="count">count of channels</param>
+        /// <param name="count">count of channels<br/>チャンネル数</param>
         /// <returns></returns>
         /// <exception cref="ArgumentException">The count value must be either 1 or 2.</exception>
         public FormatBuilder WithChannelCount(int count)
@@ -112,7 +115,8 @@ public class FormatBuilder
     }
 
     /// <summary>
-    /// create an instance of builder. ビルダのインスタンスを作成する。
+    /// Create an instance of builder. <br/>
+    /// ビルダのインスタンスを作成する。
     /// </summary>
     /// <returns>builder</returns>
     public static SamplingFrequencyBuilder Create()
@@ -122,7 +126,8 @@ public class FormatBuilder
     }
 
     /// <summary>
-    /// build to FormatChunk. FormatChunkにビルドする。 
+    /// Build to FormatChunk. <br/>
+    /// FormatChunkにビルドする。 
     /// </summary>
     /// <returns>FormatChunk</returns>
     public FormatChunk ToFormatChunk()
@@ -131,7 +136,8 @@ public class FormatBuilder
     }
 
     /// <summary>
-    /// build to SoundFormat. SoundFormatにビルドする。
+    /// Build to SoundFormat. <br/>
+    /// SoundFormatにビルドする。
     /// </summary>
     /// <returns>SoundFormat</returns>
     public SoundFormat ToSoundFormat()
