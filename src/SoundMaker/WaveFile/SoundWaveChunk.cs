@@ -1,11 +1,11 @@
 ﻿namespace SoundMaker.WaveFile;
 /// <summary>
-/// chunk of the sound wave. 波形データのチャンクを表すクラス
+/// Chunk of the sound wave. <br/>波形データのチャンクを表すクラス
 /// </summary>
 public class SoundWaveChunk : IChunk
 {
     /// <summary>
-    /// constructor. コンストラクタ
+    /// Constructor. <br/>コンストラクタ
     /// </summary>
     /// <param name="soundWave">音の波形データの配列</param>
     public SoundWaveChunk(byte[] soundWave)
@@ -15,7 +15,7 @@ public class SoundWaveChunk : IChunk
     }
 
     /// <summary>
-    /// size of the wave data. 波形データのサイズ
+    /// Size of the wave data. <br/>波形データのサイズ
     /// </summary>
     public uint Size { get; }
 

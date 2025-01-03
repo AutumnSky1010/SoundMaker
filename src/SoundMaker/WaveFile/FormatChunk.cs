@@ -1,15 +1,16 @@
 ﻿namespace SoundMaker.WaveFile;
+
 /// <summary>
-/// Chunk of format for the .wav file. フォーマットチャンクを表す構造体
+/// Chunk of format for the .wav file. <br/>フォーマットチャンクを表す構造体
 /// </summary>
 public readonly struct FormatChunk : IChunk
 {
     /// <summary>
-    /// constructor. コンストラクタ
+    /// Constructor. <br/>コンストラクタ
     /// </summary>
-    /// <param name="samplingFrequency">sampling frequency. サンプリング周波数</param>
-    /// <param name="bitRate">bit rate. 量子化ビット数</param>
-    /// <param name="channel">type of channels count. チャンネル数</param>
+    /// <param name="samplingFrequency">Sampling frequency. <br/>サンプリング周波数</param>
+    /// <param name="bitRate">Bit rate. <br/>量子化ビット数</param>
+    /// <param name="channel">Type of channels count. <br/>チャンネル数</param>
     public FormatChunk(SamplingFrequencyType samplingFrequency, BitRateType bitRate, ChannelType channel)
     {
         Channel = (ushort)channel;
@@ -19,6 +20,7 @@ public readonly struct FormatChunk : IChunk
         ByteSizePerSecond = BlockSize * SamplingFrequency;
     }
 
+    // Chunk size is 16 bytes
     // チャンクサイズは16byte
     private uint ChankSize { get; } = 0x00000010;
 
@@ -27,7 +29,7 @@ public readonly struct FormatChunk : IChunk
     private ushort Channel { get; }
 
     /// <summary>
-    /// sampling frequency. サンプリング周波数
+    /// Sampling frequency. <br/>サンプリング周波数
     /// </summary>
     public uint SamplingFrequency { get; }
 
@@ -36,14 +38,14 @@ public readonly struct FormatChunk : IChunk
     private ushort BlockSize { get; }
 
     /// <summary>
-    /// bit rate. 量子化ビット数
+    /// Bit rate. <br/>量子化ビット数
     /// </summary>
     public ushort BitRate { get; }
 
     /// <summary>
-    /// get array of this chunk. フォーマットチャンクのバイト列を取得するメソッド。
+    /// Get array of this chunk. <br/>フォーマットチャンクのバイト列を取得するメソッド。
     /// </summary>
-    /// <returns>bytes of this chunk. フォーマットチャンクのバイト列 : byte[]</returns>
+    /// <returns>Bytes of this chunk. <br/>フォーマットチャンクのバイト列 : byte[]</returns>
     public byte[] GetBytes()
     {
         var result = BitConverter.GetBytes(0x20746D66);
