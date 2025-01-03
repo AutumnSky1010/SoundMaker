@@ -1,18 +1,19 @@
 ﻿using SoundMaker.Sounds.WaveTypes;
 
 namespace SoundMaker.Sounds.Score;
+
 /// <summary>
-/// the note. 音符を表すクラス
+/// The note. <br/>音符を表すクラス
 /// </summary>
 public class Note : BasicSoundComponentBase
 {
     /// <summary>
-    /// constructor コンストラクタ
+    /// Constructor. <br/>コンストラクタ
     /// </summary>
-    /// <param name="scale">scale of the note.音の高さ</param>
-    /// <param name="scaleNumber">sound height number. (C"4" is middle C.)音の高さの番号（Cの「4」が真ん中のド）</param>
-    /// <param name="length">length (ex. "quarter" note) 長さ（音楽的な、「四分」音符、「全」休符のような長さを表す。）</param>
-    /// <param name="isDotted">is note/rest dotted. 付点かを表す論理型</param>
+    /// <param name="scale">Scale of the note. <br/>音の高さ</param>
+    /// <param name="scaleNumber">Sound height number. (C"4" is middle C.) <br/>音の高さの番号（Cの「4」が真ん中のド）</param>
+    /// <param name="length">Length (ex. "quarter" note). <br/>長さ（音楽的な、「四分」音符、「全」休符のような長さを表す。）</param>
+    /// <param name="isDotted">Is note/rest dotted. <br/>付点かを表す論理型</param>
     /// <exception cref="ArgumentException">Scale and scale number must be only the range of sound that the piano can produce.</exception>
     public Note(Scale scale, int scaleNumber, LengthType length, bool isDotted = false)
         : base(length, isDotted)
@@ -24,10 +25,10 @@ public class Note : BasicSoundComponentBase
     }
 
     /// <summary>
-    /// easiness constructor(use case: construct Tie).Scale is "A4". 簡易コンストラクタ(使用場面: タイの初期化)。音の高さは"A4"
+    /// Easiness constructor (use case: construct Tie). Scale is "A4". <br/>簡易コンストラクタ(使用場面: タイの初期化)。音の高さは"A4"
     /// </summary>
-    /// <param name="length">length (ex. "quarter" note) 長さ（音楽的な、「四分」音符、「全」休符のような長さを表す。）</param>
-    /// <param name="isDotted">is note/rest dotted. 付点かを表す論理型</param>
+    /// <param name="length">Length (ex. "quarter" note). <br/>長さ（音楽的な、「四分」音符、「全」休符のような長さを表す。）</param>
+    /// <param name="isDotted">Is note/rest dotted. <br/>付点かを表す論理型</param>
     public Note(LengthType length, bool isDotted = false) : base(length, isDotted)
     {
         var scale = Scale.A;
@@ -38,23 +39,24 @@ public class Note : BasicSoundComponentBase
     }
 
     /// <summary>
-    /// scale of the note. 音の高さ
+    /// Scale of the note. <br/>音の高さ
     /// </summary>
     public Scale Scale { get; }
 
     /// <summary>
-    /// sound height number. (C"4" is middle C.)音の高さの番号（Cの「4」が真ん中のド）
+    /// Sound height number. (C"4" is middle C.) <br/>音の高さの番号（Cの「4」が真ん中のド）
     /// </summary>
     public int ScaleNumber { get; }
 
     /// <summary>
-    /// hertz of the sound. 音の周波数
+    /// Hertz of the sound. <br/>音の周波数
     /// </summary>
     public double Hertz { get; } = 0d;
 
     private int _volume = 100;
+
     /// <summary>
-    /// volume of the sound.(0 ~ 100) 音の大きさ(0 ~ 100の間)
+    /// Volume of the sound. (0 ~ 100) <br/>音の大きさ(0 ~ 100の間)
     /// </summary>
     public int Volume
     {
