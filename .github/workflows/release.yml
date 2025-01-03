@@ -36,7 +36,8 @@ jobs:
         id: tag_version
         uses: mathieudutour/github-tag-action@v6.2
         with:
-          custom_tag: SoundMaker-Ver.${{ inputs.version }}
+          custom_tag: ${{ inputs.version }}
+          tag_prefix: SoundMaker-Ver.
           github_token: ${{ secrets.GITHUB_TOKEN }}
       - name: Create a GitHub release
         uses: ncipollo/release-action@v1.14.0
