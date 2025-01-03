@@ -5,11 +5,11 @@
 public enum ChannelType
 {
     /// <summary>
-    /// monaural(1ch) モノラル1ch
+    /// monaural(1ch) <br/>モノラル1ch
     /// </summary>
     Monaural,
     /// <summary>
-    /// stereo(2ch) ステレオ2ch
+    /// stereo(2ch) <br/>ステレオ2ch
     /// </summary>
     Stereo
 }

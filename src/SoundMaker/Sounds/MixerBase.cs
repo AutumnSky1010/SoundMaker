@@ -1,34 +1,27 @@
 ﻿using SoundMaker.Sounds.SoundChannels;
 
 namespace SoundMaker.Sounds;
+
 /// <summary>
-/// provides a base class for a mixer to inherit from. ミキサーの抽象基底クラス
+/// Provides a base class for a mixer to inherit from. <br/>ミキサーの抽象基底クラス
 /// </summary>
-public abstract class MixerBase
+/// <param name="channels">List of sound channels (read-only). <br/>音声チャンネルのリスト(読み取り専用)</param>
+public abstract class MixerBase(IReadOnlyList<ISoundChannel> channels)
 {
     /// <summary>
-    /// constructor コンストラクタ
+    /// List of channels. <br/>チャンネルのリスト
     /// </summary>
-    /// <param name="channels">音声チャンネルのリスト(読み取り専用)</param>
-    public MixerBase(IReadOnlyList<ISoundChannel> channels)
-    {
-        Channels = channels;
-    }
+    protected IReadOnlyList<ISoundChannel> Channels { get; } = channels;
 
     /// <summary>
-    /// チャンネルのリスト
-    /// </summary>
-    protected IReadOnlyList<ISoundChannel> Channels { get; }
-
-    /// <summary>
-    /// 音のフォーマット
+    /// Sound format. <br/>音のフォーマット
     /// </summary>
     protected SoundFormat Format { get; }
 
     /// <summary>
-    /// 各チャンネルの波形データで一番長い配列の長さを返すメソッド。
+    /// Method to return the length of the longest array in each channel's waveform data. <br/>各チャンネルの波形データで一番長い配列の長さを返すメソッド。
     /// </summary>
-    /// <returns>最長の配列の長さ : int</returns>
+    /// <returns>Length of the longest array. <br/>最長の配列の長さ : int</returns>
     protected int GetMaxWaveLength()
     {
         var max = 0;

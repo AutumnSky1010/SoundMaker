@@ -1,27 +1,21 @@
 ﻿using SoundMaker.Sounds.SoundChannels;
 
 namespace SoundMaker.Sounds;
-/// <summary>
-/// mix waves to stereo wave. ステレオ音声をミックスするクラス。
-/// </summary>
-public class StereoMixer : MixerBase
-{
-    /// <summary>
-    /// constructor. コンストラクタ
-    /// </summary>
-    /// <param name="channels">channels. チャンネルのリスト</param>
-    public StereoMixer(IReadOnlyList<ISoundChannel> channels) : base(channels)
-    {
-    }
 
+/// <summary>
+/// Mix waves to stereo wave. <br/>ステレオ音声をミックスするクラス。
+/// </summary>
+/// <param name="channels">Channels. <br/>チャンネルのリスト</param>
+public class StereoMixer(IReadOnlyList<ISoundChannel> channels) : MixerBase(channels)
+{
     private object LockLeftObject { get; } = new object();
 
     private object LockRightObject { get; } = new object();
 
     /// <summary>
-    /// mix. ミックスするメソッド。
+    /// Mix. <br/>ミックスするメソッド。
     /// </summary>
-    /// <returns>ステレオ波形データ</returns>
+    /// <returns>Stereo wave data. <br/>ステレオ波形データ</returns>
     public StereoWave Mix()
     {
         var max = GetMaxWaveLength();
@@ -34,6 +28,7 @@ public class StereoMixer : MixerBase
         });
         return new StereoWave(rightResult, leftResult);
     }
+
     private void Merge(short[] left, short[] right, ISoundChannel channel, ChannelCount channelCount)
     {
         var waveNumericData = channel.GenerateWave();
@@ -57,7 +52,7 @@ public class StereoMixer : MixerBase
                 }
             }
         }
-        // 両方のチャンネルから音が出る場合
+        // If sound is coming from both channels
         else
         {
             lock (LockLeftObject)
@@ -73,17 +68,18 @@ public class StereoMixer : MixerBase
             }
         }
     }
+
     /// <summary>
-    /// 左右それぞれのチャンネルの個数を数えるメソッド。
+    /// Method to count the number of channels for left and right. <br/>左右それぞれのチャンネルの個数を数えるメソッド。
     /// </summary>
-    /// <returns>左右それぞれのチャンネルの個数</returns>
+    /// <returns>Number of channels for left and right. <br/>左右それぞれのチャンネルの個数</returns>
     private ChannelCount GetChannelCount()
     {
         var right = 0;
         var left = 0;
         foreach (var channel in Channels)
         {
-            // 両方の場合は両方インクリメントする。
+            // Increment both if both channels are used.
             if (channel.PanType is PanType.Left || channel.PanType is PanType.Both)
             {
                 left++;
@@ -96,16 +92,10 @@ public class StereoMixer : MixerBase
         return new ChannelCount(left, right);
     }
 
-    private readonly struct ChannelCount
+    private readonly struct ChannelCount(int left, int right)
     {
-        public ChannelCount(int left, int right)
-        {
-            Left = left;
-            Right = right;
-        }
+        public int Right { get; } = right;
 
-        public int Right { get; }
-
-        public int Left { get; }
+        public int Left { get; } = left;
     }
 }
