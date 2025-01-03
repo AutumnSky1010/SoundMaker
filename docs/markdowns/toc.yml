@@ -14,6 +14,8 @@
         href: start/gen/channel-base-api.md
       - name: トラックベースAPI
         href: start/gen/track-base-api.md
+      - name: バッファリング可能な音声生成
+        href: start/gen/track-base-api-partial.md
   - name: WAV出力
     href: start/wav.md
 - name: Ver 3.0.0への移行
@@ -23,3 +25,4 @@
     - name: SMSCフォーマットとは？
       href: smsc/what-is-the-smsc.md
     - name: SMSCシリアライズ・デシリアライズ
+      href: smsc/serializer.md
