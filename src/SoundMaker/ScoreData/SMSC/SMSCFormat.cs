@@ -10,8 +10,8 @@ public static class SMSCFormat
     /// Reads SMSC data.<br/>
     /// SMSCデータを読み込む。
     /// </summary>
-    /// <param name="data">SMSC data. SMSCデータ</param>
-    /// <returns>The read results. 読み取り結果</returns>
+    /// <param name="data">SMSC data. <br/>SMSCデータ</param>
+    /// <returns>The read results. <br/>読み取り結果</returns>
     public static SMSCReadResult Read(string data)
     {
         var lexer = new Lexer(data);
@@ -23,8 +23,8 @@ public static class SMSCFormat
     /// Outputs SMSC data.<br/>
     /// SMSCデータを出力する。
     /// </summary>
-    /// <param name="components">Sound components to write. 書き込むサウンドコンポーネント</param>
-    /// <returns>SMSC data. SMSCデータ</returns>
+    /// <param name="components">Sound components to write. <br/>書き込むサウンドコンポーネント</param>
+    /// <returns>SMSC data. <br/>SMSCデータ</returns>
     public static string Serialize(IEnumerable<ISoundComponent> components)
     {
         return SMSCSerializer.Serialize(components);
