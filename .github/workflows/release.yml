@@ -19,6 +19,9 @@ jobs:
       with:
         dotnet-version: 8.0.x
 
+    - name: Restore dependencies
+      run: dotnet restore src/SoundMaker/SoundMaker.csproj; dotnet restore test/SoundMakerTests.csproj
+
     - name: Build the SoundMaker project
       run: dotnet build src/SoundMaker/SoundMaker.csproj --no-restore --warnaserror --configuration Release
 
@@ -34,7 +37,6 @@ jobs:
         uses: mathieudutour/github-tag-action@v6.2
         with:
           custom_tag: SoundMaker-Ver.${{ inputs.version }}
-          tag_prefix:
           github_token: ${{ secrets.GITHUB_TOKEN }}
       - name: Create a GitHub release
         uses: ncipollo/release-action@v1.14.0
