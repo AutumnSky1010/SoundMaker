@@ -1,24 +1,27 @@
 ﻿namespace SoundMaker.Sounds.WaveTypes;
+
 /// <summary>
-/// the pseudo triangle wave. 疑似三角波
+/// The pseudo triangle wave. <br/>疑似三角波
 /// </summary>
 public class PseudoTriangleWave : WaveTypeBase
 {
-    private static readonly short[] _leftHeights = new short[]
-    {
+    private static readonly short[] _leftHeights =
+    [
         0, -4096, -8192, -12288, -16384, -20480, -24576, -28672, -28672, -24576, -20480, -16384, -12288, -8192, -4096, 0,
-    };
-    private static readonly short[] _rightHeights = new short[]
-    {
+    ];
+    private static readonly short[] _rightHeights =
+    [
         4095, 8191, 12287, 16383, 20479, 24575, 28671, short.MaxValue, short.MaxValue, 28671, 24575, 20479, 16383, 12287, 8191, 4095
-    };
+    ];
 
     public override short[] GenerateWave(SoundFormat format, int length, int volume, double hertz)
     {
         CheckGenerateWaveArgs(length, volume, hertz);
 
+        // Number of repetitions to create △ waveform
         // △の波形を作るための繰り返し回数
         var triangleWidth = (int)((int)format.SamplingFrequency / hertz);
+        // Generate a normal triangle wave if pseudo triangle wave cannot be generated.
         // 疑似三角波に出来ない場合は普通の三角波を生成する。
         if (triangleWidth <= 64)
         {
@@ -44,13 +47,12 @@ public class PseudoTriangleWave : WaveTypeBase
     }
 
     /// <summary>
-    /// Generates one cycle of a sound waveform at the specified frequency.<br/>
-    /// 指定した周波数の音声波形1周期分を生成する。
+    /// Generates one cycle of a sound waveform at the specified frequency. <br/>指定した周波数の音声波形1周期分を生成する。
     /// </summary>
     /// <param name="format">Format of the sound. <br/>音のフォーマット</param>
-    /// <param name="volume">Volume <br/>音量（0 ~ 100）</param>
+    /// <param name="volume">Volume. <br/>音量（0 ~ 100）</param>
     /// <param name="hertz">Hertz of the sound. <br/>音の周波数</param>
-    /// <returns>The array of wave data.</returns>
+    /// <returns>The array of wave data. <br/>波形データの配列 : short[]</returns>
     /// <exception cref="ArgumentOutOfRangeException">Hertz must be non-negative and greater than 0.</exception>
     /// <exception cref="ArgumentOutOfRangeException">Volume must be below 100 and above 0.</exception>
     public short[] GenerateUnitWave(SoundFormat format, int volume, double hertz)
@@ -65,10 +67,13 @@ public class PseudoTriangleWave : WaveTypeBase
 
         var result = new short[repeatNumber];
         var steps = 32;
+        // Volume magnification (1.00 ~ 0.00)
         // 音量の倍率(1.00 ~ 0.00)
         var volumeMagnification = volume / 100d;
+        // Width of stairs
         // 階段の幅
         var stairsWidth = repeatNumber / steps;
+        // Remainder of width
         // 幅の余り
         var r = repeatNumber % steps;
 

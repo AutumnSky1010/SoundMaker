@@ -5,7 +5,7 @@
 public abstract class WaveTypeBase
 {
     /// <summary>
-    /// generate array of wave data. 波形データの配列を生成する。
+    /// Generate array of wave data. <br/>波形データの配列を生成する。
     /// </summary>
     /// <param name="format">format of the sound. 音のフォーマット</param>
     /// <param name="length">length of the array. 配列の長さ</param>

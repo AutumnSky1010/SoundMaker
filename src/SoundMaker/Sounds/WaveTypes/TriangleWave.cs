@@ -1,6 +1,6 @@
 ﻿namespace SoundMaker.Sounds.WaveTypes;
 /// <summary>
-/// the triangle wave. 三角波
+/// The triangle wave. <br/>三角波
 /// </summary>
 public class TriangleWave : WaveTypeBase
 {

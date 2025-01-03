@@ -1,15 +1,16 @@
 ﻿using SoundMaker.Sounds.SoundChannels;
 
 namespace SoundMaker.Sounds.WaveTypes;
+
 /// <summary>
-/// the square wave. 矩形波
+/// The square wave. <br/>矩形波
 /// </summary>
 public class SquareWave : WaveTypeBase
 {
     /// <summary>
-    /// constructor. コンストラクタ
+    /// Constructor. <br/>コンストラクタ
     /// </summary>
-    /// <param name="squareWaveRatio">duty cycle. デューティ比</param>
+    /// <param name="squareWaveRatio">Duty cycle. <br/>デューティ比</param>
     public SquareWave(SquareWaveRatio squareWaveRatio)
     {
         SquareWaveRatio = squareWaveRatio;
@@ -18,7 +19,7 @@ public class SquareWave : WaveTypeBase
     private SquareWaveRatio SquareWaveRatio { get; }
 
     /// <summary>
-    /// デューティ比を基に繰り返し回数を求める為の値
+    /// Values to determine the number of repetitions based on duty cycle. <br/>デューティ比を基に繰り返し回数を求める為の値
     /// </summary>
     private static List<(double, double)> Ratio { get; } =
     [
@@ -48,13 +49,12 @@ public class SquareWave : WaveTypeBase
     }
 
     /// <summary>
-    /// Generates one cycle of a sound waveform at the specified frequency.<br/>
-    /// 指定した周波数の音声波形1周期分を生成する。
+    /// Generates one cycle of a sound waveform at the specified frequency. <br/>指定した周波数の音声波形1周期分を生成する。
     /// </summary>
     /// <param name="format">Format of the sound. <br/>音のフォーマット</param>
-    /// <param name="volume">Volume <br/>音量（0 ~ 100）</param>
+    /// <param name="volume">Volume. <br/>音量（0 ~ 100）</param>
     /// <param name="hertz">Hertz of the sound. <br/>音の周波数</param>
-    /// <returns>The array of wave data.</returns>
+    /// <returns>The array of wave data. <br/>波形データの配列 : short[]</returns>
     /// <exception cref="ArgumentOutOfRangeException">Hertz must be non-negative and greater than 0.</exception>
     /// <exception cref="ArgumentOutOfRangeException">Volume must be below 100 and above 0.</exception>
     public short[] GenerateUnitWave(SoundFormat format, int volume, double hertz)
@@ -68,8 +68,10 @@ public class SquareWave : WaveTypeBase
         var ratioIndex = (int)squareWaveRatio;
         var allRepeatTimes = (int)((int)format.SamplingFrequency / hertz);
         var firstRepeatTimes = (int)(allRepeatTimes * Ratio[ratioIndex].Item1);
+        // A list is faster than an array for some reason
         // なぜか配列よりリストの方が早い
         var result = new List<short>(allRepeatTimes);
+        // Volume magnification (1.00 ~ 0.00)
         // 音量の倍率(1.00 ~ 0.00)
         var volumeMagnification = volume / 100d;
 
