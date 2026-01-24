@@ -7,7 +7,7 @@ namespace SoundMaker.Sounds;
 /// Represents a track with a specific wave type. <br/>
 /// 特定の波形タイプを持つトラックを表すクラス。
 /// </summary>
-public class Track
+public class Track : ITrack
 {
     private List<ISoundComponent> _soundComponents = [];
 
@@ -59,13 +59,17 @@ public class Track
         }
     }
 
-    internal int EndIndex { get; private set; }
+    /// <summary>
+    /// Gets the end time in index. <br/>
+    /// 終了時間（インデクス）を取得するプロパティ。
+    /// </summary>
+    public int EndIndex { get; private set; }
     private int _startIndex;
     /// <summary>
-    /// Gets or sets the start time in index. <br/>
-    /// 開始時間（インデクス）を取得または設定するプロパティ。
+    /// Gets the start time in index. <br/>
+    /// 開始時間（インデクス）を取得するプロパティ。
     /// </summary>
-    internal int StartIndex
+    public int StartIndex
     {
         get => _startIndex;
         set
@@ -354,12 +358,16 @@ public class Track
     /// トラックのクローンを作成するメソッド。
     /// </summary>
     /// <returns>A new instance of the track with the same properties. <br/> 同じプロパティを持つトラックの新しいインスタンス。</returns>
-    internal Track Clone()
+    public Track Clone()
     {
         var copy = new Track(WaveType.Clone(), _format, _tempo, StartIndex);
+        copy.Pan = Pan;
         copy.Import(_soundComponents.Select(component => component.Clone()));
         return copy;
     }
+
+    /// <inheritdoc/>
+    ITrack ITrack.Clone() => Clone();
 
     private bool IsOutOfRange(int index)
     {

@@ -28,9 +28,9 @@ public class TrackBaseSound(SoundFormat format, int tempo)
 
     /// <summary>
     /// トラックを管理する辞書<br/>
-    /// 開始時間(ミリ秒)とトラック(複数)のペア
+    /// 開始時間(インデクス)とトラック(複数)のペア
     /// </summary>
-    private Dictionary<int, List<Track>> _tracksTimeMap = [];
+    private Dictionary<int, List<ITrack>> _tracksTimeMap = [];
 
     /// <summary>
     /// Creates a new track with the specified wave type and start time. <br/>
@@ -42,6 +42,20 @@ public class TrackBaseSound(SoundFormat format, int tempo)
     public Track CreateTrack(int startIndex, WaveTypeBase waveType)
     {
         var track = new Track(waveType, Format, Tempo, startIndex);
+        InsertTrack(startIndex, track);
+        return track;
+    }
+
+    /// <summary>
+    /// Creates a new polyphonic track with the specified wave type and start time. <br/>
+    /// 指定された波の種類と開始時間で新しいポリフォニックトラックを作成するメソッド。
+    /// </summary>
+    /// <param name="startIndex">The start time in index. <br/> 開始時間（インデクス）。</param>
+    /// <param name="waveType">The type of wave. <br/> 波の種類。</param>
+    /// <returns>A new instance of the polyphonic track. <br/> 新しいポリフォニックトラックのインスタンス。</returns>
+    public PolyphonicTrack CreatePolyphonicTrack(int startIndex, WaveTypeBase waveType)
+    {
+        var track = new PolyphonicTrack(waveType, Format, Tempo, startIndex);
         InsertTrack(startIndex, track);
         return track;
     }
@@ -63,7 +77,7 @@ public class TrackBaseSound(SoundFormat format, int tempo)
     /// </summary>
     /// <param name="track">The track to remove. <br/> 削除するトラック。</param>
     /// <returns>True if the track was removed; otherwise, false. <br/> トラックが削除された場合は true、それ以外の場合は false。</returns>
-    public bool RemoveTrack(Track track)
+    public bool RemoveTrack(ITrack track)
     {
         if (_tracksTimeMap.TryGetValue(track.StartIndex, out var tracks))
         {
@@ -96,7 +110,7 @@ public class TrackBaseSound(SoundFormat format, int tempo)
     /// 失敗時は空リスト。
     /// </returns>
 
-    public List<Track> GetTracks(int startIndex)
+    public List<ITrack> GetTracks(int startIndex)
     {
         if (_tracksTimeMap.TryGetValue(startIndex, out var tracks))
         {
@@ -115,7 +129,7 @@ public class TrackBaseSound(SoundFormat format, int tempo)
     /// <returns>An enumerable collection of tracks. <br/>
     /// トラックの列挙可能なコレクションを返します。
     /// </returns>
-    public IEnumerable<Track> GetAllTracks()
+    public IEnumerable<ITrack> GetAllTracks()
     {
         return _tracksTimeMap.SelectMany(pair => pair.Value);
     }
@@ -127,7 +141,7 @@ public class TrackBaseSound(SoundFormat format, int tempo)
     /// <param name="startIndex">The start time in index. <br/> 開始時間（インデクス）。</param>
     /// <param name="tracks">The list of tracks. <br/> トラックのリスト。</param>
     /// <returns>True if tracks were found; otherwise, false. <br/> トラックが見つかった場合は true、それ以外の場合は false。</returns>
-    public bool TryGetTracks(int startIndex, out List<Track> tracks)
+    public bool TryGetTracks(int startIndex, out List<ITrack> tracks)
     {
         if (_tracksTimeMap.TryGetValue(startIndex, out var foundTracks))
         {
@@ -147,7 +161,7 @@ public class TrackBaseSound(SoundFormat format, int tempo)
     /// </summary>
     /// <param name="startIndex">The start time in index. <br/> 開始時間（インデクス）。</param>
     /// <param name="track">The track to insert. <br/> 挿入するトラック。</param>
-    private void InsertTrack(int startIndex, Track track)
+    private void InsertTrack(int startIndex, ITrack track)
     {
         if (_tracksTimeMap.TryGetValue(startIndex, out var tracks))
         {
@@ -160,18 +174,35 @@ public class TrackBaseSound(SoundFormat format, int tempo)
     }
 
     /// <summary>
+    /// Sets the start index of the track. <br/>
+    /// トラックの開始インデックスを設定するメソッド。
+    /// </summary>
+    private static void SetTrackStartIndex(ITrack track, int startIndex)
+    {
+        switch (track)
+        {
+            case Track t:
+                t.StartIndex = startIndex;
+                break;
+            case PolyphonicTrack pt:
+                pt.StartIndex = startIndex;
+                break;
+        }
+    }
+
+    /// <summary>
     /// Moves a track to a new start time. <br/>
     /// トラックを新しい開始時間に移動するメソッド。
     /// </summary>
     /// <param name="track">The track to move. <br/> 移動するトラック。</param>
     /// <param name="newStartIndex">The new start time in index. <br/> 新しい開始時間（インデクス）。</param>
     /// <returns>True if the track was moved; otherwise, false. <br/> トラックが移動された場合は true、それ以外の場合は false。</returns>
-    public bool MoveTrack(Track track, int newStartIndex)
+    public bool MoveTrack(ITrack track, int newStartIndex)
     {
         if (RemoveTrack(track))
         {
             InsertTrack(newStartIndex, track);
-            track.StartIndex = newStartIndex;
+            SetTrackStartIndex(track, newStartIndex);
             return true;
         }
         return false;
@@ -184,10 +215,10 @@ public class TrackBaseSound(SoundFormat format, int tempo)
     /// <param name="sourceTrack">The track to copy. <br/> コピーするトラック。</param>
     /// <param name="newStartIndex">The new start time in index. <br/> 新しい開始時間（インデクス）。</param>
     /// <returns>A new instance of the copied track. <br/> コピーされたトラックの新しいインスタンス。</returns>
-    public Track CopyTrack(Track sourceTrack, int newStartIndex)
+    public ITrack CopyTrack(ITrack sourceTrack, int newStartIndex)
     {
         var newTrack = sourceTrack.Clone();
-        newTrack.StartIndex = newStartIndex;
+        SetTrackStartIndex(newTrack, newStartIndex);
         InsertTrack(newStartIndex, newTrack);
         return newTrack;
     }
@@ -440,14 +471,14 @@ public class TrackBaseSound(SoundFormat format, int tempo)
     }
 
 
-    /// <summary> 
-    /// Imports tracks into the internal map based on their start times. <br/> 
-    /// トラックを開始時間に基づいて内部のマップにインポートするメソッド。 
-    /// </summary> 
+    /// <summary>
+    /// Imports tracks into the internal map based on their start times. <br/>
+    /// トラックを開始時間に基づいて内部のマップにインポートするメソッド。
+    /// </summary>
     /// <param name="from">The tracks to import. <br/> インポートするトラック。</param>
-    public void Import(IEnumerable<Track> from)
+    public void Import(IEnumerable<ITrack> from)
     {
-        var map = new Dictionary<int, List<Track>>();
+        var map = new Dictionary<int, List<ITrack>>();
         foreach (var track in from)
         {
             if (map.TryGetValue(track.StartIndex, out var tracks))
