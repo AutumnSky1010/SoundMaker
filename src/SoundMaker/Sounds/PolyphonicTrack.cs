@@ -253,22 +253,26 @@ public class PolyphonicTrack : ITrack
 
         foreach (var (position, components) in _componentsByPosition)
         {
+            // 相対座標を絶対座標に変換
+            int absolutePosition = StartIndex + position;
+
             foreach (var component in components)
             {
                 int componentLength = GetComponentLength(component);
-                int componentEndPosition = position + componentLength - 1;
+                int absoluteEndPosition = absolutePosition + componentLength - 1;
 
                 // Skip if component is entirely before or after the requested range
-                if (componentEndPosition < startIndex || position > endIndex)
+                // 絶対座標同士で比較
+                if (absoluteEndPosition < startIndex || absolutePosition > endIndex)
                 {
                     continue;
                 }
 
                 var wave = component.GenerateWave(_format, _tempo, WaveType);
 
-                // Calculate the overlap range
-                int waveStartOffset = Math.Max(0, startIndex - position);
-                int resultStartOffset = Math.Max(0, position - startIndex);
+                // Calculate the overlap range（絶対座標を使用）
+                int waveStartOffset = Math.Max(0, startIndex - absolutePosition);
+                int resultStartOffset = Math.Max(0, absolutePosition - startIndex);
 
                 for (int i = waveStartOffset; i < wave.Length && (resultStartOffset + i - waveStartOffset) < expectedLength; i++)
                 {
