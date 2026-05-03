@@ -43,7 +43,7 @@ public class SquareWave : WaveTypeBase
         return result.ToArray();
     }
 
-    internal override WaveTypeBase Clone()
+    public override WaveTypeBase Clone()
     {
         return new SquareWave(SquareWaveRatio);
     }
